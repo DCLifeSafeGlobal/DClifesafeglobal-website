@@ -18,9 +18,10 @@ img { max-width: 100%; display: block; }
 button, input, select, textarea { font: inherit; }
 .container { width: min(1220px, calc(100% - 40px)); margin: 0 auto; }
 .header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: 1px solid rgba(0,0,0,0.04); backdrop-filter: blur(10px); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 88px; gap: 0px; }
-.brand-logo {  height: 420px;  width: auto;  display: block;} @media (max-width: 800px) {  .brand-logo {    height: 1850px; }  .header-inner {
-    min-height: 175px; }}
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 78px; gap: 0px; }
+.brand-logo { height: 96px; width: auto; display: block;}@media (max-width: 800px) { 
+.brand-logo { height: 52px; } 
+  .header-inner { min-height: 72px; } }
 .nav { display: flex; align-items: center; gap: 34px; }
 .nav-link { font-size: 1.05rem; color: #2f3441; padding: 6px 0; border-bottom: 2px solid transparent; }
 .nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
