@@ -18,7 +18,7 @@ img { max-width: 100%; display: block; }
 button, input, select, textarea { font: inherit; }
 .container { width: min(1220px, calc(100% - 40px)); margin: 0 auto; }
 .header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.96); border-bottom: 1px solid rgba(0,0,0,0.04); backdrop-filter: blur(10px); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 94px; gap: 20px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 80px; gap: 10px; }
 .brand-logo {
   height: 220px;
   width: auto;
