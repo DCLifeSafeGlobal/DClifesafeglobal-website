@@ -31,7 +31,7 @@ button, input, select, textarea { font: inherit; }
   }
 
   .header-inner {
-    min-height: 100px;
+    min-height: 180px;
   }
 }
 .nav { display: flex; align-items: center; gap: 34px; }
