@@ -74,7 +74,7 @@ export default function Outdoor() {
         <div className="container">
           <div className="cta-banner">
             <img src="/cta_outdoor.png" alt="" className="cta-image" />
-            <div className="cta-content left white">
+            <div className="cta-content left outdoor-cta-dark">
               <h3>Ready for your next adventure?</h3>
               <p>Join us on an upcoming expedition or guided journey.</p>
               <button className="btn btn-orange">View Upcoming Trips</button>
