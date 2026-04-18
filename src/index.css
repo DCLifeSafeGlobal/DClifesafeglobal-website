@@ -99,7 +99,7 @@ button, input, select, textarea { font: inherit; }
 .bottom-action-bar { margin-top: 18px; background: linear-gradient(90deg, #072f63, #0a2951); color: #fff; border-radius: 16px; padding: 26px 28px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
 .bottom-action-bar strong { display: block; font-size: 1.6rem; }
 .bottom-action-bar span { display: block; margin-top: 6px; color: rgba(255,255,255,0.88); }
-.page-hero-badge { position: absolute; right: 12%; top: 12%; width: min(38%, 420px); }
+.page-hero-badge { position: absolute; right: 8%; top: 8%; width: min(26%, 240px); }
 .partner-row { display: flex; justify-content: space-between; gap: 20px; color: #8b91a1; margin-top: 18px; font-size: 1.2rem; }
 .mission-block { margin-top: 46px; }
 .story-banner { margin-top: 28px; border-radius: 14px; }
@@ -131,3 +131,37 @@ button, input, select, textarea { font: inherit; }
 .section-subtitle.narrow { max-width: 760px; }
 @media (max-width: 1100px){ .columns-4, .icon-row.four-large{grid-template-columns:repeat(2,minmax(0,1fr));} .columns-3,.training-bottom-grid,.contact-grid,.columns-2,.hero-training-grid{grid-template-columns:1fr;} .page-hero-overlay.left,.cta-content.left{width:100%;} .page-hero-badge{width:min(46%,380px);right:6%;} }
 @media (max-width: 820px){ .header-inner{min-height:84px;} .brand-logo{height:60px;} .mobile-toggle{display:block;} .nav{position:absolute;left:0;right:0;top:84px;background:white;border-bottom:1px solid #ece8ec;box-shadow:0 12px 28px rgba(14,18,28,0.08);padding:16px 20px 20px;display:none;flex-direction:column;align-items:flex-start;gap:14px;} .nav.nav-open{display:flex;} .icon-row,.three-tools,.columns-4,.icon-row.four-large,.contact-split{grid-template-columns:1fr;} .page-hero-overlay.left{position:relative;inset:auto;width:100%;padding:28px 10px 0;text-align:left;} .page-hero-badge{width:42%;right:4%;top:6%;} .page-hero-card{background:white;border-radius:18px;} .story-overlay,.cta-content{padding:24px;} .partner-row{flex-direction:column;} .bottom-action-bar{flex-direction:column;align-items:flex-start;} }
+.outdoor-hero-card {
+  overflow: hidden;
+}
+
+.outdoor-badge-clean {
+  position: absolute;
+  right: 7%;
+  top: 6%;
+  width: min(24%, 230px);
+  pointer-events: none;
+}
+
+.outdoor-badge-clean img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+}
+
+@media (max-width: 1100px) {
+  .outdoor-badge-clean {
+    right: 5%;
+    top: 5%;
+    width: min(28%, 210px);
+  }
+}
+
+@media (max-width: 820px) {
+  .outdoor-badge-clean {
+    right: 4%;
+    top: 4%;
+    width: min(34%, 180px);
+  }
+}
