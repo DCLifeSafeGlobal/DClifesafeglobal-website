@@ -27,11 +27,11 @@ button, input, select, textarea { font: inherit; }
 
 @media (max-width: 800px) {
   .brand-logo {
-    height: 150px;
+    height: 1850px;
   }
 
   .header-inner {
-    min-height: 180px;
+    min-height: 175px;
   }
 }
 .nav { display: flex; align-items: center; gap: 34px; }
