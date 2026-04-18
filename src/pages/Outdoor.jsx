@@ -1,3 +1,92 @@
-import React from 'react';
-const cards=[{icon:'/icon_adventure.png',title:'Adventure Expeditions',text:'Embark on guided trips to Peru, the US Rockies, and more.',button:'Learn More',secondary:false},{icon:'/icon_wilderness.png',title:'Wilderness Medicine',text:'Learn survival medicine and rescue skills in remote environments.',button:'View Courses',secondary:true},{icon:'/icon_guided.png',title:'Guided Experiences',text:'Join like-minded groups for therapeutic and restorative hikes.',button:'See Upcoming',secondary:true},{icon:'/icon_nature.png',title:'Nature-Based Wellness',text:'Find balance with outdoor wellness retreats and nature immersion.',button:'Explore Wellness',secondary:false}];
-export default function Outdoor(){ return <><section className='hero-banner-page'><div className='container'><div className='page-hero-card'><img src='/hero_outdoor.png' alt='Outdoor' className='page-hero-image'/><div className='page-hero-badge'><img src='/logo_outdoor.png' alt='Outdoor badge'/></div></div></div></section><section className='section'><div className='container text-center'><h1 className='section-title'>Explore the great outdoors</h1><p className='section-subtitle'>Health-focused expeditions and nature-based experiences.</p><div className='card-grid columns-4 mt-medium'>{cards.map(card=><article className='program-card' key={card.title}><img src={card.icon} alt='' className='program-icon'/><h3>{card.title}</h3><p>{card.text}</p><button className={card.secondary?'btn btn-outline small':'btn small'}>{card.button}</button></article>)}</div></div></section><section className='section'><div className='container'><div className='cta-banner'><img src='/cta_outdoor.png' alt='' className='cta-image'/><div className='cta-content left white'><h3>Ready for your next adventure?</h3><p>Join us on an upcoming expedition or guided journey.</p><button className='btn btn-orange'>View Upcoming Trips</button></div></div><div className='partner-row'><span>Adventure Travel Trade Association</span><span>SOLO | Medler Trails Medicine School</span></div></div></section></>; }
+import React from "react";
+
+export default function Outdoor() {
+  const cards = [
+    {
+      icon: "/icon_adventure.png",
+      title: "Adventure Expeditions",
+      text: "Embark on guided trips to Peru, the US Rockies, and more.",
+      button: "Learn More",
+    },
+    {
+      icon: "/icon_wilderness.png",
+      title: "Wilderness Medicine",
+      text: "Learn survival medicine and rescue skills in remote environments.",
+      button: "View Courses",
+      secondary: true,
+    },
+    {
+      icon: "/icon_guided.png",
+      title: "Guided Experiences",
+      text: "Join like-minded groups for therapeutic and restorative hikes.",
+      button: "See Upcoming",
+      secondary: true,
+    },
+    {
+      icon: "/icon_nature.png",
+      title: "Nature-Based Wellness",
+      text: "Find balance with outdoor wellness retreats and nature immersion.",
+      button: "Explore Wellness",
+    },
+  ];
+
+  return (
+    <>
+      <section className="hero-banner-page">
+        <div className="container">
+          <div className="page-hero-card outdoor-hero-card">
+            <img
+              src="/hero_outdoor.png"
+              alt="Outdoor"
+              className="page-hero-image"
+            />
+
+            <div className="page-hero-badge outdoor-badge-clean">
+              <img src="/logo_outdoor.png" alt="Outdoor badge" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container text-center">
+          <h1 className="section-title">Explore the great outdoors</h1>
+          <p className="section-subtitle">
+            Health-focused expeditions and nature-based experiences.
+          </p>
+
+          <div className="card-grid columns-4 mt-medium">
+            {cards.map((card) => (
+              <article className="program-card" key={card.title}>
+                <img src={card.icon} alt="" className="program-icon" />
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+                <button className={card.secondary ? "btn btn-outline small" : "btn small"}>
+                  {card.button}
+                </button>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="cta-banner">
+            <img src="/cta_outdoor.png" alt="" className="cta-image" />
+            <div className="cta-content left white">
+              <h3>Ready for your next adventure?</h3>
+              <p>Join us on an upcoming expedition or guided journey.</p>
+              <button className="btn btn-orange">View Upcoming Trips</button>
+            </div>
+          </div>
+
+          <div className="partner-row">
+            <span>Adventure Travel Trade Association</span>
+            <span>SOLO | Wilderness Medicine School</span>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
