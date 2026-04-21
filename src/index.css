@@ -74,9 +74,10 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
+  height: 56px;
   gap: 20px;
   position: relative;
+  overflow: visible;
 }
 
 .brand {
@@ -84,14 +85,15 @@ textarea {
   align-items: center;
   line-height: 0;
   flex-shrink: 0;
+  margin: 0;
 }
 
 .brand-logo {
   height: 250px;
   width: auto;
   display: block;
+  transform: translateY(2px);
 }
-
 .nav {
   display: flex;
   align-items: center;
