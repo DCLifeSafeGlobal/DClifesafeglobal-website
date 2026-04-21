@@ -87,7 +87,7 @@ textarea {
 }
 
 .brand-logo {
-  height: 108px;
+  height: 150px;
   width: auto;
   display: block;
 }
@@ -95,7 +95,7 @@ textarea {
 .nav {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 86px;
 }
 
 .nav-link {
