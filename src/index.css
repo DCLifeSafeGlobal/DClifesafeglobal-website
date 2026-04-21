@@ -63,16 +63,18 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.82);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.42);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 86px;
+  min-height: 94px;
   gap: 20px;
   position: relative;
 }
@@ -85,7 +87,7 @@ textarea {
 }
 
 .brand-logo {
-  height: 312px;
+  height: 108px;
   width: auto;
   display: block;
 }
@@ -330,13 +332,13 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   color: #23334d;
 }
 
 .icon-circle {
-  width: 82px;
-  height: 82px;
+  width: 108px;
+  height: 108px;
   border-radius: 999px;
   background: #f6f8fb;
   border: 1px solid #e7eaf0;
@@ -345,17 +347,24 @@ textarea {
   justify-content: center;
 }
 
+.icon-circle img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
 .icon-text-item {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   text-align: left;
 }
 
 .icon-text-item img {
-  width: 74px;
-  height: 74px;
+  width: 92px;
+  height: 92px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .icon-text-item span,
@@ -452,10 +461,10 @@ textarea {
 }
 
 .tool-card img {
-  width: 86px;
-  height: 86px;
+  width: 118px;
+  height: 118px;
   object-fit: contain;
-  margin: 0 auto 14px;
+  margin: 0 auto 18px;
 }
 
 .tool-card h3 {
@@ -540,14 +549,14 @@ textarea {
 }
 
 .program-card {
-  padding: 30px 22px 26px;
+  padding: 34px 24px 28px;
   text-align: center;
 }
 
 .program-icon {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 18px;
+  width: 122px;
+  height: 122px;
+  margin: 0 auto 22px;
   object-fit: contain;
 }
 
@@ -716,8 +725,8 @@ textarea {
 }
 
 .contact-icon-circle {
-  width: 76px;
-  height: 76px;
+  width: 90px;
+  height: 90px;
   border-radius: 999px;
   border: 8px solid #c9d5e2;
   margin: 0 auto 14px;
@@ -726,6 +735,12 @@ textarea {
   justify-content: center;
   color: #315986;
   background: white;
+}
+
+.contact-icon-circle img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
 }
 
 .form-card {
@@ -854,11 +869,11 @@ textarea {
   }
 
   .header-inner {
-    min-height: 72px;
+    min-height: 74px;
   }
 
   .brand-logo {
-    height: 54px;
+    height: 72px;
   }
 
   .mobile-toggle {
@@ -869,15 +884,17 @@ textarea {
     position: absolute;
     left: 0;
     right: 0;
-    top: 72px;
-    background: rgba(255, 255, 255, 0.97);
-    border-bottom: 1px solid #ece8ec;
+    top: 74px;
+    background: rgba(255, 255, 255, 0.72);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
     box-shadow: 0 12px 28px rgba(14, 18, 28, 0.08);
     padding: 16px 20px 20px;
     display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .nav.nav-open {
