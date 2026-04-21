@@ -59,15 +59,15 @@ textarea {
 }
 
 /* Header */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: transparent;
-  border-bottom: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  gap: 20px;
+  position: relative;
+  overflow: visible;
+  padding-top: 10px;
 }
 
 .header-inner {
