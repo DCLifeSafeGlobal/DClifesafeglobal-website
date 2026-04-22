@@ -51,7 +51,7 @@ textarea {
 }
 
 .section {
-  padding: 38px 0 34px;
+  padding: 42px 0 36px;
 }
 
 .text-center {
@@ -60,24 +60,24 @@ textarea {
 
 /* Header */
 .header {
-  position: relative;
-  z-index: 50;
-  background: transparent;
-  border-bottom: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 22px rgba(16, 24, 40, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 56px;
+  min-height: 92px;
   gap: 20px;
   position: relative;
   overflow: visible;
-  padding-top: 45px;
 }
 
 .brand {
@@ -89,19 +89,19 @@ textarea {
 }
 
 .brand-logo {
-  height: 250px;
+  height: 118px;
   width: auto;
   display: block;
-  transform: translateY(2px);
 }
+
 .nav {
   display: flex;
   align-items: center;
-  gap: 86px;
+  gap: 42px;
 }
 
 .nav-link {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #2f3441;
   padding: 6px 0;
   border-bottom: 2px solid transparent;
@@ -124,7 +124,7 @@ textarea {
 
 /* Footer */
 .footer {
-  padding: 38px 0 48px;
+  padding: 42px 0 50px;
 }
 
 .footer-inner {
@@ -236,8 +236,8 @@ textarea {
 
 /* Home */
 .hero-home-simple {
-  padding-top: 54px;
-  padding-bottom: 16px;
+  padding-top: 76px;
+  padding-bottom: 22px;
 }
 
 .hero-actions {
@@ -300,7 +300,7 @@ textarea {
 
 .feature-card p {
   color: #404755;
-  line-height: 1.7;
+  line-height: 1.75;
   padding: 18px 24px 0;
   min-height: 118px;
 }
@@ -321,26 +321,27 @@ textarea {
 .icon-row {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  gap: 26px;
   margin-top: 34px;
 }
 
 .icon-row.four-large {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
 .icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   color: #23334d;
+  text-align: center;
 }
 
 .icon-circle {
-  width: 108px;
-  height: 108px;
+  width: 92px;
+  height: 92px;
   border-radius: 999px;
   background: #f6f8fb;
   border: 1px solid #e7eaf0;
@@ -350,23 +351,42 @@ textarea {
 }
 
 .icon-circle img {
-  width: 72px;
-  height: 72px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
 .icon-text-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  align-items: start;
+  gap: 14px;
   text-align: left;
 }
 
 .icon-text-item img {
-  width: 92px;
-  height: 92px;
+  width: 78px;
+  height: 78px;
   object-fit: contain;
   flex-shrink: 0;
+}
+
+.icon-text-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.icon-text-copy strong {
+  display: block;
+  color: #1a2740;
+  line-height: 1.35;
+}
+
+.icon-text-copy span {
+  display: block;
+  color: #505866;
+  line-height: 1.6;
 }
 
 .icon-text-item span,
@@ -384,8 +404,8 @@ textarea {
 
 /* Shared banners */
 .hero-banner-page {
-  padding-top: 26px;
-  padding-bottom: 14px;
+  padding-top: 34px;
+  padding-bottom: 16px;
 }
 
 .page-hero-card,
@@ -463,10 +483,10 @@ textarea {
 }
 
 .tool-card img {
-  width: 118px;
-  height: 118px;
+  width: 82px;
+  height: 82px;
   object-fit: contain;
-  margin: 0 auto 18px;
+  margin: 0 auto 14px;
 }
 
 .tool-card h3 {
@@ -515,7 +535,7 @@ textarea {
 /* Training page */
 .hero-training {
   background: linear-gradient(180deg, #ffffff, #f6f7fb);
-  padding: 22px 0 30px;
+  padding: 34px 0 34px;
 }
 
 .hero-training-grid {
@@ -556,9 +576,9 @@ textarea {
 }
 
 .program-icon {
-  width: 122px;
-  height: 122px;
-  margin: 0 auto 22px;
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
   object-fit: contain;
 }
 
@@ -727,8 +747,8 @@ textarea {
 }
 
 .contact-icon-circle {
-  width: 90px;
-  height: 90px;
+  width: 76px;
+  height: 76px;
   border-radius: 999px;
   border: 8px solid #c9d5e2;
   margin: 0 auto 14px;
@@ -740,8 +760,8 @@ textarea {
 }
 
 .contact-icon-circle img {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
 }
 
@@ -801,6 +821,12 @@ textarea {
 
 .cta-content.center {
   align-items: center;
+}
+
+.cta-content h3,
+.cta-content p {
+  color: #fff;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.38);
 }
 
 .cta-content.white,
@@ -871,11 +897,11 @@ textarea {
   }
 
   .header-inner {
-    min-height: 74px;
+    min-height: 82px;
   }
 
   .brand-logo {
-    height: 72px;
+    height: 84px;
   }
 
   .mobile-toggle {
@@ -883,21 +909,19 @@ textarea {
   }
 
   .nav {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 74px;
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 12px 28px rgba(14, 18, 28, 0.08);
-  padding: 16px 20px 20px;
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 82px;
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px rgba(14, 18, 28, 0.08);
+    padding: 16px 20px 20px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
 
   .nav.nav-open {
     display: flex;
@@ -905,24 +929,57 @@ textarea {
 
   .icon-row,
   .three-tools,
-  .columns-4,
-  .icon-row.four-large,
   .contact-split,
   .columns-3,
   .columns-2 {
     grid-template-columns: 1fr;
   }
 
+  .icon-row.four-large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .icon-item {
+    gap: 10px;
+  }
+
+  .icon-circle {
+    width: 74px;
+    height: 74px;
+  }
+
+  .icon-circle img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .icon-text-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .icon-text-item img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .icon-text-copy {
+    align-items: center;
+  }
+
   .page-hero-overlay.left {
     position: relative;
     inset: auto;
     width: 100%;
-    padding: 28px 18px 0;
+    padding: 24px 18px 0;
     text-align: left;
   }
 
   .page-hero-badge {
-    width: 42%;
+    width: 38%;
     right: 4%;
     top: 6%;
   }
@@ -947,18 +1004,22 @@ textarea {
   }
 
   .hero-home-simple {
-    padding-top: 34px;
+    padding-top: 42px;
+  }
+
+  .hero-banner-page {
+    padding-top: 22px;
   }
 
   .hero-title {
-    font-size: clamp(2.6rem, 9vw, 4rem);
+    font-size: clamp(2.35rem, 9vw, 4rem);
     line-height: 1.08;
   }
 
   .hero-subtitle,
   .section-subtitle {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1.02rem;
+    line-height: 1.72;
   }
 
   .hero-actions {
@@ -974,9 +1035,102 @@ textarea {
     min-height: auto;
   }
 
+  .tool-card img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .program-icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .contact-icon-circle {
+    width: 72px;
+    height: 72px;
+    border-width: 6px;
+  }
+
+  .contact-icon-circle img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .resource-content h3,
+  .program-card h3 {
+    font-size: 1.7rem;
+  }
+
   .outdoor-badge-clean {
     right: 4%;
     top: 4%;
-    width: min(34%, 180px);
+    width: min(30%, 150px);
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    min-height: 76px;
+  }
+
+  .brand-logo {
+    height: 72px;
+  }
+
+  .nav {
+    top: 76px;
+  }
+
+  .hero-home-simple {
+    padding-top: 34px;
+  }
+
+  .hero-banner-page {
+    padding-top: 18px;
+  }
+
+  .section {
+    padding: 34px 0 30px;
+  }
+
+  .feature-card h2 {
+    font-size: 1.75rem;
+  }
+
+  .feature-card p,
+  .program-card p,
+  .resource-content p,
+  .tool-card p {
+    font-size: 0.98rem;
+  }
+
+  .icon-row.four-large {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+  }
+
+  .icon-circle {
+    width: 66px;
+    height: 66px;
+  }
+
+  .icon-circle img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tool-card h3,
+  .resource-content h3,
+  .program-card h3 {
+    font-size: 1.48rem;
+  }
+
+  .cta-content h3 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+    line-height: 1.55;
   }
 }
