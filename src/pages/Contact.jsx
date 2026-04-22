@@ -60,7 +60,7 @@
               <img src="/icon_message.png" alt="Send us a message" />
             </div>
             <div>
-              <h3>Send Us a Message</h3>
+              <h3>NEW CONTACT TEST</h3>
             </div>
           </div>
 
