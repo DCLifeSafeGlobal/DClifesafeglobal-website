@@ -62,7 +62,7 @@ textarea {
 .header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 80;
   background: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 6px 22px rgba(16, 24, 40, 0.05);
@@ -74,11 +74,10 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 62px;
+  min-height: 92px;
   gap: 20px;
   position: relative;
   overflow: visible;
-  padding-top: 45px;
 }
 
 .brand {
@@ -90,10 +89,9 @@ textarea {
 }
 
 .brand-logo {
-  height: 250px;
+  height: 118px;
   width: auto;
   display: block;
-  transform: translateY(2px);
 }
 
 .nav {
