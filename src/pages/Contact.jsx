@@ -79,7 +79,7 @@
           </div>
 
           <div className="contact-trust-note">
-            <img src="/icon_shield.png" alt="Privacy" />
+            <img src="/icon_shield_a.png" alt="Privacy" />
             <span>Your information is safe and will never be shared.</span>
           </div>
         </div>
