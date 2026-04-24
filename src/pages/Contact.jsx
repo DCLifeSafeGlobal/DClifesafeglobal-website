@@ -1,6 +1,30 @@
 import React from "react";
 
 export default function Contact() {
+  const bigIcon = {
+    width: "58px",
+    height: "58px",
+    objectFit: "contain",
+    transform: "scale(1.7)",
+    transformOrigin: "center",
+  };
+
+  const mediumIcon = {
+    width: "50px",
+    height: "50px",
+    objectFit: "contain",
+    transform: "scale(1.55)",
+    transformOrigin: "center",
+  };
+
+  const shieldIcon = {
+    width: "26px",
+    height: "26px",
+    objectFit: "contain",
+    transform: "scale(1.25)",
+    transformOrigin: "center",
+  };
+
   return (
     <section className="section">
       <div className="container">
@@ -16,7 +40,11 @@ export default function Contact() {
             <div className="contact-left-block">
               <div className="contact-info-header">
                 <div className="contact-icon-circle">
-                  <img src="/icon_contact_info.png" alt="Contact information" />
+                  <img
+                    src="/icon_contact_info.png"
+                    alt="Contact information"
+                    style={mediumIcon}
+                  />
                 </div>
                 <div>
                   <h3>Contact Information</h3>
@@ -25,8 +53,8 @@ export default function Contact() {
 
               <div className="contact-info-list">
                 <div className="contact-info-item">
-                  <div className="contact-icon-circle small">
-                    <img src="/icon_phone.png" alt="Phone" />
+                  <div className="contact-icon-circle">
+                    <img src="/icon_phone.png" alt="Phone" style={bigIcon} />
                   </div>
                   <div className="contact-info-copy">
                     <strong>720.527.9516</strong>
@@ -35,8 +63,8 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-info-item">
-                  <div className="contact-icon-circle small">
-                    <img src="/icon_email.png" alt="Email" />
+                  <div className="contact-icon-circle">
+                    <img src="/icon_email.png" alt="Email" style={bigIcon} />
                   </div>
                   <div className="contact-info-copy">
                     <strong>info@dclifesafeglobal.com</strong>
@@ -45,8 +73,8 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-info-item">
-                  <div className="contact-icon-circle small">
-                    <img src="/icon_location.png" alt="Location" />
+                  <div className="contact-icon-circle">
+                    <img src="/icon_location.png" alt="Location" style={bigIcon} />
                   </div>
                   <div className="contact-info-copy">
                     <strong>Denver, Colorado</strong>
@@ -61,7 +89,11 @@ export default function Contact() {
             <div className="contact-left-block">
               <div className="contact-info-header">
                 <div className="contact-icon-circle">
-                  <img src="/icon_message.png" alt="Send us a message" />
+                  <img
+                    src="/icon_message.png"
+                    alt="Send us a message"
+                    style={mediumIcon}
+                  />
                 </div>
                 <div>
                   <h3>Send Us a Message</h3>
@@ -69,8 +101,8 @@ export default function Contact() {
               </div>
 
               <p className="contact-left-description">
-                Use the form to request information, schedule a training, or ask
-                about our wellness and outdoor experiences.
+                Use the form below to request information, schedule a training,
+                or ask about our wellness and outdoor experiences.
               </p>
 
               <div className="contact-quick-actions">
@@ -86,7 +118,7 @@ export default function Contact() {
               </div>
 
               <div className="contact-trust-note">
-                <img src="/icon_shield_a.png" alt="Privacy" />
+                <img src="/icon_shield_a.png" alt="Privacy" style={shieldIcon} />
                 <span>Your information is safe and will never be shared.</span>
               </div>
             </div>
