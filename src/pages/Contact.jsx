@@ -149,8 +149,7 @@ export default function Contact() {
 
             <label htmlFor="message">Message</label>
             <textarea id="message" rows="6" placeholder="Your Message" />
-<button className="btn full" type="button"> Send Message </button> </div> </div> </div> </section> ); }
-            <a
+<a
   className="btn full"
   href="mailto:info@dclifesafeglobal.com?subject=New%20message%20from%20DC%20LifeSafe%20Global%20website&body=Hello%20DC%20LifeSafe%20Global%2C%0A%0AI%20would%20like%20more%20information%20about%3A%0A%0AName%3A%20%0AEmail%3A%20%0ASubject%3A%20%0AMessage%3A%20%0A"
 >
