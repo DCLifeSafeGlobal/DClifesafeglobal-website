@@ -25,6 +25,34 @@ export default function Contact() {
     transformOrigin: "center",
   };
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") || "";
+    const email = formData.get("email") || "";
+    const subject = formData.get("subject") || "General Inquiry";
+    const message = formData.get("message") || "";
+
+    const mailSubject = `Website message: ${subject}`;
+    const mailBody = `
+Hello DC LifeSafe Global,
+
+I would like more information.
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+`;
+
+    window.location.href = `mailto:info@dclifesafeglobal.com?subject=${encodeURIComponent(
+      mailSubject
+    )}&body=${encodeURIComponent(mailBody)}`;
+  }
+
   return (
     <section className="section">
       <div className="container">
@@ -40,11 +68,7 @@ export default function Contact() {
             <div className="contact-left-block">
               <div className="contact-info-header">
                 <div className="contact-icon-circle">
-                  <img
-                    src="/icon_contact_info.png"
-                    alt="Contact information"
-                    style={mediumIcon}
-                  />
+                  <img src="/icon_contact_info.png" alt="Contact information" style={mediumIcon} />
                 </div>
                 <div>
                   <h3>Contact Information</h3>
@@ -89,11 +113,7 @@ export default function Contact() {
             <div className="contact-left-block">
               <div className="contact-info-header">
                 <div className="contact-icon-circle">
-                  <img
-                    src="/icon_message.png"
-                    alt="Send us a message"
-                    style={mediumIcon}
-                  />
+                  <img src="/icon_message.png" alt="Send us a message" style={mediumIcon} />
                 </div>
                 <div>
                   <h3>Send Us a Message</h3>
@@ -109,10 +129,7 @@ export default function Contact() {
                 <a className="btn" href="tel:+17205279516">
                   Call Now
                 </a>
-                <a
-                  className="btn btn-outline"
-                  href="mailto:info@dclifesafeglobal.com"
-                >
+                <a className="btn btn-outline" href="mailto:info@dclifesafeglobal.com">
                   Email Us
                 </a>
               </div>
@@ -124,17 +141,17 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="form-card">
+          <form className="form-card" onSubmit={handleSubmit}>
             <h3>Send a Message</h3>
 
             <label htmlFor="name">Your Name</label>
-            <input id="name" type="text" placeholder="Your Name" />
+            <input id="name" name="name" type="text" placeholder="Your Name" />
 
             <label htmlFor="email">Your Email</label>
-            <input id="email" type="email" placeholder="Your Email" />
+            <input id="email" name="email" type="email" placeholder="Your Email" />
 
             <label htmlFor="subject">Select Subject</label>
-            <select id="subject" defaultValue="">
+            <select id="subject" name="subject" defaultValue="">
               <option value="" disabled>
                 Select Subject
               </option>
@@ -148,11 +165,14 @@ export default function Contact() {
             </select>
 
             <label htmlFor="message">Message</label>
-            <textarea id="message" rows="6" placeholder="Your Message" />
-<a
-  className="btn full"
-  href="mailto:info@dclifesafeglobal.com?subject=New%20message%20from%20DC%20LifeSafe%20Global%20website&body=Hello%20DC%20LifeSafe%20Global%2C%0A%0AI%20would%20like%20more%20information%20about%3A%0A%0AName%3A%20%0AEmail%3A%20%0ASubject%3A%20%0AMessage%3A%20%0A"
->
-  Send Message
-</a>
-          
+            <textarea id="message" name="message" rows="6" placeholder="Your Message" />
+
+            <button className="btn full" type="submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
