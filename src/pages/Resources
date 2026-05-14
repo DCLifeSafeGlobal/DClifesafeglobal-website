@@ -4,180 +4,52 @@ const resources = [
   {
     category: "Emotional Regulation",
     items: [
-      {
-        title: "Anger Management",
-        description:
-          "A practical worksheet for understanding anger, triggers, and safer emotional responses.",
-        image: "/resources/anger-management.png",
-      },
-      {
-        title: "Control the Wave",
-        description:
-          "Learn emotional regulation strategies using the Surfviving wave metaphor.",
-        image: "/resources/control-the-wave.png",
-      },
-      {
-        title: "STOP Skill",
-        description:
-          "A grounding tool to pause, regulate emotions, and make safer decisions.",
-        image: "/resources/stop-skill.png",
-      },
-      {
-        title: "On the Wave",
-        description:
-          "Reflection exercises focused on riding emotional intensity safely.",
-        image: "/resources/on-the-wave.png",
-      },
-      {
-        title: "Coping Skills",
-        description:
-          "Helpful coping techniques for stress, emotional overload, and recovery.",
-        image: "/resources/coping-skills.png",
-      },
+      { title: "Anger Management", image: "/resources/anger-management.png" },
+      { title: "Control the Wave", image: "/resources/control-the-wave.png" },
+      { title: "STOP Skill", image: "/resources/stop-skill.png" },
+      { title: "On the Wave", image: "/resources/on-the-wave.png" },
+      { title: "Coping Skills", image: "/resources/coping-skills.png" },
     ],
   },
-
   {
     category: "Thought Processing",
     items: [
-      {
-        title: "Disturbing Thoughts",
-        description:
-          "A supportive worksheet for observing difficult thoughts safely and without judgment.",
-        image: "/resources/disturbing-thoughts.png",
-      },
-      {
-        title: "Disturbing Thoughts Part 1",
-        description:
-          "Exercises for recognizing intrusive thoughts and emotional responses.",
-        image: "/resources/disturbing-thoughts-1.png",
-      },
-      {
-        title: "Disturbing Thoughts Part 2",
-        description:
-          "Additional guided reflections for emotional awareness and safe coping.",
-        image: "/resources/disturbing-thoughts-2.png",
-      },
-      {
-        title: "Thoughts and Emotions",
-        description:
-          "Explore the relationship between thoughts, emotions, and behavior.",
-        image: "/resources/thoughts-and-emotions.png",
-      },
+      { title: "Disturbing Thoughts", image: "/resources/disturbing-thoughts.png" },
+      { title: "Disturbing Thoughts 1", image: "/resources/disturbing-thoughts-1.png" },
+      { title: "Disturbing Thoughts 2", image: "/resources/disturbing-thoughts-2.png" },
+      { title: "Thoughts and Emotions", image: "/resources/thoughts-and-emotions.png" },
     ],
   },
-
   {
-    category: "Awareness & Reflection",
+    category: "Awareness and Reflection",
     items: [
-      {
-        title: "Emotional Awareness",
-        description:
-          "Develop emotional insight and identify patterns in feelings and reactions.",
-        image: "/resources/emotional-awareness.png",
-      },
-      {
-        title: "Emotional Awareness Prompts",
-        description:
-          "Guided prompts to support emotional reflection and mindfulness.",
-        image: "/resources/emotional-awareness-prompts.png",
-      },
-      {
-        title: "Discharge Reflection",
-        description:
-          "A wellness reflection worksheet focused on progress, support, and next steps.",
-        image: "/resources/discharge-reflection.png",
-      },
-      {
-        title: "Connection Ladder",
-        description:
-          "Visualize steps toward healthier communication and connection.",
-        image: "/resources/connection-ladder.png",
-      },
+      { title: "Emotional Awareness", image: "/resources/emotional-awareness.png" },
+      { title: "Emotional Awareness Prompts", image: "/resources/Emotional-awareness-prompts.png" },
+      { title: "Discharge Reflection", image: "/resources/Discharge-reflection.png" },
+      { title: "Connection Ladder", image: "/resources/connection-ladder.png" },
     ],
   },
-
   {
-    category: "Growth & Recovery",
+    category: "Growth and Recovery",
     items: [
-      {
-        title: "Goal Setting 1",
-        description:
-          "Build realistic and meaningful goals using structured reflection.",
-        image: "/resources/goal-setting-1.png",
-      },
-      {
-        title: "Goal Setting 2",
-        description:
-          "Continue developing values-based personal goals and habits.",
-        image: "/resources/goal-setting-2.png",
-      },
-      {
-        title: "Goal Setting 3",
-        description:
-          "Strengthen consistency and long-term planning strategies.",
-        image: "/resources/goal-setting-3.png",
-      },
-      {
-        title: "Goal Setting 4",
-        description:
-          "Advanced goal reflection focused on progress and resilience.",
-        image: "/resources/goal-setting-4.png",
-      },
-      {
-        title: "Goal Setting Worksheet",
-        description:
-          "A structured worksheet for personal growth and emotional wellness.",
-        image: "/resources/goal-setting-worksheet.png",
-      },
-      {
-        title: "Relapse Prevention",
-        description:
-          "Identify warning signs, triggers, and support strategies for recovery.",
-        image: "/resources/relapse-prevention.png",
-      },
-      {
-        title: "Consistency Persistence Structure",
-        description:
-          "A CPS-based framework for sustainable personal growth and resilience.",
-        image: "/resources/consistency-persistance-structure.png",
-      },
+      { title: "Goal Setting", image: "/resources/goal-setting.png" },
+      { title: "Goal Setting 1", image: "/resources/goal-setting-1.png" },
+      { title: "Goal Setting 2", image: "/resources/goal-setting-2.png" },
+      { title: "Goal Setting 3", image: "/resources/goal-setting-3.png" },
+      { title: "Goal Setting 4", image: "/resources/goal-setting-4.png" },
+      { title: "Goal Setting Worksheet", image: "/resources/goal-setting-worksheet.png" },
+      { title: "Relapse Prevention", image: "/resources/relapse-prevention.png" },
+      { title: "Consistency Persistence Structure", image: "/resources/consistency-persistance-structure.png" },
     ],
   },
-
   {
     category: "Surfviving Series",
     items: [
-      {
-        title: "Surfviving Worksheet",
-        description:
-          "Core Surfviving exercises for emotional regulation and resilience.",
-        image: "/resources/surfviving-worksheet.png",
-      },
-      {
-        title: "Surfviving Worksheet 2",
-        description:
-          "Additional Surfviving exercises focused on emotional balance and coping.",
-        image: "/resources/surfviving-worksheet-2.png",
-      },
-      {
-        title: "Riding the Emotional Wave",
-        description:
-          "A signature Surfviving reflection worksheet using the emotional wave metaphor.",
-        image: "/resources/surfviving-riding-the-emotional-wave.png",
-      },
-      {
-        title: "Wellness Tips",
-        description:
-          "Simple wellness reminders and supportive coping strategies.",
-        image: "/resources/wellness-tips.png",
-      },
-      {
-        title: "DBT Distress Tolerance",
-        description:
-          "Distress tolerance concepts inspired by Dialectical Behavior Therapy (DBT).",
-        image: "/resources/dbt-skill-distress-tolerance.png",
-      },
+      { title: "Surfviving Worksheet", image: "/resources/surfviving-worksheet.png" },
+      { title: "Surfviving Worksheet 2", image: "/resources/surfviving-worksheet-2.png" },
+      { title: "Riding the Emotional Wave", image: "/resources/surfviving-riding-the-emotional-wave.png" },
+      { title: "Wellness Tips", image: "/resources/wellness-tips.png" },
+      { title: "DBT Distress Tolerance", image: "/resources/dbt-skill-distress-tolerance.png" },
     ],
   },
 ];
@@ -186,72 +58,48 @@ export default function Resources() {
   return (
     <section className="section resources-page">
       <div className="container">
-
         <div className="text-center">
           <h1 className="section-title">Wellness Resources</h1>
-
           <p className="section-subtitle narrow">
-            Download wellness worksheets, emotional regulation tools,
-            Surfviving exercises, and psychoeducational resources designed
-            to support reflection, resilience, and personal growth.
+            Download wellness worksheets, emotional regulation tools, Surfviving exercises, and educational resources.
           </p>
         </div>
 
         <div className="resources-intro">
           <h2>Free Downloadable Wellness Resources</h2>
-
           <p>
-            These educational materials are designed to support emotional
-            awareness, coping skills, reflection, and resilience. They are
-            intended for wellness and educational purposes only and are not
-            a substitute for emergency care, psychiatric treatment, or
-            professional medical advice.
+            These materials support emotional awareness, coping skills, reflection, and resilience.
+            They are intended for wellness and educational purposes only.
           </p>
         </div>
 
-        {resources.map((group) => (
-          <div className="resource-category" key={group.category}>
+        {resources.map(function (group) {
+          return (
+            <div className="resource-category" key={group.category}>
+              <h2>{group.category}</h2>
 
-            <h2>{group.category}</h2>
+              <div className="resource-grid">
+                {group.items.map(function (item) {
+                  return (
+                    <article className="resource-card" key={item.title}>
+                      <a href={item.image} target="_blank" rel="noreferrer">
+                        <img src={item.image} alt={item.title} className="resource-preview" />
+                      </a>
 
-            <div className="resource-grid">
+                      <div className="resource-content">
+                        <h3>{item.title}</h3>
 
-              {group.items.map((item) => (
-                <article
-                  className="resource-card"
-                  key={item.title}
-                >
-
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="resource-preview"
-                  />
-
-                  <div className="resource-content">
-
-                    <h3>{item.title}</h3>
-
-                    <p>{item.description}</p>
-
-                    <a
-                      className="btn"
-                      href={item.image}
-                      download
-                    >
-                      Download Resource
-                    </a>
-
-                  </div>
-
-                </article>
-              ))}
-
+                        <a className="btn" href={item.image} download>
+                          Download Resource
+                        </a>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
-
-          </div>
-        ))}
-
+          );
+        })}
       </div>
     </section>
   );
