@@ -8,6 +8,7 @@ import Training from './pages/Training.jsx';
 import Outdoor from './pages/Outdoor.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import Resources from './pages/Resources';
 
 export default function App(){return (<><ScrollToTop /><Routes><Route element={<Layout />}>
 <Route path='/' element={<Home />} />
@@ -17,3 +18,4 @@ export default function App(){return (<><ScrollToTop /><Routes><Route element={<
 <Route path='/about' element={<About />} />
 <Route path='/contact' element={<Contact />} />
 </Route></Routes></>);}
+<Route path="/resources" element={<Resources />} />
