@@ -1,59 +1,5 @@
 import React from "react";
 
-const resources = [
-  {
-    category: "Emotional Regulation",
-    items: [
-      { title: "Anger Management", image: "/resources/anger-management.png" },
-      { title: "Control the Wave", image: "/resources/control-the-wave.png" },
-      { title: "STOP Skill", image: "/resources/stop-skill.png" },
-      { title: "On the Wave", image: "/resources/on-the-wave.png" },
-      { title: "Coping Skills", image: "/resources/coping-skills.png" },
-    ],
-  },
-  {
-    category: "Thought Processing",
-    items: [
-      { title: "Disturbing Thoughts", image: "/resources/disturbing-thoughts.png" },
-      { title: "Disturbing Thoughts 1", image: "/resources/disturbing-thoughts-1.png" },
-      { title: "Disturbing Thoughts 2", image: "/resources/disturbing-thoughts-2.png" },
-      { title: "Thoughts and Emotions", image: "/resources/thoughts-and-emotions.png" },
-    ],
-  },
-  {
-    category: "Awareness and Reflection",
-    items: [
-      { title: "Emotional Awareness", image: "/resources/emotional-awareness.png" },
-      { title: "Emotional Awareness Prompts", image: "/resources/Emotional-awareness-prompts.png" },
-      { title: "Discharge Reflection", image: "/resources/Discharge-reflection.png" },
-      { title: "Connection Ladder", image: "/resources/connection-ladder.png" },
-    ],
-  },
-  {
-    category: "Growth and Recovery",
-    items: [
-      { title: "Goal Setting", image: "/resources/goal-setting.png" },
-      { title: "Goal Setting 1", image: "/resources/goal-setting-1.png" },
-      { title: "Goal Setting 2", image: "/resources/goal-setting-2.png" },
-      { title: "Goal Setting 3", image: "/resources/goal-setting-3.png" },
-      { title: "Goal Setting 4", image: "/resources/goal-setting-4.png" },
-      { title: "Goal Setting Worksheet", image: "/resources/goal-setting-worksheet.png" },
-      { title: "Relapse Prevention", image: "/resources/relapse-prevention.png" },
-      { title: "Consistency Persistence Structure", image: "/resources/consistency-persistance-structure.png" },
-    ],
-  },
-  {
-    category: "Surfviving Series",
-    items: [
-      { title: "Surfviving Worksheet", image: "/resources/surfviving-worksheet.png" },
-      { title: "Surfviving Worksheet 2", image: "/resources/surfviving-worksheet-2.png" },
-      { title: "Riding the Emotional Wave", image: "/resources/surfviving-riding-the-emotional-wave.png" },
-      { title: "Wellness Tips", image: "/resources/wellness-tips.png" },
-      { title: "DBT Distress Tolerance", image: "/resources/dbt-skill-distress-tolerance.png" },
-    ],
-  },
-];
-
 export default function Resources() {
   return (
     <section className="section resources-page">
@@ -61,45 +7,9 @@ export default function Resources() {
         <div className="text-center">
           <h1 className="section-title">Wellness Resources</h1>
           <p className="section-subtitle narrow">
-            Download wellness worksheets, emotional regulation tools, Surfviving exercises, and educational resources.
+            Download wellness worksheets and emotional regulation tools.
           </p>
         </div>
-
-        <div className="resources-intro">
-          <h2>Free Downloadable Wellness Resources</h2>
-          <p>
-            These materials support emotional awareness, coping skills, reflection, and resilience.
-            They are intended for wellness and educational purposes only.
-          </p>
-        </div>
-
-        {resources.map(function (group) {
-          return (
-            <div className="resource-category" key={group.category}>
-              <h2>{group.category}</h2>
-
-              <div className="resource-grid">
-                {group.items.map(function (item) {
-                  return (
-                    <article className="resource-card" key={item.title}>
-                      <a href={item.image} target="_blank" rel="noreferrer">
-                        <img src={item.image} alt={item.title} className="resource-preview" />
-                      </a>
-
-                      <div className="resource-content">
-                        <h3>{item.title}</h3>
-
-                        <a className="btn" href={item.image} download>
-                          Download Resource
-                        </a>
-                      </div>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
       </div>
     </section>
   );
