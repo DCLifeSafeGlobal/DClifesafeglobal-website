@@ -60,6 +60,57 @@ const journalPosts = [
   },
 ];
 
+const amsterdamImages = [
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_canal_bicycles.jpg",
+    alt: "Amsterdam canal bicycles",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_church_twilight.jpg",
+    alt: "Amsterdam church twilight",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_city_street_evening.jpg",
+    alt: "Amsterdam city street evening",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_hidden_alley.jpg",
+    alt: "Amsterdam hidden alley",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_monument_square.jpg",
+    alt: "Amsterdam monument square",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_bike_bridge_sunrise.jpg",
+    alt: "Amsterdam bike bridge sunrise",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
+    alt: "Amsterdam duck reflection",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_flag_minimal.jpg",
+    alt: "Amsterdam flag minimal",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
+    alt: "Amsterdam heron reflection",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_silhouette.jpg",
+    alt: "Amsterdam heron silhouette",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
+    alt: "Amsterdam red hollyhock",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_river_paddleboard.jpg",
+    alt: "Amsterdam river paddleboard",
+  },
+];
+
 export default function ExpeditionVisuals() {
   return (
     <div className="visuals-page">
@@ -146,31 +197,21 @@ export default function ExpeditionVisuals() {
         </div>
       </section>
 
-      {/* NUEVA GALERÍA AMSTERDAM */}
+      <section className="visuals-section">
+        <div className="visuals-section-header">
+          <span>AMSTERDAM</span>
+          <h2>Visual documentary archive.</h2>
+        </div>
 
-<section className="visuals-section">
-  <div className="visuals-section-header">
-    <span>AMSTERDAM</span>
-    <h2>Visual documentary archive.</h2>
-  </div>
+        <div className="visuals-masonry">
+          {amsterdamImages.map((image) => (
+            <article className="visuals-masonry-item" key={image.src}>
+              <img src={image.src} alt={image.alt} />
+            </article>
+          ))}
+        </div>
+      </section>
 
-  <div className="visuals-masonry">
-    {amsterdamImages.map((image) => (
-      <article className="visuals-masonry-item" key={image.src}>
-        <img src={image.src} alt={image.alt} />
-      </article>
-    ))}
-  </div>
-</section>
-
-<section
-  className="visuals-bottom"
-  style={{
-    backgroundImage:
-      "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/dcp_visuals/colorado/dcp_redrocks_valley_view.png')",
-  }}
->
-      
       <section
         className="visuals-bottom"
         style={{
@@ -189,55 +230,3 @@ export default function ExpeditionVisuals() {
     </div>
   );
 }
-
-const amsterdamImages = [
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_canal_bicycles.jpg",
-    alt: "Amsterdam canal bicycles",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_church_twilight.jpg",
-    alt: "Amsterdam church twilight",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_city_street_evening.jpg",
-    alt: "Amsterdam city street evening",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_hidden_alley.jpg",
-    alt: "Amsterdam hidden alley",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_monument_square.jpg",
-    alt: "Amsterdam monument square",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_bike_bridge_sunrise.jpg",
-    alt: "Amsterdam bike bridge sunrise",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
-    alt: "Amsterdam duck reflection",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_flag_minimal.jpg",
-    alt: "Amsterdam flag minimal",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
-    alt: "Amsterdam heron reflection",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_silhouette.jpg",
-    alt: "Amsterdam heron silhouette",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
-    alt: "Amsterdam red hollyhock",
-  },
-  {
-    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_river_paddleboard.jpg",
-    alt: "Amsterdam river paddleboard",
-  },
-];
-
