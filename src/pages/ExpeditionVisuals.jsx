@@ -1,3 +1,6 @@
+import React from "react";
+import "./ExpeditionVisuals.css";
+
 const featuredImages = [
   {
     src: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
@@ -32,3 +35,42 @@ const featuredImages = [
     alt: "Amsterdam wooden bull sculpture",
   },
 ];
+
+export default function ExpeditionVisuals() {
+  return (
+    <div className="expedition-page">
+      <section className="expedition-hero">
+        <div className="hero-overlay">
+          <h1>DCP Expedition Visuals</h1>
+
+          <p>
+            Photography as lived experience — where the lens becomes a bridge
+            between place, presence, and memory.
+          </p>
+        </div>
+      </section>
+
+      <section className="expedition-intro">
+        <div className="container">
+          <h2>Amsterdam, Netherlands</h2>
+
+          <p>
+            A curated visual exploration of Amsterdam through canals,
+            architecture, movement, urban nature, and cinematic European
+            atmosphere.
+          </p>
+        </div>
+      </section>
+
+      <section className="expedition-gallery">
+        <div className="gallery-grid">
+          {featuredImages.map((image, index) => (
+            <div className="gallery-item" key={index}>
+              <img src={image.src} alt={image.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
