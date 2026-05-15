@@ -1,101 +1,56 @@
 import React from "react";
 
-const resources = [
+const groups = [
   {
-    title: "Anger Management",
-    image: "/anger-management.png",
+    category: "Emotional Regulation",
+    items: [
+      ["Anger Management", "/anger-management.png"],
+      ["Control the Wave", "/control-the-wave.png"],
+      ["On the Wave", "/on-the-wave.png"],
+      ["STOP Skill", "/stop-skill.png"],
+      ["Coping Skills", "/coping-skills.png"],
+      ["DBT Distress Tolerance", "/dbt-skill-distress-tolerance.png"],
+    ],
   },
   {
-    title: "Control the Wave",
-    image: "/control-the-wave.png",
+    category: "Thought Processing",
+    items: [
+      ["Disturbing Thoughts", "/disturbing-thoughts.png"],
+      ["Disturbing Thoughts 1", "/disturbing-thoughts-1.png"],
+      ["Disturbing Thoughts 2", "/disturbing-thoughts-2.png"],
+      ["Thoughts and Emotions", "/thoughts-and-emotions.png"],
+    ],
   },
   {
-    title: "DBT Distress Tolerance",
-    image: "/dbt-skill-distress-tolerance.png",
+    category: "Awareness & Reflection",
+    items: [
+      ["Emotional Awareness", "/emotional-awareness.png"],
+      ["Emotional Awareness Prompts", "/emotional-awareness-prompts.png"],
+      ["Connection Ladder", "/connection-ladder.png"],
+      ["Discharge Reflection", "/discharge-reflection.png"],
+    ],
   },
   {
-    title: "Disturbing Thoughts 1",
-    image: "/disturbing-thoughts-1.png",
+    category: "Growth & Recovery",
+    items: [
+      ["Goal Setting", "/goal-setting.png"],
+      ["Goal Setting 1", "/goal-setting-1.png"],
+      ["Goal Setting 2", "/goal-setting-2.png"],
+      ["Goal Setting 3", "/goal-setting-3.png"],
+      ["Goal Setting 4", "/goal-setting-4.png"],
+      ["Goal Setting Worksheet", "/goal-setting-worksheet.png"],
+      ["Relapse Prevention", "/relapse-prevention.png"],
+      ["Consistency Persistence Structure", "/consistency-persistance-structure.png"],
+    ],
   },
   {
-    title: "Disturbing Thoughts 2",
-    image: "/disturbing-thoughts-2.png",
-  },
-  {
-    title: "Disturbing Thoughts",
-    image: "/disturbing-thoughts.png",
-  },
-  {
-    title: "Emotional Awareness",
-    image: "/emotional-awareness.png",
-  },
-  {
-    title: "Emotional Awareness Prompts",
-    image: "/emotional-awareness-prompts.png",
-  },
-  {
-    title: "Connection Ladder",
-    image: "/connection-ladder.png",
-  },
-  {
-    title: "Coping Skills",
-    image: "/coping-skills.png",
-  },
-  {
-    title: "Consistency Persistence Structure",
-    image: "/consistency-persistance-structure.png",
-  },
-  {
-    title: "Goal Setting 1",
-    image: "/goal-setting-1.png",
-  },
-  {
-    title: "Goal Setting 2",
-    image: "/goal-setting-2.png",
-  },
-  {
-    title: "Goal Setting 3",
-    image: "/goal-setting-3.png",
-  },
-  {
-    title: "Goal Setting 4",
-    image: "/goal-setting-4.png",
-  },
-  {
-    title: "Goal Setting Worksheet",
-    image: "/goal-setting-worksheet.png",
-  },
-  {
-    title: "On the Wave",
-    image: "/on-the-wave.png",
-  },
-  {
-    title: "Relapse Prevention",
-    image: "/relapse-prevention.png",
-  },
-  {
-    title: "STOP Skill",
-    image: "/stop-skill.png",
-  },
-  {
-    title: "Surfviving Riding the Emotional Wave",
-    image: "/surfviving-riding-the-emotional-wave.png",
-  },
-  {
-    title: "Surfviving Worksheet",
-    image: "/surfviving-worksheet.png",
-  },
-  {
-    title: "Surfviving Worksheet 2",
-    image: "/surfviving-worksheet-2.png",
-  },
-  {
-    title: "Thoughts and Emotions",
-    image: "/thoughts-and-emotions.png",
-  },
-  {
-    title: "Wellness Tips",
-    image: "/wellness-tips.png",
+    category: "Surfviving Series",
+    items: [
+      ["Surfviving Worksheet", "/surfviving-worksheet.png"],
+      ["Surfviving Worksheet 2", "/surfviving-worksheet-2.png"],
+      ["Surfviving Riding the Emotional Wave", "/surfviving-riding-the-emotional-wave.png"],
+      ["Wellness Tips", "/wellness-tips.png"],
+    ],
   },
 ];
 
@@ -103,42 +58,44 @@ export default function Resources() {
   return (
     <section className="section resources-page">
       <div className="container">
-
         <div className="text-center">
           <h1 className="section-title">Wellness Resources</h1>
-
           <p className="section-subtitle narrow">
-            Download wellness worksheets and emotional regulation tools.
+            Download wellness worksheets, emotional regulation tools, and Surfviving resources.
           </p>
         </div>
 
-        <div className="resources-grid">
-
-          {resources.map((resource, index) => (
-            <a
-              key={index}
-              href={resource.image}
-              target="_blank"
-              rel="noreferrer"
-              className="resource-download-card"
-            >
-              <img
-                src={resource.image}
-                alt={resource.title}
-                className="resource-preview"
-              />
-
-              <div className="resource-download-content">
-                <h3>{resource.title}</h3>
-
-                <span className="btn small">
-                  Open Resource
-                </span>
-              </div>
-            </a>
-          ))}
-
+        <div className="resources-intro">
+          <h2>Free Downloadable Wellness Tools</h2>
+          <p>
+            Educational worksheets for emotional awareness, coping skills, reflection,
+            resilience, and personal growth.
+          </p>
         </div>
+
+        {groups.map((group) => (
+          <div className="resource-category" key={group.category}>
+            <h2>{group.category}</h2>
+
+            <div className="resource-grid">
+              {group.items.map(([title, image]) => (
+                <article className="resource-card" key={title}>
+                  <a href={image} target="_blank" rel="noreferrer">
+                    <img src={image} alt={title} className="resource-preview" />
+                  </a>
+
+                  <div className="resource-content">
+                    <h3>{title}</h3>
+
+                    <a className="btn" href={image} target="_blank" rel="noreferrer">
+                      Open Resource
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
