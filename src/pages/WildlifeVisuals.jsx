@@ -7,7 +7,9 @@ export default function WildlifeVisuals() {
     "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
     "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
     "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
-
+"/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg:,
+"/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra.jpg",
+"/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg"'
     
   ];
 
