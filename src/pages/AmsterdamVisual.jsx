@@ -1,18 +1,19 @@
 import React from "react";
 
+
 const images = [
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_bike_bridge_sunrise.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_bicycles.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_church_twilight.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_city_street_evening.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_hidden_alley.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_monument_square.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_flag_minimal.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_heron_reflection.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_heron_silhouette.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_red_hollyhock.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_river_paddleboard.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_duck_reflection.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_bike_bridge_sunrise.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_canal_bicycles.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_church_twilight.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_city_street_evening.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_hidden_alley.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_monument_square.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_flag_minimal.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_silhouette.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_river_paddleboard.jpg",
+  "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
 ];
 
 export default function AmsterdamVisual() {
