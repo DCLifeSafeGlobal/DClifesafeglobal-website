@@ -9,9 +9,10 @@ const groups = [
       ["On the Wave", "/on-the-wave.png"],
       ["STOP Skill", "/stop-skill.png"],
       ["Coping Skills", "/coping-skills.png"],
-      ["DBT Distress Tolerance", "/dbt-skill-distress-tolerance.png"],
+      ["DBT Distress Tolerance", "/dbt-distress-tolerance.png"],
     ],
   },
+
   {
     category: "Thought Processing",
     items: [
@@ -21,15 +22,17 @@ const groups = [
       ["Thoughts and Emotions", "/thoughts-and-emotions.png"],
     ],
   },
+
   {
     category: "Awareness & Reflection",
     items: [
-      ["Emotional Awareness", "/emotional-awareness.png"],
-      ["Emotional Awareness Prompts", "/emotional-awareness-prompts.png"],
+      ["Emotional Awareness", "/emotional-awarness.png"],
+      ["Emotional Awareness Prompts", "/Emotional-awareness-prompts.png"],
       ["Connection Ladder", "/connection-ladder.png"],
-      ["Discharge Reflection", "/discharge-reflection.png"],
+      ["Discharge Reflection", "/Discharge-reflection.png"],
     ],
   },
+
   {
     category: "Growth & Recovery",
     items: [
@@ -43,6 +46,7 @@ const groups = [
       ["Consistency Persistence Structure", "/consistency-persistance-structure.png"],
     ],
   },
+
   {
     category: "Surfviving Series",
     items: [
@@ -58,8 +62,10 @@ export default function Resources() {
   return (
     <section className="section resources-page">
       <div className="container">
+
         <div className="text-center">
           <h1 className="section-title">Wellness Resources</h1>
+
           <p className="section-subtitle narrow">
             Download wellness worksheets, emotional regulation tools, and Surfviving resources.
           </p>
@@ -67,35 +73,54 @@ export default function Resources() {
 
         <div className="resources-intro">
           <h2>Free Downloadable Wellness Tools</h2>
+
           <p>
-            Educational worksheets for emotional awareness, coping skills, reflection,
-            resilience, and personal growth.
+            Educational worksheets for emotional awareness, coping skills,
+            reflection, resilience, and personal growth.
           </p>
         </div>
 
         {groups.map((group) => (
           <div className="resource-category" key={group.category}>
+
             <h2>{group.category}</h2>
 
             <div className="resource-grid">
+
               {group.items.map(([title, image]) => (
                 <article className="resource-card" key={title}>
+
                   <a href={image} target="_blank" rel="noreferrer">
-                    <img src={image} alt={title} className="resource-preview" />
+                    <img
+                      src={image}
+                      alt={title}
+                      className="resource-preview"
+                    />
                   </a>
 
                   <div className="resource-content">
+
                     <h3>{title}</h3>
 
-                    <a className="btn" href={image} target="_blank" rel="noreferrer">
+                    <a
+                      className="btn"
+                      href={image}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Open Resource
                     </a>
+
                   </div>
+
                 </article>
               ))}
+
             </div>
+
           </div>
         ))}
+
       </div>
     </section>
   );
