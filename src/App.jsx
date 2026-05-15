@@ -22,26 +22,23 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
 
-          <Route path='/' element={<Home />} />
+          <Route path="/" element={<Home />} />
 
-          <Route path='/wellness' element={<Wellness />} />
+          <Route path="/wellness" element={<Wellness />} />
 
-          <Route path='/training' element={<Training />} />
+          <Route path="/training" element={<Training />} />
 
-          <Route path='/outdoor' element={<Outdoor />} />
+          <Route path="/outdoor" element={<Outdoor />} />
 
-          <Route path='/about' element={<About />} />
+          <Route path="/about" element={<About />} />
 
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
 
-          <Route path='/resources' element={<Resources />} />
+          <Route path="/resources" element={<Resources />} />
 
-          <Route path='/workshops' element={<Workshops />} />
+          <Route path="/workshops" element={<Workshops />} />
 
-          <Route
-            path='/visuals'
-            element={<ExpeditionVisuals />}
-          />
+          <Route path="/visuals" element={<ExpeditionVisuals />} />
 
         </Route>
       </Routes>
