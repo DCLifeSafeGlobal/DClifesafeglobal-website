@@ -16,6 +16,8 @@ import Workshops from './pages/Workshops.jsx';
 import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
 import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
+import BarcelonaVisual from './pages/BarcelonaVisual.jsx';
+
 
 export default function App() {
   return (
@@ -55,6 +57,8 @@ export default function App() {
             element={<WildlifeVisuals />}
           />
 
+<Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
+          
         </Route>
       </Routes>
     </>
