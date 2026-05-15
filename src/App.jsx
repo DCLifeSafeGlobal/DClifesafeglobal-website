@@ -45,11 +45,15 @@ export default function App() {
 
           <Route path="/expeditions" element={<ExpeditionVisuals />} />
 
-          <Route path="/visuals/amsterdam"element={<AmsterdamVisual />}
-          
-            <Route path="/visuals/wildlife" element={<WildlifeVisuals />} />
-          
-            />
+          <Route
+            path="/visuals/amsterdam"
+            element={<AmsterdamVisual />}
+          />
+
+          <Route
+            path="/visuals/wildlife"
+            element={<WildlifeVisuals />}
+          />
 
         </Route>
       </Routes>
