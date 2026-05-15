@@ -113,10 +113,9 @@ export default function Wellness() {
                   a private session tailored to your needs.
                 </p>
 
-                <button className='btn'>
-                  View Upcoming Workshops
-                </button>
-
+                <a className='btn' href='/workshops'>
+  View Upcoming Workshops
+</a>
               </div>
 
             </article>
