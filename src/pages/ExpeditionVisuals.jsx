@@ -17,7 +17,8 @@ const expeditions = [
     title: "Wildlife",
     subtitle: "Nature Encounters",
     image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_heron_reflection.jpg",
+      "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
+    link: "/visuals/wildlife",
   },
   {
     title: "Urban Journey",
@@ -45,7 +46,7 @@ const collections = [
   {
     title: "Nature",
     image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_red_hollyhock.jpg",
+      "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
   },
 ];
 
