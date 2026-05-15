@@ -172,7 +172,7 @@ const amsterdamImages = [
   },
   {
     src: "/dcp_visuals/netherlands/amsterdam/amsterdam_church_twilight.jpg",
-    alt: "Amsterdam church at twilight",
+    alt: "Amsterdam church twilight",
   },
   {
     src: "/dcp_visuals/netherlands/amsterdam/amsterdam_city_street_evening.jpg",
