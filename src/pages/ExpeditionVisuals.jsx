@@ -1,5 +1,4 @@
 import React from "react";
-import "./ExpeditionVisuals.css";
 
 const featuredImages = [
   {
