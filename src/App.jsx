@@ -12,6 +12,7 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
+import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 
 export default function App() {
   return (
@@ -20,14 +21,28 @@ export default function App() {
 
       <Routes>
         <Route element={<Layout />}>
+
           <Route path='/' element={<Home />} />
+
           <Route path='/wellness' element={<Wellness />} />
+
           <Route path='/training' element={<Training />} />
+
           <Route path='/outdoor' element={<Outdoor />} />
+
           <Route path='/about' element={<About />} />
+
           <Route path='/contact' element={<Contact />} />
+
           <Route path='/resources' element={<Resources />} />
+
           <Route path='/workshops' element={<Workshops />} />
+
+          <Route
+            path='/visuals'
+            element={<ExpeditionVisuals />}
+          />
+
         </Route>
       </Routes>
     </>
