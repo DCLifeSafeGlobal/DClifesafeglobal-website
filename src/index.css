@@ -1402,7 +1402,7 @@ textarea {
       rgba(0, 0, 0, 0.45),
       rgba(0, 0, 0, 0.55)
     ),
-    url('/hero_dcp_visuals.jpg');
+    url('/hero_dcp_visuals.png');
 
   background-size: cover;
   background-position: center;
@@ -1484,7 +1484,7 @@ textarea {
       rgba(0,0,0,0.45),
       rgba(0,0,0,0.55)
     ),
-    url('/quote_visuals.jpg');
+    url('/quote_visuals.png');
 
   background-size: cover;
   background-position: center;
