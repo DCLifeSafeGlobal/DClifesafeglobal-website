@@ -15,6 +15,7 @@ import Workshops from './pages/Workshops.jsx';
 
 import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
+import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
 
 export default function App() {
   return (
@@ -44,10 +45,11 @@ export default function App() {
 
           <Route path="/expeditions" element={<ExpeditionVisuals />} />
 
-          <Route
-            path="/visuals/amsterdam"
-            element={<AmsterdamVisual />}
-          />
+          <Route path="/visuals/amsterdam"element={<AmsterdamVisual />}
+          
+            <Route path="/visuals/wildlife" element={<WildlifeVisuals />} />
+          
+            />
 
         </Route>
       </Routes>
