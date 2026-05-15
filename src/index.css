@@ -1374,3 +1374,18 @@ textarea {
 .btn-dark:hover{
   opacity:.9;
 }
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.program-card p {
+  flex-grow: 1;
+}
+
+.program-card .btn {
+  margin-top: 1.5rem;
+  align-self: center;
+}
