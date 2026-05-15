@@ -35,6 +35,7 @@ export default function Training() {
         <div className='container hero-training-grid'>
 
           <div className='training-copy'>
+
             <div className='eyebrow'>
               Training today
               <br />
@@ -55,10 +56,6 @@ export default function Training() {
             </p>
 
             <div className='hero-buttons'>
-
-              <a className='btn' href='/training'>
-                View Courses
-              </a>
 
               <a
                 className='btn btn-outline'
@@ -133,6 +130,7 @@ export default function Training() {
           <div className='training-bottom-grid'>
 
             <div className='training-benefits'>
+
               <h3>
                 Why Train with
                 <br />
@@ -140,6 +138,7 @@ export default function Training() {
               </h3>
 
               <ul>
+
                 <li>
                   <CheckCircle2 size={18} />
                   Real-world focused curriculum
@@ -164,7 +163,9 @@ export default function Training() {
                   <CheckCircle2 size={18} />
                   Confidence for life
                 </li>
+
               </ul>
+
             </div>
 
             <div className='training-bag-panel'>
@@ -183,19 +184,21 @@ export default function Training() {
 
               <div className='course-item'>
                 <strong>BLS Provider</strong>
-                <span>Upcoming date placeholder</span>
+                <span>Coming soon</span>
                 <small>Denver, Colorado</small>
               </div>
 
               <div className='course-item'>
                 <strong>ACLS Provider</strong>
-                <span>Upcoming date placeholder</span>
+                <span>Coming soon</span>
                 <small>Denver, Colorado</small>
               </div>
 
-              <button className='text-link'>
-                View All Courses →
-              </button>
+              <div className='course-item'>
+                <strong>Wilderness Medicine</strong>
+                <span>Coming soon</span>
+                <small>Colorado & Outdoor Settings</small>
+              </div>
 
             </aside>
 
