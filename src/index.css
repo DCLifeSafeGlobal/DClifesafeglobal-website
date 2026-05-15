@@ -898,7 +898,7 @@ textarea {
   }
 
   .brand-logo {
-    height: 110px;
+    height: 210px;
   }
 
   .mobile-toggle {
@@ -1067,7 +1067,7 @@ textarea {
 
 @media (max-width: 560px) {
   .header-inner {
-    min-height: 76px;
+    min-height: 100px;
   }
 
   .brand-logo {
