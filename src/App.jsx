@@ -12,8 +12,9 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
-import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 
+import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
+import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
 
 export default function App() {
   return (
@@ -42,7 +43,12 @@ export default function App() {
           <Route path="/visuals" element={<ExpeditionVisuals />} />
 
           <Route path="/expeditions" element={<ExpeditionVisuals />} />
-          
+
+          <Route
+            path="/visuals/amsterdam"
+            element={<AmsterdamVisual />}
+          />
+
         </Route>
       </Routes>
     </>
