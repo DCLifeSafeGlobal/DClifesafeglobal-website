@@ -7,24 +7,28 @@ const programs = [
     title: 'BLS',
     subtitle: 'Basic Life Support',
     text: 'Essential life-saving skills for healthcare providers and community members.',
+    link: 'mailto:info@dclifesafeglobal.com?subject=BLS%20Course%20Inquiry',
   },
   {
     icon: '/icon_acls.png',
     title: 'ACLS',
     subtitle: 'Advanced Cardiac Life Support',
     text: 'Advanced training for managing cardiovascular emergencies with confidence.',
+    link: 'mailto:info@dclifesafeglobal.com?subject=ACLS%20Course%20Inquiry',
   },
   {
     icon: '/icon_wilderness.png',
     title: 'Wilderness & Outdoor',
     subtitle: 'Medicine',
     text: 'Training for remote environments and adventure professionals where help is far away.',
+    link: 'mailto:info@dclifesafeglobal.com?subject=Wilderness%20Medicine%20Inquiry',
   },
   {
     icon: '/icon_group.png',
     title: 'Private & Group',
     subtitle: 'Workshops',
     text: 'Customized training for teams, organizations, and communities.',
+    link: 'mailto:info@dclifesafeglobal.com?subject=Private%20Workshop%20Inquiry',
   },
 ];
 
@@ -113,9 +117,12 @@ export default function Training() {
 
                 <p>{item.text}</p>
 
-                <button className='text-link'>
+                <a
+                  className='text-link'
+                  href={item.link}
+                >
                   Learn More →
-                </button>
+                </a>
 
               </article>
             ))}
