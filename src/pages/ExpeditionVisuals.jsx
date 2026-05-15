@@ -6,6 +6,7 @@ const expeditions = [
     subtitle: "Colorado",
     image: "/dcp_visuals/colorado/dcp_redrocks_valley_view.png",
   },
+
   {
     title: "Netherlands",
     subtitle: "Amsterdam",
@@ -13,6 +14,15 @@ const expeditions = [
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
     link: "/visuals/amsterdam",
   },
+
+  {
+    title: "Spain",
+    subtitle: "Barcelona",
+    image:
+      "/dcp_visuals/spain/barcelona/sagrada_familia_main.jpg",
+    link: "/visuals/barcelona",
+  },
+
   {
     title: "Wildlife",
     subtitle: "Nature Encounters",
@@ -20,6 +30,7 @@ const expeditions = [
       "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
     link: "/visuals/wildlife",
   },
+
   {
     title: "Urban Journey",
     subtitle: "Cities & Culture",
@@ -33,20 +44,23 @@ const collections = [
     title: "North America",
     image: "/dcp_visuals/colorado/dcp_redrocks_deer_meadow.png",
   },
+
   {
     title: "Architecture",
     image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_dutch_corner_wide.jpg",
+      "/dcp_visuals/spain/barcelona/sagrada_familia_detail_1.jpg",
   },
+
   {
     title: "Waterways",
     image:
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_houseboat_garden.jpg",
   },
+
   {
     title: "Nature",
     image:
-      "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
+      "/dcp_visuals/spain/barcelona/barcelona_bird_closeup.jpg",
   },
 ];
 
@@ -57,20 +71,24 @@ const journalPosts = [
     image:
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_queen_boat_sunflare.jpg",
   },
+
   {
-    title: "Bridge Reflections",
-    date: "Amsterdam",
+    title: "Barcelona Rain",
+    date: "Spain",
     image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_underbridge_reflections.jpg",
+      "/dcp_visuals/spain/barcelona/barcelona_rain_street.jpg",
   },
+
   {
     title: "Red Rocks Morning",
     date: "Colorado",
-    image: "/dcp_visuals/colorado/dcp_redrocks_sunflower_macro.png",
+    image:
+      "/dcp_visuals/colorado/dcp_redrocks_sunflower_macro.png",
   },
 ];
 
 export default function ExpeditionVisuals() {
+
   return (
     <div className="visuals-page">
 
@@ -78,7 +96,7 @@ export default function ExpeditionVisuals() {
         className="visuals-hero"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)), url('/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg')",
+            "linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)), url('/dcp_visuals/spain/barcelona/sagrada_familia_lake.jpg')",
         }}
       >
         <div className="visuals-hero-content">
@@ -120,6 +138,7 @@ export default function ExpeditionVisuals() {
                 key={item.title}
                 style={{ textDecoration: "none" }}
               >
+
                 <img src={item.image} alt={item.title} />
 
                 <div>
@@ -201,7 +220,7 @@ export default function ExpeditionVisuals() {
         className="visuals-bottom"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/dcp_visuals/colorado/dcp_redrocks_valley_view.png')",
+            "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/dcp_visuals/spain/barcelona/sagrada_familia_park.jpg')",
         }}
       >
         <div>
