@@ -164,3 +164,54 @@ export default function ExpeditionVisuals() {
     </div>
   );
 }
+
+const amsterdamImages = [
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_canal_bicycles.jpg",
+    alt: "Amsterdam canal bicycles",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_church_twilight.jpg",
+    alt: "Amsterdam church at twilight",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_city_street_evening.jpg",
+    alt: "Amsterdam city street evening",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_hidden_alley.jpg",
+    alt: "Amsterdam hidden alley",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_monument_square.jpg",
+    alt: "Amsterdam monument square",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_bike_bridge_sunrise.jpg",
+    alt: "Amsterdam bike bridge sunrise",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
+    alt: "Amsterdam duck reflection",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_flag_minimal.jpg",
+    alt: "Amsterdam flag minimal",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
+    alt: "Amsterdam heron reflection",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_silhouette.jpg",
+    alt: "Amsterdam heron silhouette",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
+    alt: "Amsterdam red hollyhock",
+  },
+  {
+    src: "/dcp_visuals/netherlands/amsterdam/amsterdam_river_paddleboard.jpg",
+    alt: "Amsterdam river paddleboard",
+  },
+];
