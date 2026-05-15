@@ -9,17 +9,21 @@ const expeditions = [
   {
     title: "Netherlands",
     subtitle: "Amsterdam",
-    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
+    image:
+      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
+    link: "/visuals/amsterdam",
   },
   {
     title: "Wildlife",
     subtitle: "Nature Encounters",
-    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
+    image:
+      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_heron_reflection.jpg",
   },
   {
     title: "Urban Journey",
     subtitle: "Cities & Culture",
-    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_bridge_bicycles.jpg",
+    image:
+      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_bridge_bicycles.jpg",
   },
 ];
 
@@ -27,37 +31,33 @@ const collections = [
   {
     title: "North America",
     image: "/dcp_visuals/colorado/dcp_redrocks_deer_meadow.png",
-    link: "/visuals/colorado",
-  },
-  {
-    title: "Amsterdam",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_riverboat_skyline.jpg",
-    link: "/visuals/amsterdam",
   },
   {
     title: "Architecture",
     image:
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_dutch_corner_wide.jpg",
-    link: "/visuals/amsterdam",
   },
   {
     title: "Waterways",
     image:
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_houseboat_garden.jpg",
-    link: "/visuals/amsterdam",
+  },
+  {
+    title: "Nature",
+    image:
+      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_red_hollyhock.jpg",
   },
 ];
 
 const journalPosts = [
   {
-    title: "Canals of Amsterdam",
-    date: "Netherlands",
+    title: "Canals at Sunset",
+    date: "Amsterdam",
     image:
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_queen_boat_sunflare.jpg",
   },
   {
-    title: "Reflections Below the Bridge",
+    title: "Bridge Reflections",
     date: "Amsterdam",
     image:
       "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_underbridge_reflections.jpg",
@@ -72,6 +72,7 @@ const journalPosts = [
 export default function ExpeditionVisuals() {
   return (
     <div className="visuals-page">
+
       <section
         className="visuals-hero"
         style={{
@@ -80,6 +81,7 @@ export default function ExpeditionVisuals() {
         }}
       >
         <div className="visuals-hero-content">
+
           <img
             src="/logo_dcp_visuals.png"
             alt="DCP Expedition Visuals"
@@ -89,75 +91,109 @@ export default function ExpeditionVisuals() {
           <h1>Medicine Beyond the Trail.</h1>
 
           <p>
-            Visual storytelling from expeditions, wildlife, cities, landscapes,
-            and human journeys captured through lived experience.
+            Visual storytelling from expeditions, wildlife, cities,
+            landscapes, and human journeys captured through lived experience.
           </p>
 
           <a href="#expeditions" className="visuals-btn">
             Explore Expeditions
           </a>
+
         </div>
       </section>
 
       <section className="visuals-section" id="expeditions">
+
         <div className="visuals-section-header">
           <span>EXPEDITIONS</span>
           <h2>Stories from around the world.</h2>
         </div>
 
         <div className="visuals-grid">
+
           {expeditions.map((item) => (
-            <article className="visuals-card tall" key={item.title}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.subtitle}</p>
-              </div>
-            </article>
+            item.link ? (
+              <a
+                href={item.link}
+                className="visuals-card tall"
+                key={item.title}
+                style={{ textDecoration: "none" }}
+              >
+                <img src={item.image} alt={item.title} />
+
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                </div>
+
+              </a>
+            ) : (
+              <article className="visuals-card tall" key={item.title}>
+
+                <img src={item.image} alt={item.title} />
+
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                </div>
+
+              </article>
+            )
           ))}
+
         </div>
+
       </section>
 
       <section className="visuals-section">
+
         <div className="visuals-section-header">
           <span>COLLECTIONS</span>
           <h2>Curated visual archives.</h2>
         </div>
 
         <div className="visuals-grid">
+
           {collections.map((item) => (
-            <a
-              href={item.link}
-              className="visuals-card"
-              key={item.title}
-              style={{ textDecoration: "none" }}
-            >
+            <article className="visuals-card" key={item.title}>
+
               <img src={item.image} alt={item.title} />
+
               <div>
                 <h3>{item.title}</h3>
               </div>
-            </a>
+
+            </article>
           ))}
+
         </div>
+
       </section>
 
       <section className="visuals-section">
+
         <div className="visuals-section-header">
           <span>JOURNAL</span>
           <h2>Field notes & stories.</h2>
         </div>
 
         <div className="visuals-journal-grid">
+
           {journalPosts.map((post) => (
             <article className="visuals-journal-card" key={post.title}>
+
               <img src={post.image} alt={post.title} />
+
               <div>
                 <span>{post.date}</span>
                 <h3>{post.title}</h3>
               </div>
+
             </article>
           ))}
+
         </div>
+
       </section>
 
       <section
@@ -168,14 +204,18 @@ export default function ExpeditionVisuals() {
         }}
       >
         <div>
+
           <h2>Visuals with purpose.</h2>
 
           <p>
-            DCP Expedition Visuals documents the intersection between medicine,
-            resilience, exploration, wildlife, movement, and human experience.
+            DCP Expedition Visuals documents the intersection between
+            medicine, resilience, exploration, wildlife, movement,
+            and human experience.
           </p>
+
         </div>
       </section>
+
     </div>
   );
 }
