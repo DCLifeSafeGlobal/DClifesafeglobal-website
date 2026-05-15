@@ -1,11 +1,5 @@
 import React from "react";
 
-const heroSlides = [
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
-  "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_riverboat_skyline.jpg",
-  "/dcp_visuals/colorado/dcp_redrocks_valley_view.png",
-];
-
 const expeditions = [
   {
     title: "USA",
@@ -15,20 +9,17 @@ const expeditions = [
   {
     title: "Netherlands",
     subtitle: "Amsterdam",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg",
   },
   {
     title: "Wildlife",
-    subtitle: "Expedition Nature",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
+    subtitle: "Nature Encounters",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
   },
   {
-    title: "Architecture",
-    subtitle: "European Streets",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_dutch_corner_wide.jpg",
+    title: "Urban Journey",
+    subtitle: "Cities & Culture",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_bridge_bicycles.jpg",
   },
 ];
 
@@ -39,33 +30,28 @@ const collections = [
   },
   {
     title: "Europe",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_riverboat_skyline.jpg",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_riverboat_skyline.jpg",
   },
   {
-    title: "Wildlife",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
+    title: "Architecture",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_dutch_corner_wide.jpg",
   },
   {
-    title: "Urban Journey",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_bridge_bicycles.jpg",
+    title: "Waterways",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_houseboat_garden.jpg",
   },
 ];
 
 const journalPosts = [
   {
     title: "Canals of Amsterdam",
-    date: "May 2026",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_queen_boat_sunflare.jpg",
+    date: "Netherlands",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_queen_boat_sunflare.jpg",
   },
   {
     title: "Reflections Below the Bridge",
-    date: "May 2026",
-    image:
-      "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_underbridge_reflections.jpg",
+    date: "Amsterdam",
+    image: "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_underbridge_reflections.jpg",
   },
   {
     title: "Red Rocks Morning",
@@ -76,428 +62,100 @@ const journalPosts = [
 
 export default function ExpeditionVisuals() {
   return (
-    <div
-      style={{
-        backgroundColor: "#050505",
-        color: "#ffffff",
-        minHeight: "100vh",
-        fontFamily: "Arial, sans-serif",
-      }}
-    >
-      {/* HERO */}
+    <div className="visuals-page">
       <section
+        className="visuals-hero"
         style={{
-          position: "relative",
-          height: "92vh",
-          backgroundImage: `url(${heroSlides[0]})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)), url('/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg')",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.55))",
-          }}
-        />
-
-        {/* NAVBAR */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 10,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "28px 60px",
-          }}
-        >
+        <div className="visuals-hero-content">
           <img
             src="/logo_dcp_visuals.png"
             alt="DCP Expedition Visuals"
-            style={{
-              width: "180px",
-              objectFit: "contain",
-            }}
+            className="visuals-logo"
           />
 
-          <div
-            style={{
-              display: "flex",
-              gap: "28px",
-              fontSize: "0.9rem",
-              letterSpacing: "1px",
-            }}
-          >
-            <span>HOME</span>
-            <span>EXPEDITIONS</span>
-            <span>COLLECTIONS</span>
-            <span>JOURNAL</span>
-            <span>ABOUT</span>
-            <span>CONTACT</span>
-          </div>
-        </div>
+          <h1>Medicine Beyond the Trail.</h1>
 
-        {/* HERO CONTENT */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            maxWidth: "700px",
-            paddingLeft: "80px",
-            paddingTop: "120px",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "clamp(3rem, 7vw, 6rem)",
-              lineHeight: "1.05",
-              fontWeight: "500",
-              marginBottom: "24px",
-            }}
-          >
-            Medicine
-            <br />
-            Beyond the Trail.
-          </h1>
-
-          <p
-            style={{
-              fontSize: "1.1rem",
-              lineHeight: "1.9",
-              color: "rgba(255,255,255,0.85)",
-              maxWidth: "520px",
-              marginBottom: "35px",
-            }}
-          >
+          <p>
             Visual storytelling from expeditions, wildlife, cities, landscapes,
             and human journeys captured through lived experience.
           </p>
 
-          <button
-            style={{
-              backgroundColor: "#c8a96b",
-              color: "#000",
-              border: "none",
-              padding: "14px 26px",
-              fontWeight: "700",
-              letterSpacing: "1px",
-              cursor: "pointer",
-              borderRadius: "4px",
-            }}
-          >
-            EXPLORE EXPEDITIONS
-          </button>
+          <a href="#expeditions" className="visuals-btn">
+            Explore Expeditions
+          </a>
         </div>
       </section>
 
-      {/* EXPEDITIONS */}
-      <section
-        style={{
-          padding: "80px 60px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-            marginBottom: "35px",
-          }}
-        >
-          <div>
-            <p
-              style={{
-                color: "#c8a96b",
-                letterSpacing: "2px",
-                fontSize: "0.8rem",
-                marginBottom: "12px",
-              }}
-            >
-              EXPEDITIONS
-            </p>
-
-            <h2
-              style={{
-                fontSize: "2.7rem",
-                fontWeight: "500",
-              }}
-            >
-              Stories from
-              <br />
-              around the world.
-            </h2>
-          </div>
+      <section className="visuals-section" id="expeditions">
+        <div className="visuals-section-header">
+          <span>EXPEDITIONS</span>
+          <h2>Stories from around the world.</h2>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "22px",
-          }}
-        >
+        <div className="visuals-grid">
           {expeditions.map((item) => (
-            <div
-              key={item.title}
-              style={{
-                position: "relative",
-                height: "420px",
-                overflow: "hidden",
-                borderRadius: "8px",
-              }}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.1))",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "24px",
-                  left: "24px",
-                }}
-              >
-                <h3
-                  style={{
-                    margin: 0,
-                    fontSize: "1.3rem",
-                  }}
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  style={{
-                    marginTop: "8px",
-                    color: "rgba(255,255,255,0.8)",
-                  }}
-                >
-                  {item.subtitle}
-                </p>
+            <article className="visuals-card tall" key={item.title}>
+              <img src={item.image} alt={item.title} />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.subtitle}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* COLLECTIONS */}
-      <section
-        style={{
-          padding: "0 60px 80px",
-        }}
-      >
-        <p
-          style={{
-            color: "#c8a96b",
-            letterSpacing: "2px",
-            fontSize: "0.8rem",
-            marginBottom: "16px",
-          }}
-        >
-          COLLECTIONS
-        </p>
+      <section className="visuals-section">
+        <div className="visuals-section-header">
+          <span>COLLECTIONS</span>
+          <h2>Curated visual archives.</h2>
+        </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "18px",
-          }}
-        >
+        <div className="visuals-grid">
           {collections.map((item) => (
-            <div
-              key={item.title}
-              style={{
-                position: "relative",
-                height: "240px",
-                overflow: "hidden",
-                borderRadius: "8px",
-              }}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.15))",
-                }}
-              />
-
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "18px",
-                  left: "18px",
-                  fontWeight: "700",
-                  letterSpacing: "1px",
-                }}
-              >
-                {item.title.toUpperCase()}
+            <article className="visuals-card" key={item.title}>
+              <img src={item.image} alt={item.title} />
+              <div>
+                <h3>{item.title}</h3>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* JOURNAL */}
-      <section
-        style={{
-          padding: "0 60px 80px",
-        }}
-      >
-        <p
-          style={{
-            color: "#c8a96b",
-            letterSpacing: "2px",
-            fontSize: "0.8rem",
-            marginBottom: "12px",
-          }}
-        >
-          JOURNAL
-        </p>
+      <section className="visuals-section">
+        <div className="visuals-section-header">
+          <span>JOURNAL</span>
+          <h2>Field notes & stories.</h2>
+        </div>
 
-        <h2
-          style={{
-            fontSize: "2.4rem",
-            marginBottom: "30px",
-            fontWeight: "500",
-          }}
-        >
-          Field notes & stories.
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "22px",
-          }}
-        >
+        <div className="visuals-journal-grid">
           {journalPosts.map((post) => (
-            <div
-              key={post.title}
-              style={{
-                backgroundColor: "#101010",
-                borderRadius: "8px",
-                overflow: "hidden",
-              }}
-            >
-              <img
-                src={post.image}
-                alt={post.title}
-                style={{
-                  width: "100%",
-                  height: "260px",
-                  objectFit: "cover",
-                }}
-              />
-
-              <div
-                style={{
-                  padding: "20px",
-                }}
-              >
-                <p
-                  style={{
-                    color: "#c8a96b",
-                    fontSize: "0.8rem",
-                    marginBottom: "10px",
-                  }}
-                >
-                  {post.date}
-                </p>
-
-                <h3
-                  style={{
-                    margin: 0,
-                    fontSize: "1.3rem",
-                  }}
-                >
-                  {post.title}
-                </h3>
+            <article className="visuals-journal-card" key={post.title}>
+              <img src={post.image} alt={post.title} />
+              <div>
+                <span>{post.date}</span>
+                <h3>{post.title}</h3>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* FOOTER IMAGE */}
       <section
+        className="visuals-bottom"
         style={{
-          position: "relative",
-          height: "420px",
           backgroundImage:
-            "url('/dcp_visuals/colorado/dcp_redrocks_valley_view.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+            "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/dcp_visuals/colorado/dcp_redrocks_valley_view.png')",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "rgba(0,0,0,0.45)",
-          }}
-        />
-
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            textAlign: "center",
-            padding: "20px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "3rem",
-              marginBottom: "18px",
-              fontWeight: "500",
-            }}
-          >
-            Visuals with purpose.
-          </h2>
-
-          <p
-            style={{
-              maxWidth: "700px",
-              lineHeight: "1.9",
-              color: "rgba(255,255,255,0.88)",
-            }}
-          >
+        <div>
+          <h2>Visuals with purpose.</h2>
+          <p>
             DCP Expedition Visuals documents the intersection between medicine,
             resilience, exploration, wildlife, movement, and human experience.
           </p>
