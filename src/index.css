@@ -1347,3 +1347,30 @@ textarea {
     height: auto;
   }
 }
+
+.hero-buttons{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1.5rem;
+}
+
+.btn-outline{
+  background:white;
+  color:#123b63;
+  border:2px solid #123b63;
+}
+
+.btn-outline:hover{
+  background:#123b63;
+  color:white;
+}
+
+.btn-dark{
+  background:#0b2340;
+  color:white;
+}
+
+.btn-dark:hover{
+  opacity:.9;
+}
