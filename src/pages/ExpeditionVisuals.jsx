@@ -146,6 +146,31 @@ export default function ExpeditionVisuals() {
         </div>
       </section>
 
+      {/* NUEVA GALERÍA AMSTERDAM */}
+
+<section className="visuals-section">
+  <div className="visuals-section-header">
+    <span>AMSTERDAM</span>
+    <h2>Visual documentary archive.</h2>
+  </div>
+
+  <div className="visuals-masonry">
+    {amsterdamImages.map((image) => (
+      <article className="visuals-masonry-item" key={image.src}>
+        <img src={image.src} alt={image.alt} />
+      </article>
+    ))}
+  </div>
+</section>
+
+<section
+  className="visuals-bottom"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/dcp_visuals/colorado/dcp_redrocks_valley_view.png')",
+  }}
+>
+      
       <section
         className="visuals-bottom"
         style={{
@@ -215,3 +240,4 @@ const amsterdamImages = [
     alt: "Amsterdam river paddleboard",
   },
 ];
+
