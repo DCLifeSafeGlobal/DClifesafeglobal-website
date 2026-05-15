@@ -9,8 +9,7 @@ export default function WildlifeVisuals() {
     "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
     "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
 
-    "/dcp_visuals/colorado/dcp_deer_grass_close.jpg",
-
+    
   ];
 
   return (
