@@ -5,7 +5,6 @@ export default function WildlifeVisuals() {
   const images = [
 
     "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
-    "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_silhouette.jpg",
     "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
     "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
 
