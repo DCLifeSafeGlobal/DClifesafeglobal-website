@@ -7,7 +7,6 @@ const items = [
     text: 'Enhance emotional and mental resilience through the Surfviving wellness approach.',
     button: 'Learn More',
     link: '/wellness',
-    secondary: false,
   },
   {
     icon: '/icon_wilderness.png',
@@ -15,7 +14,6 @@ const items = [
     text: 'Get certified in CPR, ACLS, and life-saving skills for real-world emergencies.',
     button: 'View Training',
     link: '/training',
-    secondary: true,
   },
   {
     icon: '/icon_guided.png',
@@ -23,7 +21,6 @@ const items = [
     text: 'Join like-minded groups for restorative outdoor experiences and future guided adventures.',
     button: 'Explore Outdoor',
     link: '/outdoor',
-    secondary: true,
   },
   {
     icon: '/icon_nature.png',
@@ -31,7 +28,6 @@ const items = [
     text: 'Find balance through outdoor wellness, mindful movement, and nature immersion.',
     button: 'Explore Adventures',
     link: '/outdoor',
-    secondary: false,
   },
 ];
 
@@ -67,10 +63,7 @@ export default function About() {
 
                 <p>{card.text}</p>
 
-                <a
-                  href={card.link}
-                  className={card.secondary ? 'btn btn-outline small' : 'btn small'}
-                >
+                <a href={card.link} className='btn small'>
                   {card.button}
                 </a>
               </article>
@@ -95,23 +88,6 @@ export default function About() {
               emotional wellness, and meaningful adventure to support healthier,
               stronger, and more connected lives.
             </p>
-          </div>
-
-          <div className='story-banner'>
-            <img src='/story_about.png' alt='Our story' />
-
-            <div className='story-overlay'>
-              <h3>
-                Our Story: Bridging Medicine, Wellness, and Outdoor Experience
-              </h3>
-
-              <p>
-                DC LifeSafe Global brings together medical knowledge, wellness education, training, and
-                outdoor experiences through a practical and human-centered
-                approach inspired by resilience, preparedness, and meaningful
-                connection.
-              </p>
-            </div>
           </div>
 
           <div className='center-cta'>
