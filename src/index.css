@@ -1781,6 +1781,11 @@ textarea {
 
 .home-feature-card p {
   flex-grow: 1;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .home-feature-card .btn {
