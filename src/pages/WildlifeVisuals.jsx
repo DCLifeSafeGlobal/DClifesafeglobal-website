@@ -1,15 +1,24 @@
 import React from "react";
 
+const amsterdamPath =
+  "/dcp_visuals/netherlands/amsterdam";
+
+const barcelonaPath =
+  "/dcp_visuals/spain/barcelona";
+
 export default function WildlifeVisuals() {
 
   const images = [
 
-    "/dcp_visuals/netherlands/amsterdam/amsterdam_heron_reflection.jpg",
-    "/dcp_visuals/netherlands/amsterdam/amsterdam_duck_reflection.jpg",
-    "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra_close.jpg",
-    "/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_zebra.jpg",
-    "/dcp_visuals/netherlands/amsterdam/amsterdam_red_hollyhock.jpg",
-    "/dcp_visuals/spain/barcelona/barcelona_bird_closeup.jpg",
+    `${amsterdamPath}/amsterdam_heron_reflection.jpg`,
+
+    `${amsterdamPath}/amsterdam_duck_reflection.jpg`,
+
+    `${amsterdamPath}/dcp_amsterdam_zebra_close.jpg`,
+
+    `${amsterdamPath}/dcp_amsterdam_zebra.jpg`,
+
+    `${barcelonaPath}/barcelona_bird_closeup.jpg`,
 
   ];
 
@@ -21,7 +30,9 @@ export default function WildlifeVisuals() {
         padding: "120px 6vw 80px",
       }}
     >
+
       <div style={{ marginBottom: "60px" }}>
+
         <p
           style={{
             color: "#d4af37",
@@ -53,10 +64,13 @@ export default function WildlifeVisuals() {
             fontSize: "17px",
           }}
         >
-          Encounters with wildlife documented through DCP Expedition Visuals —
-          reflections of movement, stillness, coexistence, and natural presence
-          across different regions of the world.
+          Encounters with wildlife documented through
+          DCP Expedition Visuals — reflections of
+          movement, stillness, coexistence, and
+          natural presence across different regions
+          of the world.
         </p>
+
       </div>
 
       <div
@@ -65,11 +79,14 @@ export default function WildlifeVisuals() {
           columnGap: "18px",
         }}
       >
+
         {images.map((img, index) => (
+
           <img
             key={index}
             src={img}
             alt="Wildlife"
+            loading="lazy"
             style={{
               width: "100%",
               marginBottom: "18px",
@@ -78,8 +95,11 @@ export default function WildlifeVisuals() {
               breakInside: "avoid",
             }}
           />
+
         ))}
+
       </div>
+
     </div>
   );
 }
