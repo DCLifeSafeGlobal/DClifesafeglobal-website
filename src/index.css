@@ -1761,3 +1761,29 @@ textarea {
     height: 360px;
   }
 }
+
+/* HOME CARD ALIGNMENT FIX */
+
+.home-feature-grid {
+  align-items: stretch;
+}
+
+.home-feature-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home-feature-card .feature-thumb {
+  height: 230px;
+  object-fit: cover;
+}
+
+.home-feature-card p {
+  flex-grow: 1;
+}
+
+.home-feature-card .btn {
+  margin-top: auto;
+  align-self: center;
+}
