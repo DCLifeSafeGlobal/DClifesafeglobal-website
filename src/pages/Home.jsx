@@ -60,10 +60,13 @@ export default function Home() {
               Explore Wellness
             </Link>
 
-            <Link
-              to='/training'
-              className='btn btn-outline'
-            >
+           <Link
+  to='/training'
+  className='btn'
+  style={{
+    marginTop: 'auto',
+    alignSelf: 'center'
+  }}
               View Training
             </Link>
 
@@ -86,7 +89,13 @@ export default function Home() {
           
 <div className='card-grid columns-4 home-feature-grid'>
 
-            <article className='feature-card home-feature-card'>
+           <article
+  className='feature-card home-feature-card'
+  style={{
+    display: 'flex',
+    flexDirection: 'column'
+  }}
+>
 
               <h2>
                 Wellness
