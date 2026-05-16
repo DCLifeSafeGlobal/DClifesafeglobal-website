@@ -14,7 +14,8 @@ const expeditions = [
   {
     title: "USA",
     subtitle: "Colorado",
-    image: `${redRocksPath}/dcp_redrocks_valley_view.png`,
+    image:
+      `${redRocksPath}/dcp_redrocks_valley_view.png`,
   },
 
   {
@@ -101,6 +102,7 @@ const journalPosts = [
 export default function ExpeditionVisuals() {
 
   return (
+
     <div className="visuals-page">
 
       <section
@@ -120,19 +122,26 @@ export default function ExpeditionVisuals() {
             className="visuals-logo"
           />
 
-          <h1>Medicine Beyond the Trail.</h1>
+          <h1>
+            Medicine Beyond the Trail.
+          </h1>
 
           <p>
-            Visual storytelling from expeditions, wildlife,
-            cities, landscapes, and human journeys captured
-            through lived experience.
+            Visual storytelling from expeditions,
+            wildlife, cities, landscapes, and
+            human journeys captured through
+            lived experience.
           </p>
 
-          <a href="#expeditions" className="visuals-btn">
+          <a
+            href="#expeditions"
+            className="visuals-btn"
+          >
             Explore Expeditions
           </a>
 
         </div>
+
       </section>
 
       <section
@@ -141,11 +150,15 @@ export default function ExpeditionVisuals() {
       >
 
         <div className="visuals-section-header">
-          <span>EXPEDITIONS</span>
+
+          <span>
+            EXPEDITIONS
+          </span>
 
           <h2>
             Stories from around the world.
           </h2>
+
         </div>
 
         <div className="visuals-grid">
@@ -155,4 +168,183 @@ export default function ExpeditionVisuals() {
             item.link ? (
 
               <a
-                href={
+                href={item.link}
+                className="visuals-card"
+                key={item.title}
+              >
+
+                <img
+                  src={item.image}
+                  alt={item.title}
+                />
+
+                <div>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+
+                  <p>
+                    {item.subtitle}
+                  </p>
+
+                </div>
+
+              </a>
+
+            ) : (
+
+              <article
+                className="visuals-card"
+                key={item.title}
+              >
+
+                <img
+                  src={item.image}
+                  alt={item.title}
+                />
+
+                <div>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+
+                  <p>
+                    {item.subtitle}
+                  </p>
+
+                </div>
+
+              </article>
+
+            )
+
+          )}
+
+        </div>
+
+      </section>
+
+      <section className="visuals-section">
+
+        <div className="visuals-section-header">
+
+          <span>
+            COLLECTIONS
+          </span>
+
+          <h2>
+            Curated visual archives.
+          </h2>
+
+        </div>
+
+        <div className="visuals-grid">
+
+          {collections.map((item) => (
+
+            <article
+              className="visuals-card"
+              key={item.title}
+            >
+
+              <img
+                src={item.image}
+                alt={item.title}
+              />
+
+              <div>
+
+                <h3>
+                  {item.title}
+                </h3>
+
+              </div>
+
+            </article>
+
+          ))}
+
+        </div>
+
+      </section>
+
+      <section className="visuals-section">
+
+        <div className="visuals-section-header">
+
+          <span>
+            JOURNAL
+          </span>
+
+          <h2>
+            Field notes & stories.
+          </h2>
+
+        </div>
+
+        <div className="visuals-journal-grid">
+
+          {journalPosts.map((post) => (
+
+            <article
+              className="visuals-journal-card"
+              key={post.title}
+            >
+
+              <img
+                src={post.image}
+                alt={post.title}
+              />
+
+              <div>
+
+                <span>
+                  {post.date}
+                </span>
+
+                <h3>
+                  {post.title}
+                </h3>
+
+              </div>
+
+            </article>
+
+          ))}
+
+        </div>
+
+      </section>
+
+      <section
+        className="visuals-bottom"
+        style={{
+          backgroundImage:
+            `linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+            url('${redRocksPath}/dcp_redrocks_valley_view.png')`,
+        }}
+      >
+
+        <div>
+
+          <h2>
+            Visuals with purpose.
+          </h2>
+
+          <p>
+            DCP Expedition Visuals documents
+            the intersection between medicine,
+            resilience, exploration, wildlife,
+            movement, and human experience.
+          </p>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  );
+}
