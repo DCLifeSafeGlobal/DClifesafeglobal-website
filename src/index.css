@@ -1794,38 +1794,35 @@ textarea {
 }
 
 
-/* HOME CARD ALIGNMENT FIX */
-
-.home-feature-grid {
-  align-items: stretch;
-}
+/* HOME CARD ALIGNMENT FIX - FINAL */
 
 .home-feature-card {
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
+  display: grid !important;
+  grid-template-rows: 82px 230px 190px 60px !important;
   padding-bottom: 24px !important;
 }
 
 .home-feature-card h2 {
-  height: 78px !important;
+  margin: 0 !important;
+  padding: 0 16px !important;
+  height: auto !important;
+
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin: 0 !important;
 }
 
 .home-feature-card .feature-thumb {
-  height: 230px !important;
   width: 100% !important;
+  height: 230px !important;
   object-fit: cover !important;
 }
 
 .home-feature-card p {
-  height: 170px !important;
-  min-height: 170px !important;
-  padding: 18px 24px 0 !important;
   margin: 0 !important;
+  padding: 22px 24px !important;
+  height: auto !important;
+  min-height: 0 !important;
 
   display: flex !important;
   align-items: center !important;
@@ -1834,6 +1831,9 @@ textarea {
 }
 
 .home-feature-card .btn {
-  margin-top: 0 !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin: 0 !important;
+}
   align-self: center !important;
 }
