@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, HeartPulse, Compass, ClipboardList } from 'lucide-react';
+import NewsletterForm from '../components/NewsletterForm.jsx';
 
 const pillars = [
   { icon: Shield, title: 'Expert Training' },
@@ -158,6 +159,11 @@ export default function Home() {
               );
             })}
           </div>
+        </div>
+      </section>
+      <section className='section'>
+        <div className='container'>
+          <NewsletterForm />
         </div>
       </section>
     </>
