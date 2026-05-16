@@ -83,10 +83,10 @@ export default function Home() {
       <section className='section'>
 
         <div className='container'>
+          
+<div className='card-grid columns-4 home-feature-grid'>
 
-          <div className='card-grid columns-4'>
-
-            <article className='feature-card'>
+            <article className='feature-card home-feature-card'>
 
               <h2>
                 Wellness
