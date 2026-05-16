@@ -1794,26 +1794,34 @@ textarea {
 }
 
 
-/* FINAL HOME CARD ALIGNMENT FIX */
+/* HOME CARD ALIGNMENT FIX */
+
+.home-feature-grid {
+  align-items: stretch;
+}
 
 .home-feature-card {
   display: flex !important;
   flex-direction: column !important;
   height: 100% !important;
-  min-height: 620px !important;
+}
+
+.home-feature-card .feature-thumb {
+  height: 230px !important;
+  object-fit: cover !important;
 }
 
 .home-feature-card p {
-  min-height: 175px !important;
+  flex: 1 1 auto !important;
+  min-height: 165px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  flex-grow: 1 !important;
+  margin-bottom: 18px !important;
 }
 
 .home-feature-card .btn {
   margin-top: auto !important;
   align-self: center !important;
-  margin-bottom: 0 !important;
 }
