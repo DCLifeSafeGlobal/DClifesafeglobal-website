@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, HeartPulse, Compass, ClipboardList } from 'lucide-react';
 import NewsletterForm from '../components/NewsletterForm.jsx';
+import { useLanguage } from '../components/LanguageContext.jsx';
 
 const pillars = [
   { icon: Shield, title: 'Expert Training' },
@@ -16,6 +17,37 @@ export default function Home() {
     flexDirection: 'column',
   };
 
+  const { language } = useLanguage();
+
+const text = {
+  en: {
+    heroTitle: "Medicine beyond the trail",
+    heroSubtitle:
+      "Training, wellness, and outdoor experiences designed to build skill, resilience, and real-world confidence.",
+    wellness: "Wellness",
+    training: "Training",
+    outdoor: "Outdoor",
+    visuals: "Expedition Visuals",
+    why: "Why DC LifeSafe Global?",
+    whySub:
+      "Building confidence through skill, wellness, and outdoor discovery.",
+  },
+  es: {
+    heroTitle: "Medicina más allá del sendero",
+    heroSubtitle:
+      "Entrenamiento, bienestar y experiencias outdoor diseñadas para desarrollar habilidades, resiliencia y confianza en el mundo real.",
+    wellness: "Bienestar",
+    training: "Entrenamiento",
+    outdoor: "Outdoor",
+    visuals: "Visuales de Expedición",
+    why: "¿Por qué DC LifeSafe Global?",
+    whySub:
+      "Construyendo confianza a través de habilidades, bienestar y exploración outdoor.",
+  },
+};
+
+const t = text[language];
+  
   const buttonStyle = {
     marginTop: 'auto',
     alignSelf: 'center',
