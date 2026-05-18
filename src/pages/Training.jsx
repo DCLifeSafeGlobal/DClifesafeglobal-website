@@ -1,38 +1,49 @@
 import React from 'react';
 import { CalendarDays, CheckCircle2 } from 'lucide-react';
-
-const programs = [
-  {
-    icon: '/icon_bls.png',
-    title: 'BLS',
-    subtitle: 'Basic Life Support',
-    text: 'Essential life-saving skills for healthcare providers and community members.',
-    link: 'mailto:info@dclifesafeglobal.com?subject=BLS%20Course%20Inquiry',
-  },
-  {
-    icon: '/icon_acls.png',
-    title: 'ACLS',
-    subtitle: 'Advanced Cardiac Life Support',
-    text: 'Advanced training for managing cardiovascular emergencies with confidence.',
-    link: 'mailto:info@dclifesafeglobal.com?subject=ACLS%20Course%20Inquiry',
-  },
-  {
-    icon: '/icon_wilderness.png',
-    title: 'Wilderness & Outdoor',
-    subtitle: 'Medicine',
-    text: 'Training for remote environments and adventure professionals where help is far away.',
-    link: 'mailto:info@dclifesafeglobal.com?subject=Wilderness%20Medicine%20Inquiry',
-  },
-  {
-    icon: '/icon_group.png',
-    title: 'Private & Group',
-    subtitle: 'Workshops',
-    text: 'Customized training for teams, organizations, and communities.',
-    link: 'mailto:info@dclifesafeglobal.com?subject=Private%20Workshop%20Inquiry',
-  },
-];
+import { useLanguage } from '../components/LanguageContext.jsx';
+import { translations } from '../translations/translations.js';
 
 export default function Training() {
+  const { language } = useLanguage();
+
+  const t =
+    translations[language]?.trainingPage ||
+    translations.en.trainingPage;
+
+  const programs = [
+    {
+      icon: '/icon_bls.png',
+      title: 'BLS',
+      subtitle: t.blsTitle,
+      text: t.blsText,
+      link: 'mailto:info@dclifesafeglobal.com?subject=BLS%20Course%20Inquiry',
+    },
+
+    {
+      icon: '/icon_acls.png',
+      title: 'ACLS',
+      subtitle: t.aclsTitle,
+      text: t.aclsText,
+      link: 'mailto:info@dclifesafeglobal.com?subject=ACLS%20Course%20Inquiry',
+    },
+
+    {
+      icon: '/icon_wilderness.png',
+      title: t.wildernessTitle,
+      subtitle: '',
+      text: t.wildernessText,
+      link: 'mailto:info@dclifesafeglobal.com?subject=Wilderness%20Medicine%20Inquiry',
+    },
+
+    {
+      icon: '/icon_group.png',
+      title: t.privateTitle,
+      subtitle: '',
+      text: t.privateText,
+      link: 'mailto:info@dclifesafeglobal.com?subject=Private%20Workshop%20Inquiry',
+    },
+  ];
+
   return (
     <>
       <section className='hero-training'>
@@ -41,22 +52,17 @@ export default function Training() {
           <div className='training-copy'>
 
             <div className='eyebrow'>
-              Training today
+              {t.betterTraining}
               <br />
-              confidence tomorrow
+              {t.strongerTomorrow}
             </div>
 
             <h1>
-              Real Skills.
-              <br />
-              Real Situations.
-              <br />
-              <span>Real Impact.</span>
+              {t.heroTitle}
             </h1>
 
             <p>
-              Professional medical training designed to prepare you for real-world
-              emergencies and everyday heroes.
+              {t.heroText}
             </p>
 
             <div className='hero-buttons'>
@@ -65,14 +71,14 @@ export default function Training() {
                 className='btn btn-outline'
                 href='mailto:info@dclifesafeglobal.com?subject=Private%20Session%20Inquiry'
               >
-                Request Private Session
+                {t.requestPrivate}
               </a>
 
               <a
                 className='btn btn-dark'
                 href='mailto:info@dclifesafeglobal.com?subject=Group%20Training%20Inquiry'
               >
-                Request Group Training
+                {t.requestGroup}
               </a>
 
             </div>
@@ -91,11 +97,11 @@ export default function Training() {
         <div className='container text-center'>
 
           <div className='eyebrow center'>
-            Our Training Programs
+            {t.sectionTitle}
           </div>
 
           <h2 className='section-title'>
-            Build Skills. Save Lives.
+            {t.sectionTitle}
           </h2>
 
           <div className='card-grid columns-4 mt-medium'>
@@ -121,7 +127,7 @@ export default function Training() {
                   className='text-link'
                   href={item.link}
                 >
-                  Learn More →
+                  {t.learnMore} →
                 </a>
 
               </article>
@@ -139,36 +145,34 @@ export default function Training() {
             <div className='training-benefits'>
 
               <h3>
-                Why Train with
-                <br />
-                DC LifeSafe Global?
+                {t.whyTitle}
               </h3>
 
               <ul>
 
                 <li>
                   <CheckCircle2 size={18} />
-                  Real-world focused curriculum
+                  {t.why1}
                 </li>
 
                 <li>
                   <CheckCircle2 size={18} />
-                  Experienced instructors
+                  {t.why2}
                 </li>
 
                 <li>
                   <CheckCircle2 size={18} />
-                  Small class sizes
+                  {t.why3}
                 </li>
 
                 <li>
                   <CheckCircle2 size={18} />
-                  Hands-on, practical learning
+                  {t.why4}
                 </li>
 
                 <li>
                   <CheckCircle2 size={18} />
-                  Confidence for life
+                  {t.why5}
                 </li>
 
               </ul>
@@ -186,7 +190,7 @@ export default function Training() {
 
               <h4>
                 <CalendarDays size={20} />
-                Upcoming Courses
+                {t.upcomingCourses}
               </h4>
 
               <div className='course-item'>
@@ -214,15 +218,15 @@ export default function Training() {
           <div className='bottom-action-bar'>
 
             <div>
-              <strong>Better Training Today</strong>
-              <span>Stronger Communities Tomorrow</span>
+              <strong>{t.betterTraining}</strong>
+              <span>{t.strongerTomorrow}</span>
             </div>
 
             <a
               className='btn btn-danger'
               href='mailto:info@dclifesafeglobal.com?subject=Training%20Inquiry'
             >
-              Get Started Today
+              {t.getStarted}
             </a>
 
           </div>
