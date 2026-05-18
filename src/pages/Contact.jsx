@@ -1,6 +1,16 @@
 import React from "react";
 
+import { useLanguage } from "../components/LanguageContext.jsx";
+import { translations } from "../translations/translations.js";
+
 export default function Contact() {
+
+  const { language } = useLanguage();
+
+  const t =
+    translations[language]?.contactPage ||
+    translations.en.contactPage;
+
   const bigIcon = {
     width: "58px",
     height: "58px",
@@ -29,13 +39,32 @@ export default function Contact() {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+
     const name = formData.get("name") || "";
     const email = formData.get("email") || "";
     const subject = formData.get("subject") || "General Inquiry";
     const message = formData.get("message") || "";
 
-    const mailSubject = `Website message: ${subject}`;
-    const mailBody = `
+    const mailSubject =
+      language === "es"
+        ? `Mensaje web: ${subject}`
+        : `Website message: ${subject}`;
+
+    const mailBody =
+      language === "es"
+        ? `
+Hola DC LifeSafe Global,
+
+Me gustaría más información.
+
+Nombre: ${name}
+Email: ${email}
+Asunto: ${subject}
+
+Mensaje:
+${message}
+`
+        : `
 Hello DC LifeSafe Global,
 
 I would like more information.
@@ -48,131 +77,317 @@ Message:
 ${message}
 `;
 
-    window.location.href = `mailto:info@dclifesafeglobal.com?subject=${encodeURIComponent(
-      mailSubject
-    )}&body=${encodeURIComponent(mailBody)}`;
+    window.location.href =
+      `mailto:info@dclifesafeglobal.com?subject=${encodeURIComponent(
+        mailSubject
+      )}&body=${encodeURIComponent(mailBody)}`;
   }
 
   return (
+
     <section className="section">
+
       <div className="container">
+
         <div className="text-center">
-          <h1 className="section-title">Contact DC LifeSafe Global</h1>
+
+          <h1 className="section-title">
+            {t.title}
+          </h1>
+
           <p className="section-subtitle narrow">
-            Get in touch to learn more, schedule a training, or start your journey.
+            {t.subtitle}
           </p>
+
         </div>
 
         <div className="contact-grid">
+
           <div className="contact-panel contact-panel-enhanced">
+
             <div className="contact-left-block">
+
               <div className="contact-info-header">
+
                 <div className="contact-icon-circle">
-                  <img src="/icon_contact_info.png" alt="Contact information" style={mediumIcon} />
+
+                  <img
+                    src="/icon_contact_info.png"
+                    alt="Contact information"
+                    style={mediumIcon}
+                  />
+
                 </div>
+
                 <div>
-                  <h3>Contact Information</h3>
+
+                  <h3>
+                    {t.contactInfo}
+                  </h3>
+
                 </div>
+
               </div>
 
               <div className="contact-info-list">
+
                 <div className="contact-info-item">
+
                   <div className="contact-icon-circle">
-                    <img src="/icon_phone.png" alt="Phone" style={bigIcon} />
+
+                    <img
+                      src="/icon_phone.png"
+                      alt="Phone"
+                      style={bigIcon}
+                    />
+
                   </div>
+
                   <div className="contact-info-copy">
-                    <strong>720.527.9516</strong>
-                    <span>Mon–Fri, 8:00 AM – 6:00 PM MST</span>
+
+                    <strong>
+                      720.527.9516
+                    </strong>
+
+                    <span>
+                      {t.hours}
+                    </span>
+
                   </div>
+
                 </div>
 
                 <div className="contact-info-item">
+
                   <div className="contact-icon-circle">
-                    <img src="/icon_email.png" alt="Email" style={bigIcon} />
+
+                    <img
+                      src="/icon_email.png"
+                      alt="Email"
+                      style={bigIcon}
+                    />
+
                   </div>
+
                   <div className="contact-info-copy">
-                    <strong>info@dclifesafeglobal.com</strong>
-                    <span>We typically reply within 24 hours</span>
+
+                    <strong>
+                      info@dclifesafeglobal.com
+                    </strong>
+
+                    <span>
+                      {t.emailReply}
+                    </span>
+
                   </div>
+
                 </div>
 
                 <div className="contact-info-item">
+
                   <div className="contact-icon-circle">
-                    <img src="/icon_location.png" alt="Location" style={bigIcon} />
+
+                    <img
+                      src="/icon_location.png"
+                      alt="Location"
+                      style={bigIcon}
+                    />
+
                   </div>
+
                   <div className="contact-info-copy">
-                    <strong>Denver, Colorado</strong>
-                    <span>Serving local and global communities</span>
+
+                    <strong>
+                      {t.location}
+                    </strong>
+
+                    <span>
+                      {t.locationText}
+                    </span>
+
                   </div>
+
                 </div>
+
               </div>
+
             </div>
 
             <div className="contact-divider" />
 
             <div className="contact-left-block">
+
               <div className="contact-info-header">
+
                 <div className="contact-icon-circle">
-                  <img src="/icon_message.png" alt="Send us a message" style={mediumIcon} />
+
+                  <img
+                    src="/icon_message.png"
+                    alt="Send us a message"
+                    style={mediumIcon}
+                  />
+
                 </div>
+
                 <div>
-                  <h3>Send Us a Message</h3>
+
+                  <h3>
+                    {t.sendMessage}
+                  </h3>
+
                 </div>
+
               </div>
 
               <p className="contact-left-description">
-                Use the form below to request information, schedule a training,
-                or ask about our wellness and outdoor experiences.
+                {t.sendMessageText}
               </p>
 
               <div className="contact-quick-actions">
-                <a className="btn" href="tel:+17205279516">
-                  Call Now
+
+                <a
+                  className="btn"
+                  href="tel:+17205279516"
+                >
+                  {t.callNow}
                 </a>
-                <a className="btn btn-outline" href="mailto:info@dclifesafeglobal.com">
-                  Email Us
+
+                <a
+                  className="btn btn-outline"
+                  href="mailto:info@dclifesafeglobal.com"
+                >
+                  {t.emailUs}
                 </a>
+
               </div>
 
               <div className="contact-trust-note">
-                <img src="/icon_shield_a.png" alt="Privacy" style={shieldIcon} />
-                <span>Your information is safe and will never be shared.</span>
+
+                <img
+                  src="/icon_shield_a.png"
+                  alt="Privacy"
+                  style={shieldIcon}
+                />
+
+                <span>
+                  {t.safetyText}
+                </span>
+
               </div>
+
             </div>
+
           </div>
 
-          <form className="form-card" onSubmit={handleSubmit}>
-            <h3>Send a Message</h3>
+          <form
+            className="form-card"
+            onSubmit={handleSubmit}
+          >
 
-            <label htmlFor="name">Your Name</label>
-            <input id="name" name="name" type="text" placeholder="Your Name" />
+            <h3>
+              {t.formTitle}
+            </h3>
 
-            <label htmlFor="email">Your Email</label>
-            <input id="email" name="email" type="email" placeholder="Your Email" />
+            <label htmlFor="name">
+              {t.yourName}
+            </label>
 
-            <label htmlFor="subject">Select Subject</label>
-            <select id="subject" name="subject" defaultValue="">
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder={t.yourName}
+            />
+
+            <label htmlFor="email">
+              {t.yourEmail}
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder={t.yourEmail}
+            />
+
+            <label htmlFor="subject">
+              {t.selectSubject}
+            </label>
+
+            <select
+              id="subject"
+              name="subject"
+              defaultValue=""
+            >
+
               <option value="" disabled>
-                Select Subject
+                {t.selectSubject}
               </option>
-              <option>General Inquiry</option>
-              <option>Wellness / Surfviving</option>
-              <option>Training Courses</option>
-              <option>Outdoor Experiences</option>
-              <option>Private Group Training</option>
-              <option>Partnerships</option>
-              <option>Other</option>
+
+              <option>
+                {language === "es"
+                  ? "Consulta general"
+                  : "General Inquiry"}
+              </option>
+
+              <option>
+                Wellness / Surfviving
+              </option>
+
+              <option>
+                {language === "es"
+                  ? "Cursos de entrenamiento"
+                  : "Training Courses"}
+              </option>
+
+              <option>
+                {language === "es"
+                  ? "Experiencias outdoor"
+                  : "Outdoor Experiences"}
+              </option>
+
+              <option>
+                {language === "es"
+                  ? "Entrenamiento privado"
+                  : "Private Group Training"}
+              </option>
+
+              <option>
+                {language === "es"
+                  ? "Alianzas"
+                  : "Partnerships"}
+              </option>
+
+              <option>
+                Other
+              </option>
+
             </select>
 
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Your Message" />
+            <label htmlFor="message">
+              {t.yourMessage}
+            </label>
 
-            <button className="btn full" type="submit">
-              Send Message
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder={t.yourMessage}
+            />
+
+            <button
+              className="btn full"
+              type="submit"
+            >
+              {t.sendBtn}
             </button>
+
           </form>
+
         </div>
+
       </div>
+
     </section>
   );
 }
