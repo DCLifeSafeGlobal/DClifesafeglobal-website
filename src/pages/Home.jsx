@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, HeartPulse, Compass, ClipboardList } from 'lucide-react';
 import NewsletterForm from '../components/NewsletterForm.jsx';
 import { useLanguage } from '../components/LanguageContext.jsx';
+import NewsletterFormES from '../components/NewsletterFormES.jsx';
 
 const pillars = [
   { icon: Shield, title: 'Expert Training' },
@@ -189,7 +190,11 @@ const t = text[language];
       </section>
       <section className='section'>
         <div className='container'>
-          <NewsletterForm />
+        {language === "en" ? (
+  <NewsletterForm />
+) : (
+  <NewsletterFormES />
+)}
         </div>
       </section>
     </>
