@@ -1890,3 +1890,70 @@ textarea {
   border-color: #10213e;
   transform: translateY(-1px);
 }
+
+/* ===== KIT NEWSLETTER MOBILE FIX ===== */
+
+@media (max-width: 768px) {
+
+  .formkit-form {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+  }
+
+  .formkit-header h2,
+  .formkit-header h1 {
+
+    font-size: 32px !important;
+
+    line-height: 1.1 !important;
+
+    padding: 0 16px !important;
+
+  }
+
+  .formkit-subheader {
+
+    font-size: 18px !important;
+
+    line-height: 1.5 !important;
+
+    padding: 0 18px !important;
+
+  }
+
+  .formkit-background {
+
+    min-height: 620px !important;
+
+    background-position: center !important;
+
+    background-size: cover !important;
+
+  }
+
+  .formkit-fields {
+
+    padding: 20px !important;
+
+  }
+
+  .formkit-input {
+
+    font-size: 18px !important;
+
+    height: 58px !important;
+
+  }
+
+  .formkit-submit {
+
+    font-size: 20px !important;
+
+    height: 62px !important;
+
+  }
+
+}
