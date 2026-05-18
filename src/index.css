@@ -1835,3 +1835,18 @@ textarea {
   justify-self: center !important;
   margin: 0 !important;
 }
+.language-toggle {
+  border: 1px solid #d8dce3;
+  background: #ffffff;
+  color: #10213e;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.language-toggle:hover {
+  background: #f1f5f8;
+  transform: translateY(-1px);
+}
