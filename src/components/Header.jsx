@@ -2,19 +2,23 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import LanguageToggle from './LanguageToggle.jsx';
-
-const navItems = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/wellness', label: 'Wellness' },
-  { to: '/training', label: 'Training' },
-  { to: '/outdoor', label: 'Outdoor' },
-  { to: '/visuals', label: 'Visuals' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
-];
+import { useLanguage } from './LanguageContext.jsx';
+import { translations } from '../translations/translations.js';
 
 export default function Header() {
   const [open, setOpen] = React.useState(false);
+  const { language } = useLanguage();
+  const t = translations[language].nav;
+
+  const navItems = [
+    { to: '/', label: t.home, end: true },
+    { to: '/wellness', label: t.wellness },
+    { to: '/training', label: t.training },
+    { to: '/outdoor', label: t.outdoor },
+    { to: '/visuals', label: t.visuals },
+    { to: '/about', label: t.about },
+    { to: '/contact', label: t.contact },
+  ];
 
   return (
     <header className='header'>
