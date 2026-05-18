@@ -4,7 +4,7 @@ import { translations } from '../translations/translations.js';
 
 export default function Wellness() {
   const { language } = useLanguage();
-  const t = translations[language].wellnessPage;
+  const t = translations[language]?.wellnessPage || translations.en.wellnessPage;
 
   return (
     <>
