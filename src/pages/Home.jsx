@@ -2,77 +2,50 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, HeartPulse, Compass, ClipboardList } from 'lucide-react';
 import NewsletterForm from '../components/NewsletterForm.jsx';
-import { useLanguage } from '../components/LanguageContext.jsx';
 import NewsletterFormES from '../components/NewsletterFormES.jsx';
-
-const pillars = [
-  { icon: Shield, title: 'Expert Training' },
-  { icon: HeartPulse, title: 'Emotional Resilience' },
-  { icon: Compass, title: 'Outdoor Leadership' },
-  { icon: ClipboardList, title: 'Real-World Preparedness' },
-];
+import { useLanguage } from '../components/LanguageContext.jsx';
+import { translations } from '../translations/translations.js';
 
 export default function Home() {
+  const { language } = useLanguage();
+  const t = translations[language].home;
+
   const cardStyle = {
     display: 'flex',
     flexDirection: 'column',
   };
 
-  const { language } = useLanguage();
-
-const text = {
-  en: {
-    heroTitle: "Medicine beyond the trail",
-    heroSubtitle:
-      "Training, wellness, and outdoor experiences designed to build skill, resilience, and real-world confidence.",
-    wellness: "Wellness",
-    training: "Training",
-    outdoor: "Outdoor",
-    visuals: "Expedition Visuals",
-    why: "Why DC LifeSafe Global?",
-    whySub:
-      "Building confidence through skill, wellness, and outdoor discovery.",
-  },
-  es: {
-    heroTitle: "Medicina más allá del sendero",
-    heroSubtitle:
-      "Entrenamiento, bienestar y experiencias outdoor diseñadas para desarrollar habilidades, resiliencia y confianza en el mundo real.",
-    wellness: "Bienestar",
-    training: "Entrenamiento",
-    outdoor: "Outdoor",
-    visuals: "Visuales de Expedición",
-    why: "¿Por qué DC LifeSafe Global?",
-    whySub:
-      "Construyendo confianza a través de habilidades, bienestar y exploración outdoor.",
-  },
-};
-
-const t = text[language];
-  
   const buttonStyle = {
     marginTop: 'auto',
     alignSelf: 'center',
   };
 
+  const pillars = [
+    { icon: Shield, title: t.expertTraining },
+    { icon: HeartPulse, title: t.emotionalResilience },
+    { icon: Compass, title: t.outdoorLeadership },
+    { icon: ClipboardList, title: t.realWorldPreparedness },
+  ];
+
   return (
     <>
       <section className='section hero-home-simple'>
         <div className='container text-center'>
-         <h1 className='hero-title'>{t.heroTitle}</h1>
+          <h1 className='hero-title'>{t.heroTitle}</h1>
 
           <p className='hero-subtitle'>{t.heroSubtitle}</p>
-          
+
           <div className='hero-actions'>
             <Link to='/wellness' className='btn'>
-              Explore Wellness
+              {t.exploreWellness}
             </Link>
 
             <Link to='/training' className='btn btn-outline'>
-              View Training
+              {t.viewTraining}
             </Link>
 
             <Link to='/contact' className='btn btn-outline'>
-              Contact Us
+              {t.contactUs}
             </Link>
           </div>
         </div>
@@ -84,81 +57,42 @@ const t = text[language];
 
             <article className='feature-card home-feature-card' style={cardStyle}>
               <h2>{t.wellness}</h2>
-
-              <img
-                src='/card_home_wellness.png'
-                alt='Wellness'
-                className='feature-thumb'
-                loading='lazy'
-              />
-
-              <p>
-                Emotional regulation and resilience tools to manage daily life
-                through the Surfviving approach.
-              </p>
-
+              <img src='/card_home_wellness.png' alt={t.wellness} className='feature-thumb' loading='lazy' />
+              <p>{t.wellnessText}</p>
               <Link to='/wellness' className='btn' style={buttonStyle}>
-                Discover Surfviving
+                {t.wellnessBtn}
               </Link>
             </article>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
-             <h2>{t.training}</h2>
-
-              <img
-                src='/card_home_training.png'
-                alt='Training'
-                className='feature-thumb'
-                loading='lazy'
-              />
-
-              <p>
-                BLS, ACLS, wilderness medicine, and practical training for
-                real-world emergencies.
-              </p>
-
+              <h2>{t.training}</h2>
+              <img src='/card_home_training.png' alt={t.training} className='feature-thumb' loading='lazy' />
+              <p>{t.trainingText}</p>
               <Link to='/training' className='btn' style={buttonStyle}>
-                View Training Courses
+                {t.trainingBtn}
               </Link>
             </article>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
-            <h2>{t.outdoor}</h2>
-
-              <img
-                src='/card_home_outdoor.png'
-                alt='Outdoor'
-                className='feature-thumb'
-                loading='lazy'
-              />
-
-              <p>
-                Expeditions and nature-based experiences built around leadership,
-                health, and purpose.
-              </p>
-
+              <h2>{t.outdoor}</h2>
+              <img src='/card_home_outdoor.png' alt={t.outdoor} className='feature-thumb' loading='lazy' />
+              <p>{t.outdoorText}</p>
               <Link to='/outdoor' className='btn' style={buttonStyle}>
-                Explore Adventures
+                {t.outdoorBtn}
               </Link>
             </article>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
               <h2>{t.visuals}</h2>
-
               <img
                 src='/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg'
-                alt='Expedition Visuals'
+                alt={t.visuals}
                 className='feature-thumb'
                 loading='lazy'
               />
-
-              <p>
-                Visual storytelling from expeditions, wildlife, cities,
-                landscapes, and human journeys around the world.
-              </p>
-
+              <p>{t.visualsText}</p>
               <Link to='/visuals' className='btn' style={buttonStyle}>
-                Explore Visuals
+                {t.visualsBtn}
               </Link>
             </article>
 
@@ -169,8 +103,8 @@ const t = text[language];
       <section className='section soft-section'>
         <div className='container text-center'>
           <h2 className='section-title'>{t.why}</h2>
+          <p className='section-subtitle'>{t.whySub}</p>
 
-         <p className='section-subtitle'>{t.whySub}</p>
           <div className='icon-row'>
             {pillars.map((item) => {
               const Icon = item.icon;
@@ -180,7 +114,6 @@ const t = text[language];
                   <div className='icon-circle'>
                     <Icon size={38} />
                   </div>
-
                   <span>{item.title}</span>
                 </div>
               );
@@ -188,13 +121,10 @@ const t = text[language];
           </div>
         </div>
       </section>
-      <section className='section'>
+
+      <section id='newsletter' className='section'>
         <div className='container'>
-        {language === "en" ? (
-  <NewsletterForm />
-) : (
-  <NewsletterFormES />
-)}
+          {language === 'en' ? <NewsletterForm /> : <NewsletterFormES />}
         </div>
       </section>
     </>
