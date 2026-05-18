@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import LanguageToggle from './LanguageToggle.jsx';
 
 const navItems = [
   { to: '/', label: 'Home', end: true },
@@ -18,7 +19,6 @@ export default function Header() {
   return (
     <header className='header'>
       <div className='container header-inner'>
-
         <NavLink to='/' className='brand'>
           <img
             src='/logo_principal.png'
@@ -36,7 +36,6 @@ export default function Header() {
         </button>
 
         <nav className={`nav ${open ? 'nav-open' : ''}`}>
-
           {navItems.map((item) => (
             <NavLink
               key={item.to}
@@ -51,8 +50,8 @@ export default function Header() {
             </NavLink>
           ))}
 
+          <LanguageToggle />
         </nav>
-
       </div>
     </header>
   );
