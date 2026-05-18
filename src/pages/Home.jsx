@@ -57,13 +57,10 @@ const t = text[language];
     <>
       <section className='section hero-home-simple'>
         <div className='container text-center'>
-          <h1 className='hero-title'>Medicine beyond the trail</h1>
+         <h1 className='hero-title'>{t.heroTitle}</h1>
 
-          <p className='hero-subtitle'>
-            Training, wellness, and outdoor experiences designed to build skill,
-            resilience, and real-world confidence.
-          </p>
-
+          <p className='hero-subtitle'>{t.heroSubtitle}</p>
+          
           <div className='hero-actions'>
             <Link to='/wellness' className='btn'>
               Explore Wellness
@@ -85,7 +82,7 @@ const t = text[language];
           <div className='card-grid columns-4 home-feature-grid'>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
-              <h2>Wellness</h2>
+              <h2>{t.wellness}</h2>
 
               <img
                 src='/card_home_wellness.png'
@@ -105,7 +102,7 @@ const t = text[language];
             </article>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
-              <h2>Training</h2>
+             <h2>{t.training}</h2>
 
               <img
                 src='/card_home_training.png'
@@ -125,7 +122,7 @@ const t = text[language];
             </article>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
-              <h2>Outdoor</h2>
+            <h2>{t.outdoor}</h2>
 
               <img
                 src='/card_home_outdoor.png'
@@ -145,7 +142,7 @@ const t = text[language];
             </article>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
-              <h2>Expedition Visuals</h2>
+              <h2>{t.visuals}</h2>
 
               <img
                 src='/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg'
@@ -170,12 +167,9 @@ const t = text[language];
 
       <section className='section soft-section'>
         <div className='container text-center'>
-          <h2 className='section-title'>Why DC LifeSafe Global?</h2>
+          <h2 className='section-title'>{t.why}</h2>
 
-          <p className='section-subtitle'>
-            Building confidence through skill, wellness, and outdoor discovery.
-          </p>
-
+         <p className='section-subtitle'>{t.whySub}</p>
           <div className='icon-row'>
             {pillars.map((item) => {
               const Icon = item.icon;
