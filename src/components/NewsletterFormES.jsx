@@ -2,23 +2,26 @@ import { useEffect } from "react";
 
 export default function NewsletterFormES() {
   useEffect(() => {
-    const script = document.createElement("script");
+    const container = document.getElementById("kit-form-es");
+    if (!container) return;
 
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
     script.async = true;
     script.setAttribute("data-uid", "6a3f7c7d1a");
-    script.src =
-      "https://dc-lifesafe-global.kit.com/6a3f7c7d1a/index.js";
+    script.src = "https://dc-lifesafe-global.kit.com/6a3f7c7d1a/index.js";
 
-    document.body.appendChild(script);
+    container.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      container.innerHTML = "";
     };
   }, []);
 
   return (
     <section className="newsletter-section">
-      <div className="newsletter-container"></div>
+      <div id="kit-form-es"></div>
     </section>
   );
 }
