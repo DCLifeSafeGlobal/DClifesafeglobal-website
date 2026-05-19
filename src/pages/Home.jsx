@@ -124,7 +124,7 @@ export default function Home() {
 
       <section id='newsletter' className='section'>
         <div className='container'>
-          {language === 'en' ? <NewsletterForm /> : <NewsletterFormES />}
+         {language === 'en' ? <NewsletterForm /> : <NewsletterFormES />}
         </div>
       </section>
     </>
