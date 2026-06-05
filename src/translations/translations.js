@@ -8,6 +8,7 @@ export const translations = {
       visuals: "Visuals",
       about: "About",
       contact: "Contact",
+network: "Network",
     },
 
     home: {
@@ -313,6 +314,7 @@ export const translations = {
       visuals: "Visuales",
       about: "Acerca de",
       contact: "Contacto",
+network: "Red Global",
     },
 
     home: {
