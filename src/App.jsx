@@ -61,6 +61,9 @@ export default function App() {
 
 <Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
           
+<Route path="/network" element={<Network />} />
+
+
         </Route>
       </Routes>
     </>
