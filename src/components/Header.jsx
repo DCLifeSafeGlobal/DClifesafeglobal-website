@@ -18,7 +18,8 @@ export default function Header() {
     { to: '/visuals', label: t.visuals },
     { to: '/about', label: t.about },
     { to: '/contact', label: t.contact },
-  ];
+ { to: '/network', label: t.network },
+];
 
   return (
     <header className='header'>
