@@ -1,132 +1,162 @@
 import React from "react";
-import { MapPin, Globe, Instagram, Mountain, BookOpen, ShieldCheck, Users } from "lucide-react";
-import { useLanguage } from "../components/LanguageContext.jsx";
+import {
+  MapPin,
+  Globe,
+  Instagram,
+  Mountain,
+  Leaf,
+  Snowflake,
+  ShieldCheck,
+} from "lucide-react";
+
+const partners = [
+  {
+    name: "DC LifeSafe Global",
+    location: "Colorado, USA",
+    logo: "/logo_dclifesafeglobal.png",
+    image: "/card_dclifesafeglobal.png",
+    accent: "orange",
+    website: "https://www.dclifesafeglobal.com",
+    instagram: "https://www.instagram.com/dclifesafeglobal",
+    services: [
+      "Wilderness Medicine",
+      "Training & Education",
+      "Expedition Leadership",
+      "Resilience & Wellbeing",
+      "Photography & Storytelling",
+    ],
+  },
+  {
+    name: "Viajeros Perú",
+    location: "Ancón, Lima, Peru",
+    logo: "/logo_viajerosperu.png",
+    image: "/card_viajerosperu.png",
+    accent: "orange",
+    website: "https://viajerosperu.pe",
+    instagram: "https://www.instagram.com/viajerosperu",
+    services: [
+      "Trekking & Hiking",
+      "Cultural Immersion",
+      "Adventure Travel",
+      "Multi-region Expeditions",
+      "Logistics & Support",
+    ],
+  },
+  {
+    name: "T Viajes",
+    location: "La Merced, Chanchamayo, Peru",
+    logo: "/logo_tviajes.jpg",
+    image: "/card_tviajes.jpg",
+    accent: "green",
+    website: "",
+    instagram: "https://www.instagram.com/tviajesperu",
+    services: [
+      "Central Jungle Expeditions",
+      "Ecotourism & Nature",
+      "Indigenous Communities",
+      "Oxapampa – Villa Rica",
+      "Sustainable Experiences",
+    ],
+  },
+  {
+    name: "ANTS Travel Smart",
+    location: "Antarctica / International Operations",
+    logo: "/logo_antstravelsmart.jpeg",
+    image: "/card_antstravelsmart.jpeg",
+    accent: "blue",
+    website: "https://antstravelsmart.com",
+    instagram: "https://www.instagram.com/antstravelsmart",
+    services: [
+      "Antarctica Expeditions",
+      "International Travel",
+      "Custom Programs",
+      "Polar Logistics & Support",
+      "Safety & Experience",
+    ],
+  },
+];
 
 export default function Network() {
-  const { language } = useLanguage();
-  const isEs = language === "es";
-
-  const partners = [
-    {
-      name: "DC LifeSafe Global",
-      location: "Colorado, USA",
-      logo: "/logo_principal.png",
-      image: "/network_dc_lifesafe.jpg",
-      color: "orange",
-      services: [
-        "Wilderness Medicine",
-        "Training & Education",
-        "Expedition Leadership",
-        "Resilience & Wellbeing",
-        "Photography & Storytelling",
-      ],
-      website: "https://www.dclifesafeglobal.com",
-      instagram: "",
-    },
-    {
-      name: "Viajeros Perú",
-      location: "Ancón, Lima, Perú",
-      logo: "/network_viajeros_logo.png",
-      image: "/network_viajeros.jpg",
-      color: "orange",
-      services: [
-        "Trekking & Hiking",
-        "Cultural Immersion",
-        "Adventure Travel",
-        "Multi-region Expeditions",
-        "Logistics & Support",
-      ],
-      website: "#",
-      instagram: "@viajerosperu",
-    },
-    {
-      name: "T Viajes",
-      location: "La Merced, Chanchamayo, Junín, Perú",
-      logo: "/network_tviajes_logo.png",
-      image: "/network_tviajes.jpg",
-      color: "green",
-      services: [
-        "Central Jungle Expeditions",
-        "Ecotourism & Nature",
-        "Indigenous Communities",
-        "Oxapampa – Villa Rica",
-        "Sustainable Experiences",
-      ],
-      website: "#",
-      instagram: "@tviajesperu",
-    },
-    {
-      name: "ANTS Travel Smart",
-      location: "Antarctica / International Operations",
-      logo: "/network_ants_logo.png",
-      image: "/network_ants.jpg",
-      color: "blue",
-      services: [
-        "Antarctica Expeditions",
-        "International Travel",
-        "Custom Programs",
-        "Polar Logistics & Support",
-        "Safety & Experience",
-      ],
-      website: "#",
-      instagram: "@antstravelsmart",
-    },
-  ];
-
   return (
-    <div className="network-page">
-      <section className="network-hero">
-        <div className="network-overlay">
-          <div className="container text-center">
-            <h1>
-              {isEs ? "Red Global de Expediciones" : "Global Expedition Network"}
-            </h1>
+    <>
+      <section
+        className="network-hero"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('/hero_global_expedition_network.png')",
+        }}
+      >
+        <div className="container network-hero-content">
+          <p className="network-kicker">Global Alliance</p>
+          <h1>Global Expedition Network</h1>
+          <div className="network-line" />
+          <p>
+            Trusted expedition organizations operating across mountains,
+            rainforests, polar environments, and wilderness regions.
+          </p>
+        </div>
+      </section>
 
-            <p>
-              {isEs
-                ? "Organizaciones aliadas que operan en montañas, selvas, regiones polares y destinos de aventura en las Américas y el mundo."
-                : "Trusted expedition organizations operating across mountains, rainforests, polar environments, and wilderness regions throughout the Americas and beyond."}
-            </p>
-          </div>
-
-          <div className="container network-grid">
+      <section className="section network-section">
+        <div className="container">
+          <div className="network-grid">
             {partners.map((partner) => (
-              <article className={`network-card ${partner.color}`} key={partner.name}>
-                <img src={partner.image} alt={partner.name} className="network-card-image" />
+              <article className="network-card" key={partner.name}>
+                <div
+                  className="network-card-image"
+                  style={{ backgroundImage: `url('${partner.image}')` }}
+                />
 
                 <div className="network-card-body">
-                  <img src={partner.logo} alt={partner.name} className="network-logo" />
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="network-logo"
+                  />
 
-                  <div className="network-location">
-                    <MapPin size={18} />
-                    <span>{partner.location}</span>
-                  </div>
+                  <h2>{partner.name}</h2>
 
-                  <ul>
+                  <p className="network-location">
+                    <MapPin size={17} />
+                    {partner.location}
+                  </p>
+
+                  <div className={`network-divider ${partner.accent}`} />
+
+                  <ul className="network-services">
                     {partner.services.map((service) => (
                       <li key={service}>
-                        <ShieldCheck size={17} />
+                        <ShieldCheck size={16} />
                         {service}
                       </li>
                     ))}
                   </ul>
 
-                  <a className="network-button" href={partner.website}>
-                    {partner.website === "#"
-                      ? isEs
-                        ? "Próximamente"
-                        : "Coming Soon"
-                      : isEs
-                      ? "Visitar web"
-                      : "Visit Website"}
-                  </a>
+                  <div className="network-actions">
+                    {partner.website && (
+                      <a
+                        className={`network-button ${partner.accent}`}
+                        href={partner.website}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Globe size={16} />
+                        Website
+                      </a>
+                    )}
 
-                  {partner.instagram && (
-                    <div className="network-instagram">
-                      <Instagram size={20} />
-                      {partner.instagram}
-                    </div>
-                  )}
+                    {partner.instagram && (
+                      <a
+                        className={`network-button outline ${partner.accent}`}
+                        href={partner.instagram}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Instagram size={16} />
+                        Instagram
+                      </a>
+                    )}
+                  </div>
                 </div>
               </article>
             ))}
@@ -134,49 +164,44 @@ export default function Network() {
         </div>
       </section>
 
-      <section className="network-mission">
-        <div className="container network-mission-grid">
-          <div>
-            <h2>{isEs ? "Una misión" : "One Mission"}</h2>
-            <h3>
-              {isEs
-                ? "Explorar. Aprender. Proteger. Inspirar."
-                : "Explore. Learn. Protect. Inspire."}
-            </h3>
+      <section className="section network-mission">
+        <div className="container network-mission-inner">
+          <div className="network-mission-text">
+            <p className="network-kicker">One Mission</p>
+            <h2>Explore. Learn. Protect. Inspire.</h2>
             <p>
-              {isEs
-                ? "Juntos creamos experiencias seguras, significativas y transformadoras en algunos de los lugares más extraordinarios del mundo."
-                : "Together, we create safe, meaningful, and transformative experiences in the world’s most extraordinary places."}
+              Together, we create safe, meaningful, and transformative
+              experiences in some of the world’s most extraordinary places.
             </p>
           </div>
 
           <div className="network-values">
             <div>
-              <Mountain />
-              <strong>{isEs ? "Explorar" : "Explore"}</strong>
-              <span>{isEs ? "Lugares con propósito" : "New places with purpose"}</span>
+              <Mountain size={34} />
+              <strong>Explore</strong>
+              <span>New places with purpose</span>
             </div>
 
             <div>
-              <BookOpen />
-              <strong>{isEs ? "Aprender" : "Learn"}</strong>
-              <span>{isEs ? "Conocimiento y habilidades" : "Knowledge & skills"}</span>
+              <Globe size={34} />
+              <strong>Learn</strong>
+              <span>Expand knowledge and skills</span>
             </div>
 
             <div>
-              <ShieldCheck />
-              <strong>{isEs ? "Proteger" : "Protect"}</strong>
-              <span>{isEs ? "Seguridad y responsabilidad" : "Safety & responsibility"}</span>
+              <Snowflake size={34} />
+              <strong>Protect</strong>
+              <span>Prioritize safety and responsibility</span>
             </div>
 
             <div>
-              <Users />
-              <strong>{isEs ? "Inspirar" : "Inspire"}</strong>
-              <span>{isEs ? "Personas y comunidades" : "People & communities"}</span>
+              <Leaf size={34} />
+              <strong>Inspire</strong>
+              <span>Empower people and communities</span>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
