@@ -66,3 +66,5 @@ const partners = [
     accent: "blue",
     website: "https://antstravelsmart.com",
     instagram: "https://www.instagram.com/
+],
+  },
