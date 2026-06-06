@@ -1,4 +1,4 @@
-:root {
+.:root {
   --bg: #f4f0f3;
   --surface: #ffffff;
   --text: #17263f;
@@ -1889,6 +1889,7 @@ textarea {
   color: #ffffff;
   border-color: #10213e;
   transform: translateY(-1px);
+}
 }
 
 /* ===== KIT NEWSLETTER MOBILE FIX ===== */
