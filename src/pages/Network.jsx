@@ -1,207 +1,254 @@
-import React from "react";
-import {
-  MapPin,
-  Globe,
-  Instagram,
-  Mountain,
-  Leaf,
-  Snowflake,
-  ShieldCheck,
-} from "lucide-react";
+/* =========================
+   Global Expedition Network
+========================= */
 
-const partners = [
-  {
-    name: "DC LifeSafe Global",
-    location: "Colorado, USA",
-    logo: "/logo_dclifesafeglobal.png",
-    image: "/card_dclifesafeglobal.png",
-    accent: "orange",
-    website: "https://www.dclifesafeglobal.com",
-    instagram: "https://www.instagram.com/dclifesafeglobal",
-    services: [
-      "Wilderness Medicine",
-      "Training & Education",
-      "Expedition Leadership",
-      "Resilience & Wellbeing",
-      "Photography & Storytelling",
-    ],
-  },
-  {
-    name: "Viajeros Perú",
-    location: "Ancón, Lima, Peru",
-    logo: "/logo_viajerosperu.png",
-    image: "/card_viajerosperu.png",
-    accent: "orange",
-    website: "https://viajerosperu.pe",
-    instagram: "https://www.instagram.com/viajerosperu",
-    services: [
-      "Trekking & Hiking",
-      "Cultural Immersion",
-      "Adventure Travel",
-      "Multi-region Expeditions",
-      "Logistics & Support",
-    ],
-  },
-  {
-    name: "T Viajes",
-    location: "La Merced, Chanchamayo, Peru",
-    logo: "/logo_tviajes.jpg",
-    image: "/card_tviajes.jpg",
-    accent: "green",
-    website: "",
-    instagram: "https://www.instagram.com/tviajesperu",
-    services: [
-      "Central Jungle Expeditions",
-      "Ecotourism & Nature",
-      "Indigenous Communities",
-      "Oxapampa – Villa Rica",
-      "Sustainable Experiences",
-    ],
-  },
-  {
-    name: "ANTS Travel Smart",
-    location: "Antarctica / International Operations",
-    logo: "/logo_antstravelsmart.jpeg",
-    image: "/card_antstravelsmart.jpeg",
-    accent: "blue",
-    website: "https://antstravelsmart.com",
-    instagram: "https://www.instagram.com/antstravelsmart",
-    services: [
-      "Antarctica Expeditions",
-      "International Travel",
-      "Custom Programs",
-      "Polar Logistics & Support",
-      "Safety & Experience",
-    ],
-  },
-];
+.network-hero {
+  min-height: 560px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
 
-export default function Network() {
-  return (
-    <>
-      <section
-        className="network-hero"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)), url('/hero_global_expedition_network.png')",
-        }}
-      >
-        <div className="container network-hero-content">
-          <p className="network-kicker">Global Alliance</p>
-          <h1>Global Expedition Network</h1>
-          <div className="network-line" />
-          <p>
-            Trusted expedition organizations operating across mountains,
-            rainforests, polar environments, and wilderness regions.
-          </p>
-        </div>
-      </section>
+.network-hero-content {
+  text-align: left;
+  max-width: 980px;
+}
 
-      <section className="section network-section">
-        <div className="container">
-          <div className="network-grid">
-            {partners.map((partner) => (
-              <article className="network-card" key={partner.name}>
-                <div
-                  className="network-card-image"
-                  style={{ backgroundImage: `url('${partner.image}')` }}
-                />
+.network-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #f28c28;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
 
-                <div className="network-card-body">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="network-logo"
-                  />
+.network-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
 
-                  <h2>{partner.name}</h2>
+.network-line {
+  width: 130px;
+  height: 3px;
+  background: #f28c28;
+  margin: 0 0 1.5rem;
+}
 
-                  <p className="network-location">
-                    <MapPin size={17} />
-                    {partner.location}
-                  </p>
+.network-hero p {
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  max-width: 900px;
+}
 
-                  <div className={`network-divider ${partner.accent}`} />
+.network-section {
+  background: #071018;
+}
 
-                  <ul className="network-services">
-                    {partner.services.map((service) => (
-                      <li key={service}>
-                        <ShieldCheck size={16} />
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
+.network-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
 
-                  <div className="network-actions">
-                    {partner.website && (
-                      <a
-                        className={`network-button ${partner.accent}`}
-                        href={partner.website}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Globe size={16} />
-                        Website
-                      </a>
-                    )}
+.network-card {
+  background: linear-gradient(180deg, #132330, #071018);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  color: #ffffff;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+}
 
-                    {partner.instagram && (
-                      <a
-                        className={`network-button outline ${partner.accent}`}
-                        href={partner.instagram}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <Instagram size={16} />
-                        Instagram
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+.network-card-image {
+  height: 210px;
+  background-size: cover;
+  background-position: center;
+}
 
-      <section className="section network-mission">
-        <div className="container network-mission-inner">
-          <div className="network-mission-text">
-            <p className="network-kicker">One Mission</p>
-            <h2>Explore. Learn. Protect. Inspire.</h2>
-            <p>
-              Together, we create safe, meaningful, and transformative
-              experiences in some of the world’s most extraordinary places.
-            </p>
-          </div>
+.network-card-body {
+  padding: 1.4rem;
+}
 
-          <div className="network-values">
-            <div>
-              <Mountain size={34} />
-              <strong>Explore</strong>
-              <span>New places with purpose</span>
-            </div>
+.network-logo {
+  width: 170px;
+  height: 100px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 0.8rem;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0.45rem;
+}
 
-            <div>
-              <Globe size={34} />
-              <strong>Learn</strong>
-              <span>Expand knowledge and skills</span>
-            </div>
+.network-card h2 {
+  color: #ffffff;
+  font-size: 1.45rem;
+  margin-bottom: 0.6rem;
+}
 
-            <div>
-              <Snowflake size={34} />
-              <strong>Protect</strong>
-              <span>Prioritize safety and responsibility</span>
-            </div>
+.network-location {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255,255,255,0.82);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
 
-            <div>
-              <Leaf size={34} />
-              <strong>Inspire</strong>
-              <span>Empower people and communities</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+.network-divider {
+  height: 3px;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 999px;
+}
+
+.network-divider.orange { background: #f28c28; }
+.network-divider.green { background: #6dbd45; }
+.network-divider.blue { background: #5ca9e6; }
+
+.network-services {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.4rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.network-services li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.88);
+  font-size: 0.95rem;
+}
+
+.network-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.network-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+.network-button.orange { background: #f28c28; }
+.network-button.green { background: #6dbd45; }
+.network-button.blue { background: #5ca9e6; }
+
+.network-button.outline {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.network-mission {
+  background: linear-gradient(135deg, #0a1720, #102a3a);
+  color: #ffffff;
+}
+
+.network-mission-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.network-mission h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.network-mission p {
+  color: rgba(255,255,255,0.82);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.network-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.network-values div {
+  border-left: 1px solid rgba(255,255,255,0.18);
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.network-values svg {
+  color: #f28c28;
+  margin-bottom: 0.8rem;
+}
+
+.network-values strong {
+  display: block;
+  color: #f28c28;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.network-values span {
+  display: block;
+  color: rgba(255,255,255,0.78);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1100px) {
+  .network-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .network-mission-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .network-hero {
+    min-height: 480px;
+    padding: 4rem 0;
+  }
+
+  .network-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .network-card-image {
+    height: 220px;
+  }
+
+  .network-logo {
+    width: 180px;
+    height: 110px;
+  }
+
+  .network-values {
+    grid-template-columns: 1fr;
+  }
+
+  .network-values div {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.18);
+  }
 }
