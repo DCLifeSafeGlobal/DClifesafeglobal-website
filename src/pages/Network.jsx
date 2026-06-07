@@ -10,23 +10,25 @@ import {
 } from "lucide-react";
 
 const partners = [
-  {
-    name: "DC LifeSafe Global",
-    location: "Colorado, USA",
-    logo: "/logo_dclifesafeglobal_expeditions.png",
-    image: "/card_global_expedition_network.png",
-    accent: "orange",
-    website: "https://www.dclifesafeglobal.com",
-    instagram: "https://www.instagram.com/dclifesafeglobal",
-    services: [
-      "Wilderness Medicine",
-      "Training & Education",
-      "Expedition Leadership",
-      "Resilience & Wellbeing",
-      "Photography & Storytelling",
-    ],
-  },
-  {
+ 
+ {
+  name: "DC LifeSafe Global",
+  location: "Colorado, USA",
+  logo: "/logo_dclifesafeglobal_expeditions.png",
+  image: "/card_dclifesafeglobal.png",
+  accent: "orange",
+  website: "https://www.dclifesafeglobal.com",
+  instagram: "https://www.instagram.com/dclifesafeglobal",
+  services: [
+    "Wilderness Medicine",
+    "Training & Education",
+    "Expedition Leadership",
+    "Resilience & Wellbeing",
+    "Photography & Storytelling",
+  ],
+},
+  
+{
     name: "Viajeros Perú",
     location: "Ancón, Lima, Peru",
     logo: "/logo_viajerosperu.png",
