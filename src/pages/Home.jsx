@@ -130,3 +130,12 @@ export default function Home() {
     </>
   );
 }
+
+{
+  title: "Global Expedition Network",
+  image: "/hero_global_expedition_network.png",
+  description:
+    "International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.",
+  buttonText: "Explore GEN",
+  link: "/network",
+}
