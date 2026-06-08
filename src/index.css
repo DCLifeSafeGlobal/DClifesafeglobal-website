@@ -2054,7 +2054,7 @@ textarea {
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 850px) {
   .network-grid {
     grid-template-columns: 1fr;
   }
@@ -2064,8 +2064,8 @@ textarea {
   }
 
   .network-logo {
-    max-width: 135px !important;
-    max-height: 65px !important;
+    max-width: 235px !important;
+    max-height: 105px !important;
   }
 
   .network-values {
