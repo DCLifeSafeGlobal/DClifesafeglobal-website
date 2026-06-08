@@ -96,6 +96,24 @@ export default function Home() {
               </Link>
             </article>
 
+{
+  <article className='feature-card home-feature-card' style={cardStyle}>
+  <h2>{genTitle}</h2>
+
+  <img
+    src='/hero_global_expedition_network.png'
+    alt='Global Expedition Network'
+    className='feature-thumb'
+    loading='lazy'
+  />
+
+  <p>{genText}</p>
+
+  <Link to='/network' className='btn' style={buttonStyle}>
+    {genBtn}
+  </Link>
+</article>
+            
           </div>
         </div>
       </section>
@@ -130,3 +148,4 @@ export default function Home() {
     </>
   );
 }
+
