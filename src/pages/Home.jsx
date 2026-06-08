@@ -38,13 +38,6 @@ const genBtn =
 
 
 
-  const genBtn =
-  language === 'en'
-    ? 'Explore GEN'
-    : 'Explorar GEN';
-
-
-
   const pillars = [
     { icon: Shield, title: t.expertTraining },
     { icon: HeartPulse, title: t.emotionalResilience },
