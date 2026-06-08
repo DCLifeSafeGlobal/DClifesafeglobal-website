@@ -37,7 +37,6 @@ const genBtn =
     : 'Explorar GEN';
 
 
-
   const pillars = [
     { icon: Shield, title: t.expertTraining },
     { icon: HeartPulse, title: t.emotionalResilience },
