@@ -119,6 +119,14 @@ export default function Home() {
               </Link>
             </article>
 
+<h2>{t.gen}</h2>
+
+<p>{t.genText}</p>
+
+<Link to='/network' className='btn' style={buttonStyle}>
+  {t.genBtn}
+</Link>
+            
           </div>
         </div>
       </section>
