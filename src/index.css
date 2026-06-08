@@ -1765,9 +1765,11 @@ textarea {
 /* HOME CARD ALIGNMENT FIX */
 
 .home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
   align-items: stretch;
 }
-
 .home-feature-card {
   display: flex;
   flex-direction: column;
