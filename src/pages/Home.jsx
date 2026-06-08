@@ -20,17 +20,19 @@ export default function Home() {
     alignSelf: 'center',
   };
 
-  const genTitle =
-    language === 'en'
-      ? 'Global Expedition Network'
-      : 'Red Global de Expediciones';
 
-  const genText =
-    language === 'en'
-      ? 'International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.'
-      : 'Alianzas internacionales, apoyo expedicionario, liderazgo outdoor, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.';
+const genText =
+  language === 'en'
+    ? 'International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.'
+    : 'Alianzas internacionales, apoyo expedicionario, liderazgo wilderness, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.';
 
-  const genBtn = language === 'en' ? 'Explore GEN' : 'Explorar GEN';
+
+  const genBtn =
+  language === 'en'
+    ? 'Explore GEN'
+    : 'Explorar GEN';
+
+
 
   const pillars = [
     { icon: Shield, title: t.expertTraining },
