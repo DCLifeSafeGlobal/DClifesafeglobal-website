@@ -20,6 +20,11 @@ export default function Home() {
     alignSelf: 'center',
   };
 
+const genTitle =
+  language === 'en'
+    ? 'Global Expedition Network'
+    : 'Red Global de Expediciones';
+
 
 const genText =
   language === 'en'
