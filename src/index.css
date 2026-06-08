@@ -1956,13 +1956,13 @@ textarea {
 .network-logo {
   display: block !important;
   width: auto !important;
-  max-width: 110px !important;
-  max-height: 48px !important;
+  max-width: 150px !important;
+  max-height: 88px !important;
   object-fit: contain !important;
   object-position: left center !important;
   background: transparent !important;
   padding: 0 !important;
-  margin: 0 0 14px 0 !important;
+  margin: 0 0 34px 0 !important;
 }
 
 .network-card h2 {
