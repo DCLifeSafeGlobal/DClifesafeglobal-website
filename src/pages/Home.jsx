@@ -151,7 +151,7 @@ export default function Home() {
         </div>
       </section>
     </>
-  );
+  
 
   <h2>{t.gen}</h2>
 
@@ -161,5 +161,5 @@ export default function Home() {
   {t.genBtn}
 </Link>
   
-  
+);  
 }
