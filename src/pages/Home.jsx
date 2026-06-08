@@ -105,7 +105,7 @@ export default function Home() {
               </Link>
             </article>
 
-            <article className='feature-card home-feature-card' style={cardStyle}>
+           <article className='feature-card home-feature-card gen-card' style={cardStyle}>
               <h2>{genTitle}</h2>
               <img
                 src='/hero_global_expedition_network.png'
