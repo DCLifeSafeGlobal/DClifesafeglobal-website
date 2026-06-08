@@ -20,6 +20,15 @@ export default function Home() {
     alignSelf: 'center',
   };
 
+  const genTitle = 'Global Expedition Network';
+
+  const genText =
+    language === 'en'
+      ? 'International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.'
+      : 'Alianzas internacionales, apoyo expedicionario, liderazgo wilderness, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.';
+
+  const genBtn = language === 'en' ? 'Explore GEN' : 'Explorar GEN';
+
   const pillars = [
     { icon: Shield, title: t.expertTraining },
     { icon: HeartPulse, title: t.emotionalResilience },
@@ -53,7 +62,7 @@ export default function Home() {
 
       <section className='section'>
         <div className='container'>
-          <div className='card-grid columns-4 home-feature-grid'>
+          <div className='card-grid home-feature-grid'>
 
             <article className='feature-card home-feature-card' style={cardStyle}>
               <h2>{t.wellness}</h2>
@@ -96,24 +105,20 @@ export default function Home() {
               </Link>
             </article>
 
-{
-  <article className='feature-card home-feature-card' style={cardStyle}>
-  <h2>{genTitle}</h2>
+            <article className='feature-card home-feature-card' style={cardStyle}>
+              <h2>{genTitle}</h2>
+              <img
+                src='/hero_global_expedition_network.png'
+                alt='Global Expedition Network'
+                className='feature-thumb'
+                loading='lazy'
+              />
+              <p>{genText}</p>
+              <Link to='/network' className='btn' style={buttonStyle}>
+                {genBtn}
+              </Link>
+            </article>
 
-  <img
-    src='/hero_global_expedition_network.png'
-    alt='Global Expedition Network'
-    className='feature-thumb'
-    loading='lazy'
-  />
-
-  <p>{genText}</p>
-
-  <Link to='/network' className='btn' style={buttonStyle}>
-    {genBtn}
-  </Link>
-</article>
-            
           </div>
         </div>
       </section>
@@ -142,10 +147,9 @@ export default function Home() {
 
       <section id='newsletter' className='section'>
         <div className='container'>
-         {language === 'en' ? <NewsletterForm /> : <NewsletterFormES />}
+          {language === 'en' ? <NewsletterForm /> : <NewsletterFormES />}
         </div>
       </section>
     </>
   );
 }
-
