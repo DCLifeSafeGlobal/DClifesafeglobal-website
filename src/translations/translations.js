@@ -302,9 +302,17 @@ network: "Network",
       yourMessage: "Your Message",
 
       sendBtn: "Send Message",
-    },
+    
+  gen: "Global Expedition Network",
+
+genText:
+  "International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.",
+
+genBtn: "Explore GEN",
+},
   },
 
+  
   es: {
     nav: {
       home: "Inicio",
@@ -608,6 +616,13 @@ network: "Red Global",
       yourMessage: "Tu mensaje",
 
       sendBtn: "Enviar mensaje",
-    },
+        },
+
+    gen: "Red Global de Expediciones",
+
+genText:
+  "Alianzas internacionales, apoyo a expediciones, liderazgo outdoor, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.",
+
+genBtn: "Explorar GEN",
   },
 };
