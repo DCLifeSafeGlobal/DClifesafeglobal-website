@@ -20,12 +20,15 @@ export default function Home() {
     alignSelf: 'center',
   };
 
-  const genTitle = 'Global Expedition Network';
+  const genTitle =
+    language === 'en'
+      ? 'Global Expedition Network'
+      : 'Red Global de Expediciones';
 
   const genText =
     language === 'en'
       ? 'International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.'
-      : 'Alianzas internacionales, apoyo expedicionario, liderazgo wilderness, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.';
+      : 'Alianzas internacionales, apoyo expedicionario, liderazgo outdoor, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.';
 
   const genBtn = language === 'en' ? 'Explore GEN' : 'Explorar GEN';
 
@@ -105,11 +108,11 @@ export default function Home() {
               </Link>
             </article>
 
-           <article className='feature-card home-feature-card gen-card' style={cardStyle}>
+            <article className='feature-card home-feature-card gen-card' style={cardStyle}>
               <h2>{genTitle}</h2>
               <img
                 src='/hero_global_expedition_network.png'
-                alt='Global Expedition Network'
+                alt={genTitle}
                 className='feature-thumb'
                 loading='lazy'
               />
@@ -119,14 +122,6 @@ export default function Home() {
               </Link>
             </article>
 
-<h2>{t.gen}</h2>
-
-<p>{t.genText}</p>
-
-<Link to='/network' className='btn' style={buttonStyle}>
-  {t.genBtn}
-</Link>
-            
           </div>
         </div>
       </section>
@@ -159,6 +154,5 @@ export default function Home() {
         </div>
       </section>
     </>
- 
-);  
+  );
 }
