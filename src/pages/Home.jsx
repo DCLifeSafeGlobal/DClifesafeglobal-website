@@ -66,4 +66,106 @@ export default function Home() {
       <section className='section'>
         <div className='container'>
           <div className='card-grid home-feature-grid'>
-            <article className
+            <article className='feature-card home-feature-card' style={cardStyle}>
+              <h2>{t.wellness}</h2>
+              <img
+                src='/card_home_wellness.png'
+                alt={t.wellness}
+                className='feature-thumb'
+                loading='lazy'
+              />
+              <p>{t.wellnessText}</p>
+              <Link to='/wellness' className='btn' style={buttonStyle}>
+                {t.wellnessBtn}
+              </Link>
+            </article>
+
+            <article className='feature-card home-feature-card' style={cardStyle}>
+              <h2>{t.training}</h2>
+              <img
+                src='/card_home_training.png'
+                alt={t.training}
+                className='feature-thumb'
+                loading='lazy'
+              />
+              <p>{t.trainingText}</p>
+              <Link to='/training' className='btn' style={buttonStyle}>
+                {t.trainingBtn}
+              </Link>
+            </article>
+
+            <article className='feature-card home-feature-card' style={cardStyle}>
+              <h2>{t.outdoor}</h2>
+              <img
+                src='/card_home_outdoor.png'
+                alt={t.outdoor}
+                className='feature-thumb'
+                loading='lazy'
+              />
+              <p>{t.outdoorText}</p>
+              <Link to='/outdoor' className='btn' style={buttonStyle}>
+                {t.outdoorBtn}
+              </Link>
+            </article>
+
+            <article className='feature-card home-feature-card' style={cardStyle}>
+              <h2>{t.visuals}</h2>
+              <img
+                src='/dcp_visuals/netherlands/amsterdam/dcp_amsterdam_canal_panorama.jpg'
+                alt={t.visuals}
+                className='feature-thumb'
+                loading='lazy'
+              />
+              <p>{t.visualsText}</p>
+              <Link to='/visuals' className='btn' style={buttonStyle}>
+                {t.visualsBtn}
+              </Link>
+            </article>
+
+            <article className='feature-card home-feature-card gen-card' style={cardStyle}>
+              <h2>{genTitle}</h2>
+              <img
+                src='/hero_global_expedition_network.png'
+                alt={genTitle}
+                className='feature-thumb'
+                loading='lazy'
+              />
+              <p>{genText}</p>
+              <Link to='/network' className='btn' style={buttonStyle}>
+                {genBtn}
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className='section soft-section'>
+        <div className='container text-center'>
+          <h2 className='section-title'>{t.why}</h2>
+          <p className='section-subtitle'>{t.whySub}</p>
+
+          <div className='icon-row'>
+            {pillars.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div key={item.title} className='icon-item'>
+                  <div className='icon-circle'>
+                    <Icon size={38} />
+                  </div>
+                  <span>{item.title}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id='newsletter' className='section'>
+        <div className='container'>
+          {language === 'en' ? <NewsletterForm /> : <NewsletterFormES />}
+        </div>
+      </section>
+    </>
+  );
+}
