@@ -2072,3 +2072,48 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==================================
+   HOME - 5 CARDS SAME ROW
+================================== */
+
+.home-feature-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+}
+
+.home-feature-card {
+  display: grid !important;
+  grid-template-rows: 70px 230px 180px 60px !important;
+}
+
+.home-feature-card h2 {
+  font-size: 1.9rem !important;
+  line-height: 1.05 !important;
+  padding: 10px 12px !important;
+}
+
+.gen-card h2 {
+  font-size: 1.45rem !important;
+  line-height: 1.05 !important;
+}
+
+@media (max-width: 1400px) {
+  .home-feature-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-feature-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .home-feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
