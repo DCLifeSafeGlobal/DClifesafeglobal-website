@@ -49,8 +49,8 @@
   opacity: 0.92;
 }
 
-.visuals-btn {
-  margin-top: 30px;
+.visuals-hero-btn {
+  margin-top: 40px;
 
   display: inline-flex;
   align-items: center;
@@ -67,19 +67,15 @@
   color: #000;
   text-decoration: none;
   font-size: 14px;
+  font-weight: 800;
   letter-spacing: 1px;
 
-   position: relative;
-  z-index: 5;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
 
- position: relative;
-  z-index: 5;
-}
-
-
-.visuals-btn:hover {
-  background: rgba(255,255,255,0.08);
+.visuals-hero-btn:hover {
+  background: #d8b86f;
   transform: translateY(-2px);
 }
 
