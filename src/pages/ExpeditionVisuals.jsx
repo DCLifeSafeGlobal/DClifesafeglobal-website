@@ -139,12 +139,12 @@ export default function ExpeditionVisuals() {
             {t.heroText}
           </p>
 
-          <a
-            href="#expeditions"
-            className="visuals-btn"
-          >
-            {t.exploreBtn}
-          </a>
+       <a
+  href="#expeditions"
+  className="visuals-hero-btn"
+>
+  {t.exploreBtn}
+</a>
 
         </div>
 
