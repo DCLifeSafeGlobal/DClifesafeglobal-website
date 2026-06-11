@@ -2137,3 +2137,26 @@ textarea {
     margin-top: 8px;
   }
 }
+
+
+/* HEADER SIZE FIX */
+
+.header-inner {
+  min-height: 110px !important;
+}
+
+.brand-logo {
+  height: 115px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 820px) {
+  .header-inner {
+    min-height: 104px !important;
+  }
+
+  .brand-logo {
+    height: 95px !important;
+  }
+}
