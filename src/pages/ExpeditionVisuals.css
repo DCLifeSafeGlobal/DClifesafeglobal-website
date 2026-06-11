@@ -24,13 +24,14 @@
   flex-direction: column;
   justify-content: center;
 
-  padding-left: 8%;
-  padding-right: 8%;
+  padding: 90px 8% 80px;
 }
 
 .visuals-logo {
   width: 180px;
+  margin-top: 20px;
   margin-bottom: 28px;
+  display: block;
 }
 
 .visuals-hero-content h1 {
