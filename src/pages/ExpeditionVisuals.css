@@ -50,7 +50,7 @@
 }
 
 .visuals-btn {
-  margin-top: 40px;
+  margin-top: 140px;
 
   display: inline-flex;
   align-items: center;
@@ -63,14 +63,20 @@
   border: 1px solid rgba(255,255,255,0.25);
   border-radius: 999px;
 
-  color: white;
+  background: #c8a96b;
+  color: #000;
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 1px;
 
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+   position: relative;
+  z-index: 5;
 }
+
+ position: relative;
+  z-index: 5;
+}
+
 
 .visuals-btn:hover {
   background: rgba(255,255,255,0.08);
