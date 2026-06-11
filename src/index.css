@@ -2160,3 +2160,32 @@ textarea {
     height: 95px !important;
   }
 }
+
+/* NETWORK VALUES SPACING FIX */
+
+.network-values div {
+  display: grid;
+  grid-template-columns: 54px auto;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 4px;
+  text-align: left;
+}
+
+.network-values svg {
+  grid-row: span 2;
+}
+
+.network-values strong {
+  margin-right: 10px;
+}
+
+.network-values span {
+  display: block;
+}
+
+@media (max-width: 650px) {
+  .network-values div {
+    grid-template-columns: 54px 1fr;
+  }
+}
