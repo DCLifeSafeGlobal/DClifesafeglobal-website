@@ -10,8 +10,7 @@ export default function WildlifeVisuals() {
 
   const images = [
 
-   const images = [
-
+  
   `${amsterdamPath}/amsterdam_heron_reflection.jpg`,
   `${amsterdamPath}/amsterdam_duck_reflection.jpg`,
   `${amsterdamPath}/dcp_amsterdam_zebra_close.jpg`,
