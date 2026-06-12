@@ -29,8 +29,7 @@ export default function WildlifeVisuals() {
   "/dcp_visuals/Wildlife/wildlife-twelve-spotted-skimmer-dragonfly-aurora-20230603.jpg",
 const wildlifePath = "/dcp_visuals/Wildlife";
 
-const images = [
-  `${wildlifePath}/wildlife-american-avocet-shorebird-pond-20230619.jpg`,
+ {wildlifePath}/wildlife-american-avocet-shorebird-pond-20230619.jpg`,
   `${wildlifePath}/wildlife-american-avocets-pond-20230619.jpg`,
   `${wildlifePath}/wildlife-black-crowned-night-heron-marsh-20230606.jpg`,
 
