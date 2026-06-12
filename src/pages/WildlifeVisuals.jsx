@@ -13,13 +13,10 @@ export default function WildlifeVisuals() {
 
   const images = [
 
-    // Originales
-
-    `${amsterdamPath}/amsterdam_heron_reflection.jpg`,
+    // 
     `${amsterdamPath}/amsterdam_duck_reflection.jpg`,
     `${amsterdamPath}/dcp_amsterdam_zebra_close.jpg`,
-    `${amsterdamPath}/dcp_amsterdam_zebra.jpg`,
-    `${barcelonaPath}/barcelona_bird_closeup.jpg`,
+    `${amsterdamPath}/barcelona_bird_closeup.jpg`,
 
     // Wildlife Set 1
 
