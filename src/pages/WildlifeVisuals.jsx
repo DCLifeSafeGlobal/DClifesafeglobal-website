@@ -10,18 +10,26 @@ export default function WildlifeVisuals() {
 
   const images = [
 
-    `${amsterdamPath}/amsterdam_heron_reflection.jpg`,
+   const images = [
 
-    `${amsterdamPath}/amsterdam_duck_reflection.jpg`,
+  `${amsterdamPath}/amsterdam_heron_reflection.jpg`,
+  `${amsterdamPath}/amsterdam_duck_reflection.jpg`,
+  `${amsterdamPath}/dcp_amsterdam_zebra_close.jpg`,
+  `${amsterdamPath}/dcp_amsterdam_zebra.jpg`,
+  `${barcelonaPath}/barcelona_bird_closeup.jpg`,
 
-    `${amsterdamPath}/dcp_amsterdam_zebra_close.jpg`,
+  "/dcp_visuals/Wildlife/wildlife-american-avocet-shorebird-pond-20230619.jpg",
+  "/dcp_visuals/Wildlife/wildlife-american-avocets-pond-20230619.jpg",
+  "/dcp_visuals/Wildlife/wildlife-black-crowned-night-heron-marsh-20230606.jpg",
+  "/dcp_visuals/Wildlife/wildlife-canada-geese-golden-light-20230628.jpg",
+  "/dcp_visuals/Wildlife/wildlife-canada-goose-family-lake-20230628.jpg",
+  "/dcp_visuals/Wildlife/wildlife-garter-snake-aurora-20230602.jpg",
+  "/dcp_visuals/Wildlife/wildlife-raptor-tree-silhouette-20230628.jpg",
+  "/dcp_visuals/Wildlife/wildlife-red-eared-slider-turtle-pond-20230619.jpg",
+  "/dcp_visuals/Wildlife/wildlife-squirrels-tree-aurora-20230620.jpg",
+  "/dcp_visuals/Wildlife/wildlife-twelve-spotted-skimmer-dragonfly-aurora-20230603.jpg",
 
-    `${amsterdamPath}/dcp_amsterdam_zebra.jpg`,
-
-    `${barcelonaPath}/barcelona_bird_closeup.jpg`,
-
-  ];
-
+];
   return (
     <div
       style={{
@@ -104,55 +112,3 @@ export default function WildlifeVisuals() {
   );
 }
 
-const wildlifeImages = [
-  {
-    title: "American Avocet",
-    location: "Pond Wildlife",
-    image: "/dcp_visuals/Wildlife/wildlife-american-avocet-shorebird-pond-20230619.jpg",
-  },
-  {
-    title: "American Avocets",
-    location: "Pond Wildlife",
-    image: "/dcp_visuals/Wildlife/wildlife-american-avocets-pond-20230619.jpg",
-  },
-  {
-    title: "Black-crowned Night Heron",
-    location: "Marsh Wildlife",
-    image: "/dcp_visuals/Wildlife/wildlife-black-crowned-night-heron-marsh-20230606.jpg",
-  },
-  {
-    title: "Canada Geese",
-    location: "Golden Light",
-    image: "/dcp_visuals/Wildlife/wildlife-canada-geese-golden-light-20230628.jpg",
-  },
-  {
-    title: "Canada Goose Family",
-    location: "Lake Wildlife",
-    image: "/dcp_visuals/Wildlife/wildlife-canada-goose-family-lake-20230628.jpg",
-  },
-  {
-    title: "Garter Snake",
-    location: "Aurora, Colorado",
-    image: "/dcp_visuals/Wildlife/wildlife-garter-snake-aurora-20230602.jpg",
-  },
-  {
-    title: "Raptor Silhouette",
-    location: "Tree Wildlife",
-    image: "/dcp_visuals/Wildlife/wildlife-raptor-tree-silhouette-20230628.jpg",
-  },
-  {
-    title: "Red-eared Slider Turtle",
-    location: "Pond Wildlife",
-    image: "/dcp_visuals/Wildlife/wildlife-red-eared-slider-turtle-pond-20230619.jpg",
-  },
-  {
-    title: "Squirrels",
-    location: "Aurora, Colorado",
-    image: "/dcp_visuals/Wildlife/wildlife-squirrels-tree-aurora-20230620.jpg",
-  },
-  {
-    title: "Twelve-spotted Skimmer Dragonfly",
-    location: "Aurora, Colorado",
-    image: "/dcp_visuals/Wildlife/wildlife-twelve-spotted-skimmer-dragonfly-aurora-20230603.jpg",
-  },
-];
