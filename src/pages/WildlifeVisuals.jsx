@@ -27,7 +27,25 @@ export default function WildlifeVisuals() {
   "/dcp_visuals/Wildlife/wildlife-red-eared-slider-turtle-pond-20230619.jpg",
   "/dcp_visuals/Wildlife/wildlife-squirrels-tree-aurora-20230620.jpg",
   "/dcp_visuals/Wildlife/wildlife-twelve-spotted-skimmer-dragonfly-aurora-20230603.jpg",
+const wildlifePath = "/dcp_visuals/Wildlife";
 
+const images = [
+  `${wildlifePath}/wildlife-american-avocet-shorebird-pond-20230619.jpg`,
+  `${wildlifePath}/wildlife-american-avocets-pond-20230619.jpg`,
+  `${wildlifePath}/wildlife-black-crowned-night-heron-marsh-20230606.jpg`,
+
+  `${wildlifePath}/wildlife-bobcat-close-urban-walkway-20250927.jpg`,
+  `${wildlifePath}/wildlife-bobcat-urban-walkway-20250927.jpg`,
+  `${wildlifePath}/wildlife-alligator-overhead-20250531.jpg`,
+  `${wildlifePath}/wildlife-bighorn-sheep-rocks-20250531.jpg`,
+  `${wildlifePath}/wildlife-monarch-butterfly-close-20240811.jpg`,
+  `${wildlifePath}/wildlife-red-fox-rocks-realistic-20240930.jpg`,
+  `${wildlifePath}/wildlife-white-storks-nest-rooftop-20240618.jpg`,
+  `${wildlifePath}/wildlife-canada-goose-reflection-20240518.jpg`,
+  `${wildlifePath}/wildlife-bald-eagle-branches-20241123.jpg`,
+  `${wildlifePath}/wildlife-bald-eagle-close-branches-20241123.jpg`,
+  `${wildlifePath}/wildlife-mule-deer-bucks-pine-forest-20240812.jpg`,
+  `${wildlifePath}/wildlife-sarus-crane-wetland-20240629.jpg`,
 ];
   return (
     <div
