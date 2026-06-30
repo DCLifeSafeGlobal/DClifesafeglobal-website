@@ -108,7 +108,19 @@ export default function ExpeditionVisuals() {
       image:
         `${redRocksPath}/dcp_redrocks_sunflower_macro.png`,
     },
-  ];
+  
+
+
+{
+  title: "Washington State",
+  subtitle: "Pacific Northwest",
+  image:
+    "/dcp_visuals/usa/washington_state/washington-state-seattle-skyline-elliott-bay-20221009.jpg",
+  link: "/visuals/washington-state",
+},
+
+
+];
 
   return (
 
