@@ -20,6 +20,7 @@ import BarcelonaVisual from './pages/BarcelonaVisual.jsx';
 
 import Network from './pages/Network.jsx';
 
+import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
 
 export default function App() {
   return (
@@ -62,6 +63,12 @@ export default function App() {
 <Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
           
 <Route path="/network" element={<Network />} />
+
+
+<Route
+  path="/visuals/washington-state"
+  element={<WashingtonStateVisual />}
+/>
 
 
         </Route>
