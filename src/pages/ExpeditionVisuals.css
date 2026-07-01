@@ -7,7 +7,7 @@
 /* HERO */
 
 .visuals-hero {
-  height: 92vh;
+  min-height: 78vh;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -17,28 +17,25 @@
 
 .visuals-hero-content {
   width: 100%;
-  height: 100%;
+  min-height: 78vh;
   background: rgba(0, 0, 0, 0.42);
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  padding: 90px 8% 80px;
+  padding: 70px 8%;
 }
 
 .visuals-logo {
   width: 180px;
-  margin-top: 220px;
-  margin-bottom: 228px;
+  margin: 0 0 32px 0;
   display: block;
 }
 
 .visuals-hero-content h1 {
-  font-size: 5rem;
+  font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.05;
-  margin-bottom: 1.4rem;
+  margin: 0 0 1.4rem;
   max-width: 900px;
 }
 
@@ -47,36 +44,7 @@
   max-width: 720px;
   line-height: 1.8;
   opacity: 0.92;
-}
-
-.visuals-hero-btn {
-  margin-top: 40px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: fit-content;
-
-  padding: 14px 28px;
-
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 999px;
-
-  background: #c8a96b;
-  color: #000;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1px;
-
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
-}
-
-.visuals-hero-btn:hover {
-  background: #d8b86f;
-  transform: translateY(-2px);
+  margin: 0;
 }
 
 /* SECTIONS */
@@ -91,20 +59,17 @@
 
 .visuals-section-header span {
   display: block;
-
   color: #d4af37;
-
   letter-spacing: 4px;
   text-transform: uppercase;
-
   font-size: 12px;
-
   margin-bottom: 14px;
 }
 
 .visuals-section-header h2 {
-  font-size: 3rem;
+  font-size: clamp(2.3rem, 5vw, 3rem);
   font-weight: 700;
+  margin: 0;
 }
 
 /* GRID */
@@ -117,16 +82,14 @@
 
 .visuals-card {
   position: relative;
-
   overflow: hidden;
-
   border-radius: 22px;
-
-  background: #111;
-
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+  min-height: 420px;
   text-decoration: none;
   color: white;
-
   transition: transform 0.35s ease;
 }
 
@@ -134,89 +97,47 @@
   transform: translateY(-6px);
 }
 
-.visuals-card img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
+.visuals-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.86),
+    rgba(0,0,0,0.12)
+  );
 }
 
 .visuals-card div {
   position: absolute;
+  z-index: 2;
   left: 0;
   right: 0;
   bottom: 0;
-
   padding: 28px;
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.82),
-    rgba(0,0,0,0)
-  );
 }
 
 .visuals-card h3 {
   font-size: 1.5rem;
-  margin-bottom: 8px;
+  margin: 0 0 8px;
 }
 
 .visuals-card p {
   opacity: 0.84;
   font-size: 0.95rem;
-}
-
-/* JOURNAL */
-
-.visuals-journal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-}
-
-.visuals-journal-card {
-  background: #111;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.visuals-journal-card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  display: block;
-}
-
-.visuals-journal-card div {
-  padding: 22px;
-}
-
-.visuals-journal-card span {
-  color: #d4af37;
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.visuals-journal-card h3 {
-  margin-top: 12px;
-  font-size: 1.4rem;
+  margin: 0;
 }
 
 /* FOOTER SECTION */
 
 .visuals-bottom {
   min-height: 55vh;
-
   background-size: cover;
   background-position: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   padding: 80px 30px;
 }
 
@@ -225,8 +146,8 @@
 }
 
 .visuals-bottom h2 {
-  font-size: 4rem;
-  margin-bottom: 22px;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin: 0 0 22px;
 }
 
 .visuals-bottom p {
@@ -238,14 +159,18 @@
 /* MOBILE */
 
 @media (max-width: 768px) {
+  .visuals-hero {
+    min-height: 74vh;
+  }
 
   .visuals-hero-content {
-    padding-left: 7%;
-    padding-right: 7%;
+    min-height: 74vh;
+    padding: 50px 7%;
   }
 
   .visuals-logo {
     width: 120px;
+    margin-bottom: 24px;
   }
 
   .visuals-hero-content h1 {
@@ -265,8 +190,8 @@
     font-size: 2.2rem;
   }
 
-  .visuals-card img {
-    height: 340px;
+  .visuals-card {
+    min-height: 340px;
   }
 
   .visuals-bottom h2 {
