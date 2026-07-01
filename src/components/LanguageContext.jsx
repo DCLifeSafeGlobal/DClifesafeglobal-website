@@ -3,7 +3,9 @@ import React, { createContext, useContext, useState } from "react";
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(
+  window.location.pathname.startsWith("/es") ? "es" : "en"
+);
 
   const toggleLanguage = () => {
     setLanguage((prev) => (prev === "en" ? "es" : "en"));
