@@ -18,6 +18,8 @@ import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
 import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
 import BarcelonaVisual from './pages/BarcelonaVisual.jsx';
 import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
+import RedRocksVisual from './pages/RedRocksVisual.jsx';
+
 
 import Network from './pages/Network.jsx';
 
