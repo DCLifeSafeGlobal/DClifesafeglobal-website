@@ -1,3 +1,4 @@
+import React from "react";
 const baselPath =
 "/dcp_visuals/switzerland/basel";
 
