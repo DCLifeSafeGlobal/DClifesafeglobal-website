@@ -25,6 +25,15 @@ export default function ExpeditionVisuals() {
     `${redRocksPath}/dcp_redrocks_valley_view.png`,
   link: "/visuals/red-rocks-colorado",
 },
+
+{
+  title: "Switzerland",
+  subtitle: "Basel",
+  image:
+    "/dcp_visuals/switzerland/basel/basel-switzerland-22-rhine-river-panorama.jpg",
+  link: "/visuals/basel",
+},
+
     
     {
       title: "Washington State",
@@ -52,6 +61,7 @@ export default function ExpeditionVisuals() {
     },
   ];
 
+  
   return (
     <div className="visuals-page">
       <section
