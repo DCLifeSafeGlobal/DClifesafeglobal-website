@@ -19,6 +19,7 @@ import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
 import BarcelonaVisual from './pages/BarcelonaVisual.jsx';
 import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
 import RedRocksVisual from './pages/RedRocksVisual.jsx';
+import BaselVisual from "./pages/BaselVisual.jsx";
 
 
 import Network from './pages/Network.jsx';
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="/visuals/wildlife" element={<WildlifeVisuals />} />
           <Route path="/visuals/washington-state" element={<WashingtonStateVisual />} />
           <Route path="/visuals/red-rocks-colorado" element={<RedRocksVisual />} />
+          <Route path="/visuals/basel" element={<BaselVisual />} />
 
           
           <Route path="/network" element={<Network />} />
