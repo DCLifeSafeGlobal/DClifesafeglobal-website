@@ -17,13 +17,15 @@ export default function ExpeditionVisuals() {
     translations.en.visualsPage;
 
   const expeditions = [
-  {
-  title: "USA",
+
+    {
+  title: "Red Rocks",
   subtitle: "Colorado",
   image:
     `${redRocksPath}/dcp_redrocks_valley_view.png`,
-  link: "/visuals/colorado",
+  link: "/visuals/red-rocks-colorado",
 },
+    
     {
       title: "Washington State",
       subtitle: "Pacific Northwest",
