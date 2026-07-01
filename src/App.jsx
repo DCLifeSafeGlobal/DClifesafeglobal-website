@@ -29,6 +29,7 @@ export default function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/es" element={<Home />} />
           <Route path="/wellness" element={<Wellness />} />
           <Route path="/training" element={<Training />} />
           <Route path="/outdoor" element={<Outdoor />} />
@@ -36,7 +37,9 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/workshops" element={<Workshops />} />
+          
 
+          
           <Route path="/visuals" element={<ExpeditionVisuals />} />
           <Route path="/expeditions" element={<ExpeditionVisuals />} />
           <Route path="/visuals/amsterdam" element={<AmsterdamVisual />} />
