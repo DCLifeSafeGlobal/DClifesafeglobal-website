@@ -17,10 +17,9 @@ import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
 import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
 import BarcelonaVisual from './pages/BarcelonaVisual.jsx';
+import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
 
 import Network from './pages/Network.jsx';
-
-import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
 
 export default function App() {
   return (
@@ -29,48 +28,23 @@ export default function App() {
 
       <Routes>
         <Route element={<Layout />}>
-
           <Route path="/" element={<Home />} />
-
           <Route path="/wellness" element={<Wellness />} />
-
           <Route path="/training" element={<Training />} />
-
           <Route path="/outdoor" element={<Outdoor />} />
-
           <Route path="/about" element={<About />} />
-
           <Route path="/contact" element={<Contact />} />
-
           <Route path="/resources" element={<Resources />} />
-
           <Route path="/workshops" element={<Workshops />} />
 
           <Route path="/visuals" element={<ExpeditionVisuals />} />
-
           <Route path="/expeditions" element={<ExpeditionVisuals />} />
+          <Route path="/visuals/amsterdam" element={<AmsterdamVisual />} />
+          <Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
+          <Route path="/visuals/wildlife" element={<WildlifeVisuals />} />
+          <Route path="/visuals/washington-state" element={<WashingtonStateVisual />} />
 
-          <Route
-            path="/visuals/amsterdam"
-            element={<AmsterdamVisual />}
-          />
-
-          <Route
-            path="/visuals/wildlife"
-            element={<WildlifeVisuals />}
-          />
-
-<Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
-          
-<Route path="/network" element={<Network />} />
-
-
-<Route
-  path="/visuals/washington-state"
-  element={<WashingtonStateVisual />}
-/>
-
-
+          <Route path="/network" element={<Network />} />
         </Route>
       </Routes>
     </>
