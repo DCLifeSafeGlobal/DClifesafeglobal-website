@@ -48,7 +48,7 @@ export default function App() {
           <Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
           <Route path="/visuals/wildlife" element={<WildlifeVisuals />} />
           <Route path="/visuals/washington-state" element={<WashingtonStateVisual />} />
-          <Route path="/visuals/red-rocks-colorado"  element={<RedRocksVisual />} />
+          <Route path="/visuals/red-rocks-colorado" element={<RedRocksVisual />} />
 
           
           <Route path="/network" element={<Network />} />
