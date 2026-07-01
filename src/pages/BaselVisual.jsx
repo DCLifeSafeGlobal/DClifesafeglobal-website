@@ -1,4 +1,9 @@
 import React from "react";
+
+const redRocksPath =
+  "/dcp_visuals/switzerland/basel";
+
+export default function baselvisuals() {
 const baselPath =
 "/dcp_visuals/switzerland/basel";
 
