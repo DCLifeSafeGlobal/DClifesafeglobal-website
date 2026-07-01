@@ -4,16 +4,28 @@ const redRocksPath =
   "/dcp_visuals/usa/colorado/colorado_springs/redrocks";
 
 export default function RedRocksVisual() {
+  
   const images = [
-    `${redRocksPath}/dcp_redrocks_valley_view.png`,
-    `${redRocksPath}/dcp_redrocks_deer_meadow.png`,
-    `${redRocksPath}/dcp_redrocks_formation_panorama.png`,
-    `${redRocksPath}/dcp_redrocks_lizard_macro.png`,
-    `${redRocksPath}/dcp_redrocks_stone_animalhead_01.png`,
-    `${redRocksPath}/dcp_redrocks_stone_animalhead_02.png`,
-    `${redRocksPath}/dcp_redrocks_sunflower_macro.png`,
-  ];
+  `${redRocksPath}/dcp_redrocks_valley_view.png`,
+  `${redRocksPath}/dcp_redrocks_deer_meadow.png`,
+  `${redRocksPath}/dcp_redrocks_formation_panorama.png`,
+  `${redRocksPath}/dcp_redrocks_lizard_macro.png`,
+  `${redRocksPath}/dcp_redrocks_stone_animalhead_01.png`,
+  `${redRocksPath}/dcp_redrocks_stone_animalhead_02.png`,
+  `${redRocksPath}/dcp_redrocks_sunflower_macro.png`,
 
+  `${redRocksPath}/colorado-red-rocks-view-mountains-2.png`,
+  `${redRocksPath}/colorado-red-rocks-bird.png`,
+  `${redRocksPath}/colorado-red-rocks-view-rock-2.png`,
+  `${redRocksPath}/colorado-red-rocks-view-rock.png`,
+  `${redRocksPath}/colorado-red-rocks-view-mountains.png`,
+  `${redRocksPath}/colorado-red-rocks-sunflower-macro.png`,
+
+  `${redRocksPath}/colorado-red-rocks-garden-of-the-gods-pikes-peak-panorama-20230722.jpg`,
+  `${redRocksPath}/colorado-red-rocks-garden-of-the-gods-red-ridge-20230722.jpg`,
+  `${redRocksPath}/colorado-red-rocks-road-tunnel-natural-arch-20240812.jpg`,
+  `${redRocksPath}/colorado-red-rocks-stone-formations-cloudy-sky-20240812.jpg`,
+];
   return (
     <div
       style={{
