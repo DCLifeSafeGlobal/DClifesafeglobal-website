@@ -59,8 +59,16 @@ export default function ExpeditionVisuals() {
       image: `${amsterdamPath}/amsterdam_heron_reflection.jpg`,
       link: "/visuals/wildlife",
     },
-  ];
+  
 
+{
+  title: "Boppard to Koblenz",
+  subtitle: "Rhine Bike Ride, Germany",
+  image:
+    "/dcp_visuals/germany/boppard_koblenz_bike_ride/boppard-koblenz-bike-ride-01-rhine-river-barge-panorama.jpg",
+  link: "/visuals/boppard-koblenz-bike-ride",
+},
+  ];
   
   return (
     <div className="visuals-page">
