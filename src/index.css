@@ -291,8 +291,9 @@ textarea {
 
 .feature-thumb {
   width: 100%;
-  aspect-ratio: 1.2 / 0.86;
+  height: 260px;
   object-fit: cover;
+  object-position: center 35%
 }
 
 .feature-card p {
