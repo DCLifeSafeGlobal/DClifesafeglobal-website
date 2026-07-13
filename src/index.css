@@ -293,7 +293,7 @@ textarea {
   width: 100%;
   height: 260px;
   object-fit: cover;
-  object-position: center 35%
+  object-position: center 15%
 }
 
 .feature-card p {
