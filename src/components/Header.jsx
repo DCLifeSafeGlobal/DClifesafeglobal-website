@@ -8,7 +8,10 @@ import { translations } from '../translations/translations.js';
 export default function Header() {
   const [open, setOpen] = React.useState(false);
   const { language } = useLanguage();
-  const t = translations[language].nav;
+
+  const t =
+    translations[language]?.nav ||
+    translations.en.nav;
 
   const navItems = [
     { to: '/', label: t.home, end: true },
@@ -16,15 +19,20 @@ export default function Header() {
     { to: '/training', label: t.training },
     { to: '/outdoor', label: t.outdoor },
     { to: '/visuals', label: t.visuals },
+    { to: '/learning-center', label: t.learningCenter },
     { to: '/about', label: t.about },
     { to: '/contact', label: t.contact },
- { to: '/network', label: t.network },
-];
+    { to: '/network', label: t.network },
+  ];
 
   return (
     <header className='header'>
       <div className='container header-inner'>
-        <NavLink to='/' className='brand'>
+        <NavLink
+          to='/'
+          className='brand'
+          onClick={() => setOpen(false)}
+        >
           <img
             src='/logo_principal.png'
             alt='DC LifeSafe Global'
@@ -33,14 +41,20 @@ export default function Header() {
         </NavLink>
 
         <button
+          type='button'
           className='mobile-toggle'
-          onClick={() => setOpen((v) => !v)}
-          aria-label='Toggle menu'
+          onClick={() => setOpen((currentValue) => !currentValue)}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls='primary-navigation'
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <nav className={`nav ${open ? 'nav-open' : ''}`}>
+        <nav
+          id='primary-navigation'
+          className={`nav ${open ? 'nav-open' : ''}`}
+        >
           {navItems.map((item) => (
             <NavLink
               key={item.to}
