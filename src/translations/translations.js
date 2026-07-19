@@ -6,9 +6,11 @@ export const translations = {
       training: "Training",
       outdoor: "Outdoor",
       visuals: "Visuals",
+      learningCenter: "Learning Center",
+      network: "Network",
       about: "About",
       contact: "Contact",
-network: "Network",
+
     },
 
     home: {
@@ -320,9 +322,11 @@ genBtn: "Explore GEN",
       training: "Entrenamiento",
       outdoor: "Outdoor",
       visuals: "Visuales",
+      learningCenter: "Centro de Aprendizaje",
+      network: "Red Global",
       about: "Acerca de",
       contact: "Contacto",
-network: "Red Global",
+
     },
 
     home: {
