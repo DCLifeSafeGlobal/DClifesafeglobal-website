@@ -1,10 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../components/LanguageContext.jsx';
 import { translations } from '../translations/translations.js';
 
 export default function Wellness() {
   const { language } = useLanguage();
-  const t = translations[language]?.wellnessPage || translations.en.wellnessPage;
+
+  const t =
+    translations[language]?.wellnessPage ||
+    translations.en.wellnessPage;
 
   return (
     <>
@@ -43,24 +47,32 @@ export default function Wellness() {
         <div className='container text-center'>
           <h2 className='section-title'>{t.toolsTitle}</h2>
 
-          <p className='section-subtitle narrow'>{t.toolsSubtitle}</p>
+          <p className='section-subtitle narrow'>
+            {t.toolsSubtitle}
+          </p>
 
           <div className='soft-panel three-tools'>
             <div className='tool-card'>
               <img src='/icon_calm.png' alt='' />
+
               <h3>{t.calmTitle}</h3>
+
               <p>{t.calmText}</p>
             </div>
 
             <div className='tool-card'>
               <img src='/icon_wave.png' alt='' />
+
               <h3>{t.waveTitle}</h3>
+
               <p>{t.waveText}</p>
             </div>
 
             <div className='tool-card'>
               <img src='/icon_resilience.png' alt='' />
+
               <h3>{t.resilienceTitle}</h3>
+
               <p>{t.resilienceText}</p>
             </div>
           </div>
@@ -78,9 +90,9 @@ export default function Wellness() {
 
                 <p>{t.workshopsText}</p>
 
-                <a className='btn' href='/workshops'>
+                <Link className='btn' to='/workshops'>
                   {t.workshopsBtn}
-                </a>
+                </Link>
               </div>
             </article>
 
@@ -96,9 +108,9 @@ export default function Wellness() {
 
                 <p>{t.resourcesText}</p>
 
-                <a className='btn' href='/resources'>
+                <Link className='btn' to='/learning-center'>
                   {t.resourcesBtn}
-                </a>
+                </Link>
               </div>
             </article>
           </div>
