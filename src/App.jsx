@@ -13,6 +13,8 @@ import Contact from './pages/Contact.jsx';
 import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
 
+import Surfviving from './pages/learning-center/Surfviving.jsx';
+
 import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
 import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
@@ -40,6 +42,11 @@ export default function App() {
           <Route path='/learning-center' element={<Resources />} />
 
           <Route
+            path='/learning-center/surfviving'
+            element={<Surfviving />}
+          />
+
+          <Route
             path='/resources'
             element={<Navigate to='/learning-center' replace />}
           />
@@ -53,14 +60,17 @@ export default function App() {
           <Route path='/visuals/amsterdam' element={<AmsterdamVisual />} />
           <Route path='/visuals/barcelona' element={<BarcelonaVisual />} />
           <Route path='/visuals/wildlife' element={<WildlifeVisuals />} />
+
           <Route
             path='/visuals/washington-state'
             element={<WashingtonStateVisual />}
           />
+
           <Route
             path='/visuals/red-rocks-colorado'
             element={<RedRocksVisual />}
           />
+
           <Route path='/visuals/basel' element={<BaselVisual />} />
 
           <Route path='/network' element={<Network />} />
