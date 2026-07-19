@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Layout from './components/Layout.jsx';
@@ -19,8 +19,7 @@ import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
 import BarcelonaVisual from './pages/BarcelonaVisual.jsx';
 import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
 import RedRocksVisual from './pages/RedRocksVisual.jsx';
-import BaselVisual from "./pages/BaselVisual.jsx";
-
+import BaselVisual from './pages/BaselVisual.jsx';
 
 import Network from './pages/Network.jsx';
 
@@ -31,29 +30,40 @@ export default function App() {
 
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/es" element={<Home />} />
-          <Route path="/wellness" element={<Wellness />} />
-          <Route path="/training" element={<Training />} />
-          <Route path="/outdoor" element={<Outdoor />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/workshops" element={<Workshops />} />
-          
+          <Route path='/' element={<Home />} />
+          <Route path='/es' element={<Home />} />
 
-          
-          <Route path="/visuals" element={<ExpeditionVisuals />} />
-          <Route path="/expeditions" element={<ExpeditionVisuals />} />
-          <Route path="/visuals/amsterdam" element={<AmsterdamVisual />} />
-          <Route path="/visuals/barcelona" element={<BarcelonaVisual />} />
-          <Route path="/visuals/wildlife" element={<WildlifeVisuals />} />
-          <Route path="/visuals/washington-state" element={<WashingtonStateVisual />} />
-          <Route path="/visuals/red-rocks-colorado" element={<RedRocksVisual />} />
-          <Route path="/visuals/basel" element={<BaselVisual />} />
+          <Route path='/wellness' element={<Wellness />} />
+          <Route path='/training' element={<Training />} />
+          <Route path='/outdoor' element={<Outdoor />} />
 
-          
-          <Route path="/network" element={<Network />} />
+          <Route path='/learning-center' element={<Resources />} />
+
+          <Route
+            path='/resources'
+            element={<Navigate to='/learning-center' replace />}
+          />
+
+          <Route path='/workshops' element={<Workshops />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+
+          <Route path='/visuals' element={<ExpeditionVisuals />} />
+          <Route path='/expeditions' element={<ExpeditionVisuals />} />
+          <Route path='/visuals/amsterdam' element={<AmsterdamVisual />} />
+          <Route path='/visuals/barcelona' element={<BarcelonaVisual />} />
+          <Route path='/visuals/wildlife' element={<WildlifeVisuals />} />
+          <Route
+            path='/visuals/washington-state'
+            element={<WashingtonStateVisual />}
+          />
+          <Route
+            path='/visuals/red-rocks-colorado'
+            element={<RedRocksVisual />}
+          />
+          <Route path='/visuals/basel' element={<BaselVisual />} />
+
+          <Route path='/network' element={<Network />} />
         </Route>
       </Routes>
     </>
