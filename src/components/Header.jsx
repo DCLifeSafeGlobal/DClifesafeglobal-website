@@ -20,9 +20,9 @@ export default function Header() {
     { to: '/outdoor', label: t.outdoor },
     { to: '/visuals', label: t.visuals },
     { to: '/learning-center', label: t.learningCenter },
+    { to: '/network', label: t.network },
     { to: '/about', label: t.about },
     { to: '/contact', label: t.contact },
-    { to: '/network', label: t.network },
   ];
 
   return (
