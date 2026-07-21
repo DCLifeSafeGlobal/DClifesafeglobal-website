@@ -2192,29 +2192,73 @@ textarea {
 }
 
 
+/* LEARNING CENTER */
+
+.learning-center-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 42px;
+}
+
 .learning-center-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  padding: 0;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgba(16, 42, 67, 0.1);
 }
 
 .learning-center-card-image {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
 }
 
-.learning-center-icon {
-  margin-top: 24px;
+.learning-center-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 26px;
+  text-align: center;
 }
 
-.learning-center-card h2,
-.learning-center-card p,
-.learning-center-card .btn {
-  margin-left: 24px;
-  margin-right: 24px;
+.learning-center-category {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.learning-center-card .btn {
-  margin-bottom: 24px;
+.learning-center-card h2 {
+  margin: 0 0 14px;
+}
+
+.learning-center-description {
+  margin: 0 0 24px;
+}
+
+.learning-center-card-content .btn {
+  margin-top: auto;
+}
+
+.coming-soon-card .learning-center-card-image {
+  opacity: 0.8;
+}
+
+.disabled-link {
+  pointer-events: none;
+  cursor: default;
+}
+
+@media (max-width: 800px) {
+  .learning-center-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-center-card-image {
+    height: 230px;
+  }
 }
