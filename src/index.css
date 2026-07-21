@@ -2190,3 +2190,31 @@ textarea {
     grid-template-columns: 54px 1fr;
   }
 }
+
+
+.learning-center-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.learning-center-card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.learning-center-icon {
+  margin-top: 24px;
+}
+
+.learning-center-card h2,
+.learning-center-card p,
+.learning-center-card .btn {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.learning-center-card .btn {
+  margin-bottom: 24px;
+}
