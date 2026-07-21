@@ -89,9 +89,9 @@ export default function Home() {
           <p className='hero-subtitle'>
             {t.heroSubtitle}
           </p>
-            </div>
+        </div>
+      </section>
 
-      
       <section className='section'>
         <div className='container'>
           <div className='card-grid home-feature-grid'>
