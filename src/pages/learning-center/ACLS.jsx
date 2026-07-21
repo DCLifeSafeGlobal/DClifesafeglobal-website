@@ -10,6 +10,7 @@ const sections = [
       ['Systematic Approach', '/learning-center/ACLS/acls-04-systematic-approach.png'],
       ['EKG Basics', '/learning-center/ACLS/acls-05-ekg-basics.png'],
       ['Cardiac Monitor Waves', '/learning-center/ACLS/acls-06-cardiac-monitor-waves.png'],
+      ['Capnography Waveforms A Crucial Assesstmenet Guide', '/learning-center/ACLS/acls-24-capnography-waveforms-a-crucial-assessment-guide.png'],
     ],
   },
 
