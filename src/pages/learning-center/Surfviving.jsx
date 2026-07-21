@@ -298,11 +298,7 @@ export default function Surfviving() {
           <div className='text-center'>
             <p className='page-eyebrow'>{t.eyebrow}</p>
 
-            <img
-              src='/logo_surfviving.png'
-              alt='Surfviving'
-              className='surfviving-learning-logo'
-            />
+           
 
             <h1 className='section-title'>{t.title}</h1>
 
