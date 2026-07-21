@@ -165,6 +165,13 @@ export default function Resources() {
                   }`}
                   key={program.id}
                 >
+                <img
+  src={program.image}
+  alt={program.title[currentLanguage]}
+  className='learning-center-card-image'
+  loading='lazy'
+/>
+                  
                   <div className='learning-center-icon'>
                     <Icon size={42} />
                   </div>
