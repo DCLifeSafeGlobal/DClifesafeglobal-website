@@ -14,6 +14,8 @@ import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
 
 import Surfviving from './pages/learning-center/Surfviving.jsx';
+import BLS from './pages/learning-center/BLS.jsx';
+import ACLS from './pages/learning-center/ACLS.jsx';
 
 import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
@@ -44,6 +46,16 @@ export default function App() {
           <Route
             path='/learning-center/surfviving'
             element={<Surfviving />}
+          />
+
+          <Route
+            path='/learning-center/bls'
+            element={<BLS />}
+          />
+
+          <Route
+            path='/learning-center/acls'
+            element={<ACLS />}
           />
 
           <Route
