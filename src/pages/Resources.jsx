@@ -1,17 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  HeartPulse,
-  Activity,
-  Waves,
-  Mountain,
-} from 'lucide-react';
 import { useLanguage } from '../components/LanguageContext.jsx';
 
 const programs = [
   {
     id: 'surfviving',
-    icon: Waves,
+    image: '/learning-center/surfviving-card.png',
     title: {
       en: 'Surfviving™',
       es: 'Surfviving™',
@@ -34,12 +28,11 @@ const programs = [
 
   {
     id: 'bls',
-    icon: HeartPulse,
+    image: '/learning-center/bls-card.png',
     title: {
-      en: 'Basic Life Support',
-      es: 'Soporte Vital Básico',
+      en: 'BLS: Basic Life Support',
+      es: 'BLS: Soporte Vital Básico',
     },
-    shortTitle: 'BLS',
     category: {
       en: 'CPR, AED & Emergency Response',
       es: 'CPR, AED y respuesta a emergencias',
@@ -58,12 +51,11 @@ const programs = [
 
   {
     id: 'acls',
-    icon: Activity,
+    image: '/learning-center/acls-card.png',
     title: {
-      en: 'Advanced Cardiac Life Support',
-      es: 'Soporte Vital Cardiovascular Avanzado',
+      en: 'ACLS: Advanced Cardiac Life Support',
+      es: 'ACLS: Soporte Vital Cardiovascular Avanzado',
     },
-    shortTitle: 'ACLS',
     category: {
       en: 'Advanced Cardiovascular Emergency Care',
       es: 'Atención cardiovascular avanzada',
@@ -82,7 +74,7 @@ const programs = [
 
   {
     id: 'wilderness',
-    icon: Mountain,
+    image: '/learning-center/wilderness-card.png',
     title: {
       en: 'Wilderness Medicine',
       es: 'Medicina Wilderness',
@@ -154,47 +146,34 @@ export default function Resources() {
             <p>{t.introText}</p>
           </div>
 
-          <div className='card-grid learning-center-grid'>
-            {programs.map((program) => {
-              const Icon = program.icon;
-
-              return (
-                <article
-                  className={`feature-card learning-center-card ${
-                    !program.available ? 'coming-soon-card' : ''
-                  }`}
-                  key={program.id}
-                >
+          <div className='learning-center-grid'>
+            {programs.map((program) => (
+              <article
+                className={`learning-center-card ${
+                  !program.available ? 'coming-soon-card' : ''
+                }`}
+                key={program.id}
+              >
                 <img
-  src={program.image}
-  alt={program.title[currentLanguage]}
-  className='learning-center-card-image'
-  loading='lazy'
-/>
-                  
-                  <div className='learning-center-icon'>
-                    <Icon size={42} />
-                  </div>
+                  src={program.image}
+                  alt={program.title[currentLanguage]}
+                  className='learning-center-card-image'
+                  loading='lazy'
+                />
 
+                <div className='learning-center-card-content'>
                   <p className='learning-center-category'>
                     {program.category[currentLanguage]}
                   </p>
 
-                  <h2>
-                    {program.shortTitle && (
-                      <span>{program.shortTitle}: </span>
-                    )}
+                  <h2>{program.title[currentLanguage]}</h2>
 
-                    {program.title[currentLanguage]}
-                  </h2>
-
-                  <p>{program.description[currentLanguage]}</p>
+                  <p className='learning-center-description'>
+                    {program.description[currentLanguage]}
+                  </p>
 
                   {program.available ? (
-                    <Link
-                      className='btn'
-                      to={program.path}
-                    >
+                    <Link className='btn' to={program.path}>
                       {program.button[currentLanguage]}
                     </Link>
                   ) : (
@@ -202,9 +181,9 @@ export default function Resources() {
                       {program.button[currentLanguage]}
                     </span>
                   )}
-                </article>
-              );
-            })}
+                </div>
+              </article>
+            ))}
           </div>
 
           <div className='learning-center-footer text-center'>
