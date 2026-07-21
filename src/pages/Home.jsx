@@ -89,32 +89,8 @@ export default function Home() {
           <p className='hero-subtitle'>
             {t.heroSubtitle}
           </p>
-
-          <div className='hero-actions'>
-            <Link
-              to='/wellness'
-              className='btn'
-            >
-              {t.exploreWellness}
-            </Link>
-
-            <Link
-              to='/training'
-              className='btn btn-outline'
-            >
-              {t.viewTraining}
-            </Link>
-
-            <Link
-              to='/contact'
-              className='btn btn-outline'
-            >
-              {t.contactUs}
-            </Link>
-          </div>
-        </div>
-      </section>
-
+          
+      
       <section className='section'>
         <div className='container'>
           <div className='card-grid home-feature-grid'>
