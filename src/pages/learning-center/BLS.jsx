@@ -87,7 +87,7 @@ const sections = [
       ],
       [
         'Compression Fraction & Quality Metrics',
-        '/learning-center/BLS/bls-18-compression-fraction-quality-metrics.png',
+        '/learning-center/BLS/bls-18-compression-fraction-and-quality-metrics.png',
       ],
       [
         'Compression Rotation & Fatigue Prevention',
@@ -189,7 +189,7 @@ const sections = [
       ],
       [
         'Family Presence During Resuscitation',
-        '/learning-center/BLS/bls-36-family-presence-during-resuscitation.png',
+        '/learning-center/BLS/bls-36-family-presence-during-resuscitationbls-36-family-presence-during-resuscitation.png',
       ],
       [
         'The Emotional Impact of CPR',
