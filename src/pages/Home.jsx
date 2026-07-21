@@ -89,7 +89,8 @@ export default function Home() {
           <p className='hero-subtitle'>
             {t.heroSubtitle}
           </p>
-          
+            </div>
+
       
       <section className='section'>
         <div className='container'>
