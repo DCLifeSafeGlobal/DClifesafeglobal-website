@@ -91,8 +91,8 @@ const programs = [
       en: 'Coming Soon',
       es: 'Próximamente',
     },
-    path: '',
-    available: false,
+    path: '/learning-center/wilderness',
+available: true,
   },
 ];
 
