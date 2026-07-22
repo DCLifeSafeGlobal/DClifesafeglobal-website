@@ -88,8 +88,8 @@ const programs = [
       es: 'Próximos recursos educativos para ambientes remotos, emergencias outdoor, seguridad expedicionaria y preparación wilderness.',
     },
     button: {
-      en: 'Coming Soon',
-      es: 'Próximamente',
+      en: 'Explore Wilderness',
+      es: 'Explora Medicina en Zonas Remota',
     },
     path: '/learning-center/wilderness',
 available: true,
