@@ -16,7 +16,7 @@ import Workshops from './pages/Workshops.jsx';
 import Surfviving from './pages/learning-center/Surfviving.jsx';
 import BLS from './pages/learning-center/BLS.jsx';
 import ACLS from './pages/learning-center/ACLS.jsx';
-import Wilderness from './pages/learning-center/Wilderness.jsx';
+import Wilderness from './pages/learning-center/wilderness.jsx';
 
 import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
