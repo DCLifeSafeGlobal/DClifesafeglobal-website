@@ -89,7 +89,7 @@ const programs = [
     },
     button: {
       en: 'Explore Wilderness',
-      es: 'Explora Medicina en Zonas Remota',
+      es: 'Explora Medicina en Zonas Remotas',
     },
     path: '/learning-center/wilderness',
 available: true,
