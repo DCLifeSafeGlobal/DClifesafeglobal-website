@@ -26,9 +26,8 @@ const resourceGroups = [
         },
 
         image: {
-  en: '/learning-center/wilderness/ENG/wildernerss-01-introduction-to-wilderness-medicine.png',
-  es: '/learning-center/wilderness/spanish/wilderness-01-introduccion-a-la-medicina-en-areas-remotas.png',
-},
+          en: '/learning-center/wilderness/ENG/wildernerss-01-introduction-to-wilderness-medicine.png',
+          es: '/learning-center/wilderness/spanish/wilderness-01-introduccion-a-la-medicina-en-areas-remotas.png',
         },
       },
 
@@ -41,9 +40,8 @@ const resourceGroups = [
         },
 
         image: {
-  en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safey-guide.png',
-  es: '/learning-center/wilderness/spanish/wilderness-02-evaluacion-y-seguridad-en-areas-remotas.png',
-},
+          en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safey-guide.png',
+          es: '/learning-center/wilderness/spanish/wilderness-02-evaluacion-y-seguridad-en-areas-remotas.png',
         },
       },
 
@@ -170,7 +168,7 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-10-altitud-illness.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-10-altitud-illness.png',
           es: '/learning-center/wilderness/spanish/wilderness-10-expedition-medicine-enfermedad-de-altura.png',
         },
       },
@@ -184,8 +182,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-11-dehydration-and-heat-illness.png',
-          es: '/learning-center/wilderness/spanish/wilderness-11-deshidratacion-enfermedad-por-calor.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-11-dehydration-and-heat-illness.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-11-deshidratacion-enfermedad-por-calor.png',
         },
       },
 
@@ -198,8 +196,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-12-bleeding-control.png',
-          es: '/learning-center/wilderness/spanish/wilderness-12-control-de-hemorragias-en-la-montana.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-12-bleeding-control.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-12-control-de-hemorragias-en-la-montana.png',
         },
       },
 
@@ -212,8 +210,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-13-altitude-illness.png',
-          es: '/learning-center/wilderness/spanish/wilderness-13-enfermedades-de-altura.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-13-altitude-illness.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-13-enfermedades-de-altura.png',
         },
       },
 
@@ -226,8 +224,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-14-spinal-injuries-awareness.png',
-          es: '/learning-center/wilderness/spanish/wilderness-14-lesion-de-columna-en-entorno-remotos.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-14-spinal-injuries-awarness.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-14-lesion-de-columna-en-entorno-remotos.png',
         },
       },
 
@@ -240,8 +238,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-15-burn-injuries.png',
-          es: '/learning-center/wilderness/spanish/wilderness-15-quemaduras.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-15-burn-injuries.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-15-quemaduras.png',
         },
       },
 
@@ -254,8 +252,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-16-HACE.png',
-          es: '/learning-center/wilderness/spanish/wilderness-16-HACE.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-16-HACE.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-16-HACE.png',
         },
       },
 
@@ -268,8 +266,8 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-17-HAPE.png',
-          es: '/learning-center/wilderness/spanish/wilderness-17-HAPE.png',
+          en: '/learning-center/wilderness/ENG/wildernerss-17-HAPE.png',
+          es: '/learning-center/wilderness/spanish/wildernerss-17-HAPE.png',
         },
       },
     ],
@@ -336,10 +334,9 @@ export default function Wilderness() {
 
     image.style.display = 'none';
 
-    const fallback =
-      image.parentElement?.querySelector(
-        '.resource-image-fallback'
-      );
+    const fallback = image.parentElement?.querySelector(
+      '.resource-image-fallback'
+    );
 
     if (fallback) {
       fallback.style.display = 'flex';
@@ -351,17 +348,11 @@ export default function Wilderness() {
       <section className='section'>
         <div className='container'>
           <div className='text-center'>
-            <p className='page-eyebrow'>
-              {t.eyebrow}
-            </p>
+            <p className='page-eyebrow'>{t.eyebrow}</p>
 
-            <h1 className='section-title'>
-              {t.title}
-            </h1>
+            <h1 className='section-title'>{t.title}</h1>
 
-            <p className='section-subtitle narrow'>
-              {t.subtitle}
-            </p>
+            <p className='section-subtitle narrow'>{t.subtitle}</p>
           </div>
 
           <div className='resources-intro'>
@@ -371,14 +362,9 @@ export default function Wilderness() {
           </div>
 
           {resourceGroups.map((group) => (
-            <section
-              className='resource-category'
-              key={group.id}
-            >
+            <section className='resource-category' key={group.id}>
               <div className='text-center'>
-                <h2>
-                  {group.title[currentLanguage]}
-                </h2>
+                <h2>{group.title[currentLanguage]}</h2>
 
                 <p className='section-subtitle narrow wilderness-category-description'>
                   {group.description[currentLanguage]}
@@ -387,8 +373,7 @@ export default function Wilderness() {
 
               <div className='resource-grid'>
                 {group.resources.map((resource) => {
-                  const imagePath =
-                    resource.image[currentLanguage];
+                  const imagePath = resource.image[currentLanguage];
 
                   const resourceTitle =
                     resource.title[currentLanguage];
