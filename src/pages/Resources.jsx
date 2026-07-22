@@ -72,28 +72,33 @@ const programs = [
     available: true,
   },
 
-  {
-    id: 'wilderness',
-    image: '/learning-center/wilderness-card.png',
-    title: {
-      en: 'Wilderness Medicine',
-      es: 'Medicina Wilderness',
-    },
-    category: {
-      en: 'Remote & Outdoor Medical Education',
-      es: 'Educación médica outdoor y remota',
-    },
-    description: {
-      en: 'Future educational resources for remote environments, outdoor emergencies, expedition safety, and wilderness preparedness.',
-      es: 'Próximos recursos educativos para ambientes remotos, emergencias outdoor, seguridad expedicionaria y preparación wilderness.',
-    },
-    button: {
-      en: 'Explore Wilderness',
-      es: 'Explora Medicina en Zonas Remotas',
-    },
-    path: '/learning-center/wilderness',
-available: true,
+ {
+  id: 'wilderness',
+  image: '/learning-center/wilderness-card.png',
+
+  title: {
+    en: 'Wilderness Medicine',
+    es: 'Medicina Wilderness',
   },
+
+  category: {
+    en: 'Remote & Outdoor Medical Education',
+    es: 'Educación médica outdoor y remota',
+  },
+
+  description: {
+    en: 'Explore educational resources covering wilderness medicine, expedition safety, environmental emergencies, patient assessment, rescue, and remote medical care.',
+    es: 'Explora recursos educativos sobre medicina wilderness, seguridad expedicionaria, emergencias ambientales, evaluación del paciente, rescate y atención médica en ambientes remotos.',
+  },
+
+  button: {
+    en: 'Explore Wilderness Medicine',
+    es: 'Explorar Medicina Wilderness',
+  },
+
+  path: '/learning-center/wilderness',
+  available: true,
+},
 ];
 
 const pageText = {
