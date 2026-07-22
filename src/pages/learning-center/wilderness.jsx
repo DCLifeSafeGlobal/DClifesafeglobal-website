@@ -40,7 +40,7 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safey-guide.png',
+          en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safety-guide.png',
           es: '/learning-center/wilderness/spanish/wilderness-02-evaluacion-y-seguridad-en-areas-remotas.png',
         },
       },
@@ -140,7 +140,7 @@ const resourceGroups = [
     },
 
     description: {
-      en: 'Visual guides covering hypothermia, altitude illness, dehydration, heat illness, bleeding, spine injuries, burns, HACE, and HAPE.',
+      en: 'Visual guides covering hypothermia, altitude illness, dehydration, heat illness, bleeding, spinal injuries, burns, HACE, and HAPE.',
       es: 'Guías visuales sobre hipotermia, enfermedades de altitud, deshidratación, enfermedades por calor, hemorragias, lesiones de columna, quemaduras, HACE y HAPE.',
     },
 
@@ -219,7 +219,7 @@ const resourceGroups = [
         id: 14,
 
         title: {
-          en: 'Spinal Injuries Awareness',
+          en: 'Spinal Injury Awareness',
           es: 'Lesión de Columna en Entornos Remotos',
         },
 
@@ -330,10 +330,12 @@ export default function Wilderness() {
   const t = pageText[currentLanguage];
 
   const handleImageError = (event) => {
-    event.currentTarget.style.display = 'none';
+    const image = event.currentTarget;
+
+    image.style.display = 'none';
 
     const fallback =
-      event.currentTarget.parentElement.querySelector(
+      image.parentElement?.querySelector(
         '.resource-image-fallback'
       );
 
