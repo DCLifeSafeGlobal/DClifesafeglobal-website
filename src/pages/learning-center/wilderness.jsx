@@ -26,8 +26,9 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-01-introduction-to-wilderness-medicine.png',
-          es: '/learning-center/wilderness/spanish/wilderness-01-introduccion-a-la-medicina-en-areas-remotas.png',
+  en: '/learning-center/wilderness/ENG/wildernerss-01-introduction-to-wilderness-medicine.png',
+  es: '/learning-center/wilderness/spanish/wilderness-01-introduccion-a-la-medicina-en-areas-remotas.png',
+},
         },
       },
 
@@ -40,8 +41,9 @@ const resourceGroups = [
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safety-guide.png',
-          es: '/learning-center/wilderness/spanish/wilderness-02-evaluacion-y-seguridad-en-areas-remotas.png',
+  en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safey-guide.png',
+  es: '/learning-center/wilderness/spanish/wilderness-02-evaluacion-y-seguridad-en-areas-remotas.png',
+},
         },
       },
 
