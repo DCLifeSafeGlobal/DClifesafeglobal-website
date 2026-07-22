@@ -4,16 +4,16 @@ import { useLanguage } from '../../components/LanguageContext.jsx';
 
 const resourceGroups = [
   {
-    id: 'foundations',
+    id: 'wilderness-foundations',
 
     title: {
-      en: 'Foundations & Patient Assessment',
-      es: 'Fundamentos y evaluación del paciente',
+      en: 'Wilderness & Expedition Medicine Foundations',
+      es: 'Fundamentos de Medicina Wilderness y Expedicionaria',
     },
 
     description: {
-      en: 'Core principles for scene safety, patient evaluation, documentation, and decision-making in remote environments.',
-      es: 'Principios esenciales de seguridad de la escena, evaluación del paciente, documentación y toma de decisiones en entornos remotos.',
+      en: 'Core concepts for wilderness medicine, expedition preparation, teamwork, safety, training, and risk management.',
+      es: 'Conceptos fundamentales de medicina wilderness, preparación expedicionaria, trabajo en equipo, seguridad, entrenamiento y gestión de riesgos.',
     },
 
     resources: [
@@ -22,12 +22,12 @@ const resourceGroups = [
 
         title: {
           en: 'Introduction to Wilderness Medicine',
-          es: 'Introducción a la Medicina Wilderness',
+          es: 'Introducción a la Medicina en Áreas Remotas',
         },
 
         image: {
           en: '/learning-center/wilderness/ENG/wilderness-01-introduction-to-wilderness-medicine.png',
-          es: '/learning-center/wilderness/spanish/wilderness-01-introduction-to-wilderness-medicine.png',
+          es: '/learning-center/wilderness/spanish/wilderness-01-introduccion-a-la-medicina-en-areas-remotas.png',
         },
       },
 
@@ -35,13 +35,13 @@ const resourceGroups = [
         id: 2,
 
         title: {
-          en: 'Scene Safety & Initial Assessment',
-          es: 'Seguridad de la escena y evaluación inicial',
+          en: 'Wilderness Medicine Safety Guide',
+          es: 'Evaluación y Seguridad en Áreas Remotas',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-02-scene-safety-and-initial-assessment.png',
-          es: '/learning-center/wilderness/spanish/wilderness-02-scene-safety-and-initial-assessment.png',
+          en: '/learning-center/wilderness/ENG/wilderness-02-wilderness-medicine-safey-guide.png',
+          es: '/learning-center/wilderness/spanish/wilderness-02-evaluacion-y-seguridad-en-areas-remotas.png',
         },
       },
 
@@ -49,13 +49,13 @@ const resourceGroups = [
         id: 3,
 
         title: {
-          en: 'Wilderness Patient Assessment',
-          es: 'Evaluación del paciente en ambientes remotos',
+          en: 'Expedition Medicine: Care for Adventure',
+          es: 'Entrenamiento Vital',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-03-patient-assessment.png',
-          es: '/learning-center/wilderness/spanish/wilderness-03-patient-assessment.png',
+          en: '/learning-center/wilderness/ENG/wilderness-03-expedition-medicine-care-for-adventure.png',
+          es: '/learning-center/wilderness/spanish/wilderness-03-entrenamiento-vital.png',
         },
       },
 
@@ -63,43 +63,27 @@ const resourceGroups = [
         id: 4,
 
         title: {
-          en: 'SOAP Notes & Documentation',
-          es: 'Notas SOAP y documentación',
+          en: 'Expedition Medicine: Preparing for the Wild',
+          es: 'Medicina de Expedición: Preparación y Acción',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-04-soap-notes-and-documentation.png',
-          es: '/learning-center/wilderness/spanish/wilderness-04-soap-notes-and-documentation.png',
+          en: '/learning-center/wilderness/ENG/wilderness-04-expedition-medicine-preparing-for-the-wild.png',
+          es: '/learning-center/wilderness/spanish/wilderness-04-medicina-de-expedicion-preparacion-y-accion.png',
         },
       },
-    ],
-  },
 
-  {
-    id: 'trauma',
-
-    title: {
-      en: 'Trauma & Injury Management',
-      es: 'Trauma y manejo de lesiones',
-    },
-
-    description: {
-      en: 'Practical reference materials for bleeding, wounds, burns, musculoskeletal injuries, and patient stabilization.',
-      es: 'Materiales prácticos sobre hemorragias, heridas, quemaduras, lesiones musculoesqueléticas y estabilización del paciente.',
-    },
-
-    resources: [
       {
         id: 5,
 
         title: {
-          en: 'Bleeding Control in the Wilderness',
-          es: 'Control de hemorragias en la montaña',
+          en: 'Expedition Medicine: Teamwork, Safety & Decision-Making',
+          es: 'Medicina de Expedición en Equipo',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-05-bleeding-control.png',
-          es: '/learning-center/wilderness/spanish/wilderness-05-bleeding-control.png',
+          en: '/learning-center/wilderness/ENG/wilderness-05-expedition-medicine-teamwork-safety-decision-making.png',
+          es: '/learning-center/wilderness/spanish/wilderness-05-medicina-de-expedicion-en-equipo.png',
         },
       },
 
@@ -107,13 +91,13 @@ const resourceGroups = [
         id: 6,
 
         title: {
-          en: 'Wound Management',
-          es: 'Manejo de heridas',
+          en: 'Expedition Medicine & Risk Management',
+          es: 'Protocolos de Gestión de Riesgos',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-06-wound-management.png',
-          es: '/learning-center/wilderness/spanish/wilderness-06-wound-management.png',
+          en: '/learning-center/wilderness/ENG/wilderness-06-expedition-medicine-and-risk-management-guide.png',
+          es: '/learning-center/wilderness/spanish/wilderness-06-protocolos-de-gestion-de-riesgos.png',
         },
       },
 
@@ -121,13 +105,13 @@ const resourceGroups = [
         id: 7,
 
         title: {
-          en: 'Burns in Remote Environments',
-          es: 'Quemaduras en ambientes remotos',
+          en: 'Continuous Learning in Expedition Medicine',
+          es: 'Aprendizaje Continuo en Medicina de Expedición',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-07-burns.png',
-          es: '/learning-center/wilderness/spanish/wilderness-07-burns.png',
+          en: '/learning-center/wilderness/ENG/wilderness-07-expedition-medicine-continuous-learning-journey.png',
+          es: '/learning-center/wilderness/spanish/wilderness-07-aprendizaje-continuo-en-medicina-de-expedicion.png',
         },
       },
 
@@ -135,27 +119,43 @@ const resourceGroups = [
         id: 8,
 
         title: {
-          en: 'Fractures, Sprains & Splinting',
-          es: 'Fracturas, esguinces e inmovilización',
+          en: 'Risk Management in Expedition Medicine',
+          es: 'Evaluación y Gestión de Riesgos',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-08-fractures-sprains-and-splinting.png',
-          es: '/learning-center/wilderness/spanish/wilderness-08-fractures-sprains-and-splinting.png',
+          en: '/learning-center/wilderness/ENG/wilderness-08-expedition-medicine-risk-management-in-expedition-medicine.png',
+          es: '/learning-center/wilderness/spanish/wilderness-08-evaluacion-y-gestion-de-riesgos.png',
         },
       },
+    ],
+  },
 
+  {
+    id: 'environmental-and-trauma',
+
+    title: {
+      en: 'Environmental Emergencies & Trauma',
+      es: 'Emergencias Ambientales y Trauma',
+    },
+
+    description: {
+      en: 'Visual guides covering hypothermia, altitude illness, dehydration, heat illness, bleeding, spine injuries, burns, HACE, and HAPE.',
+      es: 'Guías visuales sobre hipotermia, enfermedades de altitud, deshidratación, enfermedades por calor, hemorragias, lesiones de columna, quemaduras, HACE y HAPE.',
+    },
+
+    resources: [
       {
         id: 9,
 
         title: {
-          en: 'Spine Injury Assessment',
-          es: 'Evaluación de lesiones de columna',
+          en: 'Hypothermia: Recognize, Protect & Respond',
+          es: 'Rescate y Prevención de la Hipotermia',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-09-spine-injury-assessment.png',
-          es: '/learning-center/wilderness/spanish/wilderness-09-spine-injury-assessment.png',
+          en: '/learning-center/wilderness/ENG/wilderness-09-expedition-medicine-hypothermia-recognize-protect-respond.png',
+          es: '/learning-center/wilderness/spanish/wilderness-09-medicina-de-expedicion-rescate-y-prevencion-de-la-hipotermia.png',
         },
       },
 
@@ -163,43 +163,27 @@ const resourceGroups = [
         id: 10,
 
         title: {
-          en: 'Head Injuries & Concussion',
-          es: 'Traumatismo craneal y conmoción cerebral',
+          en: 'Altitude Illness',
+          es: 'Enfermedad de Altura',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-10-head-injuries-and-concussion.png',
-          es: '/learning-center/wilderness/spanish/wilderness-10-head-injuries-and-concussion.png',
+          en: '/learning-center/wilderness/ENG/wilderness-10-altitud-illness.png',
+          es: '/learning-center/wilderness/spanish/wilderness-10-expedition-medicine-enfermedad-de-altura.png',
         },
       },
-    ],
-  },
 
-  {
-    id: 'environmental',
-
-    title: {
-      en: 'Environmental Emergencies',
-      es: 'Emergencias ambientales',
-    },
-
-    description: {
-      en: 'Recognition, prevention, and initial response for altitude, temperature, lightning, and water-related emergencies.',
-      es: 'Reconocimiento, prevención y respuesta inicial ante emergencias de altitud, temperatura, rayos y ambientes acuáticos.',
-    },
-
-    resources: [
       {
         id: 11,
 
         title: {
-          en: 'Heat-Related Illness',
-          es: 'Enfermedades relacionadas con el calor',
+          en: 'Dehydration & Heat Illness',
+          es: 'Deshidratación y Enfermedad por Calor',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-11-heat-related-illness.png',
-          es: '/learning-center/wilderness/spanish/wilderness-11-heat-related-illness.png',
+          en: '/learning-center/wilderness/ENG/wilderness-11-dehydration-and-heat-illness.png',
+          es: '/learning-center/wilderness/spanish/wilderness-11-deshidratacion-enfermedad-por-calor.png',
         },
       },
 
@@ -207,13 +191,13 @@ const resourceGroups = [
         id: 12,
 
         title: {
-          en: 'Hypothermia',
-          es: 'Hipotermia',
+          en: 'Bleeding Control',
+          es: 'Control de Hemorragias en la Montaña',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-12-hypothermia.png',
-          es: '/learning-center/wilderness/spanish/wilderness-12-hypothermia.png',
+          en: '/learning-center/wilderness/ENG/wilderness-12-bleeding-control.png',
+          es: '/learning-center/wilderness/spanish/wilderness-12-control-de-hemorragias-en-la-montana.png',
         },
       },
 
@@ -221,13 +205,13 @@ const resourceGroups = [
         id: 13,
 
         title: {
-          en: 'Frostbite & Cold Injuries',
-          es: 'Congelamiento y lesiones por frío',
+          en: 'Altitude Illness Recognition',
+          es: 'Enfermedades de Altura',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-13-frostbite-and-cold-injuries.png',
-          es: '/learning-center/wilderness/spanish/wilderness-13-frostbite-and-cold-injuries.png',
+          en: '/learning-center/wilderness/ENG/wilderness-13-altitude-illness.png',
+          es: '/learning-center/wilderness/spanish/wilderness-13-enfermedades-de-altura.png',
         },
       },
 
@@ -235,13 +219,13 @@ const resourceGroups = [
         id: 14,
 
         title: {
-          en: 'Lightning Injuries',
-          es: 'Lesiones por rayos',
+          en: 'Spinal Injuries Awareness',
+          es: 'Lesión de Columna en Entornos Remotos',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-14-lightning-injuries.png',
-          es: '/learning-center/wilderness/spanish/wilderness-14-lightning-injuries.png',
+          en: '/learning-center/wilderness/ENG/wilderness-14-spinal-injuries-awareness.png',
+          es: '/learning-center/wilderness/spanish/wilderness-14-lesion-de-columna-en-entorno-remotos.png',
         },
       },
 
@@ -249,13 +233,13 @@ const resourceGroups = [
         id: 15,
 
         title: {
-          en: 'Altitude Illness',
-          es: 'Enfermedades de altitud',
+          en: 'Burn Injuries',
+          es: 'Quemaduras',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-15-altitude-illness.png',
-          es: '/learning-center/wilderness/spanish/wilderness-15-altitude-illness.png',
+          en: '/learning-center/wilderness/ENG/wilderness-15-burn-injuries.png',
+          es: '/learning-center/wilderness/spanish/wilderness-15-quemaduras.png',
         },
       },
 
@@ -263,13 +247,13 @@ const resourceGroups = [
         id: 16,
 
         title: {
-          en: 'HAPE: High-Altitude Pulmonary Edema',
-          es: 'HAPE: edema pulmonar de gran altitud',
+          en: 'HACE: High-Altitude Cerebral Edema',
+          es: 'HACE: Edema Cerebral de Gran Altitud',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-16-hape.png',
-          es: '/learning-center/wilderness/spanish/wilderness-16-hape.png',
+          en: '/learning-center/wilderness/ENG/wilderness-16-HACE.png',
+          es: '/learning-center/wilderness/spanish/wilderness-16-HACE.png',
         },
       },
 
@@ -277,241 +261,13 @@ const resourceGroups = [
         id: 17,
 
         title: {
-          en: 'HACE: High-Altitude Cerebral Edema',
-          es: 'HACE: edema cerebral de gran altitud',
+          en: 'HAPE: High-Altitude Pulmonary Edema',
+          es: 'HAPE: Edema Pulmonar de Gran Altitud',
         },
 
         image: {
-          en: '/learning-center/wilderness/ENG/wilderness-17-hace.png',
-          es: '/learning-center/wilderness/spanish/wilderness-17-hace.png',
-        },
-      },
-
-      {
-        id: 18,
-
-        title: {
-          en: 'Drowning & Submersion Emergencies',
-          es: 'Ahogamiento y emergencias por inmersión',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-18-drowning-and-submersion.png',
-          es: '/learning-center/wilderness/spanish/wilderness-18-drowning-and-submersion.png',
-        },
-      },
-    ],
-  },
-
-  {
-    id: 'medical',
-
-    title: {
-      en: 'Medical Emergencies',
-      es: 'Emergencias médicas',
-    },
-
-    description: {
-      en: 'Field-oriented guidance for common medical conditions that may occur during outdoor and expedition activities.',
-      es: 'Orientación práctica para condiciones médicas frecuentes durante actividades outdoor y expediciones.',
-    },
-
-    resources: [
-      {
-        id: 19,
-
-        title: {
-          en: 'Altered Mental Status',
-          es: 'Alteración del estado mental',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-19-altered-mental-status.png',
-          es: '/learning-center/wilderness/spanish/wilderness-19-altered-mental-status.png',
-        },
-      },
-
-      {
-        id: 20,
-
-        title: {
-          en: 'Chest Pain & Cardiac Emergencies',
-          es: 'Dolor torácico y emergencias cardíacas',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-20-chest-pain-and-cardiac-emergencies.png',
-          es: '/learning-center/wilderness/spanish/wilderness-20-chest-pain-and-cardiac-emergencies.png',
-        },
-      },
-
-      {
-        id: 21,
-
-        title: {
-          en: 'Stroke Recognition',
-          es: 'Reconocimiento del accidente cerebrovascular',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-21-stroke-recognition.png',
-          es: '/learning-center/wilderness/spanish/wilderness-21-stroke-recognition.png',
-        },
-      },
-
-      {
-        id: 22,
-
-        title: {
-          en: 'Seizures',
-          es: 'Convulsiones',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-22-seizures.png',
-          es: '/learning-center/wilderness/spanish/wilderness-22-seizures.png',
-        },
-      },
-
-      {
-        id: 23,
-
-        title: {
-          en: 'Asthma & Breathing Emergencies',
-          es: 'Asma y emergencias respiratorias',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-23-asthma-and-breathing-emergencies.png',
-          es: '/learning-center/wilderness/spanish/wilderness-23-asthma-and-breathing-emergencies.png',
-        },
-      },
-
-      {
-        id: 24,
-
-        title: {
-          en: 'Anaphylaxis',
-          es: 'Anafilaxia',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-24-anaphylaxis.png',
-          es: '/learning-center/wilderness/spanish/wilderness-24-anaphylaxis.png',
-        },
-      },
-
-      {
-        id: 25,
-
-        title: {
-          en: 'Diabetic Emergencies',
-          es: 'Emergencias diabéticas',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-25-diabetic-emergencies.png',
-          es: '/learning-center/wilderness/spanish/wilderness-25-diabetic-emergencies.png',
-        },
-      },
-    ],
-  },
-
-  {
-    id: 'expedition',
-
-    title: {
-      en: 'Expedition Preparedness & Rescue',
-      es: 'Preparación expedicionaria y rescate',
-    },
-
-    description: {
-      en: 'Planning tools for medical kits, navigation, communication, evacuation, and response in isolated environments.',
-      es: 'Herramientas de planificación para botiquines, navegación, comunicación, evacuación y respuesta en ambientes aislados.',
-    },
-
-    resources: [
-      {
-        id: 26,
-
-        title: {
-          en: 'Wilderness Medical Kits',
-          es: 'Botiquines para ambientes remotos',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-26-medical-kits.png',
-          es: '/learning-center/wilderness/spanish/wilderness-26-medical-kits.png',
-        },
-      },
-
-      {
-        id: 27,
-
-        title: {
-          en: 'Water Treatment & Hydration',
-          es: 'Tratamiento del agua e hidratación',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-27-water-treatment-and-hydration.png',
-          es: '/learning-center/wilderness/spanish/wilderness-27-water-treatment-and-hydration.png',
-        },
-      },
-
-      {
-        id: 28,
-
-        title: {
-          en: 'Navigation & Communication',
-          es: 'Navegación y comunicación',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-28-navigation-and-communication.png',
-          es: '/learning-center/wilderness/spanish/wilderness-28-navigation-and-communication.png',
-        },
-      },
-
-      {
-        id: 29,
-
-        title: {
-          en: 'Patient Packaging & Evacuation',
-          es: 'Empaquetamiento y evacuación del paciente',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-29-patient-packaging-and-evacuation.png',
-          es: '/learning-center/wilderness/spanish/wilderness-29-patient-packaging-and-evacuation.png',
-        },
-      },
-
-      {
-        id: 30,
-
-        title: {
-          en: 'Search & Rescue Foundations',
-          es: 'Fundamentos de búsqueda y rescate',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-30-search-and-rescue-foundations.png',
-          es: '/learning-center/wilderness/spanish/wilderness-30-search-and-rescue-foundations.png',
-        },
-      },
-
-      {
-        id: 31,
-
-        title: {
-          en: 'Outdoor Leadership & Decision-Making',
-          es: 'Liderazgo outdoor y toma de decisiones',
-        },
-
-        image: {
-          en: '/learning-center/wilderness/ENG/wilderness-31-outdoor-leadership-and-decision-making.png',
-          es: '/learning-center/wilderness/spanish/wilderness-31-outdoor-leadership-and-decision-making.png',
+          en: '/learning-center/wilderness/ENG/wilderness-17-HAPE.png',
+          es: '/learning-center/wilderness/spanish/wilderness-17-HAPE.png',
         },
       },
     ],
@@ -525,14 +281,16 @@ const pageText = {
     title: 'Wilderness Medicine',
 
     subtitle:
-      'Free educational resources for patient assessment, outdoor emergencies, environmental medicine, expedition preparedness, and remote medical response.',
+      'Free educational resources for wilderness medicine, expedition safety, environmental emergencies, trauma care, and remote medical response.',
 
     introTitle: 'Medicine Beyond the Trail',
 
     introText:
-      'Explore original visual guides designed to strengthen preparation, decision-making, and patient care when definitive medical assistance may be delayed.',
+      'Explore original visual guides designed to strengthen preparation, decision-making, risk management, and patient care when definitive medical assistance may be delayed.',
 
     openResource: 'Open Resource',
+
+    imageUnavailable: 'Image unavailable',
 
     backButton: 'Back to Learning Center',
 
@@ -546,14 +304,16 @@ const pageText = {
     title: 'Medicina Wilderness',
 
     subtitle:
-      'Recursos educativos gratuitos sobre evaluación del paciente, emergencias outdoor, medicina ambiental, preparación expedicionaria y respuesta médica en ambientes remotos.',
+      'Recursos educativos gratuitos sobre medicina wilderness, seguridad expedicionaria, emergencias ambientales, trauma y respuesta médica en ambientes remotos.',
 
     introTitle: 'Medicina más allá del sendero',
 
     introText:
-      'Explora guías visuales originales diseñadas para fortalecer la preparación, la toma de decisiones y el cuidado del paciente cuando la atención médica definitiva puede demorarse.',
+      'Explora guías visuales originales diseñadas para fortalecer la preparación, la toma de decisiones, la gestión de riesgos y el cuidado del paciente cuando la atención médica definitiva puede demorarse.',
 
-    openResource: 'Abrir recurso',
+    openResource: 'Abrir Recurso',
+
+    imageUnavailable: 'Imagen no disponible',
 
     backButton: 'Volver al Centro de Aprendizaje',
 
@@ -568,6 +328,19 @@ export default function Wilderness() {
   const currentLanguage = language === 'es' ? 'es' : 'en';
 
   const t = pageText[currentLanguage];
+
+  const handleImageError = (event) => {
+    event.currentTarget.style.display = 'none';
+
+    const fallback =
+      event.currentTarget.parentElement.querySelector(
+        '.resource-image-fallback'
+      );
+
+    if (fallback) {
+      fallback.style.display = 'flex';
+    }
+  };
 
   return (
     <main className='resources-page wilderness-page'>
@@ -613,6 +386,9 @@ export default function Wilderness() {
                   const imagePath =
                     resource.image[currentLanguage];
 
+                  const resourceTitle =
+                    resource.title[currentLanguage];
+
                   return (
                     <article
                       className='resource-card'
@@ -622,19 +398,26 @@ export default function Wilderness() {
                         href={imagePath}
                         target='_blank'
                         rel='noreferrer'
+                        aria-label={`${t.openResource}: ${resourceTitle}`}
                       >
                         <img
                           src={imagePath}
-                          alt={resource.title[currentLanguage]}
+                          alt={resourceTitle}
                           className='resource-preview'
                           loading='lazy'
+                          onError={handleImageError}
                         />
+
+                        <div
+                          className='resource-image-fallback'
+                          style={{ display: 'none' }}
+                        >
+                          <span>{t.imageUnavailable}</span>
+                        </div>
                       </a>
 
                       <div className='resource-content'>
-                        <h3>
-                          {resource.title[currentLanguage]}
-                        </h3>
+                        <h3>{resourceTitle}</h3>
 
                         <a
                           className='btn'
