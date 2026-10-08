@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../components/LanguageContext.jsx';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../../components/LanguageContext.jsx';
 
 /* =========================================================
    ENGLISH RESOURCES
@@ -8,6 +9,8 @@ import { useLanguage } from '../components/LanguageContext.jsx';
 const sectionsEN = [
   {
     title: 'Foundations',
+    description:
+      'Core concepts in resuscitation science, systematic assessment, team performance, ECG interpretation, and patient monitoring.',
     items: [
       [
         'Science of Resuscitation',
@@ -42,6 +45,8 @@ const sectionsEN = [
 
   {
     title: 'Airway & Vascular Access',
+    description:
+      'Visual references for airway management, advanced airway techniques, and intraosseous access.',
     items: [
       [
         'Airway Management',
@@ -60,6 +65,8 @@ const sectionsEN = [
 
   {
     title: 'Core ACLS Algorithms',
+    description:
+      'Quick-reference visual guides for bradycardia, tachycardia, cardiac arrest, and post–cardiac arrest care.',
     items: [
       [
         'Bradycardia Algorithm',
@@ -82,6 +89,8 @@ const sectionsEN = [
 
   {
     title: 'Acute Coronary Syndromes',
+    description:
+      'Educational resources for recognizing and managing STEMI, NSTEMI, unstable angina, and other acute coronary syndromes.',
     items: [
       [
         'STEMI Recognition',
@@ -104,6 +113,8 @@ const sectionsEN = [
 
   {
     title: 'Stroke',
+    description:
+      'Visual resources covering acute stroke recognition, assessment, reperfusion, and the stroke chain of survival.',
     items: [
       [
         'Acute Stroke Assessment',
@@ -122,6 +133,8 @@ const sectionsEN = [
 
   {
     title: 'Medications',
+    description:
+      'Quick-reference educational material covering medications commonly encountered in ACLS.',
     items: [
       [
         'ACLS Medication Quick Reference',
@@ -132,6 +145,8 @@ const sectionsEN = [
 
   {
     title: 'Team Support',
+    description:
+      'Resources addressing communication, coping with death, post-event debriefing, and team wellbeing.',
     items: [
       [
         'Coping With Death',
@@ -152,6 +167,8 @@ const sectionsEN = [
 const sectionsES = [
   {
     title: 'Fundamentos',
+    description:
+      'Conceptos esenciales sobre ciencia de la reanimación, evaluación sistemática, trabajo en equipo, ECG y monitorización del paciente.',
     items: [
       [
         'Ciencia de la reanimación',
@@ -182,6 +199,8 @@ const sectionsES = [
 
   {
     title: 'Vía aérea y acceso vascular',
+    description:
+      'Referencias visuales sobre manejo de la vía aérea, técnicas avanzadas y acceso intraóseo.',
     items: [
       [
         'Manejo de la vía aérea',
@@ -200,6 +219,8 @@ const sectionsES = [
 
   {
     title: 'Algoritmos principales de ACLS',
+    description:
+      'Guías visuales de referencia rápida para bradicardia, taquicardia, paro cardíaco y cuidados posteriores al paro.',
     items: [
       [
         'Algoritmo de bradicardia',
@@ -222,6 +243,8 @@ const sectionsES = [
 
   {
     title: 'Síndromes coronarios agudos',
+    description:
+      'Recursos educativos para el reconocimiento y manejo del IAM con y sin elevación del ST, angina inestable y otros síndromes coronarios agudos.',
     items: [
       [
         'Reconocimiento del infarto agudo de miocardio con elevación del ST',
@@ -244,6 +267,8 @@ const sectionsES = [
 
   {
     title: 'Ictus',
+    description:
+      'Recursos visuales sobre reconocimiento, evaluación, reperfusión y cadena de supervivencia del ictus.',
     items: [
       [
         'Cadena de supervivencia del ictus',
@@ -262,6 +287,8 @@ const sectionsES = [
 
   {
     title: 'Medicamentos',
+    description:
+      'Material educativo de referencia rápida sobre medicamentos utilizados en el contexto de ACLS.',
     items: [
       [
         'Medicamentos para ACLS en detalle',
@@ -272,6 +299,8 @@ const sectionsES = [
 
   {
     title: 'Apoyo al equipo y a la familia',
+    description:
+      'Recursos sobre comunicación, afrontamiento de la muerte, debriefing posterior al evento y bienestar del equipo.',
     items: [
       [
         'Afrontar la muerte y comunicación con la familia',
@@ -286,98 +315,150 @@ const sectionsES = [
 ];
 
 /* =========================================================
+   PAGE TEXT
+========================================================= */
+
+const pageText = {
+  en: {
+    eyebrow: 'DC LifeSafe Global Learning Center',
+    title: 'Advanced Cardiac Life Support (ACLS)',
+    subtitle:
+      'Free educational resources for advanced cardiovascular life support, resuscitation, emergency cardiovascular care, and clinical review.',
+    introTitle: 'Advanced Resuscitation Education',
+    introText:
+      'Explore original visual guides designed to reinforce ACLS concepts, systematic assessment, clinical decision-making, emergency algorithms, and team-based resuscitation.',
+    openResource: 'Open Resource',
+    imageUnavailable: 'Image unavailable',
+    backButton: 'Back to Learning Center',
+    disclaimer:
+      'These materials are intended for education and review. They do not replace formal ACLS certification, professional medical advice, organizational protocols, or current clinical guidelines.',
+  },
+
+  es: {
+    eyebrow: 'Centro de Aprendizaje de DC LifeSafe Global',
+    title: 'Soporte Vital Cardiovascular Avanzado (ACLS)',
+    subtitle:
+      'Recursos educativos gratuitos sobre soporte vital cardiovascular avanzado, reanimación, atención cardiovascular de emergencia y repaso clínico.',
+    introTitle: 'Educación avanzada en reanimación',
+    introText:
+      'Explora guías visuales originales diseñadas para reforzar conceptos de ACLS, evaluación sistemática, toma de decisiones clínicas, algoritmos de emergencia y reanimación basada en equipos.',
+    openResource: 'Abrir Recurso',
+    imageUnavailable: 'Imagen no disponible',
+    backButton: 'Volver al Centro de Aprendizaje',
+    disclaimer:
+      'Estos materiales tienen fines educativos y de repaso. No reemplazan la certificación formal en ACLS, el asesoramiento médico profesional, los protocolos institucionales ni las guías clínicas vigentes.',
+  },
+};
+
+/* =========================================================
    ACLS PAGE
 ========================================================= */
 
 export default function ACLS() {
   const { language } = useLanguage();
 
-  const isSpanish = language === 'es';
+  const currentLanguage = language === 'es' ? 'es' : 'en';
+  const isSpanish = currentLanguage === 'es';
+
   const sections = isSpanish ? sectionsES : sectionsEN;
+  const t = pageText[currentLanguage];
 
-  const pageTitle = isSpanish
-    ? 'Soporte Vital Cardiovascular Avanzado (ACLS)'
-    : 'Advanced Cardiac Life Support (ACLS)';
+  const handleImageError = (event) => {
+    const image = event.currentTarget;
 
-  const pageDescription = isSpanish
-    ? 'Una colección integral de guías visuales y referencias rápidas de ACLS, diseñada para profesionales de la salud, instructores, estudiantes y personal de respuesta a emergencias.'
-    : 'A comprehensive collection of ACLS quick-reference guides designed for healthcare professionals, instructors, students, and emergency responders.';
+    image.style.display = 'none';
 
-  const buttonText = isSpanish ? 'Abrir referencia' : 'Open Reference';
+    const fallback = image.parentElement?.querySelector(
+      '.resource-image-fallback'
+    );
 
-  const imageUnavailableText = isSpanish
-    ? 'Imagen no disponible'
-    : 'Image unavailable';
+    if (fallback) {
+      fallback.style.display = 'flex';
+    }
+  };
 
   return (
-    <section className="section resources-page">
-      <div className="container">
-        <div className="text-center">
-          <h1 className="section-title">{pageTitle}</h1>
+    <main className='resources-page acls-page'>
+      <section className='section'>
+        <div className='container'>
+          <div className='text-center'>
+            <p className='page-eyebrow'>{t.eyebrow}</p>
 
-          <p className="section-subtitle narrow">
-            {pageDescription}
-          </p>
-        </div>
+            <h1 className='section-title'>{t.title}</h1>
 
-        {sections.map((section) => (
-          <div className="resource-category" key={section.title}>
-            <h2>{section.title}</h2>
+            <p className='section-subtitle narrow'>{t.subtitle}</p>
+          </div>
 
-            <div className="resource-grid">
-              {section.items.map(([title, image]) => (
-                <article className="resource-card" key={title}>
-                  <a
-                    href={image}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${buttonText}: ${title}`}
-                  >
-                    <img
-                      src={image}
-                      alt={title}
-                      className="resource-preview"
-                      loading="lazy"
-                      onError={(event) => {
-                        event.currentTarget.style.display = 'none';
+          <div className='resources-intro'>
+            <h2>{t.introTitle}</h2>
+            <p>{t.introText}</p>
+          </div>
 
-                        const fallback =
-                          event.currentTarget.parentElement.querySelector(
-                            '.resource-image-fallback'
-                          );
+          {sections.map((section) => (
+            <section className='resource-category' key={section.title}>
+              <div className='text-center'>
+                <h2>{section.title}</h2>
 
-                        if (fallback) {
-                          fallback.style.display = 'flex';
-                        }
-                      }}
-                    />
+                <p className='section-subtitle narrow'>
+                  {section.description}
+                </p>
+              </div>
 
-                    <div
-                      className="resource-image-fallback"
-                      style={{ display: 'none' }}
-                    >
-                      {imageUnavailableText}
-                    </div>
-                  </a>
-
-                  <div className="resource-content">
-                    <h3>{title}</h3>
-
+              <div className='resource-grid'>
+                {section.items.map(([title, image]) => (
+                  <article className='resource-card' key={title}>
                     <a
                       href={image}
-                      className="btn"
-                      target="_blank"
-                      rel="noreferrer"
+                      target='_blank'
+                      rel='noreferrer'
+                      aria-label={`${t.openResource}: ${title}`}
                     >
-                      {buttonText}
+                      <img
+                        src={image}
+                        alt={title}
+                        className='resource-preview'
+                        loading='lazy'
+                        onError={handleImageError}
+                      />
+
+                      <div
+                        className='resource-image-fallback'
+                        style={{ display: 'none' }}
+                      >
+                        <span>{t.imageUnavailable}</span>
+                      </div>
                     </a>
-                  </div>
-                </article>
-              ))}
-            </div>
+
+                    <div className='resource-content'>
+                      <h3>{title}</h3>
+
+                      <a
+                        className='btn'
+                        href={image}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        {t.openResource}
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))}
+
+          <div className='learning-center-footer text-center'>
+            <p className='resource-disclaimer'>{t.disclaimer}</p>
+
+            <Link
+              to='/learning-center'
+              className='btn btn-outline acls-back-button'
+            >
+              {t.backButton}
+            </Link>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      </section>
+    </main>
   );
 }
