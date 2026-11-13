@@ -13,11 +13,16 @@ import Contact from './pages/Contact.jsx';
 import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
 
+// Books & Publications
+import Books from './pages/Books.jsx';
+
+// Learning Center
 import Surfviving from './pages/learning-center/Surfviving.jsx';
 import BLS from './pages/learning-center/BLS.jsx';
 import ACLS from './pages/learning-center/ACLS.jsx';
 import Wilderness from './pages/learning-center/wilderness.jsx';
 
+// Expedition Visuals
 import ExpeditionVisuals from './pages/ExpeditionVisuals.jsx';
 import AmsterdamVisual from './pages/AmsterdamVisual.jsx';
 import WildlifeVisuals from './pages/WildlifeVisuals.jsx';
@@ -26,6 +31,7 @@ import WashingtonStateVisual from './pages/WashingtonStateVisual.jsx';
 import RedRocksVisual from './pages/RedRocksVisual.jsx';
 import BaselVisual from './pages/BaselVisual.jsx';
 
+// Global Expedition Network
 import Network from './pages/Network.jsx';
 
 export default function App() {
@@ -35,14 +41,24 @@ export default function App() {
 
       <Routes>
         <Route element={<Layout />}>
+
+          {/* Home */}
           <Route path='/' element={<Home />} />
           <Route path='/es' element={<Home />} />
 
+          {/* Main Sections */}
           <Route path='/wellness' element={<Wellness />} />
           <Route path='/training' element={<Training />} />
           <Route path='/outdoor' element={<Outdoor />} />
 
-          <Route path='/learning-center' element={<Resources />} />
+          {/* Books & Publications */}
+          <Route path='/books' element={<Books />} />
+
+          {/* Learning Center */}
+          <Route
+            path='/learning-center'
+            element={<Resources />}
+          />
 
           <Route
             path='/learning-center/surfviving'
@@ -60,25 +76,49 @@ export default function App() {
           />
 
           <Route
-  path='/learning-center/wilderness'
-  element={<Wilderness />}
-/>
-
-          
-          <Route
-            path='/resources'
-            element={<Navigate to='/learning-center' replace />}
+            path='/learning-center/wilderness'
+            element={<Wilderness />}
           />
 
+          <Route
+            path='/resources'
+            element={
+              <Navigate to='/learning-center' replace />
+            }
+          />
+
+          {/* Workshops */}
           <Route path='/workshops' element={<Workshops />} />
+
+          {/* About & Contact */}
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
 
-          <Route path='/visuals' element={<ExpeditionVisuals />} />
-          <Route path='/expeditions' element={<ExpeditionVisuals />} />
-          <Route path='/visuals/amsterdam' element={<AmsterdamVisual />} />
-          <Route path='/visuals/barcelona' element={<BarcelonaVisual />} />
-          <Route path='/visuals/wildlife' element={<WildlifeVisuals />} />
+          {/* Expedition Visuals */}
+          <Route
+            path='/visuals'
+            element={<ExpeditionVisuals />}
+          />
+
+          <Route
+            path='/expeditions'
+            element={<ExpeditionVisuals />}
+          />
+
+          <Route
+            path='/visuals/amsterdam'
+            element={<AmsterdamVisual />}
+          />
+
+          <Route
+            path='/visuals/barcelona'
+            element={<BarcelonaVisual />}
+          />
+
+          <Route
+            path='/visuals/wildlife'
+            element={<WildlifeVisuals />}
+          />
 
           <Route
             path='/visuals/washington-state'
@@ -90,9 +130,14 @@ export default function App() {
             element={<RedRocksVisual />}
           />
 
-          <Route path='/visuals/basel' element={<BaselVisual />} />
+          <Route
+            path='/visuals/basel'
+            element={<BaselVisual />}
+          />
 
+          {/* Global Expedition Network */}
           <Route path='/network' element={<Network />} />
+
         </Route>
       </Routes>
     </>
