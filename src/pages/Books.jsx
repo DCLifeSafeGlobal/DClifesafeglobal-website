@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../components/LanguageContext.jsx';
+import './Books.css';
 
 const books = [
   {
