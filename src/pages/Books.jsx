@@ -2,6 +2,10 @@ import React from 'react';
 import { useLanguage } from '../components/LanguageContext.jsx';
 import './Books.css';
 
+// DC LifeSafe Global — Books & Publications
+// All book covers are stored in:
+// public/Books/Covers/
+
 const books = [
   {
     id: 'surfviving',
@@ -16,10 +20,11 @@ const books = [
       es: 'Un recorrido por la resiliencia emocional, el autoconocimiento y el crecimiento personal utilizando la metáfora de las olas del océano.',
     },
     covers: {
-      en: '/Books/covers/Surfviving-eng.jpg',
-      es: '/Books/covers/Surfviving-sp.jpg',
+      en: '/Books/Covers/Surfviving-eng.jpg',
+      es: '/Books/Covers/Surfviving-sp.jpg',
     },
   },
+
   {
     id: 'myles-camping',
     category: 'children',
@@ -32,10 +37,11 @@ const books = [
       es: 'Acompaña a Myles en una aventura al aire libre llena de amistad, descubrimientos, trabajo en equipo y seguridad.',
     },
     covers: {
-      en: '/Books/covers/Myles-Camping-Adventure-EN.png',
-      es: '/Books/covers/Myles-Camping-Adventure-SP.png',
+      en: '/Books/Covers/Myles-Camping-Adventure-EN.png',
+      es: '/Books/Covers/Myles-Camping-Adventure-SP.png',
     },
   },
+
   {
     id: 'myles-mountain',
     category: 'children',
@@ -52,10 +58,11 @@ const books = [
       es: 'Myles y sus amigos descubren que ser valiente también significa reconocer cuándo es momento de regresar.',
     },
     covers: {
-      en: '/Books/covers/Myles-Mountain-Adventure-EN.jpg',
-      es: '/Books/covers/Myles-Mountain-Adventure-SP.png',
+      en: '/Books/Covers/Myles-Mountain-Adventure-EN.jpg',
+      es: '/Books/Covers/Myles-Mountain-Adventure-SP.png',
     },
   },
+
   {
     id: 'myles-coloring',
     category: 'activities',
@@ -68,8 +75,32 @@ const books = [
       es: 'Una aventura para colorear dirigida a niños de 4 a 8 años, protagonizada por Myles y sus amigos. Actualmente en desarrollo.',
     },
     covers: {
-      en: '/Books/covers/Myles-Mountain-Adventure-Coloring-Book.png',
-      es: '/Books/covers/Myles-Mountain-Adventure-Coloring-Book.png',
+      en: '/Books/Covers/Myles-Mountain-Adventure-Coloring-Book.png',
+      es: '/Books/Covers/Myles-Mountain-Adventure-Coloring-Book.png',
+    },
+  },
+];
+
+const categories = [
+  {
+    id: 'wellness',
+    title: {
+      en: 'Wellness & Personal Growth',
+      es: 'Bienestar y Crecimiento Personal',
+    },
+  },
+  {
+    id: 'children',
+    title: {
+      en: "Children's Books",
+      es: 'Cuentos Infantiles',
+    },
+  },
+  {
+    id: 'activities',
+    title: {
+      en: 'Coloring & Activity Books',
+      es: 'Libros para Colorear y Actividades',
     },
   },
 ];
@@ -77,30 +108,6 @@ const books = [
 export default function Books() {
   const { language } = useLanguage();
   const lang = language === 'es' ? 'es' : 'en';
-
-  const categories = [
-    {
-      id: 'wellness',
-      title: {
-        en: 'Wellness & Personal Growth',
-        es: 'Bienestar y Crecimiento Personal',
-      },
-    },
-    {
-      id: 'children',
-      title: {
-        en: "Children's Books",
-        es: 'Cuentos Infantiles',
-      },
-    },
-    {
-      id: 'activities',
-      title: {
-        en: 'Coloring & Activity Books',
-        es: 'Libros para Colorear y Actividades',
-      },
-    },
-  ];
 
   return (
     <>
@@ -137,46 +144,45 @@ export default function Books() {
                 </h2>
 
                 <div className="books-grid">
-                  {categoryBooks.map((book) => (
-                    <article
-                      className="books-card"
-                      key={book.id}
-                    >
-                      <div className="books-cover">
-                        <img
-                          src={book.covers[lang]}
-                          alt={
-                            typeof book.title === 'string'
-                              ? book.title
-                              : book.title[lang]
-                          }
-                          loading="lazy"
-                        />
-                      </div>
+                  {categoryBooks.map((book) => {
+                    const bookTitle =
+                      typeof book.title === 'string'
+                        ? book.title
+                        : book.title[lang];
 
-                      <div className="books-card-content">
-                        <h3>
-                          {typeof book.title === 'string'
-                            ? book.title
-                            : book.title[lang]}
-                        </h3>
+                    return (
+                      <article
+                        className="books-card"
+                        key={book.id}
+                      >
+                        <div className="books-cover">
+                          <img
+                            src={book.covers[lang]}
+                            alt={bookTitle}
+                            loading="lazy"
+                          />
+                        </div>
 
-                        {book.subtitle && (
-                          <p className="books-subtitle">
-                            {book.subtitle[lang]}
-                          </p>
-                        )}
+                        <div className="books-card-content">
+                          <h3>{bookTitle}</h3>
 
-                        <p>{book.description[lang]}</p>
+                          {book.subtitle && (
+                            <p className="books-subtitle">
+                              {book.subtitle[lang]}
+                            </p>
+                          )}
 
-                        <span className="books-status">
-                          {lang === 'es'
-                            ? 'Próximamente'
-                            : 'Coming Soon'}
-                        </span>
-                      </div>
-                    </article>
-                  ))}
+                          <p>{book.description[lang]}</p>
+
+                          <span className="books-status">
+                            {lang === 'es'
+                              ? 'Próximamente'
+                              : 'Coming Soon'}
+                          </span>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </div>
             );
