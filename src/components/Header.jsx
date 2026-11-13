@@ -13,6 +13,11 @@ export default function Header() {
     translations[language]?.nav ||
     translations.en.nav;
 
+  const networkLabel =
+    language === 'es'
+      ? 'Red Global de Expediciones'
+      : 'Global Expedition Network';
+
   const navItems = [
     { to: '/', label: t.home, end: true },
     { to: '/wellness', label: t.wellness },
@@ -20,7 +25,7 @@ export default function Header() {
     { to: '/outdoor', label: t.outdoor },
     { to: '/visuals', label: t.visuals },
     { to: '/learning-center', label: t.learningCenter },
-    { to: '/network', label: t.network },
+    { to: '/network', label: networkLabel },
     { to: '/about', label: t.about },
     { to: '/contact', label: t.contact },
   ];
