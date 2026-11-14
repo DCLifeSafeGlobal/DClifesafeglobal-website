@@ -2519,3 +2519,120 @@ textarea {
   display: flex;
   justify-content: center;
 }
+
+
+/* ==========================================
+   WELLNESS HERO — LAYOUT ADJUSTMENTS
+   ========================================== */
+
+.wellness-hero-card {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.wellness-hero-card .page-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.wellness-hero-overlay {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  min-height: 540px;
+  max-width: 680px;
+
+  padding: 45px 55px;
+  box-sizing: border-box;
+}
+
+.wellness-hero-overlay .surfviving-hero-logo {
+  display: block;
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  max-height: 95px;
+  object-fit: contain;
+  object-position: left center;
+
+  margin: 0 0 20px;
+}
+
+.wellness-hero-overlay h1 {
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.08;
+  margin: 0 0 18px;
+}
+
+.wellness-hero-overlay p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0 0 22px;
+  max-width: 540px;
+}
+
+.wellness-hero-overlay .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 44px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .wellness-hero-card,
+  .wellness-hero-overlay {
+    min-height: 500px;
+  }
+
+  .wellness-hero-overlay {
+    max-width: 600px;
+    padding: 35px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .wellness-hero-card {
+    min-height: 580px;
+  }
+
+  .wellness-hero-overlay {
+    min-height: 580px;
+    max-width: 100%;
+    padding: 28px 22px;
+    justify-content: flex-end;
+  }
+
+  .wellness-hero-overlay .surfviving-hero-logo {
+    width: 180px;
+    max-height: 75px;
+  }
+
+  .wellness-hero-overlay h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .wellness-hero-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .wellness-hero-card .page-hero-image {
+    object-position: 55% center;
+  }
+}
