@@ -21,7 +21,7 @@ export default function Wellness() {
               className='page-hero-image'
             />
 
-            <div className='page-hero-overlay left'>
+           <div className='page-hero-overlay left wellness-hero-overlay'>
               <img
                 src='/logo_surfviving.png'
                 alt='Surfviving'
