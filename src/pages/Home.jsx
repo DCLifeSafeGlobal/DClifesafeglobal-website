@@ -80,38 +80,11 @@ export default function Home() {
       ? 'Explore Our Books'
       : 'Explorar Nuestros Libros';
 
-  const featuredBooks = [
-    {
-      id: 'surfviving',
-      title: 'SURFVIVING™',
-      cover:
-        lang === 'en'
-          ? '/Books/Covers/Surfviving-eng.jpg'
-          : '/Books/Covers/Surfviving-sp.jpg',
-    },
-    {
-      id: 'myles-camping',
-      title:
-        lang === 'en'
-          ? 'The Adventures of Myles: Going Camping!'
-          : 'Las Aventuras de Myles: ¡De Campamento!',
-      cover:
-        lang === 'en'
-          ? '/Books/Covers/Myles-Camping-Adventure-EN.png'
-          : '/Books/Covers/Myles-Camping-Adventure-SP.png',
-    },
-    {
-      id: 'myles-mountain',
-      title:
-        lang === 'en'
-          ? 'The Adventures of Myles: Mt. St. Amelie'
-          : 'Las Aventuras de Myles: Mt. St. Amelie',
-      cover:
-        lang === 'en'
-          ? '/Books/Covers/Myles-Mountain-Adventure-EN.jpg'
-          : '/Books/Covers/Myles-Mountain-Adventure-SP.png',
-    },
-  ];
+ // Promotional image for Books & Publications
+const booksHomeImage =
+  lang === 'es'
+    ? '/Books/Home/Books-card-SP.png'
+    : '/Books/Home/Books-card-EN.png';
 
   const pillars = [
     {
