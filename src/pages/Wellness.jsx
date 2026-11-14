@@ -12,19 +12,25 @@ export default function Wellness() {
 
   return (
     <>
+      {/* =====================================
+          WELLNESS HERO
+          ===================================== */}
+
       <section className='hero-banner-page'>
         <div className='container'>
-          <div className='page-hero-card'>
+          <div className='page-hero-card wellness-hero-card'>
+
             <img
               src='/hero_wellness.png'
               alt={t.altWellness}
               className='page-hero-image'
             />
 
-           <div className='page-hero-overlay left wellness-hero-overlay'>
+            <div className='page-hero-overlay left wellness-hero-overlay'>
+
               <img
                 src='/logo_surfviving.png'
-                alt='Surfviving'
+                alt='DC LifeSafe Global'
                 className='surfviving-hero-logo'
               />
 
@@ -38,20 +44,29 @@ export default function Wellness() {
               >
                 {t.consultationBtn}
               </a>
+
             </div>
           </div>
         </div>
       </section>
 
+      {/* =====================================
+          EMOTIONAL REGULATION TOOLS
+          ===================================== */}
+
       <section className='section'>
         <div className='container text-center'>
-          <h2 className='section-title'>{t.toolsTitle}</h2>
+
+          <h2 className='section-title'>
+            {t.toolsTitle}
+          </h2>
 
           <p className='section-subtitle narrow'>
             {t.toolsSubtitle}
           </p>
 
           <div className='soft-panel three-tools'>
+
             <div className='tool-card'>
               <img src='/icon_calm.png' alt='' />
 
@@ -75,9 +90,15 @@ export default function Wellness() {
 
               <p>{t.resilienceText}</p>
             </div>
+
           </div>
 
+          {/* =====================================
+              WORKSHOPS AND RESOURCES
+              ===================================== */}
+
           <div className='card-grid columns-2 mt-large'>
+
             <article className='resource-card'>
               <img
                 src='/card_workshop.png'
@@ -86,6 +107,7 @@ export default function Wellness() {
               />
 
               <div className='resource-content'>
+
                 <h3>{t.workshopsTitle}</h3>
 
                 <p>{t.workshopsText}</p>
@@ -93,6 +115,7 @@ export default function Wellness() {
                 <Link className='btn' to='/workshops'>
                   {t.workshopsBtn}
                 </Link>
+
               </div>
             </article>
 
@@ -104,6 +127,7 @@ export default function Wellness() {
               />
 
               <div className='resource-content'>
+
                 <h3>{t.resourcesTitle}</h3>
 
                 <p>{t.resourcesText}</p>
@@ -111,15 +135,23 @@ export default function Wellness() {
                 <Link className='btn' to='/learning-center'>
                   {t.resourcesBtn}
                 </Link>
+
               </div>
             </article>
+
           </div>
         </div>
       </section>
 
+      {/* =====================================
+          BOTTOM CTA BANNER
+          ===================================== */}
+
       <section className='section'>
         <div className='container'>
+
           <div className='cta-banner'>
+
             <img
               src='/hero_wellness_bottom.png'
               alt=''
@@ -127,9 +159,11 @@ export default function Wellness() {
             />
 
             <div className='cta-content center'>
+
               <h3>{t.ctaTitle}</h3>
 
               <p>{t.ctaText}</p>
+
             </div>
           </div>
         </div>
