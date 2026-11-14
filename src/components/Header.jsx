@@ -13,10 +13,17 @@ export default function Header() {
     translations[language]?.nav ||
     translations.en.nav;
 
+  // Global Expedition Network
   const networkLabel =
     language === 'es'
       ? 'Red Global de Expediciones'
       : 'Global Expedition Network';
+
+  // Books & Publications
+  const booksLabel =
+    language === 'es'
+      ? 'Libros'
+      : 'Books';
 
   const navItems = [
     { to: '/', label: t.home, end: true },
@@ -25,7 +32,13 @@ export default function Header() {
     { to: '/outdoor', label: t.outdoor },
     { to: '/visuals', label: t.visuals },
     { to: '/learning-center', label: t.learningCenter },
+
+    // Books & Publications
+    { to: '/books', label: booksLabel },
+
+    // Global Expedition Network
     { to: '/network', label: networkLabel },
+
     { to: '/about', label: t.about },
     { to: '/contact', label: t.contact },
   ];
