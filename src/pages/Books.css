@@ -1,106 +1,71 @@
-/* =====================================================
+/* ==========================================
    DC LifeSafe Global
    Books & Publications
-   Bilingual Editorial Catalog
-   ===================================================== */
+   Unified Book Catalog
+   ========================================== */
 
-/* =====================================================
-   PAGE
-   ===================================================== */
+/* ==========================================
+   PAGE HEADER
+   ========================================== */
 
-.books-page {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* =====================================================
-   HERO
-   ===================================================== */
-
-.books-page .hero-home-simple {
-  padding-top: 55px;
+.books-hero {
   padding-bottom: 35px;
 }
 
-.books-page .hero-title {
-  color: #102a43;
-  margin-bottom: 14px;
+.books-hero .hero-title {
+  margin-bottom: 12px;
 }
 
-.books-page .hero-subtitle {
-  color: #526477;
-  max-width: 680px;
+.books-hero .hero-subtitle {
+  max-width: 760px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7;
 }
 
-/* =====================================================
-   BOOKS SECTION
-   ===================================================== */
+/* ==========================================
+   CATALOG SECTION
+   ========================================== */
 
-.books-section {
-  padding-top: 20px;
-  padding-bottom: 70px;
+.books-catalog-section {
+  padding-top: 35px;
+  padding-bottom: 90px;
 }
 
-/* =====================================================
-   CATEGORIES
-   ===================================================== */
-
-.books-category {
-  margin-bottom: 65px;
-}
-
-.books-category:last-child {
-  margin-bottom: 0;
-}
-
-.books-category .section-title {
-  color: #102a43;
-  text-align: left;
-  margin-bottom: 28px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid #e5eaf0;
-}
-
-/* =====================================================
+/* ==========================================
    BOOK GRID
-   ===================================================== */
+   ========================================== */
 
 .books-grid {
   display: grid;
 
-  grid-template-columns: repeat(
-    3,
-    minmax(0, 1fr)
-  );
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  gap: 28px;
+  gap: 24px;
 
   align-items: stretch;
+
+  width: 100%;
 }
 
-/* =====================================================
-   BOOK CARD
-   ===================================================== */
+/* ==========================================
+   BOOK CARDS
+   ========================================== */
 
 .books-card {
   display: flex;
   flex-direction: column;
 
   min-width: 0;
+  height: 100%;
 
   background: #ffffff;
 
-  border-radius: 14px;
+  border: 1px solid #e5eaf0;
+  border-radius: 16px;
 
   overflow: hidden;
 
-  border: 1px solid #e5eaf0;
-
-  box-shadow:
-    0 6px 20px rgba(10, 30, 60, 0.08);
+  box-shadow: 0 8px 25px rgba(10, 30, 60, 0.08);
 
   transition:
     transform 0.3s ease,
@@ -110,60 +75,53 @@
 .books-card:hover {
   transform: translateY(-5px);
 
-  box-shadow:
-    0 14px 30px rgba(10, 30, 60, 0.14);
+  box-shadow: 0 15px 35px rgba(10, 30, 60, 0.15);
 }
 
-/* =====================================================
-   BOOK COVER
-   ===================================================== */
+/* ==========================================
+   BOOK COVERS
+   ========================================== */
 
 .books-cover {
   display: flex;
 
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 22px 18px;
 
   background: #f3f6fa;
-
-  padding: 16px;
-
-  height: 360px;
-
-  overflow: hidden;
 }
 
 .books-cover img {
   display: block;
 
   width: auto;
-
   max-width: 100%;
 
-  height: 100%;
+  height: 330px;
 
   object-fit: contain;
 
-  border-radius: 3px;
+  border-radius: 5px;
 
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 
-  transition:
-    transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .books-card:hover .books-cover img {
   transform: scale(1.025);
 }
 
-/* =====================================================
+/* ==========================================
    BOOK INFORMATION
-   ===================================================== */
+   ========================================== */
 
 .books-card-content {
   display: flex;
-
   flex-direction: column;
 
   flex: 1;
@@ -171,29 +129,22 @@
   padding: 22px;
 }
 
-/* TITLE */
-
-.books-card-content h3 {
+.books-card-title {
   color: #102a43;
 
-  font-size: 1.18rem;
-
-  font-weight: 700;
-
+  font-size: 1.12rem;
   line-height: 1.4;
 
   margin: 0 0 12px;
-}
 
-/* SUBTITLE */
+  overflow-wrap: anywhere;
+}
 
 .books-subtitle {
   color: #a46a20;
 
-  font-size: 0.94rem;
-
+  font-size: 0.93rem;
   font-weight: 600;
-
   font-style: italic;
 
   line-height: 1.5;
@@ -201,21 +152,18 @@
   margin: 0 0 14px;
 }
 
-/* DESCRIPTION */
-
 .books-description {
   color: #526477;
 
-  font-size: 0.94rem;
-
+  font-size: 0.92rem;
   line-height: 1.7;
 
-  margin: 0 0 22px;
+  margin: 0 0 24px;
 }
 
-/* =====================================================
+/* ==========================================
    PUBLICATION STATUS
-   ===================================================== */
+   ========================================== */
 
 .books-status {
   display: inline-block;
@@ -224,7 +172,7 @@
 
   margin-top: auto;
 
-  padding: 8px 15px;
+  padding: 9px 15px;
 
   border-radius: 30px;
 
@@ -233,171 +181,86 @@
   color: #174a7e;
 
   font-size: 0.82rem;
-
   font-weight: 700;
 
   letter-spacing: 0.2px;
 }
 
-/* =====================================================
-   TABLET
-   ===================================================== */
+/* ==========================================
+   RESPONSIVE — SMALL DESKTOP / TABLET
+   ========================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
   .books-grid {
-    grid-template-columns: repeat(
-      2,
-      minmax(0, 1fr)
-    );
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 24px;
   }
 
-  .books-cover {
-    height: 340px;
-    padding: 14px;
+  .books-cover img {
+    height: 350px;
   }
 
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
+/* ==========================================
+   RESPONSIVE — MOBILE
+   ========================================== */
 
 @media (max-width: 650px) {
 
-  .books-page .hero-home-simple {
-    padding-top: 35px;
-    padding-bottom: 25px;
+  .books-hero {
+    padding-bottom: 20px;
   }
 
-  .books-section {
-    padding-top: 10px;
-    padding-bottom: 45px;
-  }
-
-  .books-category {
-    margin-bottom: 50px;
-  }
-
-  .books-category .section-title {
-    text-align: center;
-    margin-bottom: 22px;
+  .books-catalog-section {
+    padding-top: 20px;
+    padding-bottom: 60px;
   }
 
   .books-grid {
     grid-template-columns: 1fr;
+
     gap: 24px;
 
     max-width: 420px;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 
   .books-cover {
-    height: 360px;
-    padding: 14px;
+    padding: 24px 18px;
+  }
+
+  .books-cover img {
+    height: 340px;
   }
 
   .books-card-content {
     padding: 22px;
   }
 
-  .books-card-content h3 {
+  .books-card-title {
     font-size: 1.15rem;
   }
 
-  .books-description {
-    font-size: 0.92rem;
-  }
-
 }
-
-/* =====================================================
-   SMALL MOBILE
-   ===================================================== */
-
-@media (max-width: 380px) {
-
-  .books-cover {
-    height: 310px;
-    padding: 12px;
-  }
-
-  .books-card-content {
-    padding: 18px;
-  }
-
-}
-
-
 
 /* ==========================================
-   DC LifeSafe Global
-   Books & Publications — Catalog Layout
+   ACCESSIBILITY
    ========================================== */
 
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
+@media (prefers-reduced-motion: reduce) {
 
-.books-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: #ffffff;
-  border: 1px solid #e5eaf0;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(10, 30, 60, 0.08);
-}
-
-.books-cover {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background: #f3f6fa;
-}
-
-.books-cover img {
-  display: block;
-  width: 100%;
-  max-width: 230px;
-  height: 310px;
-  object-fit: contain;
-  border-radius: 5px;
-}
-
-.books-card-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 22px;
-}
-
-.books-status {
-  align-self: flex-start;
-  margin-top: auto;
-}
-
-/* Tablet */
-
-@media (max-width: 1100px) {
-  .books-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .books-card,
+  .books-cover img {
+    transition: none;
   }
-}
 
-/* Mobile */
-
-@media (max-width: 600px) {
-  .books-grid {
-    grid-template-columns: 1fr;
+  .books-card:hover,
+  .books-card:hover .books-cover img {
+    transform: none;
   }
+
 }
