@@ -3,8 +3,13 @@ import { useLanguage } from '../components/LanguageContext.jsx';
 import './Books.css';
 
 // =====================================================
-// DC LifeSafe Global — Books & Publications
-// Official book cover location: public/Books/Covers/
+// DC LifeSafe Global
+// Books & Publications
+//
+// Book covers:
+// public/Books/Covers/
+//
+// Categories are preserved for future catalog expansion.
 // =====================================================
 
 const books = [
@@ -89,7 +94,6 @@ const books = [
       es: 'Una aventura para colorear dirigida a niños de 4 a 8 años, protagonizada por Myles y sus amigos. Actualmente en desarrollo.',
     },
 
-    // Separate English and Spanish covers
     covers: {
       en: '/Books/Covers/Myles-Mountain-Adventure-Coloring-Book-EN.png',
       es: '/Books/Covers/Myles-Mountain-Adventure-Coloring-Book-SP.png',
@@ -97,150 +101,109 @@ const books = [
   },
 ];
 
-// =====================================================
-// Book Categories
-// =====================================================
-
-const categories = [
-  {
-    id: 'wellness',
-    title: {
-      en: 'Wellness & Personal Growth',
-      es: 'Bienestar y Crecimiento Personal',
-    },
-  },
-
-  {
-    id: 'children',
-    title: {
-      en: "Children's Books",
-      es: 'Cuentos Infantiles',
-    },
-  },
-
-  {
-    id: 'activities',
-    title: {
-      en: 'Coloring & Activity Books',
-      es: 'Libros para Colorear y Actividades',
-    },
-  },
-];
-
-// =====================================================
-// Books Page
-// =====================================================
-
 export default function Books() {
   const { language } = useLanguage();
 
   const lang = language === 'es' ? 'es' : 'en';
 
+  const pageTitle =
+    lang === 'es'
+      ? 'Libros y Publicaciones'
+      : 'Books & Publications';
+
+  const pageSubtitle =
+    lang === 'es'
+      ? 'Historias y recursos para aprender, crecer, explorar y descubrir.'
+      : 'Stories and resources to learn, grow, explore, and discover.';
+
   return (
-    <main className="books-page">
+    <>
+      {/* =====================================================
+          PAGE HEADER
+          ===================================================== */}
 
-      {/* PAGE HEADER */}
-
-      <section className="section hero-home-simple">
+      <section className="section hero-home-simple books-hero">
         <div className="container text-center">
 
           <h1 className="hero-title">
-            {lang === 'es'
-              ? 'Libros y Publicaciones'
-              : 'Books & Publications'}
+            {pageTitle}
           </h1>
 
           <p className="hero-subtitle">
-            {lang === 'es'
-              ? 'Historias y recursos para aprender, crecer, explorar y descubrir.'
-              : 'Stories and resources to learn, grow, explore, and discover.'}
+            {pageSubtitle}
           </p>
 
         </div>
       </section>
 
-      {/* BOOK CATEGORIES */}
+      {/* =====================================================
+          BOOK CATALOG
+          ===================================================== */}
 
-      <section className="section books-section">
+      <section className="section books-catalog-section">
         <div className="container">
 
-          {categories.map((category) => {
-            const categoryBooks = books.filter(
-              (book) => book.category === category.id
-            );
+          <div className="books-grid">
 
-            return (
-              <div
-                key={category.id}
-                className="books-category"
-              >
+            {books.map((book) => {
+              const bookTitle =
+                typeof book.title === 'string'
+                  ? book.title
+                  : book.title[lang];
 
-                <h2 className="section-title">
-                  {category.title[lang]}
-                </h2>
+              return (
+                <article
+                  className={`books-card books-card-${book.category}`}
+                  key={book.id}
+                >
 
-                <div className="books-grid">
+                  {/* Book cover */}
 
-                  {categoryBooks.map((book) => {
-                    const bookTitle =
-                      typeof book.title === 'string'
-                        ? book.title
-                        : book.title[lang];
+                  <div className="books-cover">
 
-                    return (
-                      <article
-                        className="books-card"
-                        key={book.id}
-                      >
+                    <img
+                      src={book.covers[lang]}
+                      alt={bookTitle}
+                      loading="lazy"
+                      decoding="async"
+                    />
 
-                        {/* BOOK COVER */}
+                  </div>
 
-                        <div className="books-cover">
-                          <img
-                            src={book.covers[lang]}
-                            alt={bookTitle}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </div>
+                  {/* Book information */}
 
-                        {/* BOOK INFORMATION */}
+                  <div className="books-card-content">
 
-                        <div className="books-card-content">
+                    <h2 className="books-card-title">
+                      {bookTitle}
+                    </h2>
 
-                          <h3>{bookTitle}</h3>
+                    {book.subtitle && (
+                      <p className="books-subtitle">
+                        {book.subtitle[lang]}
+                      </p>
+                    )}
 
-                          {book.subtitle && (
-                            <p className="books-subtitle">
-                              {book.subtitle[lang]}
-                            </p>
-                          )}
+                    <p className="books-description">
+                      {book.description[lang]}
+                    </p>
 
-                          <p className="books-description">
-                            {book.description[lang]}
-                          </p>
+                    <span className="books-status">
+                      {lang === 'es'
+                        ? 'Próximamente'
+                        : 'Coming Soon'}
+                    </span>
 
-                          <span className="books-status">
-                            {lang === 'es'
-                              ? 'Próximamente'
-                              : 'Coming Soon'}
-                          </span>
+                  </div>
 
-                        </div>
+                </article>
+              );
+            })}
 
-                      </article>
-                    );
-                  })}
-
-                </div>
-
-              </div>
-            );
-          })}
+          </div>
 
         </div>
       </section>
-
-    </main>
+    </>
   );
 }
