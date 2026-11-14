@@ -183,33 +183,7 @@ const booksHomeImage =
               </Link>
             </article>
 
-            {/* Learning Center */}
-
-            <article
-              className='feature-card home-feature-card learning-center-home-card'
-              style={cardStyle}
-            >
-              <h2>{learningCenterTitle}</h2>
-
-              <img
-                src='/learning-center/learning-center-home-card.png'
-                alt={learningCenterTitle}
-                className='feature-thumb'
-                loading='lazy'
-              />
-
-              <p>{learningCenterText}</p>
-
-              <Link
-                to='/learning-center'
-                className='btn'
-                style={buttonStyle}
-              >
-                {learningCenterBtn}
-              </Link>
-            </article>
-
-            {/* Outdoor */}
+             {/* Outdoor */}
 
             <article
               className='feature-card home-feature-card'
@@ -234,6 +208,8 @@ const booksHomeImage =
                 {t.outdoorBtn}
               </Link>
             </article>
+            
+                      
 
             {/* Expedition Visuals */}
 
@@ -261,6 +237,34 @@ const booksHomeImage =
               </Link>
             </article>
 
+
+             {/* Learning Center */}
+
+            <article
+              className='feature-card home-feature-card learning-center-home-card'
+              style={cardStyle}
+            >
+              <h2>{learningCenterTitle}</h2>
+
+              <img
+                src='/learning-center/learning-center-home-card.png'
+                alt={learningCenterTitle}
+                className='feature-thumb'
+                loading='lazy'
+              />
+
+              <p>{learningCenterText}</p>
+
+              <Link
+                to='/learning-center'
+                className='btn'
+                style={buttonStyle}
+              >
+                {learningCenterBtn}
+              </Link>
+            </article>
+
+            
             {/* Global Expedition Network */}
 
             <article
