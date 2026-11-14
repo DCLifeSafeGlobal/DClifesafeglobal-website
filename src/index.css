@@ -2310,7 +2310,7 @@ textarea {
 
 /* ==========================================
    DC LifeSafe Global
-   Official Logo Size Adjustment
+   Official Logo Size Adjustment — V2
    ========================================== */
 
 /* Desktop */
@@ -2323,7 +2323,7 @@ textarea {
 
 .header .brand-logo {
   display: block;
-  width: 205px !important;
+  width: 245px !important;
   height: auto !important;
   max-width: 100%;
   object-fit: contain;
@@ -2333,7 +2333,7 @@ textarea {
 
 @media (max-width: 1100px) {
   .header .brand-logo {
-    width: 180px !important;
+    width: 200px !important;
   }
 }
 
@@ -2341,6 +2341,6 @@ textarea {
 
 @media (max-width: 600px) {
   .header .brand-logo {
-    width: 165px !important;
+    width: 180px !important;
   }
 }
