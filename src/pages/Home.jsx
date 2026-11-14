@@ -310,34 +310,34 @@ const booksHomeImage =
               </p>
             </div>
 
-            <div className='home-books-covers'>
-              {featuredBooks.map((book) => (
-                <div
-                  key={book.id}
-                  className='home-books-cover-item'
-                >
-                  <img
-                    src={book.cover}
-                    alt={book.title}
-                    loading='lazy'
-                    decoding='async'
-                  />
-                </div>
-              ))}
-            </div>
+<div className='home-books-featured-image'>
+  <img
+    src={booksHomeImage}
+    alt={
+      lang === 'es'
+        ? 'SURFVIVING y Las Aventuras de Myles — Libros y Publicaciones'
+        : 'SURFVIVING and The Adventures of Myles — Books & Publications'
+    }
+    loading='lazy'
+    decoding='async'
+  />
+</div>
 
-            <div className='home-books-action'>
-              <Link
-                to='/books'
-                className='btn'
-              >
-                {booksBtn}
-              </Link>
-            </div>
+<div className='home-books-action'>
+  <Link
+    to='/books'
+    className='btn'
+  >
+    {booksBtn}
+  </Link>
+</div>
 
           </div>
         </div>
       </section>
+
+            
+            
 
       {/* =====================================================
           WHY CHOOSE DC LIFESAFE GLOBAL
