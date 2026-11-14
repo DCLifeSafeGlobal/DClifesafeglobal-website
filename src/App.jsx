@@ -12,7 +12,7 @@ import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
 import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
-
+import SurfvivingPage from './pages/SurfvivingPage.jsx';
 // Books & Publications
 import Books from './pages/Books.jsx';
 
@@ -138,6 +138,8 @@ export default function App() {
           {/* Global Expedition Network */}
           <Route path='/network' element={<Network />} />
 
+          {/* Surfviving Page */}
+          <Route path='/surfviving' element={<SurfvivingPage />} />
         </Route>
       </Routes>
     </>
