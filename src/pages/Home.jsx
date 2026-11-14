@@ -15,6 +15,8 @@ import { translations } from '../translations/translations.js';
 export default function Home() {
   const { language } = useLanguage();
 
+  const lang = language === 'es' ? 'es' : 'en';
+
   const t =
     translations[language]?.home ||
     translations.en.home;
@@ -30,34 +32,86 @@ export default function Home() {
   };
 
   const learningCenterTitle =
-    language === 'en'
+    lang === 'en'
       ? 'Learning Center'
       : 'Centro de Aprendizaje';
 
   const learningCenterText =
-    language === 'en'
+    lang === 'en'
       ? 'Free educational resources, quick-reference guides, worksheets, algorithms, and practical learning materials for wellness, emergency care, and wilderness medicine.'
       : 'Recursos educativos gratuitos, guías rápidas, hojas de trabajo, algoritmos y materiales prácticos para bienestar, atención de emergencias y medicina wilderness.';
 
   const learningCenterBtn =
-    language === 'en'
+    lang === 'en'
       ? 'Explore Learning Center'
       : 'Explorar Centro de Aprendizaje';
 
   const genTitle =
-    language === 'en'
+    lang === 'en'
       ? 'Global Expedition Network'
       : 'Red Global de Expediciones';
 
   const genText =
-    language === 'en'
+    lang === 'en'
       ? 'International partnerships, expedition support, wilderness leadership, cultural exploration, and collaborative adventure initiatives across diverse environments.'
       : 'Alianzas internacionales, apoyo expedicionario, liderazgo outdoor, exploración cultural e iniciativas colaborativas de aventura en diversos entornos.';
 
   const genBtn =
-    language === 'en'
+    lang === 'en'
       ? 'Explore GEN'
       : 'Explorar GEN';
+
+  // =====================================================
+  // Books & Publications
+  // =====================================================
+
+  const booksTitle =
+    lang === 'en'
+      ? 'Books & Publications'
+      : 'Libros y Publicaciones';
+
+  const booksText =
+    lang === 'en'
+      ? 'Discover stories and resources that inspire emotional resilience, personal growth, learning, and exploration. From SURFVIVING™ to The Adventures of Myles, each publication encourages discovery, reflection, and meaningful adventures.'
+      : 'Descubre historias y recursos que inspiran resiliencia emocional, crecimiento personal, aprendizaje y exploración. Desde SURFVIVING™ hasta Las Aventuras de Myles, cada publicación invita al descubrimiento, la reflexión y las aventuras con propósito.';
+
+  const booksBtn =
+    lang === 'en'
+      ? 'Explore Our Books'
+      : 'Explorar Nuestros Libros';
+
+  const featuredBooks = [
+    {
+      id: 'surfviving',
+      title: 'SURFVIVING™',
+      cover:
+        lang === 'en'
+          ? '/Books/Covers/Surfviving-eng.jpg'
+          : '/Books/Covers/Surfviving-sp.jpg',
+    },
+    {
+      id: 'myles-camping',
+      title:
+        lang === 'en'
+          ? 'The Adventures of Myles: Going Camping!'
+          : 'Las Aventuras de Myles: ¡De Campamento!',
+      cover:
+        lang === 'en'
+          ? '/Books/Covers/Myles-Camping-Adventure-EN.png'
+          : '/Books/Covers/Myles-Camping-Adventure-SP.png',
+    },
+    {
+      id: 'myles-mountain',
+      title:
+        lang === 'en'
+          ? 'The Adventures of Myles: Mt. St. Amelie'
+          : 'Las Aventuras de Myles: Mt. St. Amelie',
+      cover:
+        lang === 'en'
+          ? '/Books/Covers/Myles-Mountain-Adventure-EN.jpg'
+          : '/Books/Covers/Myles-Mountain-Adventure-SP.png',
+    },
+  ];
 
   const pillars = [
     {
@@ -80,6 +134,10 @@ export default function Home() {
 
   return (
     <>
+      {/* =====================================================
+          HERO
+          ===================================================== */}
+
       <section className='section hero-home-simple'>
         <div className='container text-center'>
           <h1 className='hero-title'>
@@ -92,11 +150,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* =====================================================
+          MAIN SERVICES
+          ===================================================== */}
+
       <section className='section'>
         <div className='container'>
           <div className='card-grid home-feature-grid'>
 
             {/* Wellness */}
+
             <article
               className='feature-card home-feature-card'
               style={cardStyle}
@@ -122,6 +185,7 @@ export default function Home() {
             </article>
 
             {/* Training */}
+
             <article
               className='feature-card home-feature-card'
               style={cardStyle}
@@ -147,6 +211,7 @@ export default function Home() {
             </article>
 
             {/* Learning Center */}
+
             <article
               className='feature-card home-feature-card learning-center-home-card'
               style={cardStyle}
@@ -172,6 +237,7 @@ export default function Home() {
             </article>
 
             {/* Outdoor */}
+
             <article
               className='feature-card home-feature-card'
               style={cardStyle}
@@ -197,6 +263,7 @@ export default function Home() {
             </article>
 
             {/* Expedition Visuals */}
+
             <article
               className='feature-card home-feature-card'
               style={cardStyle}
@@ -222,6 +289,7 @@ export default function Home() {
             </article>
 
             {/* Global Expedition Network */}
+
             <article
               className='feature-card home-feature-card gen-card'
               style={cardStyle}
@@ -249,6 +317,58 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          BOOKS & PUBLICATIONS
+          ===================================================== */}
+
+      <section className='section home-books-section'>
+        <div className='container'>
+
+          <div className='home-books-panel'>
+
+            <div className='home-books-intro'>
+              <h2 className='section-title'>
+                {booksTitle}
+              </h2>
+
+              <p className='home-books-description'>
+                {booksText}
+              </p>
+            </div>
+
+            <div className='home-books-covers'>
+              {featuredBooks.map((book) => (
+                <div
+                  key={book.id}
+                  className='home-books-cover-item'
+                >
+                  <img
+                    src={book.cover}
+                    alt={book.title}
+                    loading='lazy'
+                    decoding='async'
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className='home-books-action'>
+              <Link
+                to='/books'
+                className='btn'
+              >
+                {booksBtn}
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          WHY CHOOSE DC LIFESAFE GLOBAL
+          ===================================================== */}
 
       <section className='section soft-section'>
         <div className='container text-center'>
@@ -280,6 +400,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          NEWSLETTER
+          ===================================================== */}
 
       <section
         id='newsletter'
