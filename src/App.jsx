@@ -2,6 +2,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
+import SEO from './components/SEO.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import Layout from './components/Layout.jsx';
 
@@ -92,6 +93,7 @@ const pageRoutes = [
 export default function App() {
   return (
     <>
+      <SEO />
       <ScrollToTop />
 
       <Routes>
@@ -113,7 +115,9 @@ export default function App() {
 
           <Route
             path='/es/resources'
-            element={<Navigate to='/es/learning-center' replace />}
+            element={
+              <Navigate to='/es/learning-center' replace />
+            }
           />
 
           <Route
