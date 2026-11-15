@@ -2947,3 +2947,49 @@ textarea {
     height: 200px;
   }
 }
+
+
+
+/* ==========================================
+   SURFVIVING — CENTERED BOOK SECTION
+   ========================================== */
+
+.surfviving-book-section .surfviving-feature-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.surfviving-book-section .surfviving-book-image-wrap {
+  width: 100%;
+  text-align: center;
+}
+
+.surfviving-book-section .surfviving-book-cover {
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.surfviving-book-section .surfviving-feature-copy {
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+}
+
+.surfviving-book-section .surfviving-feature-copy p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.surfviving-book-section .surfviving-feature-copy .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
