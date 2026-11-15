@@ -41,7 +41,10 @@ export default function Wellness() {
 
               <p>{t.heroText}</p>
 
-              {/* Hero action buttons */}
+              {/* =====================================
+                  HERO ACTION BUTTONS
+                  ===================================== */}
+
               <div
                 className='wellness-hero-actions'
                 style={{
@@ -52,6 +55,8 @@ export default function Wellness() {
                   marginTop: '18px'
                 }}
               >
+
+                {/* Free consultation */}
                 <a
                   className='btn'
                   href={
@@ -67,11 +72,15 @@ export default function Wellness() {
                       isSpanish
                         ? 'Hola DC LifeSafe Global,\n\n' +
                           'Me gustaría solicitar información sobre una consulta gratuita.\n\n' +
-                          'Nombre:\nTeléfono:\nCorreo electrónico:\n' +
+                          'Nombre:\n' +
+                          'Teléfono:\n' +
+                          'Correo electrónico:\n' +
                           '¿Qué información necesitas?:\n'
                         : 'Hello DC LifeSafe Global,\n\n' +
                           'I would like to request a free consultation.\n\n' +
-                          'Name:\nPhone:\nEmail:\n' +
+                          'Name:\n' +
+                          'Phone:\n' +
+                          'Email:\n' +
                           'What are you looking for?:\n'
                     )
                   }
@@ -79,19 +88,16 @@ export default function Wellness() {
                   {t.consultationBtn}
                 </a>
 
+                {/* Discover SURFVIVING */}
                 <Link
                   className='btn'
                   to='/surfviving'
-                  style={{
-                    background: 'transparent',
-                    border: '2px solid currentColor',
-                    color: 'inherit'
-                  }}
                 >
                   {isSpanish
                     ? 'Descubre SURFVIVING™'
                     : 'Discover SURFVIVING™'}
                 </Link>
+
               </div>
 
             </div>
@@ -117,7 +123,10 @@ export default function Wellness() {
           <div className='soft-panel three-tools'>
 
             <div className='tool-card'>
-              <img src='/icon_calm.png' alt='' />
+              <img
+                src='/icon_calm.png'
+                alt=''
+              />
 
               <h3>{t.calmTitle}</h3>
 
@@ -125,7 +134,10 @@ export default function Wellness() {
             </div>
 
             <div className='tool-card'>
-              <img src='/icon_wave.png' alt='' />
+              <img
+                src='/icon_wave.png'
+                alt=''
+              />
 
               <h3>{t.waveTitle}</h3>
 
@@ -133,7 +145,10 @@ export default function Wellness() {
             </div>
 
             <div className='tool-card'>
-              <img src='/icon_resilience.png' alt='' />
+              <img
+                src='/icon_resilience.png'
+                alt=''
+              />
 
               <h3>{t.resilienceTitle}</h3>
 
@@ -148,6 +163,7 @@ export default function Wellness() {
 
           <div className='card-grid columns-2 mt-large'>
 
+            {/* Workshops */}
             <article className='resource-card'>
               <img
                 src='/card_workshop.png'
@@ -161,13 +177,17 @@ export default function Wellness() {
 
                 <p>{t.workshopsText}</p>
 
-                <Link className='btn' to='/workshops'>
+                <Link
+                  className='btn'
+                  to='/workshops'
+                >
                   {t.workshopsBtn}
                 </Link>
 
               </div>
             </article>
 
+            {/* Learning resources */}
             <article className='resource-card'>
               <img
                 src='/card_resources.png'
@@ -181,7 +201,10 @@ export default function Wellness() {
 
                 <p>{t.resourcesText}</p>
 
-                <Link className='btn' to='/learning-center'>
+                <Link
+                  className='btn'
+                  to='/learning-center'
+                >
                   {t.resourcesBtn}
                 </Link>
 
