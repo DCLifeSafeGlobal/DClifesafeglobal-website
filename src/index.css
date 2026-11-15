@@ -3038,3 +3038,27 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+
+
+
+/* ==========================================
+   SURFVIVING — THE APPROACH ALIGNMENT
+   ========================================== */
+
+/* Center the section heading */
+.surfviving-approach-section .surfviving-eyebrow,
+.surfviving-approach-section .section-title {
+  text-align: center;
+}
+
+/* Keep the narrative readable */
+.surfviving-approach-section .surfviving-approach-subtitle {
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 30px;
+}
+
+/* Preserve left-aligned paragraphs */
+.surfviving-approach-section .surfviving-prose {
+  text-align: left;
+}
