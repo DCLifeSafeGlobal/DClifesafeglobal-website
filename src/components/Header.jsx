@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -28,6 +29,10 @@ export default function Header() {
   const navItems = [
     { to: '/', label: t.home, end: true },
     { to: '/wellness', label: t.wellness },
+
+    // SURFVIVING — Official Project Page
+    { to: '/surfviving', label: 'SURFVIVING™' },
+
     { to: '/training', label: t.training },
     { to: '/outdoor', label: t.outdoor },
     { to: '/visuals', label: t.visuals },
@@ -62,7 +67,11 @@ export default function Header() {
           type='button'
           className='mobile-toggle'
           onClick={() => setOpen((currentValue) => !currentValue)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={
+            open
+              ? (language === 'es' ? 'Cerrar menú' : 'Close menu')
+              : (language === 'es' ? 'Abrir menú' : 'Open menu')
+          }
           aria-expanded={open}
           aria-controls='primary-navigation'
         >
