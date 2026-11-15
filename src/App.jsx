@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ import Contact from './pages/Contact.jsx';
 import Resources from './pages/Resources.jsx';
 import Workshops from './pages/Workshops.jsx';
 import SurfvivingPage from './pages/SurfvivingPage.jsx';
+
 // Books & Publications
 import Books from './pages/Books.jsx';
 
@@ -34,6 +36,59 @@ import BaselVisual from './pages/BaselVisual.jsx';
 // Global Expedition Network
 import Network from './pages/Network.jsx';
 
+const pageRoutes = [
+  { path: '/', element: <Home /> },
+  { path: '/wellness', element: <Wellness /> },
+  { path: '/surfviving', element: <SurfvivingPage /> },
+  { path: '/training', element: <Training /> },
+  { path: '/outdoor', element: <Outdoor /> },
+  { path: '/books', element: <Books /> },
+
+  { path: '/learning-center', element: <Resources /> },
+  {
+    path: '/learning-center/surfviving',
+    element: <Surfviving />
+  },
+  { path: '/learning-center/bls', element: <BLS /> },
+  { path: '/learning-center/acls', element: <ACLS /> },
+  {
+    path: '/learning-center/wilderness',
+    element: <Wilderness />
+  },
+
+  { path: '/workshops', element: <Workshops /> },
+  { path: '/about', element: <About /> },
+  { path: '/contact', element: <Contact /> },
+
+  { path: '/visuals', element: <ExpeditionVisuals /> },
+  {
+    path: '/visuals/amsterdam',
+    element: <AmsterdamVisual />
+  },
+  {
+    path: '/visuals/barcelona',
+    element: <BarcelonaVisual />
+  },
+  {
+    path: '/visuals/wildlife',
+    element: <WildlifeVisuals />
+  },
+  {
+    path: '/visuals/washington-state',
+    element: <WashingtonStateVisual />
+  },
+  {
+    path: '/visuals/red-rocks-colorado',
+    element: <RedRocksVisual />
+  },
+  {
+    path: '/visuals/basel',
+    element: <BaselVisual />
+  },
+
+  { path: '/network', element: <Network /> }
+];
+
 export default function App() {
   return (
     <>
@@ -41,105 +96,35 @@ export default function App() {
 
       <Routes>
         <Route element={<Layout />}>
-
-          {/* Home */}
-          <Route path='/' element={<Home />} />
-          <Route path='/es' element={<Home />} />
-
-          {/* Main Sections */}
-          <Route path='/wellness' element={<Wellness />} />
-          <Route path='/training' element={<Training />} />
-          <Route path='/outdoor' element={<Outdoor />} />
-
-          {/* Books & Publications */}
-          <Route path='/books' element={<Books />} />
-
-          {/* Learning Center */}
-          <Route
-            path='/learning-center'
-            element={<Resources />}
-          />
-
-          <Route
-            path='/learning-center/surfviving'
-            element={<Surfviving />}
-          />
-
-          <Route
-            path='/learning-center/bls'
-            element={<BLS />}
-          />
-
-          <Route
-            path='/learning-center/acls'
-            element={<ACLS />}
-          />
-
-          <Route
-            path='/learning-center/wilderness'
-            element={<Wilderness />}
-          />
+          {pageRoutes.map(({ path, element }) => (
+            <React.Fragment key={path}>
+              <Route path={path} element={element} />
+              <Route
+                path={path === '/' ? '/es' : `/es${path}`}
+                element={element}
+              />
+            </React.Fragment>
+          ))}
 
           <Route
             path='/resources'
-            element={
-              <Navigate to='/learning-center' replace />
-            }
+            element={<Navigate to='/learning-center' replace />}
           />
 
-          {/* Workshops */}
-          <Route path='/workshops' element={<Workshops />} />
-
-          {/* About & Contact */}
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-
-          {/* Expedition Visuals */}
           <Route
-            path='/visuals'
-            element={<ExpeditionVisuals />}
+            path='/es/resources'
+            element={<Navigate to='/es/learning-center' replace />}
           />
 
           <Route
             path='/expeditions'
-            element={<ExpeditionVisuals />}
+            element={<Navigate to='/visuals' replace />}
           />
 
           <Route
-            path='/visuals/amsterdam'
-            element={<AmsterdamVisual />}
+            path='/es/expeditions'
+            element={<Navigate to='/es/visuals' replace />}
           />
-
-          <Route
-            path='/visuals/barcelona'
-            element={<BarcelonaVisual />}
-          />
-
-          <Route
-            path='/visuals/wildlife'
-            element={<WildlifeVisuals />}
-          />
-
-          <Route
-            path='/visuals/washington-state'
-            element={<WashingtonStateVisual />}
-          />
-
-          <Route
-            path='/visuals/red-rocks-colorado'
-            element={<RedRocksVisual />}
-          />
-
-          <Route
-            path='/visuals/basel'
-            element={<BaselVisual />}
-          />
-
-          {/* Global Expedition Network */}
-          <Route path='/network' element={<Network />} />
-
-          {/* Surfviving Page */}
-          <Route path='/surfviving' element={<SurfvivingPage />} />
         </Route>
       </Routes>
     </>
