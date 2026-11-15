@@ -379,7 +379,7 @@ export default function SurfvivingPage() {
               <h2>{t.resourcesTitle}</h2>
 
               <img
-                src='/surfviving-riding-the-emotional-wave.png'
+                src='/learning-center/surfviving-card.png'
                 alt={t.resourcesTitle}
                 className='feature-thumb'
                 loading='lazy'
