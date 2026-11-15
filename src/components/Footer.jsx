@@ -2,7 +2,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { useLanguage } from './LanguageContext.jsx';
+import { useLanguage, localizedPath } from './LanguageContext.jsx';
 import { translations } from '../translations/translations.js';
 
 export default function Footer() {
@@ -48,7 +48,7 @@ export default function Footer() {
           {links.map((link) => (
             <NavLink
               key={link.to}
-              to={link.to}
+              to={localizedPath(link.to, language)}
               end={link.end}
               className='footer-link'
             >
