@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../components/LanguageContext.jsx';
@@ -9,6 +10,8 @@ export default function Wellness() {
   const t =
     translations[language]?.wellnessPage ||
     translations.en.wellnessPage;
+
+  const isSpanish = language === 'es';
 
   return (
     <>
@@ -30,7 +33,7 @@ export default function Wellness() {
 
               <img
                 src='/logo_surfviving.png'
-                alt='DC LifeSafe Global'
+                alt='SURFVIVING™'
                 className='surfviving-hero-logo'
               />
 
@@ -38,12 +41,58 @@ export default function Wellness() {
 
               <p>{t.heroText}</p>
 
-              <a
-                className='btn'
-                href='mailto:info@dclifesafeglobal.com?subject=Free%20Consultation%20Request&body=Hello%20DC%20LifeSafe%20Global%2C%0A%0AI%20would%20like%20to%20request%20a%20free%20consultation.%0A%0AName%3A%20%0APhone%3A%20%0AEmail%3A%20%0AWhat%20are%20you%20looking%20for%3F%0A'
+              {/* Hero action buttons */}
+              <div
+                className='wellness-hero-actions'
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  alignItems: 'center',
+                  gap: '12px',
+                  marginTop: '18px'
+                }}
               >
-                {t.consultationBtn}
-              </a>
+                <a
+                  className='btn'
+                  href={
+                    'mailto:info@dclifesafeglobal.com' +
+                    '?subject=' +
+                    encodeURIComponent(
+                      isSpanish
+                        ? 'Solicitud de consulta gratuita'
+                        : 'Free Consultation Request'
+                    ) +
+                    '&body=' +
+                    encodeURIComponent(
+                      isSpanish
+                        ? 'Hola DC LifeSafe Global,\n\n' +
+                          'Me gustaría solicitar información sobre una consulta gratuita.\n\n' +
+                          'Nombre:\nTeléfono:\nCorreo electrónico:\n' +
+                          '¿Qué información necesitas?:\n'
+                        : 'Hello DC LifeSafe Global,\n\n' +
+                          'I would like to request a free consultation.\n\n' +
+                          'Name:\nPhone:\nEmail:\n' +
+                          'What are you looking for?:\n'
+                    )
+                  }
+                >
+                  {t.consultationBtn}
+                </a>
+
+                <Link
+                  className='btn'
+                  to='/surfviving'
+                  style={{
+                    background: 'transparent',
+                    border: '2px solid currentColor',
+                    color: 'inherit'
+                  }}
+                >
+                  {isSpanish
+                    ? 'Descubre SURFVIVING™'
+                    : 'Discover SURFVIVING™'}
+                </Link>
+              </div>
 
             </div>
           </div>
