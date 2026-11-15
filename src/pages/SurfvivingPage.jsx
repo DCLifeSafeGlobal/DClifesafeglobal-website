@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '../components/LanguageContext.jsx';
+import { useLanguage, localizedPath } from '../components/LanguageContext.jsx';
 
 export default function SurfvivingPage() {
   const { language } = useLanguage();
@@ -338,7 +338,7 @@ export default function SurfvivingPage() {
 
             <p>{t.bookDescription}</p>
 
-            <Link className='btn' to='/books'>
+            <Link className='btn' to={localizedPath('/books', language)}>
               {t.bookButton}
             </Link>
           </div>
@@ -368,7 +368,7 @@ export default function SurfvivingPage() {
 
               <Link
                 className='btn'
-                to='/wellness'
+                to={localizedPath('/wellness', language)}
               >
                 {t.wellnessButton}
               </Link>
@@ -389,7 +389,7 @@ export default function SurfvivingPage() {
 
               <Link
                 className='btn'
-                to='/learning-center/surfviving'
+                to={localizedPath('/learning-center/surfviving', language)}
               >
                 {t.resourcesButton}
               </Link>
@@ -416,7 +416,7 @@ export default function SurfvivingPage() {
             {t.programsDescription}
           </p>
 
-          <Link className='btn' to='/workshops'>
+          <Link className='btn' to={localizedPath('/workshops', language)}>
             {t.programsButton}
           </Link>
 
