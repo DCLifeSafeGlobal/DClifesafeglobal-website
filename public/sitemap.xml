@@ -1,69 +1,269 @@
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- HOME -->
   <url>
     <loc>https://www.dclifesafeglobal.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/"/>
+  </url>
+
+  <!-- WELLNESS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/wellness</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/wellness"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/wellness"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/wellness</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/wellness"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/wellness"/>
+  </url>
+
+  <!-- SURFVIVING -->
   <url>
     <loc>https://www.dclifesafeglobal.com/surfviving</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/surfviving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/surfviving"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/surfviving</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/surfviving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/surfviving"/>
+  </url>
+
+  <!-- TRAINING -->
   <url>
     <loc>https://www.dclifesafeglobal.com/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/training"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/training"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/training"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/training"/>
+  </url>
+
+  <!-- OUTDOOR -->
   <url>
     <loc>https://www.dclifesafeglobal.com/outdoor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/outdoor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/outdoor"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/outdoor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/outdoor"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/outdoor"/>
+  </url>
+
+  <!-- EXPEDITION VISUALS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals"/>
+  </url>
+
+  <!-- RED ROCKS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals/red-rocks-colorado</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/red-rocks-colorado"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/red-rocks-colorado"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals/red-rocks-colorado</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/red-rocks-colorado"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/red-rocks-colorado"/>
+  </url>
+
+  <!-- BASEL -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals/basel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/basel"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/basel"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals/basel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/basel"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/basel"/>
+  </url>
+
+  <!-- WASHINGTON STATE -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals/washington-state</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/washington-state"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/washington-state"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals/washington-state</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/washington-state"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/washington-state"/>
+  </url>
+
+  <!-- AMSTERDAM -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals/amsterdam</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/amsterdam"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/amsterdam"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals/amsterdam</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/amsterdam"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/amsterdam"/>
+  </url>
+
+  <!-- BARCELONA -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals/barcelona</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/barcelona"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/barcelona"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals/barcelona</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/barcelona"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/barcelona"/>
+  </url>
+
+  <!-- WILDLIFE -->
   <url>
     <loc>https://www.dclifesafeglobal.com/visuals/wildlife</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/wildlife"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/wildlife"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/visuals/wildlife</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/visuals/wildlife"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/visuals/wildlife"/>
+  </url>
+
+  <!-- LEARNING CENTER -->
   <url>
     <loc>https://www.dclifesafeglobal.com/learning-center</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/learning-center</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center"/>
+  </url>
+
+  <!-- SURFVIVING LEARNING -->
   <url>
     <loc>https://www.dclifesafeglobal.com/learning-center/surfviving</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/surfviving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/surfviving"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/learning-center/surfviving</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/surfviving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/surfviving"/>
+  </url>
+
+  <!-- BLS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/learning-center/bls</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/bls"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/bls"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/learning-center/bls</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/bls"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/bls"/>
+  </url>
+
+  <!-- ACLS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/learning-center/acls</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/acls"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/acls"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/learning-center/acls</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/acls"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/acls"/>
+  </url>
+
+  <!-- WILDERNESS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/learning-center/wilderness</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/wilderness"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/wilderness"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/learning-center/wilderness</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/learning-center/wilderness"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/learning-center/wilderness"/>
+  </url>
+
+  <!-- BOOKS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/books</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/books"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/books"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/books</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/books"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/books"/>
+  </url>
+
+  <!-- WORKSHOPS -->
   <url>
     <loc>https://www.dclifesafeglobal.com/workshops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/workshops"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/workshops"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/workshops</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/workshops"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/workshops"/>
+  </url>
+
+  <!-- GLOBAL EXPEDITION NETWORK -->
   <url>
     <loc>https://www.dclifesafeglobal.com/network</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/network"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/network"/>
   </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/network</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/network"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/network"/>
+  </url>
+
+  <!-- ABOUT -->
   <url>
     <loc>https://www.dclifesafeglobal.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/about"/>
   </url>
   <url>
-    <loc>https://www.dclifesafeglobal.com/contact</loc>
+    <loc>https://www.dclifesafeglobal.com/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/about"/>
   </url>
+
+  <!-- CONTACT -->
+  <url>
+    <loc>https://www.dclifesafeglobal.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/contact"/>
+  </url>
+  <url>
+    <loc>https://www.dclifesafeglobal.com/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.dclifesafeglobal.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.dclifesafeglobal.com/es/contact"/>
+  </url>
+
 </urlset>
