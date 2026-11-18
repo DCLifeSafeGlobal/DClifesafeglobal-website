@@ -9,52 +9,85 @@ import {
 import { useLanguage } from '../components/LanguageContext.jsx';
 import { translations } from '../translations/translations.js';
 
+// ============================================
+// DC LIFESAFE GLOBAL
+// TRAINING - SCHEDULED COURSES
+// ============================================
+
+// Original course flyers uploaded to GitHub.
+// Paths are case-sensitive.
+// Files are located inside public/Training/.
+
 const scheduledCourses = [
   {
     id: 'bls',
     title: 'BLS Provider',
     fullName: 'Basic Life Support',
-    poster: '/training/bls.jpg',
+
+    poster: '/Training/BLS/BLS Nov - Dec 26.jpg',
+
     datesEn: 'Nov 28 · Dec 12 & 19, 2026',
     datesEs: '28 nov. · 12 y 19 dic. de 2026',
+
     priceEn: 'Initial $75 · Renewal $65',
     priceEs: 'Inicial $75 · Renovación $65',
-    certification: 'American Heart Association'
+
+    certification: 'American Heart Association (AHA)'
   },
+
   {
     id: 'acls',
     title: 'ACLS Provider',
     fullName: 'Advanced Cardiovascular Life Support',
-    poster: '/training/acls.jpg',
+
+    poster: '/Training/ACLS/ACLS 12-19-26.jpg',
+
     datesEn: 'December 19, 2026',
     datesEs: '19 de diciembre de 2026',
+
     priceEn: 'Initial $225 · Renewal $185',
     priceEs: 'Inicial $225 · Renovación $185',
-    certification: 'American Heart Association'
+
+    certification: 'American Heart Association (AHA)'
   },
+
   {
     id: 'wfa',
     title: 'Wilderness First Aid',
     fullName: 'WFA',
-    poster: '/training/wfa.jpg',
+
+    poster: '/Training/WFA/WFA 1-9-27.jpg',
+
     datesEn: 'January 9, 2027',
     datesEs: '9 de enero de 2027',
+
     priceEn: '$350 · Early Registration $300',
     priceEs: '$350 · Inscripción anticipada $300',
+
     certification: 'Survival Med'
   },
+
   {
     id: 'wfr',
     title: 'Wilderness First Responder',
     fullName: 'WFR',
-    poster: '/training/wfr.jpg',
+
+    poster: '/Training/WFR/WFR 1-11-27.jpg',
+
     datesEn: 'Online Jan 11 · Practicals Feb 15–19, 2027',
-    datesEs: 'Online 11 ene. · Prácticas 15–19 feb. de 2027',
+    datesEs:
+      'Online 11 ene. · Prácticas 15–19 feb. de 2027',
+
     priceEn: '$1,000 · Early Registration $900',
     priceEs: '$1,000 · Inscripción anticipada $900',
+
     certification: 'Survival Med'
   }
 ];
+
+// ============================================
+// MAIN TRAINING PAGE
+// ============================================
 
 export default function Training() {
   const { language } = useLanguage();
@@ -66,6 +99,7 @@ export default function Training() {
   const es = language === 'es';
   const prefix = es ? '/es' : '';
 
+  // Existing training programs
   const programs = [
     {
       icon: '/icon_bls.png',
@@ -75,6 +109,7 @@ export default function Training() {
       link: `${prefix}/training/bls`,
       internal: true
     },
+
     {
       icon: '/icon_acls.png',
       title: 'ACLS',
@@ -83,6 +118,7 @@ export default function Training() {
       link: `${prefix}/training/acls`,
       internal: true
     },
+
     {
       icon: '/icon_wilderness.png',
       title: t.wildernessTitle,
@@ -91,6 +127,7 @@ export default function Training() {
       link: `${prefix}/training/wfa`,
       internal: true
     },
+
     {
       icon: '/icon_group.png',
       title: t.privateTitle,
@@ -101,6 +138,10 @@ export default function Training() {
       internal: false
     }
   ];
+
+  // ============================================
+  // COURSE CARD STYLES
+  // ============================================
 
   const posterGridStyle = {
     display: 'grid',
@@ -135,10 +176,16 @@ export default function Training() {
 
   return (
     <>
-      {/* Existing Training Hero */}
+
+      {/* ===================================== */}
+      {/* ORIGINAL TRAINING HERO */}
+      {/* ===================================== */}
+
       <section className='hero-training'>
         <div className='container hero-training-grid'>
+
           <div className='training-copy'>
+
             <div className='eyebrow'>
               {t.betterTraining}
               <br />
@@ -150,6 +197,7 @@ export default function Training() {
             <p>{t.heroText}</p>
 
             <div className='hero-buttons'>
+
               <a
                 className='btn btn-outline'
                 href='mailto:info@dclifesafeglobal.com?subject=Private%20Session%20Inquiry'
@@ -163,6 +211,7 @@ export default function Training() {
               >
                 {t.requestGroup}
               </a>
+
             </div>
           </div>
 
@@ -171,12 +220,18 @@ export default function Training() {
             alt='DC LifeSafe Global Training'
             className='hero-training-image'
           />
+
         </div>
       </section>
 
-      {/* Existing Program Categories */}
+
+      {/* ===================================== */}
+      {/* EXISTING TRAINING PROGRAMS */}
+      {/* ===================================== */}
+
       <section className='section'>
         <div className='container text-center'>
+
           <div className='eyebrow center'>
             {t.sectionTitle}
           </div>
@@ -186,11 +241,14 @@ export default function Training() {
           </h2>
 
           <div className='card-grid columns-4 mt-medium'>
+
             {programs.map((item) => (
+
               <article
                 className='program-card'
                 key={item.title}
               >
+
                 <img
                   src={item.icon}
                   alt=''
@@ -199,6 +257,7 @@ export default function Training() {
 
                 <h3>
                   {item.title}
+
                   {item.subtitle && (
                     <>
                       <br />
@@ -210,34 +269,50 @@ export default function Training() {
                 <p>{item.text}</p>
 
                 {item.internal ? (
+
                   <Link
                     className='text-link'
                     to={item.link}
                   >
                     {t.learnMore} →
                   </Link>
+
                 ) : (
+
                   <a
                     className='text-link'
                     href={item.link}
                   >
                     {t.learnMore} →
                   </a>
+
                 )}
+
               </article>
+
             ))}
+
           </div>
         </div>
       </section>
 
-      {/* New Scheduled Certification Courses */}
+
+      {/* ===================================== */}
+      {/* UPCOMING CLASSES & CERTIFICATIONS */}
+      {/* ===================================== */}
+
       <section
         className='section'
         id='upcoming-training-classes'
-        style={{ background: '#f5f7fa' }}
+        style={{
+          background: '#f5f7fa'
+        }}
       >
+
         <div className='container'>
+
           <div className='text-center'>
+
             <div className='eyebrow center'>
               DC LifeSafe Global
             </div>
@@ -260,28 +335,42 @@ export default function Training() {
                 ? 'Explora nuestros próximos cursos de soporte vital y medicina en entornos remotos. Consulta fechas, tarifas e información de inscripción.'
                 : 'Explore our upcoming life support and wilderness medicine training. View schedules, tuition, and registration information.'}
             </p>
+
           </div>
 
+
+          {/* FOUR ORIGINAL COURSE FLYERS */}
+
           <div style={posterGridStyle}>
+
             {scheduledCourses.map((course) => (
+
               <article
                 key={course.id}
                 style={posterCardStyle}
               >
-                <div
+
+                {/* Original flyer */}
+
+                <Link
+                  to={`${prefix}/training/${course.id}`}
+                  aria-label={
+                    es
+                      ? `Ver curso ${course.title}`
+                      : `View ${course.title} course`
+                  }
                   style={{
+                    display: 'block',
                     padding: '16px',
                     background: '#eaf0f5',
                     textAlign: 'center'
                   }}
                 >
+
                   <img
                     src={course.poster}
-                    alt={`${course.title} official course flyer`}
+                    alt={`${course.title} - DC LifeSafe Global`}
                     loading='lazy'
-                    onError={(event) => {
-                      event.currentTarget.style.display = 'none';
-                    }}
                     style={{
                       width: '100%',
                       maxWidth: '360px',
@@ -291,7 +380,11 @@ export default function Training() {
                       borderRadius: '6px'
                     }}
                   />
-                </div>
+
+                </Link>
+
+
+                {/* Course information */}
 
                 <div
                   style={{
@@ -302,6 +395,7 @@ export default function Training() {
                     gap: '12px'
                   }}
                 >
+
                   <span
                     style={{
                       color: '#24748d',
@@ -332,6 +426,9 @@ export default function Training() {
                     {course.fullName}
                   </p>
 
+
+                  {/* Dates */}
+
                   <div
                     style={{
                       display: 'flex',
@@ -340,16 +437,24 @@ export default function Training() {
                       color: '#253c56'
                     }}
                   >
+
                     <CalendarDays
                       size={19}
-                      style={{ flexShrink: 0 }}
+                      style={{
+                        flexShrink: 0
+                      }}
                     />
+
                     <span>
                       {es
                         ? course.datesEs
                         : course.datesEn}
                     </span>
+
                   </div>
+
+
+                  {/* Course tuition */}
 
                   <p
                     style={{
@@ -363,6 +468,9 @@ export default function Training() {
                       : course.priceEn}
                   </p>
 
+
+                  {/* Individual course page */}
+
                   <Link
                     to={`${prefix}/training/${course.id}`}
                     style={courseLinkStyle}
@@ -371,34 +479,54 @@ export default function Training() {
                       ? 'Ver detalles del curso'
                       : 'View Course Details'}
                   </Link>
+
                 </div>
+
               </article>
+
             ))}
+
           </div>
+
+
+          {/* Course schedule disclaimer */}
 
           <p
             style={{
               fontSize: '14px',
               color: '#637083',
               textAlign: 'center',
-              marginTop: '24px'
+              marginTop: '24px',
+              lineHeight: 1.6
             }}
           >
             {es
               ? 'Las fechas, horarios y disponibilidad de plazas deben confirmarse antes de la inscripción.'
               : 'Dates, times, and seat availability are subject to confirmation before registration.'}
           </p>
+
         </div>
+
       </section>
 
-      {/* Existing Benefits and Training Gear */}
+
+      {/* ===================================== */}
+      {/* ORIGINAL BENEFITS & TRAINING GEAR */}
+      {/* ===================================== */}
+
       <section className='section'>
         <div className='container'>
+
           <div className='training-bottom-grid'>
+
+            {/* Benefits */}
+
             <div className='training-benefits'>
+
               <h3>{t.whyTitle}</h3>
 
               <ul>
+
                 <li>
                   <CheckCircle2 size={18} />
                   {t.why1}
@@ -423,29 +551,43 @@ export default function Training() {
                   <CheckCircle2 size={18} />
                   {t.why5}
                 </li>
+
               </ul>
+
             </div>
+
+
+            {/* Training gear image */}
 
             <div className='training-bag-panel'>
+
               <img
                 src='/training_gear.png'
-                alt='Training gear'
+                alt='Training equipment'
               />
+
             </div>
 
-            {/* Updated Upcoming Courses */}
+
+            {/* Updated upcoming courses list */}
+
             <aside className='upcoming-card'>
+
               <h4>
                 <CalendarDays size={20} />
                 {t.upcomingCourses}
               </h4>
 
               {scheduledCourses.map((course) => (
+
                 <div
                   className='course-item'
                   key={course.id}
                 >
-                  <strong>{course.title}</strong>
+
+                  <strong>
+                    {course.title}
+                  </strong>
 
                   <span>
                     {es
@@ -465,18 +607,36 @@ export default function Training() {
                       marginTop: '8px'
                     }}
                   >
-                    {es ? 'Ver curso' : 'View Course'} →
+                    {es
+                      ? 'Ver curso'
+                      : 'View Course'} →
                   </Link>
+
                 </div>
+
               ))}
+
             </aside>
+
           </div>
 
-          {/* Existing Bottom Action */}
+
+          {/* ================================= */}
+          {/* ORIGINAL BOTTOM ACTION BAR */}
+          {/* ================================= */}
+
           <div className='bottom-action-bar'>
+
             <div>
-              <strong>{t.betterTraining}</strong>
-              <span>{t.strongerTomorrow}</span>
+
+              <strong>
+                {t.betterTraining}
+              </strong>
+
+              <span>
+                {t.strongerTomorrow}
+              </span>
+
             </div>
 
             <a
@@ -485,9 +645,12 @@ export default function Training() {
             >
               {t.getStarted}
             </a>
+
           </div>
+
         </div>
       </section>
+
     </>
   );
 }
