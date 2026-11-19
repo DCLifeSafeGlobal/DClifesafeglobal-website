@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CalendarDays, CheckCircle2 } from "lucide-react";
+import {
+  CalendarDays,
+  CheckCircle2,
+  Clock3,
+  MapPin,
+  Users,
+  Mail,
+} from "lucide-react";
 
 import { useLanguage } from "../components/LanguageContext.jsx";
 import { translations } from "../translations/translations.js";
@@ -8,17 +15,25 @@ import { translations } from "../translations/translations.js";
 // =====================================================
 // DC LIFESAFE GLOBAL
 // TRAINING PAGE
+//
 // Medicine Beyond the Trail.
 // Prevention Begins at Home.
+//
+// Flexible & Personalized Training
+// Bilingual: English / Spanish
 // =====================================================
 
-// OFFICIAL COURSES AND CONFIRMED PRICES
+
+// =====================================================
+// OFFICIAL COURSES & PRICES
+// =====================================================
 
 const scheduledCourses = [
   {
     id: "bls",
     title: "BLS Provider",
     fullName: "Basic Life Support",
+    fullNameEs: "Soporte Vital Básico",
     poster: "/Training/BLS/BLS.jpg",
     priceEn: "Initial $75 · Renewal $65",
     priceEs: "Inicial $75 · Renovación $65",
@@ -28,6 +43,7 @@ const scheduledCourses = [
     id: "acls",
     title: "ACLS Provider",
     fullName: "Advanced Cardiovascular Life Support",
+    fullNameEs: "Soporte Vital Cardiovascular Avanzado",
     poster: "/Training/ACLS/ACLS.jpg",
     priceEn: "Initial $225 · Renewal $185",
     priceEs: "Inicial $225 · Renovación $185",
@@ -36,7 +52,8 @@ const scheduledCourses = [
   {
     id: "wfa",
     title: "Wilderness First Aid",
-    fullName: "WFA",
+    fullName: "Wilderness First Aid (WFA)",
+    fullNameEs: "Primeros Auxilios en Zonas Agrestes",
     poster: "/Training/WFA/WFA.jpg",
     priceEn: "$350 per person",
     priceEs: "$350 por persona",
@@ -45,7 +62,8 @@ const scheduledCourses = [
   {
     id: "wfr",
     title: "Wilderness First Responder",
-    fullName: "WFR",
+    fullName: "Wilderness First Responder (WFR)",
+    fullNameEs: "Primer Respondiente en Zonas Agrestes",
     poster: "/Training/WFR/WFR.jpg",
     priceEn: "$1,000 per person",
     priceEs: "$1,000 por persona",
@@ -53,65 +71,110 @@ const scheduledCourses = [
   },
 ];
 
+
 // =====================================================
-// AUTOMATIC PROPOSED TRAINING DATES
-//
-// These are inquiry opportunities, NOT confirmed classes.
-// Dates are generated from the visitor's local date.
+// DATE UTILITIES
 // =====================================================
+
+// Noon avoids daylight-saving issues when working
+// with calendar dates.
 
 function dateAtNoon(year, month, day) {
   return new Date(year, month, day, 12, 0, 0);
 }
 
-function nextProposedDates(courseId, total = 4) {
-  const now = new Date();
 
-  const start = dateAtNoon(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate()
+// =====================================================
+// ROLLING FOUR-MONTH CALENDAR
+//
+// Current month + next three months.
+//
+// All dates are proposed opportunities.
+// They are NOT confirmed classes.
+// =====================================================
+
+function getVisibleMonths() {
+  const today = new Date();
+
+  return Array.from({ length: 4 }, (_, index) =>
+    dateAtNoon(
+      today.getFullYear(),
+      today.getMonth() + index,
+      1
+    )
   );
+}
+
+
+// =====================================================
+// PROPOSED COURSE DATES
+// =====================================================
+
+function getProposedDates(courseId, selectedMonth) {
+  const today = new Date();
+
+  const todayDate = dateAtNoon(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+
+  const year = selectedMonth.getFullYear();
+  const month = selectedMonth.getMonth();
+
+  const daysInMonth = new Date(
+    year,
+    month + 1,
+    0
+  ).getDate();
 
   const dates = [];
 
-  // Reference Saturday for alternating ACLS sessions.
-  const anchor = Date.UTC(2026, 10, 21) / 86400000;
+  // Alternating ACLS Saturdays.
+  // Reference: November 21, 2026.
+  const aclsAnchor =
+    Date.UTC(2026, 10, 21) / 86400000;
 
-  for (
-    let offset = 1;
-    offset <= 125 && dates.length < total;
-    offset++
-  ) {
-    const date = dateAtNoon(
-      start.getFullYear(),
-      start.getMonth(),
-      start.getDate() + offset
-    );
+  for (let day = 1; day <= daysInMonth; day++) {
+    const date = dateAtNoon(year, month, day);
+
+    // Do not show past dates.
+    if (date <= todayDate) continue;
 
     const weekday = date.getDay();
-    const day = date.getDate();
 
     const dayNumber =
-      Date.UTC(
-        date.getFullYear(),
-        date.getMonth(),
-        date.getDate()
-      ) / 86400000;
+      Date.UTC(year, month, day) / 86400000;
 
-    const matches =
-      (courseId === "bls" &&
-        (weekday === 2 || weekday === 6)) ||
+    let matches = false;
 
-      (courseId === "acls" &&
-        weekday === 6 &&
-        (dayNumber - anchor) % 14 === 0) ||
+    switch (courseId) {
+      case "bls":
+        // Tuesdays and Saturdays
+        matches =
+          weekday === 2 || weekday === 6;
+        break;
 
-      (courseId === "wfa" &&
-        weekday === 0) ||
+      case "acls":
+        // Alternating Saturdays
+        matches =
+          weekday === 6 &&
+          (dayNumber - aclsAnchor) % 14 === 0;
+        break;
 
-      (courseId === "wfr" &&
-        (day === 1 || day === 15));
+      case "wfa":
+        // Sundays
+        matches = weekday === 0;
+        break;
+
+      case "wfr":
+        // Online-start inquiry opportunities
+        matches = day === 1 || day === 15;
+        break;
+
+      default:
+        matches = false;
+    }
 
     if (matches) {
       dates.push(date);
@@ -121,8 +184,53 @@ function nextProposedDates(courseId, total = 4) {
   return dates;
 }
 
+
 // =====================================================
-// TRAINING INQUIRY EMAIL
+// DATE FORMATTING
+// =====================================================
+
+function formatDate(date, es, includeYear = true) {
+  return date.toLocaleDateString(
+    es ? "es-US" : "en-US",
+    {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      ...(includeYear ? { year: "numeric" } : {}),
+    }
+  );
+}
+
+function formatMonth(date, es) {
+  const result = date.toLocaleDateString(
+    es ? "es-US" : "en-US",
+    {
+      month: "long",
+      year: "numeric",
+    }
+  );
+
+  return result.charAt(0).toUpperCase() + result.slice(1);
+}
+
+
+// =====================================================
+// EMAIL UTILITIES
+// =====================================================
+
+function createMailto(subject, body) {
+  return (
+    "mailto:info@dclifesafeglobal.com" +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body)
+  );
+}
+
+
+// =====================================================
+// INQUIRY FOR A PROPOSED DATE
 // =====================================================
 
 function trainingInquiryLink(course, date, es) {
@@ -136,58 +244,193 @@ function trainingInquiryLink(course, date, es) {
   );
 
   const subject = es
-    ? `Solicitud de capacitación - ${course.title} - ${dateText}`
-    : `Training Request - ${course.title} - ${dateText}`;
+    ? `Consulta de capacitación - ${course.title} - ${dateText}`
+    : `Training Inquiry - ${course.title} - ${dateText}`;
 
   const body = es
     ? [
         "Hola DC LifeSafe Global,",
         "",
-        `Me interesa solicitar capacitación en ${course.title}.`,
+        `Me interesa el curso ${course.title}.`,
         "",
-        `Fecha preferida: ${dateText}`,
-        "(Fecha propuesta, pendiente de confirmación)",
+        `Fecha propuesta seleccionada: ${dateText}`,
         "",
         "Nombre completo:",
         "Número de participantes:",
         "Ciudad / Estado:",
-        "Idioma preferido:",
-        "Preguntas adicionales:",
+        "Horario preferido:",
+        "Idioma preferido: Español / Inglés",
+        "Modalidad preferida:",
+        "Certificación inicial o renovación (si corresponde):",
+        "Comentarios adicionales:",
         "",
-        "Entiendo que la fecha y ubicación deben confirmarse.",
+        "Entiendo que esta fecha está sujeta a confirmación.",
         "",
         "Gracias.",
       ].join("\n")
     : [
         "Hello DC LifeSafe Global,",
         "",
-        `I am interested in ${course.title} training.`,
+        `I am interested in ${course.title}.`,
         "",
-        `Preferred date: ${dateText}`,
-        "(Proposed date, subject to confirmation)",
+        `Selected proposed date: ${dateText}`,
         "",
         "Full Name:",
         "Number of Participants:",
         "City / State:",
-        "Preferred Language:",
+        "Preferred Time:",
+        "Preferred Language: English / Spanish",
+        "Preferred Training Format:",
+        "Initial or Renewal (if applicable):",
         "Additional Questions:",
         "",
-        "I understand that the date and location require confirmation.",
+        "I understand this date is subject to confirmation.",
         "",
         "Thank you.",
       ].join("\n");
 
-  return (
-    "mailto:info@dclifesafeglobal.com" +
-    "?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body)
-  );
+  return createMailto(subject, body);
 }
 
+
 // =====================================================
-// MAIN TRAINING PAGE
+// PERSONALIZED TRAINING INQUIRY
+// =====================================================
+
+function personalizedTrainingLink(course, es) {
+  const courseName = course
+    ? course.title
+    : es
+      ? "Capacitación personalizada"
+      : "Personalized Training";
+
+  const subject = es
+    ? `Solicitud de capacitación personalizada - ${courseName}`
+    : `Personalized Training Request - ${courseName}`;
+
+  const body = es
+    ? [
+        "Hola DC LifeSafe Global,",
+        "",
+        "Me interesa solicitar una capacitación personalizada.",
+        "",
+        `Curso: ${course ? course.title : ""}`,
+        "",
+        "Nombre completo:",
+        "Número de participantes:",
+        "Fecha preferida:",
+        "Horario preferido:",
+        "  Mañana / Tarde / Noche / Fin de semana",
+        "",
+        "Modalidad preferida:",
+        "  Individual / Grupal / A domicilio / Lugar de trabajo",
+        "",
+        "Ciudad / Estado / Código postal:",
+        "Idioma preferido: Español / Inglés",
+        "Certificación inicial o renovación (si corresponde):",
+        "",
+        "Comentarios o necesidades especiales:",
+        "",
+        "Entiendo que la disponibilidad y ubicación deben confirmarse.",
+        "",
+        "Gracias.",
+      ].join("\n")
+    : [
+        "Hello DC LifeSafe Global,",
+        "",
+        "I would like to request personalized training.",
+        "",
+        `Course: ${course ? course.title : ""}`,
+        "",
+        "Full Name:",
+        "Number of Participants:",
+        "Preferred Date:",
+        "Preferred Time:",
+        "  Morning / Afternoon / Evening / Weekend",
+        "",
+        "Preferred Training Format:",
+        "  Private / Group / At Home / Workplace",
+        "",
+        "City / State / ZIP Code:",
+        "Preferred Language: English / Spanish",
+        "Initial or Renewal (if applicable):",
+        "",
+        "Additional Questions or Special Requirements:",
+        "",
+        "I understand that availability and location require confirmation.",
+        "",
+        "Thank you.",
+      ].join("\n");
+
+  return createMailto(subject, body);
+}
+
+
+// =====================================================
+// PRIVATE OR GROUP TRAINING INQUIRY
+// =====================================================
+
+function specificTrainingLink(type, es) {
+  const isPrivate = type === "private";
+
+  const subject = es
+    ? isPrivate
+      ? "Solicitud de capacitación privada"
+      : "Solicitud de capacitación grupal"
+    : isPrivate
+      ? "Private Training Inquiry"
+      : "Group Training Inquiry";
+
+  const body = es
+    ? [
+        "Hola DC LifeSafe Global,",
+        "",
+        isPrivate
+          ? "Me interesa solicitar una capacitación privada."
+          : "Me interesa solicitar una capacitación grupal.",
+        "",
+        "Nombre completo:",
+        "Organización (si corresponde):",
+        "Curso solicitado:",
+        "Número de participantes:",
+        "Fecha preferida:",
+        "Horario preferido:",
+        "Ciudad / Estado / Código postal:",
+        "Modalidad o lugar preferido:",
+        "Idioma preferido: Español / Inglés",
+        "",
+        "Comentarios adicionales:",
+        "",
+        "Gracias.",
+      ].join("\n")
+    : [
+        "Hello DC LifeSafe Global,",
+        "",
+        isPrivate
+          ? "I am interested in private training."
+          : "I am interested in group training.",
+        "",
+        "Full Name:",
+        "Organization (if applicable):",
+        "Requested Course:",
+        "Number of Participants:",
+        "Preferred Date:",
+        "Preferred Time:",
+        "City / State / ZIP Code:",
+        "Preferred Format or Location:",
+        "Preferred Language: English / Spanish",
+        "",
+        "Additional Questions:",
+        "",
+        "Thank you.",
+      ].join("\n");
+
+  return createMailto(subject, body);
+}
+
+
+// =====================================================
+// MAIN TRAINING COMPONENT
 // =====================================================
 
 export default function Training() {
@@ -199,6 +442,16 @@ export default function Training() {
   const t =
     translations[language]?.trainingPage ||
     translations.en.trainingPage;
+
+  const [selectedMonthIndex, setSelectedMonthIndex] =
+    useState(0);
+
+  const visibleMonths = getVisibleMonths();
+
+  const selectedMonth =
+    visibleMonths[selectedMonthIndex] ||
+    visibleMonths[0];
+
 
   // =====================================================
   // ORIGINAL TRAINING PROGRAMS
@@ -234,17 +487,17 @@ export default function Training() {
       title: t.privateTitle,
       subtitle: "",
       text: t.privateText,
-      link:
-        "mailto:info@dclifesafeglobal.com?subject=Private%20Workshop%20Inquiry",
+      link: specificTrainingLink("group", es),
       internal: false,
     },
   ];
+
 
   // =====================================================
   // SHARED STYLES
   // =====================================================
 
-  const posterGridStyle = {
+  const cardGridStyle = {
     display: "grid",
     gridTemplateColumns:
       "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
@@ -253,7 +506,7 @@ export default function Training() {
     alignItems: "stretch",
   };
 
-  const posterCardStyle = {
+  const cardStyle = {
     background: "#ffffff",
     borderRadius: "18px",
     overflow: "hidden",
@@ -263,7 +516,7 @@ export default function Training() {
     border: "1px solid #e5eaf0",
   };
 
-  const courseLinkStyle = {
+  const buttonStyle = {
     display: "block",
     padding: "14px 20px",
     borderRadius: "10px",
@@ -272,7 +525,14 @@ export default function Training() {
     background: "#0c355c",
     textAlign: "center",
     fontWeight: 600,
-    marginTop: "auto",
+    lineHeight: 1.4,
+  };
+
+  const secondaryButtonStyle = {
+    ...buttonStyle,
+    background: "#ffffff",
+    color: "#0c355c",
+    border: "2px solid #0c355c",
   };
 
   const paragraphStyle = {
@@ -281,15 +541,16 @@ export default function Training() {
     fontSize: "16px",
   };
 
+
   // =====================================================
-  // PAGE CONTENT
+  // PAGE
   // =====================================================
 
   return (
     <>
 
       {/* =====================================
-          ORIGINAL TRAINING HERO
+          TRAINING HERO
       ===================================== */}
 
       <section className="hero-training">
@@ -311,16 +572,20 @@ export default function Training() {
 
               <a
                 className="btn btn-outline"
-                href="mailto:info@dclifesafeglobal.com?subject=Private%20Session%20Inquiry"
+                href={specificTrainingLink("private", es)}
               >
-                {t.requestPrivate}
+                {es
+                  ? "Solicitar capacitación privada"
+                  : "Request Private Training"}
               </a>
 
               <a
                 className="btn btn-dark"
-                href="mailto:info@dclifesafeglobal.com?subject=Group%20Training%20Inquiry"
+                href={specificTrainingLink("group", es)}
               >
-                {t.requestGroup}
+                {es
+                  ? "Solicitar capacitación grupal"
+                  : "Request Group Training"}
               </a>
 
             </div>
@@ -336,8 +601,9 @@ export default function Training() {
         </div>
       </section>
 
+
       {/* =====================================
-          BUILD SKILLS. SAVE LIVES.
+          TRAINING PROGRAMS
       ===================================== */}
 
       <section className="section">
@@ -406,6 +672,7 @@ export default function Training() {
 
       </section>
 
+
       {/* =====================================
           TRAINING COURSES & CERTIFICATIONS
       ===================================== */}
@@ -434,28 +701,29 @@ export default function Training() {
 
             <p
               style={{
-                maxWidth: "720px",
+                maxWidth: "750px",
                 margin: "12px auto 0",
                 color: "#526173",
-                lineHeight: 1.7,
+                lineHeight: 1.8,
               }}
             >
               {es
-                ? "Explora nuestros cursos de soporte vital y medicina en zonas agrestes. Tarifas confirmadas, horarios flexibles y clases en inglés y español."
-                : "Explore our life support and wilderness medicine courses. Confirmed tuition, flexible scheduling, and classes in English and Spanish."}
+                ? "Explora nuestros cursos de soporte vital y medicina en zonas agrestes. Tarifas confirmadas, programación flexible y clases disponibles en inglés y español."
+                : "Explore our life support and wilderness medicine courses. Confirmed tuition, flexible scheduling, and classes available in English and Spanish."}
             </p>
 
           </div>
 
+
           {/* FOUR OFFICIAL COURSE FLYERS */}
 
-          <div style={posterGridStyle}>
+          <div style={cardGridStyle}>
 
             {scheduledCourses.map((course) => (
 
               <article
                 key={course.id}
-                style={posterCardStyle}
+                style={cardStyle}
               >
 
                 <Link
@@ -526,7 +794,9 @@ export default function Training() {
                       margin: 0,
                     }}
                   >
-                    {course.fullName}
+                    {es
+                      ? course.fullNameEs
+                      : course.fullName}
                   </p>
 
                   <div
@@ -567,7 +837,10 @@ export default function Training() {
 
                   <Link
                     to={`${prefix}/training/${course.id}`}
-                    style={courseLinkStyle}
+                    style={{
+                      ...buttonStyle,
+                      marginTop: "auto",
+                    }}
                   >
                     {es
                       ? "Ver detalles del curso"
@@ -588,7 +861,7 @@ export default function Training() {
               color: "#637083",
               textAlign: "center",
               marginTop: "24px",
-              lineHeight: 1.6,
+              lineHeight: 1.7,
             }}
           >
             {es
@@ -600,8 +873,9 @@ export default function Training() {
 
       </section>
 
+
       {/* =====================================
-          UPCOMING TRAINING OPPORTUNITIES
+          FOUR-MONTH TRAINING CALENDAR
       ===================================== */}
 
       <section
@@ -615,7 +889,7 @@ export default function Training() {
 
             <div className="eyebrow center">
               {es
-                ? "Horarios flexibles · Inglés y español"
+                ? "Programación flexible · Inglés y español"
                 : "Flexible Scheduling · English & Spanish"}
             </div>
 
@@ -627,132 +901,265 @@ export default function Training() {
 
             <p className="section-subtitle narrow">
               {es
-                ? "Selecciona una fecha propuesta para solicitar información. La realización del curso, el lugar y las plazas se confirman individualmente."
-                : "Choose a proposed date to request information. Course operation, venue, and availability are confirmed individually."}
+                ? "Selecciona un mes y una fecha propuesta para solicitar información. También puedes elegir cualquier otra fecha que se adapte a tus necesidades."
+                : "Select a month and a proposed date to request information. You may also choose any other date that works for you."}
             </p>
 
           </div>
 
-          <div style={posterGridStyle}>
 
-            {scheduledCourses.map((course) => (
+          {/* MONTH SELECTOR */}
 
-              <article
-                key={course.id}
-                style={{
-                  ...posterCardStyle,
-                  padding: "22px",
-                  gap: "12px",
-                }}
-              >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: "10px",
+              marginTop: "35px",
+              marginBottom: "12px",
+            }}
+            role="group"
+            aria-label={
+              es
+                ? "Seleccionar mes"
+                : "Select month"
+            }
+          >
 
-                <h3
+            {visibleMonths.map((month, index) => {
+
+              const selected =
+                selectedMonthIndex === index;
+
+              return (
+                <button
+                  key={`${month.getFullYear()}-${month.getMonth()}`}
+                  type="button"
+                  onClick={() => setSelectedMonthIndex(index)}
+                  aria-pressed={selected}
                   style={{
-                    margin: 0,
-                    color: "#10294a",
-                    fontSize: "21px",
-                  }}
-                >
-                  {course.title}
-                </h3>
-
-                <p
-                  style={{
-                    ...paragraphStyle,
-                    margin: 0,
+                    padding: "12px 20px",
+                    borderRadius: "10px",
+                    border: selected
+                      ? "2px solid #0c355c"
+                      : "1px solid #d6e0e8",
+                    background: selected
+                      ? "#0c355c"
+                      : "#ffffff",
+                    color: selected
+                      ? "#ffffff"
+                      : "#0c355c",
+                    fontWeight: 600,
+                    cursor: "pointer",
                     fontSize: "14px",
                   }}
                 >
-                  {course.id === "wfr"
-                    ? (
-                      es
-                        ? "Dos oportunidades mensuales para consultar el inicio online. Las prácticas presenciales se coordinan por separado."
-                        : "Two monthly online-start inquiry opportunities. In-person practicals are arranged separately."
-                    )
-                    : course.id === "bls"
-                      ? (
-                        es
-                          ? "Martes y sábados propuestos"
-                          : "Proposed Tuesdays & Saturdays"
-                      )
-                      : course.id === "acls"
-                        ? (
-                          es
-                            ? "Sábados alternos propuestos"
-                            : "Proposed Alternate Saturdays"
-                        )
-                        : (
-                          es
-                            ? "Domingos propuestos"
-                            : "Proposed Sundays"
-                        )}
-                </p>
-
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                    marginTop: "6px",
-                  }}
-                >
-
-                  {nextProposedDates(course.id).map((date) => (
-
-                    <a
-                      key={`${course.id}-${date.getTime()}`}
-                      href={trainingInquiryLink(
-                        course,
-                        date,
-                        es
-                      )}
-                      className="btn btn-outline"
-                      style={{
-                        textAlign: "center",
-                        whiteSpace: "normal",
-                      }}
-                    >
-
-                      {date.toLocaleDateString(
-                        es ? "es-US" : "en-US",
-                        {
-                          weekday: "short",
-                          month: "short",
-                          day: "numeric",
-                          year: "numeric",
-                        }
-                      )}
-
-                      {" — "}
-
-                      {es
-                        ? "Solicitar información"
-                        : "Request Information"}
-
-                    </a>
-
-                  ))}
-
-                </div>
-
-                <p
-                  style={{
-                    fontSize: "13px",
-                    lineHeight: 1.6,
-                    color: "#637083",
-                    margin: "auto 0 0",
-                  }}
-                >
-                  {es
-                    ? "Fecha tentativa. No constituye una reserva ni una sesión confirmada."
-                    : "Proposed only. Not a reserved seat or confirmed session."}
-                </p>
-
-              </article>
-
-            ))}
+                  {formatMonth(month, es)}
+                </button>
+              );
+            })}
 
           </div>
+
+
+          {/* CALENDAR CARDS */}
+
+          <div style={cardGridStyle}>
+
+            {scheduledCourses.map((course) => {
+
+              const dates = getProposedDates(
+                course.id,
+                selectedMonth
+              );
+
+              return (
+                <article
+                  key={course.id}
+                  style={{
+                    ...cardStyle,
+                    padding: "22px",
+                    gap: "14px",
+                  }}
+                >
+
+                  <h3
+                    style={{
+                      margin: 0,
+                      color: "#10294a",
+                      fontSize: "21px",
+                    }}
+                  >
+                    {course.title}
+                  </h3>
+
+                  <p
+                    style={{
+                      ...paragraphStyle,
+                      margin: 0,
+                      fontSize: "14px",
+                    }}
+                  >
+                    {course.id === "wfr"
+                      ? (
+                        es
+                          ? "Dos oportunidades mensuales para consultar el inicio online. Las 35 horas prácticas se coordinan por separado."
+                          : "Two monthly online-start inquiry opportunities. The 35 practical training hours are arranged separately."
+                      )
+                      : course.id === "bls"
+                        ? (
+                          es
+                            ? "Martes y sábados propuestos"
+                            : "Proposed Tuesdays & Saturdays"
+                        )
+                        : course.id === "acls"
+                          ? (
+                            es
+                              ? "Sábados alternos propuestos"
+                              : "Proposed Alternate Saturdays"
+                          )
+                          : (
+                            es
+                              ? "Domingos propuestos"
+                              : "Proposed Sundays"
+                          )}
+                  </p>
+
+                  <p
+                    style={{
+                      color: "#24748d",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      margin: "4px 0",
+                    }}
+                  >
+                    {formatMonth(selectedMonth, es)}
+                  </p>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                    }}
+                  >
+
+                    {dates.length > 0 ? (
+
+                      dates.map((date) => (
+
+                        <a
+                          key={`${course.id}-${date.getTime()}`}
+                          href={trainingInquiryLink(
+                            course,
+                            date,
+                            es
+                          )}
+                          style={{
+                            ...secondaryButtonStyle,
+                            padding: "12px",
+                            fontSize: "14px",
+                          }}
+                        >
+
+                          {formatDate(date, es)}
+
+                          <br />
+
+                          <span
+                            style={{
+                              fontSize: "12px",
+                              fontWeight: 500,
+                            }}
+                          >
+                            {es
+                              ? "Solicitar información"
+                              : "Request Information"}
+                          </span>
+
+                        </a>
+
+                      ))
+
+                    ) : (
+
+                      <p
+                        style={{
+                          color: "#637083",
+                          fontSize: "14px",
+                          lineHeight: 1.7,
+                        }}
+                      >
+                        {es
+                          ? "No quedan fechas propuestas para este mes. Puedes solicitar una fecha personalizada."
+                          : "No proposed dates remain this month. You may request a personalized date."}
+                      </p>
+
+                    )}
+
+                  </div>
+
+
+                  {/* CUSTOM DATE BUTTON */}
+
+                  <div
+                    style={{
+                      marginTop: "auto",
+                      paddingTop: "18px",
+                      borderTop: "1px solid #e5eaf0",
+                    }}
+                  >
+
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        color: "#43546a",
+                        lineHeight: 1.6,
+                        marginBottom: "12px",
+                      }}
+                    >
+                      {es
+                        ? "¿Prefieres otra fecha u horario?"
+                        : "Prefer another date or time?"}
+                    </p>
+
+                    <a
+                      href={personalizedTrainingLink(
+                        course,
+                        es
+                      )}
+                      style={{
+                        ...buttonStyle,
+                        fontSize: "14px",
+                      }}
+                    >
+                      {es
+                        ? "Solicita la fecha que prefieras"
+                        : "Request Your Preferred Date"}
+                    </a>
+
+                  </div>
+
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      lineHeight: 1.6,
+                      color: "#637083",
+                      margin: 0,
+                    }}
+                  >
+                    {es
+                      ? "Fechas propuestas sujetas a confirmación. No constituyen reservas."
+                      : "Proposed dates are subject to confirmation and do not constitute reservations."}
+                  </p>
+
+                </article>
+              );
+            })}
+
+          </div>
+
 
           <p
             style={{
@@ -764,31 +1171,211 @@ export default function Training() {
             }}
           >
             {es
-              ? "¿No encuentras una fecha adecuada? Podemos coordinar horarios flexibles para clases individuales y grupales, según disponibilidad."
-              : "Need another date? We can discuss flexible scheduling for individuals and groups, subject to availability."}
+              ? "¿Necesitas programar tu capacitación fuera de estos cuatro meses? También puedes solicitar cualquier otra fecha."
+              : "Need to schedule training beyond these four months? You can request any other preferred date."}
           </p>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================
+          FLEXIBLE & PERSONALIZED TRAINING
+      ===================================== */}
+
+      <section
+        className="section"
+        style={{
+          background: "#f5f8fb",
+        }}
+      >
+
+        <div className="container">
+
+          <div className="text-center">
+
+            <div className="eyebrow center">
+              {es
+                ? "Capacitación personalizada"
+                : "Personalized Training"}
+            </div>
+
+            <h2 className="section-title">
+              {es
+                ? "Capacitación que se adapta a tus horarios"
+                : "Training That Fits Your Schedule"}
+            </h2>
+
+            <p
+              style={{
+                ...paragraphStyle,
+                maxWidth: "820px",
+                margin: "0 auto 20px",
+              }}
+            >
+              {es
+                ? "Tus horarios laborales no deberían impedirte aprender habilidades que pueden salvar vidas."
+                : "Your work schedule shouldn't prevent you from learning lifesaving skills."}
+            </p>
+
+            <p
+              style={{
+                ...paragraphStyle,
+                maxWidth: "850px",
+                margin: "0 auto",
+              }}
+            >
+              {es
+                ? "En DC LifeSafe Global ofrecemos opciones de capacitación flexibles y personalizadas para profesionales sanitarios, personas con turnos rotativos, familias, grupos y organizaciones."
+                : "At DC LifeSafe Global, we offer flexible and personalized training options for healthcare professionals, individuals working rotating shifts, families, groups, and organizations."}
+            </p>
+
+          </div>
+
+
+          {/* FLEXIBLE TRAINING OPTIONS */}
+
+          <div
+            style={{
+              ...cardGridStyle,
+              marginTop: "40px",
+            }}
+          >
+
+            {[
+              {
+                icon: <Clock3 size={28} />,
+                titleEn: "Flexible Hours",
+                titleEs: "Horarios flexibles",
+                textEn:
+                  "Daytime, afternoon, evening, night, and weekend sessions may be requested.",
+                textEs:
+                  "Puedes solicitar sesiones durante el día, la tarde, la noche o los fines de semana.",
+              },
+              {
+                icon: <Users size={28} />,
+                titleEn: "Private & Group Training",
+                titleEs: "Capacitación privada y grupal",
+                textEn:
+                  "Individual sessions and training for families, healthcare teams, companies, and organizations.",
+                textEs:
+                  "Sesiones individuales y capacitación para familias, equipos sanitarios, empresas y organizaciones.",
+              },
+              {
+                icon: <MapPin size={28} />,
+                titleEn: "On-Site Training",
+                titleEs: "Capacitación a domicilio",
+                textEn:
+                  "Request training at your home, workplace, or another suitable location.",
+                textEs:
+                  "Solicita capacitación en tu domicilio, lugar de trabajo u otra ubicación apropiada.",
+              },
+              {
+                icon: <CalendarDays size={28} />,
+                titleEn: "Choose Your Date",
+                titleEs: "Elige tu fecha",
+                textEn:
+                  "Select a proposed date or request another day and time that works better for you.",
+                textEs:
+                  "Selecciona una fecha propuesta o solicita otro día y horario que se adapte mejor a tus necesidades.",
+              },
+            ].map((option) => (
+
+              <article
+                key={option.titleEn}
+                style={{
+                  ...cardStyle,
+                  padding: "28px 24px",
+                  textAlign: "center",
+                  gap: "14px",
+                }}
+              >
+
+                <div
+                  style={{
+                    color: "#24748d",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  {option.icon}
+                </div>
+
+                <h3
+                  style={{
+                    color: "#10294a",
+                    fontSize: "20px",
+                    margin: 0,
+                  }}
+                >
+                  {es
+                    ? option.titleEs
+                    : option.titleEn}
+                </h3>
+
+                <p
+                  style={{
+                    color: "#526173",
+                    lineHeight: 1.8,
+                    margin: 0,
+                    fontSize: "15px",
+                  }}
+                >
+                  {es
+                    ? option.textEs
+                    : option.textEn}
+                </p>
+
+              </article>
+
+            ))}
+
+          </div>
+
+
+          {/* PERSONALIZED TRAINING CTA */}
 
           <div
             style={{
               textAlign: "center",
-              marginTop: "18px",
+              marginTop: "40px",
             }}
           >
 
             <a
-              className="btn"
-              href="mailto:info@dclifesafeglobal.com?subject=Flexible%20Training%20Date%20Inquiry"
+              href={personalizedTrainingLink(null, es)}
+              style={{
+                ...buttonStyle,
+                display: "inline-block",
+                padding: "16px 30px",
+              }}
             >
               {es
-                ? "Solicitar otra fecha"
-                : "Request Another Date"}
+                ? "Solicitar capacitación personalizada"
+                : "Request Personalized Training"}
             </a>
+
+            <p
+              style={{
+                color: "#637083",
+                lineHeight: 1.7,
+                fontSize: "13px",
+                margin: "18px auto 0",
+                maxWidth: "800px",
+              }}
+            >
+              {es
+                ? "Todas las solicitudes están sujetas a disponibilidad del instructor, instalaciones adecuadas, requisitos del curso y ubicación. Los posibles gastos adicionales se comunicarán antes de confirmar la inscripción."
+                : "All requests are subject to instructor availability, suitable facilities, course requirements, and location. Any additional expenses will be communicated before enrollment is confirmed."}
+            </p>
 
           </div>
 
         </div>
 
       </section>
+
 
       {/* =====================================
           PREVENTION & TRAINING PHILOSOPHY
@@ -889,8 +1476,9 @@ export default function Training() {
 
       </section>
 
+
       {/* =====================================
-          ORIGINAL BENEFITS & TRAINING GEAR
+          TRAINING BENEFITS & EQUIPMENT
       ===================================== */}
 
       <section className="section">
@@ -907,34 +1495,25 @@ export default function Training() {
 
               <ul>
 
-                <li>
-                  <CheckCircle2 size={18} />
-                  {t.why1}
-                </li>
+                {[
+                  t.why1,
+                  t.why2,
+                  t.why3,
+                  t.why4,
+                  t.why5,
+                ].map((benefit, index) => (
 
-                <li>
-                  <CheckCircle2 size={18} />
-                  {t.why2}
-                </li>
+                  <li key={index}>
+                    <CheckCircle2 size={18} />
+                    {benefit}
+                  </li>
 
-                <li>
-                  <CheckCircle2 size={18} />
-                  {t.why3}
-                </li>
-
-                <li>
-                  <CheckCircle2 size={18} />
-                  {t.why4}
-                </li>
-
-                <li>
-                  <CheckCircle2 size={18} />
-                  {t.why5}
-                </li>
+                ))}
 
               </ul>
 
             </div>
+
 
             {/* TRAINING EQUIPMENT */}
 
@@ -950,6 +1529,7 @@ export default function Training() {
               />
 
             </div>
+
 
             {/* AVAILABLE COURSES */}
 
@@ -1005,8 +1585,9 @@ export default function Training() {
 
           </div>
 
+
           {/* =====================================
-              ORIGINAL BOTTOM ACTION BAR
+              BOTTOM ACTION BAR
           ===================================== */}
 
           <div className="bottom-action-bar">
@@ -1025,9 +1606,13 @@ export default function Training() {
 
             <a
               className="btn btn-danger"
-              href="mailto:info@dclifesafeglobal.com?subject=Training%20Inquiry"
+              href={personalizedTrainingLink(null, es)}
             >
-              {t.getStarted}
+              <Mail size={17} />
+
+              {es
+                ? "Solicitar información"
+                : "Request Information"}
             </a>
 
           </div>
