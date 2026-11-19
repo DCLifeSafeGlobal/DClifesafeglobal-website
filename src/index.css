@@ -3231,3 +3231,133 @@ body,
     overflow: visible;
   }
 }
+
+
+/* ==========================================
+   DC LIFESAFE GLOBAL
+   UNIFIED BUTTON DESIGN SYSTEM
+   ========================================== */
+
+:root {
+  --dc-button-primary-top: #357c94;
+  --dc-button-primary-bottom: #295f78;
+  --dc-button-hover-top: #286b83;
+  --dc-button-hover-bottom: #20546a;
+  --dc-button-border: #295f78;
+}
+
+/* PRIMARY BUTTONS */
+
+.btn,
+.btn-dark,
+.dc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 52px;
+  padding: 12px 26px;
+
+  background: linear-gradient(
+    180deg,
+    var(--dc-button-primary-top),
+    var(--dc-button-primary-bottom)
+  );
+
+  color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* PRIMARY HOVER */
+
+.btn:hover,
+.btn-dark:hover,
+.dc-btn-primary:hover {
+  background: linear-gradient(
+    180deg,
+    var(--dc-button-hover-top),
+    var(--dc-button-hover-bottom)
+  );
+
+  color: #ffffff;
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 22px rgba(41, 95, 120, 0.20);
+}
+
+/* SECONDARY BUTTONS */
+
+.btn-outline,
+.dc-btn-secondary {
+  background: #ffffff;
+  color: var(--dc-button-border);
+
+  border: 2px solid var(--dc-button-border);
+  border-radius: 12px;
+
+  box-shadow: none;
+}
+
+/* SECONDARY HOVER */
+
+.btn-outline:hover,
+.dc-btn-secondary:hover {
+  background: var(--dc-button-primary-bottom);
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+/* PRESERVE SPECIAL BUTTON COLORS */
+
+.btn-orange {
+  background: linear-gradient(180deg, #f29b37, #df7e18);
+}
+
+.btn-danger {
+  background: linear-gradient(180deg, #e63c3c, #c1272d);
+}
+
+/* ACCESSIBILITY */
+
+.btn:focus-visible,
+.btn-dark:focus-visible,
+.btn-outline:focus-visible,
+.dc-btn-primary:focus-visible,
+.dc-btn-secondary:focus-visible {
+  outline: 3px solid #d27c28;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-dark,
+  .btn-outline,
+  .dc-btn-primary,
+  .dc-btn-secondary {
+    transition: none;
+  }
+
+  .btn:hover,
+  .btn-dark:hover,
+  .btn-outline:hover,
+  .dc-btn-primary:hover,
+  .dc-btn-secondary:hover {
+    transform: none;
+  }
+}
