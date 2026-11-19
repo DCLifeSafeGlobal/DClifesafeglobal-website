@@ -104,8 +104,26 @@ function inquiry(course, es, { date = null, type = 'personalized' } = {}) {
 
 const grid = { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 275px), 1fr))', gap: 24, marginTop: 30 };
 const card = { background: '#fff', borderRadius: 18, overflow: 'hidden', boxShadow: '0 6px 24px rgba(15,35,60,.09)', display: 'flex', flexDirection: 'column', border: '1px solid #e5eaf0' };
-const primary = { display: 'block', textAlign: 'center', padding: '13px 16px', borderRadius: 10, background: '#0c355c', color: '#fff', fontWeight: 600, textDecoration: 'none', lineHeight: 1.5 };
-const secondary = { ...primary, color: '#0c355c', background: '#fff', border: '2px solid #0c355c' };
+
+const primary = {
+  display: 'block',
+  textAlign: 'center',
+  padding: '13px 16px',
+  borderRadius: 12,
+  background: 'linear-gradient(180deg, #357c94 0%, #295f78 100%)',
+  color: '#ffffff',
+  border: '2px solid transparent',
+  fontWeight: 600,
+  textDecoration: 'none',
+  lineHeight: 1.5
+};
+
+const secondary = {
+  ...primary,
+  color: '#295f78',
+  background: '#ffffff',
+  border: '2px solid #295f78'
+};
 
 export default function Training() {
   const { language } = useLanguage();
