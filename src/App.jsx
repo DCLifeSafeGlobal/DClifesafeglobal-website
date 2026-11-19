@@ -45,31 +45,43 @@ import Network from './pages/Network.jsx';
 
 // ==========================================
 // DC LIFESAFE GLOBAL
-// INDIVIDUAL TRAINING COURSE INFORMATION
+// OFFICIAL TRAINING COURSE INFORMATION
 // ==========================================
 
 const courseData = {
+
+  // ========================================
+  // BASIC LIFE SUPPORT
+  // ========================================
+
   bls: {
     title: 'BLS Provider Training',
     fullName: 'Basic Life Support',
     provider: 'American Heart Association (AHA)',
-    poster: '/Training/BLS/BLS Nov - Dec 26.jpg',
+
+    poster: '/Training/BLS/BLS.jpg',
 
     description: {
-      en: 'Basic Life Support training prepares healthcare professionals and other eligible responders to recognize life-threatening emergencies and deliver high-quality CPR, use an AED, and respond effectively as part of a resuscitation team.',
+      en: 'Basic Life Support training prepares healthcare professionals and other eligible responders to recognize life-threatening emergencies, deliver high-quality CPR, use an AED, and respond effectively as part of a resuscitation team.',
+
       es: 'La capacitación en soporte vital básico prepara a profesionales de salud y otros participantes elegibles para reconocer emergencias potencialmente mortales, realizar RCP de alta calidad, utilizar un DEA y responder eficazmente como parte de un equipo de reanimación.'
     },
 
     dates: {
       en: [
-        'Saturday, November 28, 2026',
-        'Saturday, December 12, 2026',
-        'Saturday, December 19, 2026'
+        'Flexible scheduling available',
+        'Proposed sessions: Tuesdays and Saturdays',
+        'Individual and group training available',
+        'Classes available in English and Spanish',
+        'Dates and locations require confirmation'
       ],
+
       es: [
-        'Sábado 28 de noviembre de 2026',
-        'Sábado 12 de diciembre de 2026',
-        'Sábado 19 de diciembre de 2026'
+        'Horarios flexibles disponibles',
+        'Sesiones propuestas: martes y sábados',
+        'Capacitación individual y grupal disponible',
+        'Clases disponibles en inglés y español',
+        'Fechas y ubicaciones sujetas a confirmación'
       ]
     },
 
@@ -95,6 +107,7 @@ const courseData = {
         'Effective team-based resuscitation',
         'Practical skills assessment'
       ],
+
       es: [
         'RCP de alta calidad en adultos, niños y lactantes',
         'Uso del desfibrilador externo automático (DEA)',
@@ -106,12 +119,14 @@ const courseData = {
     },
 
     format: {
-      en: 'Instructor-led training with hands-on practice and skills evaluation. Course details and duration will be confirmed before enrollment.',
-      es: 'Capacitación dirigida por instructor, con práctica presencial y evaluación de habilidades. Los detalles y la duración se confirmarán antes de la inscripción.'
+      en: 'Instructor-led training with hands-on CPR and AED practice, realistic emergency scenarios, and skills evaluation. Individual and group sessions may be coordinated according to instructor and facility availability.',
+
+      es: 'Capacitación dirigida por instructor, con práctica de RCP y DEA, escenarios realistas de emergencia y evaluación de habilidades. Las sesiones individuales y grupales pueden coordinarse según disponibilidad del instructor y de las instalaciones.'
     },
 
     certification: {
       en: 'AHA BLS Provider eCard, valid for two years, upon successful completion of all course requirements.',
+
       es: 'Credencial electrónica AHA BLS Provider (eCard), válida por dos años, al completar satisfactoriamente todos los requisitos del curso.'
     },
 
@@ -122,6 +137,7 @@ const courseData = {
         'Skills assessment',
         'AHA Provider eCard upon successful completion'
       ],
+
       es: [
         'Capacitación dirigida por instructor',
         'Práctica de RCP y uso de DEA',
@@ -132,31 +148,52 @@ const courseData = {
 
     materials: {
       en: 'The current official AHA BLS Provider Manual is required and is not included in the advertised tuition. Official training materials are sold separately. Students must have access to the required manual.',
+
       es: 'El manual oficial vigente de AHA BLS Provider es obligatorio y no está incluido en el precio anunciado. Los materiales oficiales se venden por separado. Los participantes deben tener acceso al manual requerido.'
     },
 
     location: {
       en: 'Aurora / Denver Metropolitan Area, Colorado. Exact training location will be confirmed before enrollment.',
-      es: 'Aurora / área metropolitana de Denver, Colorado. La ubicación exacta se confirmará antes de la inscripción.'
+
+      es: 'Aurora / área metropolitana de Denver, Colorado. La ubicación exacta de la capacitación se confirmará antes de la inscripción.'
     },
 
     resource: '/learning-center/bls'
   },
 
+  // ========================================
+  // ADVANCED CARDIOVASCULAR LIFE SUPPORT
+  // ========================================
+
   acls: {
     title: 'ACLS Provider Training',
     fullName: 'Advanced Cardiovascular Life Support',
     provider: 'American Heart Association (AHA)',
-    poster: '/Training/ACLS/ACLS 12-19-26.jpg',
+
+    poster: '/Training/ACLS/ACLS.jpg',
 
     description: {
       en: 'Advanced Cardiovascular Life Support training develops the knowledge and practical skills needed to participate in the management of adult cardiovascular emergencies, using current AHA algorithms and high-performance team principles.',
+
       es: 'La capacitación en soporte vital cardiovascular avanzado desarrolla los conocimientos y habilidades prácticas necesarios para participar en el manejo de emergencias cardiovasculares del adulto, utilizando los algoritmos vigentes de la AHA y los principios de trabajo en equipos de alto rendimiento.'
     },
 
     dates: {
-      en: ['Saturday, December 19, 2026'],
-      es: ['Sábado 19 de diciembre de 2026']
+      en: [
+        'Flexible scheduling available',
+        'Proposed sessions: Alternate Saturdays',
+        'Individual and group training available',
+        'Classes available in English and Spanish',
+        'Dates and locations require confirmation'
+      ],
+
+      es: [
+        'Horarios flexibles disponibles',
+        'Sesiones propuestas: sábados alternos',
+        'Capacitación individual y grupal disponible',
+        'Clases disponibles en inglés y español',
+        'Fechas y ubicaciones sujetas a confirmación'
+      ]
     },
 
     prices: [
@@ -182,6 +219,7 @@ const courseData = {
         'Resuscitation pharmacology',
         'Team communication and leadership'
       ],
+
       es: [
         'Manejo del paro cardíaco en adultos',
         'Reconocimiento y manejo de ritmos cardíacos',
@@ -194,12 +232,14 @@ const courseData = {
     },
 
     format: {
-      en: 'Instructor-led training with case-based learning, resuscitation scenarios, and skills evaluation. Preparation requirements and course duration will be confirmed before enrollment.',
-      es: 'Capacitación dirigida por instructor, con aprendizaje basado en casos, escenarios de reanimación y evaluación de habilidades. Los requisitos de preparación y la duración se confirmarán antes de la inscripción.'
+      en: 'Instructor-led training with case-based learning, resuscitation scenarios, practical skills assessment, and high-performance team exercises. Individual and group sessions may be coordinated according to instructor and facility availability.',
+
+      es: 'Capacitación dirigida por instructor, con aprendizaje basado en casos, escenarios de reanimación, evaluación de habilidades prácticas y ejercicios de equipos de alto rendimiento. Las sesiones individuales y grupales pueden coordinarse según disponibilidad del instructor y de las instalaciones.'
     },
 
     certification: {
       en: 'AHA ACLS Provider eCard, valid for two years, upon successful completion of all course requirements.',
+
       es: 'Credencial electrónica AHA ACLS Provider (eCard), válida por dos años, al completar satisfactoriamente todos los requisitos del curso.'
     },
 
@@ -210,6 +250,7 @@ const courseData = {
         'Skills and course assessments',
         'AHA Provider eCard upon successful completion'
       ],
+
       es: [
         'Capacitación ACLS dirigida por instructor',
         'Práctica de reanimación basada en casos',
@@ -220,49 +261,59 @@ const courseData = {
 
     materials: {
       en: 'The current official AHA ACLS Provider Manual is required and is not included in the advertised tuition. Official training materials are sold separately. Students must have access to the required manual and complete applicable preparation requirements.',
+
       es: 'El manual oficial vigente de AHA ACLS Provider es obligatorio y no está incluido en el precio anunciado. Los materiales oficiales se venden por separado. Los participantes deben tener acceso al manual requerido y completar los requisitos de preparación correspondientes.'
     },
 
     location: {
       en: 'Aurora / Denver Metropolitan Area, Colorado. Exact training location will be confirmed before enrollment.',
-      es: 'Aurora / área metropolitana de Denver, Colorado. La ubicación exacta se confirmará antes de la inscripción.'
+
+      es: 'Aurora / área metropolitana de Denver, Colorado. La ubicación exacta de la capacitación se confirmará antes de la inscripción.'
     },
 
     resource: '/learning-center/acls'
   },
 
+  // ========================================
+  // WILDERNESS FIRST AID
+  // ========================================
+
   wfa: {
     title: 'Wilderness First Aid (WFA)',
     fullName: 'Wilderness First Aid',
     provider: 'Survival Med',
-    poster: '/Training/WFA/WFA 1-9-27.jpg',
+
+    poster: '/Training/WFA/WFA.jpg',
 
     description: {
       en: 'Wilderness First Aid prepares participants to recognize, assess, and respond to medical emergencies and injuries in outdoor and remote environments where immediate professional medical assistance may not be available.',
+
       es: 'Wilderness First Aid prepara a los participantes para reconocer, evaluar y responder ante emergencias médicas y lesiones en entornos naturales o remotos, donde la asistencia médica profesional inmediata puede no estar disponible.'
     },
 
     dates: {
       en: [
-        'In-person training: Saturday, January 9, 2027',
-        'Time: 8:30 AM – 5:30 PM'
+        'Flexible scheduling available',
+        'Proposed sessions: Sundays',
+        'Individual and group training available',
+        'Classes available in English and Spanish',
+        'Practical training locations and dates require confirmation'
       ],
+
       es: [
-        'Capacitación presencial: sábado 9 de enero de 2027',
-        'Horario: 8:30 AM – 5:30 PM'
+        'Horarios flexibles disponibles',
+        'Sesiones propuestas: domingos',
+        'Capacitación individual y grupal disponible',
+        'Clases disponibles en inglés y español',
+        'Fechas y lugares de prácticas sujetos a confirmación'
       ]
     },
 
     prices: [
       {
-        en: 'Regular Tuition',
-        es: 'Tarifa regular',
+        en: 'Course Tuition',
+        es: 'Costo del curso',
         amount: '$350'
-      },
-      {
-        en: 'Early Registration',
-        es: 'Inscripción anticipada',
-        amount: '$300'
       }
     ],
 
@@ -273,90 +324,104 @@ const courseData = {
         'Musculoskeletal injury assessment',
         'Environmental emergency recognition',
         'Basic stabilization and first aid',
-        'Emergency response and evacuation considerations'
+        'Emergency response and evacuation considerations',
+        'Risk awareness and prevention in outdoor environments'
       ],
+
       es: [
         'Evaluación de pacientes en entornos remotos',
         'Control de hemorragias y manejo de heridas',
         'Evaluación de lesiones musculoesqueléticas',
         'Reconocimiento de emergencias ambientales',
         'Estabilización básica y primeros auxilios',
-        'Respuesta ante emergencias y consideraciones de evacuación'
+        'Respuesta ante emergencias y consideraciones de evacuación',
+        'Identificación de riesgos y prevención en entornos naturales'
       ]
     },
 
     format: {
-      en: 'Hybrid learning format combining self-paced online study with one day of instructor-led, in-person practical skills training.',
-      es: 'Modalidad híbrida que combina estudio online a ritmo propio con una jornada presencial de entrenamiento práctico dirigido por instructor.'
+      en: 'Hybrid training combining self-paced online education with instructor-led practical skills training. Practical activities may include classroom-based exercises, suitable outdoor scenarios, teamwork, and safe improvisation with available resources. Remote practical assessments may be offered only when authorized by Survival Med for the applicable certification format.',
+
+      es: 'Capacitación híbrida que combina educación online a ritmo propio con prácticas dirigidas por instructor. Las actividades pueden incluir ejercicios en aula, escenarios apropiados al aire libre, trabajo en equipo e improvisación segura con los recursos disponibles. Las evaluaciones prácticas remotas solo podrán ofrecerse cuando Survival Med las autorice para la modalidad de certificación correspondiente.'
     },
 
     certification: {
-      en: 'Survival Med Wilderness First Aid certification, valid for two years, upon successful completion of course requirements.',
-      es: 'Certificación Wilderness First Aid de Survival Med, válida por dos años, al completar satisfactoriamente los requisitos del curso.'
+      en: 'Survival Med Wilderness First Aid certification, valid for two years, upon successful completion of all applicable course requirements.',
+
+      es: 'Certificación Wilderness First Aid de Survival Med, válida por dos años, al completar satisfactoriamente todos los requisitos correspondientes.'
     },
 
     included: {
       en: [
         'Self-paced online learning component',
-        'One day of hands-on practical training',
-        'Instructor-led scenarios and skills practice',
+        'Instructor-led practical skills training',
+        'Scenario-based learning and skills practice',
         'Certification upon successful completion'
       ],
+
       es: [
         'Componente de aprendizaje online a ritmo propio',
-        'Una jornada de capacitación práctica presencial',
-        'Escenarios y ejercicios dirigidos por instructor',
-        'Certificación al completar el curso satisfactoriamente'
+        'Capacitación práctica dirigida por instructor',
+        'Aprendizaje mediante escenarios y ejercicios prácticos',
+        'Certificación al completar satisfactoriamente el programa'
       ]
     },
 
     materials: {
-      en: 'Online learning access and practical training are included in the course offering. Any additional equipment or preparation requirements will be communicated before enrollment.',
-      es: 'El acceso al aprendizaje online y la capacitación práctica están incluidos en la oferta del curso. Cualquier equipo adicional o requisito de preparación se comunicará antes de la inscripción.'
+      en: 'Online learning access and instructor-led practical training are included in the course offering. Any additional equipment or preparation requirements will be communicated before enrollment.',
+
+      es: 'El acceso al aprendizaje online y la capacitación práctica dirigida por instructor están incluidos en el curso. Los requisitos adicionales de preparación o equipo se comunicarán antes de la inscripción.'
     },
 
     location: {
-      en: 'Colorado, USA. The exact practical training location will be confirmed before enrollment.',
-      es: 'Colorado, Estados Unidos. La ubicación exacta de la capacitación práctica se confirmará antes de la inscripción.'
+      en: 'Colorado, USA. Practical training may take place in a suitable classroom or outdoor setting, depending on weather, safety conditions, instructor availability, and applicable certification requirements.',
+
+      es: 'Colorado, Estados Unidos. Las prácticas podrán realizarse en un aula adecuada o en un entorno natural apropiado, según las condiciones meteorológicas, la seguridad, la disponibilidad del instructor y los requisitos de certificación.'
     },
 
     resource: '/learning-center/wilderness'
   },
 
+  // ========================================
+  // WILDERNESS FIRST RESPONDER
+  // ========================================
+
   wfr: {
     title: 'Wilderness First Responder (WFR)',
     fullName: 'Hybrid WFR Initial Certification',
     provider: 'Survival Med',
-    poster: '/Training/WFR/WFR 1-11-27.jpg',
+
+    poster: '/Training/WFR/WFR.jpg',
 
     description: {
       en: 'The Hybrid Wilderness First Responder program is a comprehensive 70-hour wilderness medicine course designed to develop practical skills in patient assessment, emergency response, stabilization, decision-making, and medical care in remote environments.',
+
       es: 'El programa híbrido Wilderness First Responder es un curso integral de medicina en entornos remotos de 70 horas, diseñado para desarrollar habilidades prácticas de evaluación de pacientes, respuesta ante emergencias, estabilización, toma de decisiones y atención médica en lugares alejados.'
     },
 
     dates: {
       en: [
-        'Scheduled online start: January 11, 2027',
-        'Scheduled in-person practicals: February 15–19, 2027',
-        'Private or flexible schedules may be arranged'
+        'Flexible scheduling available',
+        'Two proposed online-start inquiry opportunities per month',
+        'Online coursework and practical dates coordinated individually',
+        'Classes available in English and Spanish',
+        'Practical training locations and schedules require confirmation'
       ],
+
       es: [
-        'Inicio online programado: 11 de enero de 2027',
-        'Prácticas presenciales programadas: 15–19 de febrero de 2027',
-        'Posibilidad de coordinar horarios privados o flexibles'
+        'Horarios flexibles disponibles',
+        'Dos oportunidades mensuales propuestas para consultar el inicio online',
+        'El componente online y las prácticas se coordinan individualmente',
+        'Clases disponibles en inglés y español',
+        'Fechas y lugares de prácticas sujetos a confirmación'
       ]
     },
 
     prices: [
       {
-        en: 'Regular Tuition',
-        es: 'Tarifa regular',
+        en: 'Initial Certification',
+        es: 'Certificación inicial',
         amount: '$1,000'
-      },
-      {
-        en: 'Early Registration',
-        es: 'Inscripción anticipada',
-        amount: '$900'
       }
     ],
 
@@ -368,8 +433,10 @@ const courseData = {
         'Management of environmental emergencies',
         'Patient monitoring and ongoing assessment',
         'Emergency scenarios and team-based response',
-        'Evacuation planning and remote medical care'
+        'Evacuation planning and remote medical care',
+        'Risk prevention and expedition preparedness'
       ],
+
       es: [
         'Evaluación integral de pacientes en entornos remotos',
         'Toma de decisiones médicas en lugares alejados',
@@ -377,18 +444,21 @@ const courseData = {
         'Manejo de emergencias ambientales',
         'Monitoreo y reevaluación continua del paciente',
         'Simulaciones de emergencia y trabajo en equipo',
-        'Planificación de evacuaciones y atención médica remota'
+        'Planificación de evacuaciones y atención médica remota',
+        'Prevención de riesgos y preparación para expediciones'
       ]
     },
 
     format: {
-      en: '70 total training hours: 35 hours of self-paced online education through Survival Med, followed by 35 hours of instructor-led, hands-on practical training. Private practical schedules may be arranged by mutual agreement and program requirements.',
-      es: 'Un total de 70 horas: 35 horas de educación online a ritmo propio mediante Survival Med, seguidas de 35 horas de capacitación práctica presencial dirigida por instructor. Los horarios privados pueden coordinarse de común acuerdo y conforme a los requisitos del programa.'
+      en: '70 total training hours: 35 hours of self-paced online education through Survival Med, followed by 35 hours of instructor-led practical training. Practical sessions may combine suitable classroom and outdoor scenarios, teamwork, patient assessment, and safe improvisation with available resources. Remote practical assessments are offered only when permitted by the applicable Survival Med certification program.',
+
+      es: 'Un total de 70 horas de capacitación: 35 horas de educación online a ritmo propio mediante Survival Med, seguidas de 35 horas de prácticas dirigidas por instructor. Las sesiones pueden combinar escenarios apropiados en aula y al aire libre, trabajo en equipo, evaluación de pacientes e improvisación segura con los recursos disponibles. Las evaluaciones prácticas remotas solo se ofrecen cuando lo permite el programa de certificación de Survival Med correspondiente.'
     },
 
     certification: {
-      en: 'Survival Med Wilderness First Responder certification, valid for two years, upon successful completion of all course requirements.',
-      es: 'Certificación Wilderness First Responder de Survival Med, válida por dos años, al completar satisfactoriamente todos los requisitos del curso.'
+      en: 'Survival Med Wilderness First Responder certification, valid for two years, upon successful completion of all applicable course requirements.',
+
+      es: 'Certificación Wilderness First Responder de Survival Med, válida por dos años, al completar satisfactoriamente todos los requisitos correspondientes.'
     },
 
     included: {
@@ -399,32 +469,37 @@ const courseData = {
         'Hands-on assessments and realistic scenarios',
         'WFR certification upon successful completion'
       ],
+
       es: [
         'Inscripción al programa online WFR de Survival Med',
         'Acceso a 35 horas de aprendizaje online a ritmo propio',
         '35 horas de capacitación práctica dirigida por instructor',
         'Evaluaciones prácticas y escenarios realistas',
-        'Certificación WFR al completar el programa satisfactoriamente'
+        'Certificación WFR al completar satisfactoriamente el programa'
       ]
     },
 
     materials: {
       en: 'Online program enrollment and instructor-led practical training are included in the base tuition. Any additional preparation or equipment requirements will be provided before enrollment.',
+
       es: 'La inscripción al programa online y la capacitación práctica dirigida por instructor están incluidas en la matrícula base. Los requisitos adicionales de preparación o equipo se comunicarán antes de la inscripción.'
     },
 
     location: {
-      en: 'Based in the Denver/Aurora metropolitan area, Colorado. Practical training may be arranged at a mutually agreed suitable location within Colorado, depending on instructor availability and training requirements.',
-      es: 'Con base en el área metropolitana de Denver/Aurora, Colorado. La capacitación práctica puede coordinarse en una ubicación adecuada acordada dentro de Colorado, según la disponibilidad del instructor y los requisitos de formación.'
+      en: 'Based in the Denver/Aurora Metropolitan Area, Colorado. Practical training may be arranged at a mutually agreed suitable classroom or outdoor location within Colorado, depending on safety conditions, instructor availability, and program requirements.',
+
+      es: 'Con base en el área metropolitana de Denver/Aurora, Colorado. Las prácticas pueden coordinarse en un aula o entorno natural adecuado dentro de Colorado, según las condiciones de seguridad, la disponibilidad del instructor y los requisitos del programa.'
     },
 
     travel: {
       en: 'The $1,000 regular tuition represents the base course price. Additional transportation, travel, facility rental, or logistical expenses may apply to specially arranged locations. All additional charges will be discussed and agreed upon before enrollment.',
+
       es: 'La matrícula regular de $1,000 representa el precio base del curso. Pueden aplicarse gastos adicionales de transporte, desplazamiento, alquiler de instalaciones u otros gastos logísticos en ubicaciones especiales. Todos los cargos adicionales se comunicarán y acordarán antes de la inscripción.'
     },
 
     resource: '/learning-center/wilderness'
   }
+
 };
 
 // ==========================================
