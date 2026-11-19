@@ -62,6 +62,7 @@ const courseData = {
     provider: 'American Heart Association (AHA)',
 
     poster: '/Training/BLS/BLS.jpg',
+    posterEs: '/Training/BLS/BLS-Sp.jpg',
 
     description: {
       en: 'Basic Life Support training prepares healthcare professionals and other eligible responders to recognize life-threatening emergencies, deliver high-quality CPR, use an AED, and respond effectively as part of a resuscitation team.',
@@ -175,6 +176,7 @@ const courseData = {
     provider: 'American Heart Association (AHA)',
 
     poster: '/Training/ACLS/ACLS.jpg',
+    posterEs: '/Training/ACLS/ACLS-Sp.jpg',
 
     description: {
       en: 'Advanced Cardiovascular Life Support training develops the knowledge and practical skills needed to participate in the management of adult cardiovascular emergencies, using current AHA algorithms and high-performance team principles.',
@@ -290,6 +292,7 @@ const courseData = {
     provider: 'Survival Med',
 
     poster: '/Training/WFA/WFA.jpg',
+    posterEs: '/Training/WFA/WFA-Sp.jpg',
 
     description: {
       en: 'Wilderness First Aid prepares participants to recognize, assess, and respond to medical emergencies and injuries in outdoor and remote environments where immediate professional medical assistance may not be available.',
@@ -400,6 +403,7 @@ const courseData = {
     provider: 'Survival Med',
 
     poster: '/Training/WFR/WFR.jpg',
+    posterEs: '/Training/WFR/WFR-Sp.jpg',
 
     description: {
       en: 'The Hybrid Wilderness First Responder program is a comprehensive 70-hour wilderness medicine course designed to develop practical skills in patient assessment, emergency response, stabilization, decision-making, and medical care in remote environments.',
@@ -505,6 +509,102 @@ const courseData = {
       es: 'La matrícula regular de $1,000 representa el precio base del curso. Pueden aplicarse gastos adicionales de transporte, desplazamiento, alquiler de instalaciones u otros gastos logísticos en ubicaciones especiales. Todos los cargos adicionales se comunicarán y acordarán antes de la inscripción.'
     },
 
+    resource: '/learning-center/wilderness'
+  },
+
+  // ========================================
+  // WILDERNESS ADVANCED FIRST AID
+  // ========================================
+
+  wafa: {
+    title: 'Wilderness Advanced First Aid (WAFA)',
+    titleEs: 'Wilderness Advanced First Aid (WAFA) — Primeros Auxilios Avanzados en Zonas Agrestes',
+    fullName: 'Wilderness Advanced First Aid',
+    fullNameEs: 'Primeros Auxilios Avanzados en Zonas Agrestes',
+    provider: 'Survival Med',
+    poster: '/Training/WAFA/WAFA.jpg',
+    posterEs: '/Training/WAFA/WAFA-Sp.jpg',
+    description: {
+      en: 'Wilderness Advanced First Aid develops patient assessment, first aid, and decision-making skills for more complex situations in outdoor and remote settings.',
+      es: 'Wilderness Advanced First Aid desarrolla habilidades de evaluación de pacientes, primeros auxilios y toma de decisiones para situaciones de mayor complejidad en entornos naturales y remotos.'
+    },
+    dates: {
+      en: ['Flexible dates by request', 'Daytime, evening, and weekend inquiries welcome', 'English and Spanish training inquiries', 'Field or classroom practical arrangements are subject to course requirements and confirmation'],
+      es: ['Fechas flexibles a solicitud', 'Consultas para horarios diurnos, nocturnos y fines de semana', 'Solicitudes de capacitación en inglés y español', 'Las prácticas en campo o aula están sujetas a requisitos del programa y confirmación']
+    },
+    prices: [{ en: 'Course Tuition', es: 'Costo del curso', amount: '$500' }],
+    objectives: {
+      en: ['Structured patient assessment', 'Management of common wilderness injuries', 'Medical and environmental emergency recognition', 'Monitoring and reassessment', 'Team communication and evacuation decisions', 'Practical scenarios with available resources'],
+      es: ['Evaluación estructurada del paciente', 'Manejo de lesiones frecuentes en zonas agrestes', 'Reconocimiento de emergencias médicas y ambientales', 'Monitoreo y reevaluación', 'Comunicación en equipo y decisiones de evacuación', 'Escenarios prácticos con recursos disponibles']
+    },
+    format: {
+      en: 'Course instruction and practical assessment will follow the applicable Survival Med WAFA curriculum. Classroom, field, and remote components are arranged only when permitted under the selected certification format. Exact hours and schedule are confirmed before enrollment.',
+      es: 'La enseñanza y evaluación práctica seguirán el programa WAFA aplicable de Survival Med. Los componentes en aula, campo o remotos se coordinarán únicamente cuando los permita la modalidad de certificación elegida. Las horas y el horario exactos se confirmarán antes de la inscripción.'
+    },
+    certification: {
+      en: 'Survival Med WAFA certification upon successful completion of all applicable program requirements and assessments.',
+      es: 'Certificación WAFA de Survival Med al completar satisfactoriamente los requisitos y evaluaciones correspondientes.'
+    },
+    included: {
+      en: ['Instruction in the applicable WAFA curriculum', 'Practical scenario-based exercises', 'Skills assessments as required', 'Certification upon successful completion'],
+      es: ['Formación según el programa WAFA correspondiente', 'Ejercicios prácticos basados en escenarios', 'Evaluaciones de habilidades requeridas', 'Certificación al completar satisfactoriamente el curso']
+    },
+    materials: {
+      en: 'Required learning materials, equipment, course format, and practical arrangements will be confirmed before enrollment.',
+      es: 'Los materiales de aprendizaje, equipos, modalidad y prácticas requeridos se confirmarán antes de la inscripción.'
+    },
+    location: {
+      en: 'Colorado, USA. On-site or appropriate field locations may be discussed, subject to safety, instructor availability, and certification requirements.',
+      es: 'Colorado, Estados Unidos. Se pueden considerar instalaciones del participante o entornos naturales adecuados, según seguridad, disponibilidad del instructor y requisitos de certificación.'
+    },
+    resource: '/learning-center/wilderness'
+  },
+
+  // ========================================
+  // WFR RECERTIFICATION
+  // ========================================
+
+  'wfr-recert': {
+    title: 'Wilderness First Responder Recertification',
+    titleEs: 'Wilderness First Responder — Recertificación WFR',
+    fullName: 'WFR Recertification',
+    fullNameEs: 'Recertificación de Primer Respondiente en Zonas Agrestes',
+    provider: 'Survival Med',
+    poster: '/Training/WFR/WFR Recert.jpg',
+    posterEs: '/Training/WFR/WFR-Recert-Sp.jpg',
+    description: {
+      en: 'WFR recertification provides an opportunity for eligible responders to refresh wilderness medical assessment, emergency response, and practical decision-making skills.',
+      es: 'La recertificación WFR permite a participantes elegibles actualizar sus habilidades de evaluación médica, respuesta ante emergencias y toma de decisiones prácticas en zonas agrestes.'
+    },
+    dates: {
+      en: ['Flexible scheduling by request', 'Eligibility and prior certification must be verified', 'Practical assessment format subject to Survival Med requirements', 'English and Spanish inquiries welcome'],
+      es: ['Programación flexible a solicitud', 'Es necesario verificar la elegibilidad y certificación previa', 'La modalidad de evaluación práctica depende de los requisitos de Survival Med', 'Consultas disponibles en inglés y español']
+    },
+    prices: [{ en: 'Tuition — request a quote', es: 'Matrícula — solicitar cotización', amount: 'Contact us' }],
+    objectives: {
+      en: ['Refresh structured patient assessment', 'Revisit injury stabilization and environmental emergencies', 'Practice team-based scenarios', 'Review evacuation decisions', 'Demonstrate required skills for recertification'],
+      es: ['Actualizar la evaluación estructurada del paciente', 'Repasar estabilización de lesiones y emergencias ambientales', 'Practicar escenarios en equipo', 'Revisar decisiones de evacuación', 'Demostrar las habilidades exigidas para recertificación']
+    },
+    format: {
+      en: 'Recertification format, required hours, prerequisites, and assessment options will be confirmed against the current Survival Med program before registration. Remote assessment is available only when explicitly permitted for this certification pathway.',
+      es: 'La modalidad de recertificación, horas requeridas, requisitos previos y opciones de evaluación se confirmarán conforme al programa vigente de Survival Med antes de la inscripción. La evaluación remota se ofrecerá únicamente si está expresamente permitida para esta modalidad.'
+    },
+    certification: {
+      en: 'Survival Med WFR recertification upon verified eligibility and successful completion of the applicable requirements.',
+      es: 'Recertificación WFR de Survival Med, previa verificación de elegibilidad y cumplimiento satisfactorio de los requisitos aplicables.'
+    },
+    included: {
+      en: ['Review and practice of required skills', 'Relevant scenario-based assessments', 'Certification processing upon successful completion, subject to eligibility'],
+      es: ['Revisión y práctica de habilidades requeridas', 'Evaluaciones pertinentes mediante escenarios', 'Tramitación de certificación al completar satisfactoriamente los requisitos, sujeto a elegibilidad']
+    },
+    materials: {
+      en: 'Participants should provide details of their current or previous WFR certification. Required materials and any additional preparation will be communicated before enrollment.',
+      es: 'Los participantes deberán proporcionar información de su certificación WFR vigente o anterior. Los materiales y la preparación adicional se comunicarán antes de la inscripción.'
+    },
+    location: {
+      en: 'Colorado, USA. Appropriate practical locations and remote options, where authorized, will be confirmed individually.',
+      es: 'Colorado, Estados Unidos. Las ubicaciones prácticas adecuadas y opciones remotas, cuando estén autorizadas, se confirmarán individualmente.'
+    },
     resource: '/learning-center/wilderness'
   }
 
@@ -806,7 +906,7 @@ function CourseDetail({ courseId }) {
 
         <div style={styles.card}>
           <img
-            src={course.poster}
+            src={es ? (course.posterEs || course.poster) : course.poster}
             alt={`${notes.image} - ${courseTitle}`}
             style={{
               width: '100%',
@@ -1208,6 +1308,9 @@ const pageRoutes = [
     path: '/training/wfr',
     element: <CourseDetail courseId='wfr' />
   },
+
+  { path: '/training/wafa', element: <CourseDetail courseId='wafa' /> },
+  { path: '/training/wfr-recert', element: <CourseDetail courseId='wfr-recert' /> },
 
   { path: '/outdoor', element: <Outdoor /> },
   { path: '/books', element: <Books /> },
