@@ -20,10 +20,10 @@ const socialLinks = [
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/instagram.svg",
   },
   {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/company/dclifesafeglobal/",
-    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/linkedin.svg",
-  },
+  name: "LinkedIn",
+  url: "https://www.linkedin.com/company/dclifesafeglobal/",
+  icon: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/linkedin.svg",
+},
 ];
 
 export default function Contact() {
