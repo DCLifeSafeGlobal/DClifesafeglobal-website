@@ -297,6 +297,137 @@ export default function Training() {
       </section>
 
 
+
+      {/* ===================================== */}
+{/* PREVENTION & EMERGENCY PREPAREDNESS */}
+{/* ===================================== */}
+
+<section className="section">
+
+  <div className="container">
+
+    <div
+      style={{
+        background: "#eef5f8",
+        border: "1px solid #dce8ee",
+        borderRadius: "20px",
+        padding: "clamp(28px, 5vw, 55px)",
+        textAlign: "center",
+      }}
+    >
+
+      <p
+        style={{
+          color: "#24748d",
+          fontWeight: 700,
+          fontSize: "14px",
+          textTransform: "uppercase",
+          letterSpacing: "1.4px",
+          marginBottom: "12px",
+        }}
+      >
+        {es
+          ? "Nuestro enfoque de capacitación"
+          : "Our Approach to Training"}
+      </p>
+
+      <h2 className="section-title">
+
+        {es
+          ? "La preparación comienza antes de una emergencia."
+          : "Preparedness Starts Before the Emergency."}
+
+      </h2>
+
+      <div
+        style={{
+          maxWidth: "830px",
+          margin: "0 auto",
+        }}
+      >
+
+        <p
+          style={{
+            color: "#43546a",
+            lineHeight: 1.85,
+            fontSize: "16px",
+          }}
+        >
+
+          {es
+            ? "Aprender a responder ante una emergencia puede salvar vidas. Sin embargo, reconocer los riesgos, prevenir situaciones evitables y saber actuar con confianza es igualmente importante."
+            : "Learning how to respond to an emergency can save lives. Recognizing risks, preventing avoidable situations, and knowing how to act with confidence are just as important."}
+
+        </p>
+
+        <p
+          style={{
+            color: "#43546a",
+            lineHeight: 1.85,
+            fontSize: "16px",
+          }}
+        >
+
+          {es
+            ? "En DC LifeSafe Global creemos que la capacitación debe ir más allá de memorizar procedimientos. Buscamos que los participantes comprendan lo que hacen, desarrollen habilidades prácticas y aprendan a tomar decisiones informadas en situaciones reales."
+            : "At DC LifeSafe Global, we believe training should go beyond memorizing procedures. We want participants to understand what they are doing, develop practical skills, and learn how to make informed decisions in real-world situations."}
+
+        </p>
+
+        <p
+          style={{
+            color: "#43546a",
+            lineHeight: 1.85,
+            fontSize: "16px",
+          }}
+        >
+
+          {es
+            ? "Desde el soporte vital básico y avanzado hasta la medicina en zonas agrestes, nuestro enfoque combina educación, preparación, práctica y conciencia de los riesgos."
+            : "From basic and advanced life support to wilderness medicine, our approach brings together education, preparation, hands-on practice, and risk awareness."}
+
+        </p>
+
+        <p
+          style={{
+            color: "#10294a",
+            fontWeight: 700,
+            fontSize: "clamp(18px, 2.5vw, 22px)",
+            lineHeight: 1.7,
+            marginTop: "30px",
+          }}
+        >
+
+          {es
+            ? "El conocimiento empodera. La preparación protege. La compasión conecta."
+            : "Knowledge Empowers. Preparation Protects. Compassion Connects."}
+
+        </p>
+
+        <Link
+          to={`${prefix}/about`}
+          className="btn"
+          style={{
+            display: "inline-block",
+            marginTop: "20px",
+          }}
+        >
+
+          {es
+            ? "Conoce nuestra filosofía"
+            : "Learn About Our Philosophy"}
+
+        </Link>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+      
+      
       {/* ===================================== */}
       {/* UPCOMING CLASSES & CERTIFICATIONS */}
       {/* ===================================== */}
