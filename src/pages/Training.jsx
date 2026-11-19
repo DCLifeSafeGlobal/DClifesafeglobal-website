@@ -116,12 +116,6 @@ export default function Training() {
   const months = visibleMonths();
   const selectedMonth = months[monthIndex] || months[0];
 
-  const programs = [
-    { icon: '/icon_bls.png', title: 'BLS', subtitle: t.blsTitle, text: t.blsText, link: `${prefix}/training/bls`, internal: true },
-    { icon: '/icon_acls.png', title: 'ACLS', subtitle: t.aclsTitle, text: t.aclsText, link: `${prefix}/training/acls`, internal: true },
-    { icon: '/icon_wilderness.png', title: t.wildernessTitle, subtitle: '', text: t.wildernessText, link: `${prefix}/training/wfa`, internal: true },
-    { icon: '/icon_group.png', title: t.privateTitle, subtitle: '', text: t.privateText, link: inquiry(null, es, { type: 'group' }), internal: false }
-  ];
 
   return (
     <>
@@ -144,25 +138,6 @@ export default function Training() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container text-center">
-          <div className="eyebrow center">{t.sectionTitle}</div>
-          <h2 className="section-title">{t.sectionTitle}</h2>
-          <div className="card-grid columns-4 mt-medium">
-            {programs.map((item) => (
-              <article className="program-card" key={item.title}>
-                <img src={item.icon} alt="" className="program-icon" />
-                <h3>{item.title}{item.subtitle && <><br />{item.subtitle}</>}</h3>
-                <p>{item.text}</p>
-                {item.internal ?
-                  <Link className="text-link" to={item.link}>{t.learnMore} →</Link> :
-                  <a className="text-link" href={item.link}>{t.learnMore} →</a>}
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section" style={{ background: '#f5f7fa' }} id="training-courses">
         <div className="container">
           <div className="text-center">
@@ -172,25 +147,62 @@ export default function Training() {
               {es ? 'Seis cursos de soporte vital y medicina en zonas agrestes, con clases en inglés y español y opciones de capacitación personalizada.' : 'Six life support and wilderness medicine courses, with classes in English and Spanish and personalized training options.'}
             </p>
           </div>
-          <div style={grid}>
-            {courses.map((course) => (
-              <article key={course.id} style={card}>
-                <Link to={`${prefix}/training/${course.id}`} style={{ display: 'block', padding: 16, background: '#eaf0f5' }}>
-                  <img src={es ? course.imageEs : course.imageEn} alt={`${course.name} — ${es ? 'afiche en español' : 'English flyer'}`} loading="lazy" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 6 }} />
-                </Link>
-                <div style={{ display: 'flex', flex: 1, flexDirection: 'column', gap: 12, padding: 22 }}>
-                  <span style={{ fontSize: 13, color: '#24748d', fontWeight: 700 }}>{course.issuer}</span>
-                  <h3 style={{ margin: 0, color: '#10294a', fontSize: 21 }}>{course.name}</h3>
-                  <p style={{ color: '#53657a', margin: 0 }}>{es ? course.es : course.en}</p>
-                  <p style={{ margin: 0, color: '#35465c' }}><CalendarDays size={17} style={{ verticalAlign: 'middle', marginRight: 8 }} />{es ? 'Horarios flexibles · Inglés y español' : 'Flexible scheduling · English & Spanish'}</p>
-                  <strong style={{ color: '#a71919', marginBottom: 8 }}>{es ? course.priceEs : course.priceEn}</strong>
-                  <Link to={`${prefix}/training/${course.id}`} style={{ ...primary, marginTop: 'auto' }}>
-                    {es ? 'Ver detalles del curso' : 'View Course Details'}
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+          {[
+            {
+              key: 'aha',
+              title: es
+                ? 'Certificaciones de la American Heart Association (AHA)'
+                : 'American Heart Association (AHA) Certifications',
+              description: es
+                ? 'Cursos de soporte vital con certificación AHA.'
+                : 'Life support courses with AHA certification.',
+              items: courses.filter((course) => course.issuer === 'American Heart Association (AHA)')
+            },
+            {
+              key: 'wilderness',
+              title: es ? 'Cursos de Medicina en Zonas Agrestes' : 'Wilderness Medicine Courses',
+              description: es
+                ? 'Capacitación en medicina de zonas agrestes mediante Survival Med.'
+                : 'Wilderness medicine training through Survival Med.',
+              items: courses.filter((course) => course.issuer === 'Survival Med')
+            }
+          ].map((group) => (
+            <div key={group.key} style={{ marginTop: 44 }}>
+              <div style={{ textAlign: 'center' }}>
+                <h3 style={{ color: '#10294a', fontSize: 'clamp(22px, 3vw, 30px)', marginBottom: 8 }}>
+                  {group.title}
+                </h3>
+                <p style={{ color: '#526173', lineHeight: 1.7, margin: 0 }}>
+                  {group.description}
+                </p>
+              </div>
+              <div style={{ ...grid, gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', maxWidth: 950, marginLeft: 'auto', marginRight: 'auto' }} className="training-course-group-grid">
+                {group.items.map((course) => (
+                  <article key={course.id} style={card}>
+                    <Link to={`${prefix}/training/${course.id}`} style={{ display: 'block', padding: 16, background: '#eaf0f5' }}>
+                      <img
+                        src={es ? course.imageEs : course.imageEn}
+                        alt={`${course.name} — ${es ? 'afiche en español' : 'English flyer'}`}
+                        loading="lazy"
+                        style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 6 }}
+                      />
+                    </Link>
+                    <div style={{ display: 'flex', flex: 1, flexDirection: 'column', gap: 12, padding: 22 }}>
+                      <p style={{ margin: 0, color: '#53657a' }}>{es ? course.es : course.en}</p>
+                      <p style={{ margin: 0, color: '#35465c' }}>
+                        <CalendarDays size={17} style={{ verticalAlign: 'middle', marginRight: 8 }} />
+                        {es ? 'Horarios flexibles · Inglés y español' : 'Flexible scheduling · English & Spanish'}
+                      </p>
+                      <strong style={{ color: '#a71919', marginBottom: 8 }}>{es ? course.priceEs : course.priceEn}</strong>
+                      <Link to={`${prefix}/training/${course.id}`} style={{ ...primary, marginTop: 'auto' }}>
+                        {es ? 'Ver detalles del curso' : 'View Course Details'}
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
           <p style={{ textAlign: 'center', fontSize: 13, color: '#657488', marginTop: 22, lineHeight: 1.7 }}>
             {es ? 'Las fechas, instalaciones, disponibilidad y modalidades de certificación deben confirmarse antes de la inscripción.' : 'Dates, facilities, availability and certification formats must be confirmed before enrollment.'}
           </p>
