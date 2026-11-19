@@ -166,7 +166,7 @@ const content = {
     documentButton: 'Download Institutional Statement (PDF)',
 
     documentUrl:
-      '/documents/DC_LifeSafe_Global_Institutional_Statement_EN.pdf',
+      '/Documents/DC_LifeSafe_Global_Institutional_Statement_EN.pdf',
 
     connectTitle: "Let's Stay Connected",
 
@@ -329,7 +329,7 @@ const content = {
     documentButton: 'Descargar Declaración Institucional (PDF)',
 
     documentUrl:
-      '/documents/DC_LifeSafe_Global_Declaracion_Institucional_ES.pdf',
+      '/Documents/DC_LifeSafe_Global_Declaracion_Institucional_ES.pdf',
 
     connectTitle: 'Sigamos conectados',
 
